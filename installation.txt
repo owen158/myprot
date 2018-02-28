@@ -1,0 +1,51 @@
+webstorm
+Sublime Text 3
+node.js 
+-g vue webpack bower gulp
+git/tortoiseGit
+svn
+chrome
+opera
+firefox
+internet
+safari
+
+webpack 
+可以通过参数让编译的输出内容带有进度和颜色
+webpack --progress --colors
+那么可以启动监听模式
+webpack --progress --colors --watch
+服务实时监听它们的变化并自动刷新页面。
+npm install webpack-dev-server
+来打印错误详情
+webpack --display-error-details
+webpack
+npm install webpack --save-dev
+npm init
+npm install webpack-dev-server --save-dev
+npm install css-loader style-loader --save-dev
+webpack --progress --colors 
+webpack --progress --colors --watch 监听模式的整体速度是很快的。
+webpack-dev-server --progress --colors 服务实时监听它们的变化并自动
+刷新页面
+npm install less --save-dev
+npm install less-loader --save-dev
+
+npm install file-loader --save-dev
+npm install url-loader --save-dev
+npm install --save-dev json-loader
+gulp配置
+
+npm install --save-dev jshint gulp-jshint //js代码提示
+npm install gulp-uglify --save-dev 压缩js文件
+npm install gulp-htmlmin --save-dev 压缩html
+npm install gulp-clean-css --save-dev 压缩css
+npm install gulp-imagemin --save-dev 压缩图片
+npm install imagemin-pngquant --save-dev  深度压缩
+npm install gulp-cache --save-dev 必要压缩所有图片
+npm install gulp-concat --save-dev 合并js
+npm install gulp-sass --save-dev css
+npm install gulp-sourcemaps --save-dev 看压缩文件
+
+npm install --save-dev gulp-minify-css gulp-uglify gulp-concat gulp-rev gulp-rev-replace gulp-useref
+合并压缩test.html文件中js文件并进行文件替换

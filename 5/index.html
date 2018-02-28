@@ -1,0 +1,896 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh_CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<META http-equiv="pragma" content="no-cache">
+	<META http-equiv="Cache-Control" content="no-cache, must-revalidate">
+	<META http-equiv="Expires" content="0">
+	<meta name="apple-mobile-web-app-capable" content="yes"><!-- 苹果全屏*手动输入是没有效果的* -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"><!-- 苹果全屏*显示栏的样式* -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui"><!-- 禁止用户缩放 -->
+
+	<!-- 全屏 -->
+	<meta name="format-detection"content="telephone=no, email=no" />
+	<meta name="HandheldFriendly" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta name="msapplication-tap-highlight" content="no">
+	<link rel="shortcut icon" href="./mobile/imgs/cpico.ico">
+	<title> welcome games</title>
+	<link rel="stylesheet" href="taobao/sm.min.css?sw201802241sw">
+	<link rel="stylesheet" href="taobao/sm-extend.min.css">
+	<link rel="stylesheet" href="css/index.css?sw201802241sw">
+	<link rel="stylesheet" href="css/bjcss.css?sw201802241sw">
+	<link rel="stylesheet" href="css/css_GPK.css?sw201802241sw">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body class="with-panel-left-cover" onload="getPlayerInfo();">
+	<div class="page-group">
+	<div class="wrapper"></div>
+	<div class="page page-current">
+		<div id = "gamepage"  >
+			<header class="barHeader">
+				<div  class="textaligns">
+					<span id = "gamePlayId" class="select-box gamePlay gamePlayTxt"><span id = "sidebarPagename">两面盘 </span><span class = " ionc_downleft icon icon-down"></span></span>
+				</div>
+				<div class="fl" id = "ruentMain" ><a class="retum-btn" style="-moz-user-select: none;"><i class="icon icon-left"></i><span id = "reuntText">退出</span></a></div>
+				<div class="fr"><a class="menu-btn pull-right my-right" style="-moz-user-select: none;"><span>菜单</span><i class="icon icon-menu"></i></a></div>
+			</header>
+			<div class="mainNav"style="display: none;" id="mainav"></div>
+			<div class="bar_style" >
+				<div class="lottery-box" style = "height:28px;">
+					<div class="gameSelect">
+						<div class="select-box" id = "selectMainId">北京赛车</div>
+						<!-- 						<select  id="fieldMain">
+                                                    <option value="BJC,PK10">北京赛车</option>
+                                                    <option value="XYFT,PK10">幸运飞艇</option>
+                                                    <option value="SSC,SSC">重庆时时彩</option>
+                                                    <option value="TJSC,SSC">天津时时彩</option>
+                                                    <option value="XJSC,SSC">新疆时时彩</option>
+                                                    <option value="JXSC,SSC">江西时时彩</option>
+                                                    <option value="YNSC,SSC">云南时时彩</option>
+                                                    <option value="SHSC,SHSL">上海时时乐</option>
+                                                    <option value="JSCQ,SSC">极速时时彩</option>
+                                                    <option value="KLC,KLC">广东快乐十分</option>
+                                                    <option value="TJKC,KLC">天津快乐十分</option>
+                                                    <option value="HNKC,KLC">湖南快乐十分</option>
+                                                    <option value="GXKC,GXKC">广西快乐十分</option>
+                                                    <option value="XYC,KLC">幸运农场</option>
+                                                    <option value="GD115,XZ115">广东十一选五</option>
+                                                    <option value="JX115,XZ115">江西十一选五</option>
+                                                    <option value="SD115,XZ115">山东十一运夺金</option>
+                                                    <option value="BJ115,XZ115">北京十一选五</option>
+                                                    <option value="SH115,XZ115">上海十一选五</option>
+                                                    <option value="LN115,XZ115">辽宁十一选五</option>
+                                                    <option value="HB115,XZ115">湖北十一选五</option>
+                                                    <option value="JS115,XZ115">江苏十一选五</option>
+                                                    <option value="AH115,XZ115">安徽十一选五</option>
+                                                    <option value="BJKL8,KL8">北京快乐8</option>
+                                                    <option value="AZKL8,KL8">澳洲快乐8</option>
+                                                    <option value="JNDKL8,KL8">加拿大卑斯</option>
+                                                    <option value="HGKL8,KL8">韩国快乐8</option>
+                                                    <option value="JNDDKL8,KL8">加拿大西部</option>
+                                                    <option value="SLFKKL8,KL8">斯洛伐克</option>
+                                                    <option value="METKL8,KL8">马耳他</option>
+                                                    <option value="TWBGKL8,KL8">台湾宾果</option>
+                                                    <option value="DJKL8,KL8">东京快乐8</option>
+                                                    <option value="JSC,K3">江苏骰宝</option>
+                                                    <option value="AHK3,K3">安徽快三</option>
+                                                    <option value="JLK3,K3">吉林快3</option>
+                                                    <option value="GXK3,K3">广西快3</option>
+                                                    <option value="FC3D,3D">福彩3D</option>
+                                                    <option value="TC3D,3D">排列3</option>
+                                                </select> -->
+					</div>
+					<!-- 					<span class="previous">第<label id = "pre_qishu"></label>期</span> -->
+					<span class="previous resultSpan"><a id = "resultClick" style="-moz-user-select: none;display: block;">开奖结果</a></span>
+					<div id = "resultTop" class="Result-num">
+						<span>距<label id = "qishu"></label>期封盘<label id = "t-close"></label></span>
+						<div id = "kj_result" ></div>
+					</div>
+				</div>
+			</div>
+			<div id = "chipDiv"  class="bar bar_background" style = "bottom: 4.1rem;height: 4rem;line-height: 2.2rem;display: none;z-index: 30;">
+				<div class = "bar_chip">
+					<ul>
+						<li class = "chip_one" ><a ></a></li>
+						<li class = "chip_second"><a ></a></li>
+						<li class = "chip_third"><a ></a></li>
+						<li class = "chip_four" ><a ></a></li>
+						<li class = "chip_fives"><a ></a></li>
+						<li class = "chip_six"><a ></a></li>
+					</ul>
+				</div>
+			</div>
+			<div id = "pageFooterId">
+				<footer id = "mainFooter" >
+					<div id= "mainFootersc" class="totalleft19">
+						<a class="btn cancelButton" id="clearPage" style="-moz-user-select: none;">重置</a>
+					</div>
+					<div id= "mainFooterChips" class="totalleft19">
+						<a class="btn delete" id="clearChips" style="-moz-user-select: none;color: #de8225;border: 2px solid #de8225;">筹码</a>
+					</div>
+					<div id= "mainFooterje" class="total37">
+						<input id="mainFooterMoney" data-keepdot="0" placeholder="输入金额" type="number">
+					</div>
+					<div id= "mainFooterqd" class="totalright19">
+						<a class="btn confirm open-betsubmit" id="resetBrder" style="-moz-user-select: none;float: right;">确定</a>
+					</div>
+				</footer>
+			</div>
+
+			<div id = "gamepageContent" class="view-main ">
+				<!-- 提交页面 -->
+				<div class="bet-main1" id="betMainPage" style="display: none">
+					<div class="border_1px item-inner biaocolor adaptOdss"><span>适应赔率：<input type="checkbox" id = "oddsAdapt" checked="checked"></span></div>
+					<div class="betTable" id = "mxUl"></div>
+					<div class="ui-etui item-inner_text border_1px item-inner_div inem-inner_font05">
+						<div class=" item-inner_width40"></div>
+						<div class=" item-inner_width30">共<span id = "singular" >0</span>笔注单</div>
+						<div class=" item-inner_width30">合计￥<span id = "fillmoney"  style = "color: red;">0</span></div>
+					</div>
+				</div>
+
+				<div class="bet-main">
+					<!-- 游戏页面显示 -->
+					<div  id="mainContent" class="sumBtn_box"></div>
+					<!-- 路子长龙 -->
+					<div class="mobile-waybill">
+						<div class="waybill-wrap">
+							<div class="disk-head">
+								<div id = "wayTypeID" class="content-block" style = "padding:0rem;">
+									<p class="buttons-row"><a class="button active " name = "luziID">路子</a><a class="button" name = "changlongID">长龙</a></p>
+								</div>
+							</div>
+							<div id = "changlongID" class="changlong"  style = "display: none;">
+								<ul id="ChanglongUl">
+								</ul>
+							</div>
+							<div id = "luziID">
+								<div id="wayUl">
+									<div class="waybill-tab clear waybill-tab-5">
+										<div >
+											<dl id="buttons_way" style="width:auto;display:inline-block">
+											</dl>
+										</div>
+									</div>
+									<div class="waybill-main">
+										<div class="w-item clear">
+											<div class="w-item-main">
+												<div style="position: relative; left: 0px; top: 0px; width: auto; height: 114px;overflow: hidden;overflow-x: scroll;">
+													<table class="luziTable t1 t-td-w4 align-c" style = "border-collapse: collapse; border-spacing: 0;">
+														<tbody>
+														<tr class="ballqueue_result" id="rmTr0">
+														</tr>
+														<tr class="ballqueue_result" id="rmTr1">
+														</tr>
+														<tr class="ballqueue_result" id="rmTr2">
+														</tr>
+														<tr class="ballqueue_result" id="rmTr3">
+														</tr>
+														<tr class="ballqueue_result" id="rmTr4">
+														</tr>
+														<tr class="ballqueue_result" id="rmTr5">
+														</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+										<!-- <ul class="gyjhclass" id="paihang" ></ul> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+				</div>
+			</div>
+
+			<!-- 侧边栏遮罩 -->
+			<div class="panel-overlay"></div>
+			<div class="sidebar-overlay"></div>
+			<!-- right Panel with Reveal effect 右侧边栏 -->
+			<div class="panel panel-right panel-cover userMenu " id='panel-js-right'>
+				<div class="userMenu-wrap">
+					<div class="userName">
+						<span id = "accountInfo"></span>
+						<span style="-moz-user-select: none;">余额:<a class="refresh-btn"  id = "yuer"></a></span>
+					</div>
+				</div>
+				<div class="userMenu-list" id="sideMenuList">
+					<dl>
+						<dt class="btn btn-Bet" style="-moz-user-select: none;">
+							<i class="iconfont icon-deposit"></i>
+						</dt>
+						<dt class="btn btn-Bet" style="-moz-user-select: none;font-size: 1.2rem;">
+							<span>输赢:<a class="refresh" id = "shuy"></a></span>
+						</dt>
+					</dl>
+					<dl id="lotteryresults" class = "open-result close-panel">
+						<dt class="btn btn-repost" style="-moz-user-select: none;">
+							<i class="iconfont icon-individualreport"></i>
+						</dt>
+						<dt class="btn btn-repost" style="-moz-user-select: none;">
+							<span>开奖结果</span>
+							<i class="iconfont icon-anglebottom icon icon-down"></i>
+						</dt>
+					</dl>
+					<dl id="bottompour" class = "open-details close-panel">
+						<dt class="btn btn-userinfo" style="-moz-user-select: none;">
+							<i class="iconfont icon-withdraw"></i>
+						</dt>
+						<dt class="btn btn-userinfo" style="-moz-user-select: none;">
+							<span>即时注单</span>
+							<i class="iconfont icon-anglebottom icon icon-down"></i>
+						</dt>
+					</dl>
+					<dl id="accountHistory" class = "open-history close-panel">
+						<dt class="btn btn-Notice" style="-moz-user-select: none;">
+							<i class="iconfont icon-user"></i>
+						</dt>
+						<dt class="btn btn-Notice" style="-moz-user-select: none;">
+							<span>账户历史</span>
+							<i class="iconfont icon-anglebottom icon icon-down"></i>
+						</dt>
+					</dl>
+					<dl id="gameRuleId" class = "open-rule close-panel">
+						<dt class="btn btn-Notice" style="-moz-user-select: none;">
+							<i class="iconfont icon-meila"></i>
+						</dt>
+						<dt class="btn btn-Notice" style="-moz-user-select: none;">
+							<span>游戏规则</span>
+							<i class="iconfont icon-anglebottom icon icon-down"></i>
+						</dt>
+					</dl>
+					<dl id=oldVersion class = "close-panel">
+						<dt class="btn btn-Notice" style="-moz-user-select: none;">
+							<i class="iconfont icon-lettery"></i>
+						</dt>
+						<dt class="btn btn-Notice" style="-moz-user-select: none;">
+							<span>旧版彩票</span>
+							<i class="iconfont icon-anglebottom icon icon-down"></i>
+						</dt>
+					</dl>
+					<dl id="goto-chipin" class = "offmusic">
+						<dt class="btn btn-Notice" style="-moz-user-select: none;text-align: center;">
+							<i class = "iconfont icon-closeSound"></i>
+						</dt>
+						<dt class="btn btn-Notice" style="-moz-user-select: none;">
+							<span id = "musicText">关闭声音</span>
+						</dt>
+					</dl>
+				</div>
+			</div>
+			<!-- Left Panel with Reveal effect 左侧边栏 -->
+			<div class="panel panel-left panel-cover userMenu active" id='panel-js-left' style = "width:100%;overflow-x:hidden;display: block;">
+				<div class="anvMenu-wrap">
+					<div class="anvName">
+						<!-- <div id = "andTxtCss" class = "anvCss3">
+                            <span data-text="欢"></span>
+                            <span data-text="迎"></span>
+                            <span data-text="进"></span>
+                            <span data-text="入"></span>
+                            <span data-text="彩"></span>
+                            <span data-text="票"></span>
+                            <span data-text="手"></span>
+                            <span data-text="机"></span>
+                            <span data-text="版"></span>
+                        </div> -->
+						<span id = ""></span>
+						<!-- <span style="-moz-user-select: none;">余额:<a class="refresh-btn"  id = ""></a></span> -->
+					</div>
+				</div>
+				<div class="userMenu-list" id="gameMenuList">
+					<!-- 						<div class="betico" style="display:none;"onclick="toggleShow(this,pk_bl)">
+                                                <span class="anvrightTxt" style="margin-left: 0.5rem;font-weight: bold;color: red;margin-top: -0.4rem;">PK10</span>
+                                                <span class="anvrightTxt" style="margin-left: 6rem;font-weight: bold;color: red;margin-top: -0.4rem;">3个游戏</span>
+                                                <span class=" icon icon-down iconleftColor"style="margin-top: -1rem;"></span>
+                                                </div> -->
+					<dl id="lotto_90_bl" class="active topdl">
+						<dt class="div_tb topHide" style="-moz-user-select: none;">
+							<span class="anvrightTxt" style="margin-left: 0.5rem;font-weight: bold;color: red;margin-top: -0.4rem;">极速六合</span>
+							<span class="anvrightTxt" style="margin-left: 6rem;font-weight: bold;color: red;margin-top: -0.4rem;">1<span style="color: #999999;">个游戏</span></span>
+							<span class=" icon icon-down iconleftColor" style="margin-top: -1rem;" onclick="toggleShow(lotto_90_bl)"></span>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select:none;">
+						<ul>
+							<li style="width: 10%;padding: 1rem;height: 8rem;margin-left: -2rem;margin-top: 1rem;" onclick="toggleHide(lotto_90_bl)">
+								<span class="icon icon-up iconlefttb" style="margin-left: 0.3rem;"></span>
+								<span class="anvrightTxt" style="margin-left: -1rem;font-weight: bold;color: red;margin-top: -4rem;">
+											<p style="margin-top: 7px;">香</p>
+											<p style="margin-top: -3.8rem;">港</p>
+											<p style="margin-top: -3.8rem;">彩</p>
+
+										</span>
+							</li>
+							<li style="width: 25%;"><a onclick="navGames('LOTTO_90','LOTTO_90');" style="display: -webkit-box;"><i class="lotto90_tb tb_icon"></i><div><p style="line-height: 0px;font-weight: bold;">极速六合</p><p class="anvrightTime anvTime_LOTTO_90"></p></div></a></li>
+						</ul>
+						</dt>
+					</dl>
+					<dl id="pk_bl" class="active topdl">
+						<dt class="div_tb topHide" style="-moz-user-select: none;">
+							<span class="anvrightTxt" style="margin-left: 0.5rem;font-weight: bold;color: red;margin-top: -0.4rem;">PK10</span>
+							<span class="anvrightTxt" style="margin-left: 6rem;font-weight: bold;color: red;margin-top: -0.4rem;">4<span style="color: #999999;">个游戏</span></span>
+							<span class=" icon icon-down iconleftColor" style="margin-top: -1rem;" onclick="toggleShow(pk_bl)"></span>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 10%;padding: 1rem;height: 4rem;margin-left: -2rem;margin-top: -1rem;" onclick="toggleHide(pk_bl)">
+								<span class="icon icon-up iconlefttb" style="margin-left: 0.3rem;margin-top: 1.8rem;"></span>
+								<span class="anvrightTxt" style="margin-left: -1rem;font-weight: bold;color: red;margin-top: 1.2rem;">
+											<p style="margin-top: -0.4rem;">PK</p>
+											<p style="margin-top: -3.8rem;">10</p>
+										</span>
+							</li>
+							<li style="width: 30%;"><a onclick="navGames('JSSC','PK10');" style="display: -webkit-box;"><i class="jssc_tb tb_icon"></i><div><p style="line-height: 0px;font-weight: bold;">极速赛车</p><p class="anvrightTime anvTime_JSSC"></p></div></a></li>
+							<li style="width: 25%;"><a onclick="navGames('JSSC60','PK10');" style="display: -webkit-box;"><i class="jssc60_tb tb_icon"></i><div><p style="line-height: 0px;font-weight: bold;">一分赛车</p><p class="anvrightTime anvTime_JSSC60"></p></div></a></li>
+							<li><a onclick="navGames('BJC','PK10');" style="margin-left:0;display: -webkit-box;"><i class="bjc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">北京赛车</p><p class="anvrightTime anvTime_BJC"></p></div></a></li>
+						</ul>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select:none;">
+						<ul>
+							<li style="width: 30%;margin-left: 10%;"><a onclick="navGames('XYFT','PK10');" style="display: -webkit-box;"><i class="xyft_tb tb_icon"></i><div><p style="line-height: 0px;font-weight: bold;">幸运飞艇</p><p class="anvrightTime anvTime_XYFT"></p></div></a></li>
+						</ul>
+						</dt>
+					</dl>
+					<dl id="ssc_bl" class="active topdl">
+						<dt class="div_tb topHide" style="-moz-user-select: none;">
+							<span class="anvrightTxt" style="margin-left: 0.5rem;font-weight: bold;color: red;margin-top: -0.4rem;">时时彩</span>
+							<span class="anvrightTxt" style="margin-left: 6rem;font-weight: bold;color: red;margin-top: -0.4rem;">8<span style="color: #999999;">个游戏</span></span>
+							<span class=" icon icon-down iconleftColor" style="margin-top: -1rem;" onclick="toggleShow(ssc_bl)"></span>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 10%;padding: 1rem;height: 11.5rem;margin-left: -2rem;margin-top: -1rem;" onclick="toggleHide(ssc_bl)">
+								<span class="icon icon-up iconlefttb" style="margin-left: 0.3rem;margin-top: 4rem;"></span>
+								<span class="anvrightTxt" style="margin-left: -1rem;font-weight: bold;color: red;margin-top: -0.4rem;">
+											<p style="margin-top: 3rem">时</p>
+											<p style="margin-top: -3.8rem;">时</p>
+											<p style="margin-top: -3.8rem;">彩</p>
+										</span>
+							</li>
+							<li style="width: 30%;"><a onclick="navGames('JSCQ','SSC');" style="display: -webkit-box;"><i class="jscq_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">极速</p><p class="anvrightTime anvTime_JSCQ"></p></div></a></li>
+							<li style="width: 25%;"><a onclick="navGames('JSCQ60','SSC');" style="display: -webkit-box;"><i class="jscq60_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">一分</p><p class="anvrightTime anvTime_JSCQ60"></p></div></a></li>
+							<li><a onclick="navGames('SSC','SSC');" style="display: -webkit-box;"><i class="ssc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">重庆</p><p class="anvrightTime anvTime_SSC"></p></div></a></li>
+						</ul>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 30%;margin-left: 10%;"><a onclick="navGames('TJSC','SSC');" style="display: -webkit-box;"><i class="tjsc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">天津</p><p class="anvrightTime anvTime_TJSC"></p></div></a></li>
+							<li style="width: 25%;"><a onclick="navGames('XJSC','SSC');" style="display: -webkit-box;"><i class="xjsc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">新疆</p><p class="anvrightTime anvTime_XJSC"></p></div></a></li>
+							<li><a onclick="navGames('YNSC','SSC');" style="display: -webkit-box;"><i class="ynsc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">云南</p><p class="anvrightTime anvTime_YNSC"></p></div></a></li>
+						</ul>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 30%;margin-left: 10%;"><a onclick="navGames('SHSC','SHSL');" style="display: -webkit-box;"><i class="shsc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">上海</p><p class="anvrightTime anvTime_SHSC"></p></div></a></li>
+							<li style="width: 25%; display:none;"><a onclick="navGames('JXSC','SSC');" style="display: -webkit-box;"><i class="jxsc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">江西</p><p class="anvrightTime anvTime_JXSC"></p></div></a></li>
+						</ul>
+						</dt>
+					</dl>
+					<dl id="klc_bl" class="active topdl">
+						<dt class="div_tb topHide" style="-moz-user-select: none;">
+							<span class="anvrightTxt" style="margin-left: 0.5rem;font-weight: bold;color: red;margin-top: -0.4rem;">快乐十分</span>
+							<span class="anvrightTxt" style="margin-left: 6rem;font-weight: bold;color: red;margin-top: -0.4rem;">6<span style="color: #999999;">个游戏</span></span>
+							<span class=" icon icon-down iconleftColor" style="margin-top: -1rem;" onclick="toggleShow(klc_bl)"></span>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 10%;padding: 1rem;height: 8rem;margin-left: -2rem;margin-top: 1rem;" onclick="toggleHide(klc_bl)">
+								<span class="icon icon-up iconlefttb" style="margin-left: 0.3rem;margin-top: 4rem;"></span>
+								<span class="anvrightTxt" style="margin-left: -1rem;font-weight: bold;color: red;margin-top: -0.4rem;">
+											<p style="margin-top: 3px;">快</p>
+											<p style="margin-top: -3.8rem;">乐</p>
+											<p style="margin-top: -3.8rem;">十</p>
+											<p style="margin-top: -3.8rem;">分</p>
+										</span>
+							</li>
+							<li style="width: 30%;"><a onclick="navGames('KLC_90','KLC');" style="display: -webkit-box;"><i class="klc_90_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">极速</p><p class="anvrightTime anvTime_KLC_90"></p></div></a></li>
+							<li style="width: 25%;"><a onclick="navGames('TJKC','KLC');" style="display: -webkit-box;"><i class="tjkc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">天津</p><p class="anvrightTime anvTime_TJKC"></p></div></a></li>
+							<li><a onclick="navGames('HNKC','KLC');" style="display: -webkit-box;"><i class="hnkc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">湖南</p><p class="anvrightTime anvTime_HNKC"></p></div></a></li>
+						</ul>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 30%;margin-left: 10%;"><a onclick="navGames('GXKC','GXKC');" style="display: -webkit-box;"><i class="gxkc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">广西</p><p class="anvrightTime anvTime_GXKC"></p></div></a></li>
+							<li style="width: 25%;"><a onclick="navGames('YNKC','KLC');" style="display: -webkit-box;"><i class="ynkc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">云南</p><p class="anvrightTime anvTime_YNKC"></p></div></a></li>
+							<li><a onclick="navGames('XYC','KLC');" style="display: -webkit-box;"><i class="xyc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">幸运农场</p><p class="anvrightTime anvTime_XYC"></p></div></a></li>
+
+						</ul>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 30%;margin-left: 10%;"><a onclick="navGames('KLC','KLC');" style="display: -webkit-box;"><i class="klc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">广东</p><p class="anvrightTime anvTime_KLC"></p></div></a></li>
+						</ul>
+						</dt>
+					</dl>
+					<dl id="syxw_bl" class="active topdl">
+						<dt class="div_tb topHide" style="-moz-user-select: none;">
+							<span class="anvrightTxt" style="margin-left: 0.5rem;font-weight: bold;color: red;margin-top: -0.4rem;">十一选五</span>
+							<span class="anvrightTxt" style="margin-left: 6rem;font-weight: bold;color: red;margin-top: -0.4rem;">9<span style="color: #999999;">个游戏</span></span>
+							<span class=" icon icon-down iconleftColor" style="margin-top: -1rem;" onclick="toggleShow(syxw_bl)"></span>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 10%;padding: 1rem;height: 11.5rem;margin-left: -2rem;margin-top: 0.5rem;" onclick="toggleHide(syxw_bl)">
+								<span class="icon icon-up iconlefttb" style="margin-left: 0.3rem;margin-top: 6rem;"></span>
+								<span class="anvrightTxt" style="margin-left: -1rem;font-weight: bold;color: red;margin-top: -0.4rem;">
+											<p style="margin-top: 2.5rem;">十</p>
+											<p style="margin-top: -3.8rem;">一</p>
+											<p style="margin-top: -3.8rem;">选</p>
+											<p style="margin-top: -3.8rem;">五</p>
+										</span>
+							</li>
+							<li style="width: 30%;"><a onclick="navGames('GD115_90','XZ115');" style="display: -webkit-box;"><i class="gd115_90_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">极速</p><p class="anvrightTime anvTime_GD115_90"></p></div></a></li>
+							<li style="width: 25%;"><a onclick="navGames('JX115','XZ115');" style="display: -webkit-box;"><i class="jx115_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">江西</p><p class="anvrightTime anvTime_JX115"></p></div></a></li>
+							<li><a onclick="navGames('SD115','XZ115');" style="display: -webkit-box;"><i class="sd115_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">山东</p><p class="anvrightTime anvTime_SD115"></p></div></a></li>
+						</ul>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 30%;margin-left: 10%;"><a onclick="navGames('BJ115','XZ115');" style="display: -webkit-box;"><i class="bj115_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">北京</p><p class="anvrightTime anvTime_BJ115"></p></div></a></li>
+							<li style="width: 25%;"><a onclick="navGames('SH115','XZ115');" style="display: -webkit-box;"><i class="sh115_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">上海</p><p class="anvrightTime anvTime_SH115"></p></div></a></li>
+							<li><a onclick="navGames('LN115','XZ115');" style="display: -webkit-box;"><i class="ln115_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">辽宁</p><p class="anvrightTime anvTime_LN115"></p></div></a></li>
+						</ul>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 30%;margin-left: 10%;"><a onclick="navGames('HB115','XZ115');" style="display: -webkit-box;"><i class="hb115_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">湖北</p><p class="anvrightTime anvTime_HB115"></p></div></a></li>
+							<li style="width: 25%;"><a onclick="navGames('JS115','XZ115');" style="display: -webkit-box;"><i class="js115_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">江苏</p><p class="anvrightTime anvTime_JS115"></p></div></a></li>
+							<li><a onclick="navGames('AH115','XZ115');" style="display: -webkit-box;"><i class="ah115_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">安徽</p><p class="anvrightTime anvTime_AH115"></p></div></a></li>
+						</ul>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 30%;margin-left: 10%;"><a onclick="navGames('GD115','XZ115');" style="display: -webkit-box;"><i class="gd115_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">广东</p><p class="anvrightTime anvTime_GD115"></p></div></a></li>
+						</ul>
+						</dt>
+					</dl>
+					<dl id="kl8_bl" class="active topdl">
+						<dt class="div_tb topHide" style="-moz-user-select: none;">
+							<span class="anvrightTxt" style="margin-left: 0.5rem;font-weight: bold;color: red;margin-top: -0.4rem;">快乐8</span>
+							<span class="anvrightTxt" style="margin-left: 6rem;font-weight: bold;color: red;margin-top: -0.4rem;">6<span style="color: #999999;">个游戏</span></span>
+							<span class=" icon icon-down iconleftColor" style="margin-top: -1rem;" onclick="toggleShow(kl8_bl)"></span>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 10%;padding: 1rem;height: 11.5rem;margin-left: -2rem;margin-top: -3rem;" onclick="toggleHide(kl8_bl)">
+								<span class="icon icon-up iconlefttb" style="margin-left: 0.3rem;margin-top: 2rem;"></span>
+								<span class="anvrightTxt" style="margin-left: -1rem;font-weight: bold;color: red;margin-top: -0.4rem;">
+											<p style="margin-top: 3rem;">快</p>
+											<p style="margin-top: -3.8rem;">乐</p>
+											<p style="margin-top: -3.8rem;margin-left: 0.15rem;">8</p>
+									</span>
+							</li>
+							<li style="width: 30%;"><a onclick="navGames('BJKL8_90','KL8');" style="display: -webkit-box;"><i class="bjkl8_90_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">极速</p><p class="anvrightTime anvTime_BJKL8_90"></p></div></a></li>
+
+							<li style="width: 25%;"><a onclick="navGames('JNDKL8','KL8');" style="display: -webkit-box;"><i class="jndkl8_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">加拿大</p><p class="anvrightTime anvTime_JNDKL8"></p></div></a></li>
+							<li><a onclick="navGames('SLFKKL8','KL8');" style="display: -webkit-box;"><i class="slfkkl8_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">斯洛伐克</p><p class="anvrightTime anvTime_SLFKKL8"></p></div></a></li>
+						</ul>
+						</dt>
+
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 30%;margin-left: 10%;"><a onclick="navGames('METKL8','KL8');" style="display: -webkit-box;"><i class="metkl8_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">马耳他</p><p class="anvrightTime anvTime_METKL8"></p></div></a></li>
+							<li style="width: 25%;"><a onclick="navGames('TWBGKL8','KL8');" style="display: -webkit-box;"><i class="twbgkl8_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">台湾</p><p class="anvrightTime anvTime_TWBGKL8"></p></div></a></li>
+							<li><a onclick="navGames('BJKL8','KL8');" style="display: -webkit-box;"><i class="bjkl8_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">北京</p><p class="anvrightTime anvTime_BJKL8"></p></div></a></li>
+						</ul>
+						</dt>
+						<!-- <dt class="btnleft btn-repost" style="-moz-user-select: none;">
+                            <ul>
+                            <li style="width: 30%;><a onclick="navGames('HGKL8','KL8');" style="margin-left:0.5rem;display: -webkit-box;"><i class="hgkl8_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">韩国</p><p class="anvrightTime anvTime_HGKL8"></p></div></a></li>
+                            <li style="width: 25%;><a onclick="navGames('JNDDKL8','KL8');" style="margin-left:-0.3rem;display: -webkit-box;"><i class="jnddkl8_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">大西部</p><p class="anvrightTime anvTime_JNDDKL8"></p></div></a></li>
+                            <li style="width: 25%;><a onclick="navGames('AZKL8','KL8');" style="margin-left:-1rem;display: -webkit-box;"><i class="azkl8_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">澳洲</p><p class="anvrightTime anvTime_AZKL8"></p></div></a></li>
+                            </ul>
+                        </dt>
+                        <dt class="btnleft btn-repost" style="-moz-user-select: none;">
+                            <ul>
+                            <li><a onclick="navGames('DJKL8','KL8');" style="margin-left:0.4rem;display: -webkit-box;"><i class="djkl8_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">东京</p><p class="anvrightTime anvTime_DJKL8"></p></div></a></li>
+                            </ul>
+                        </dt> -->
+					</dl>
+					<dl id="jsc_bl" class="active topdl">
+						<dt class="div_tb topHide" style="-moz-user-select: none;">
+							<span class="anvrightTxt" style="margin-left: 0.5rem;font-weight: bold;color: red;margin-top: -0.4rem;">快3</span>
+							<span class="anvrightTxt" style="margin-left: 6rem;font-weight: bold;color: red;margin-top: -0.4rem;">4<span style="color: #999999;">个游戏</span></span>
+							<span class=" icon icon-down iconleftColor" style="margin-top: -1rem;" onclick="toggleShow(jsc_bl)"></span>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 10%;padding: 1rem;height: 7.5rem;margin-left: -2rem;margin-top: -1rem;" onclick="toggleHide(jsc_bl)">
+								<span class="icon icon-up iconlefttb" style="margin-left: 0.3rem;margin-top: 2rem;"></span>
+								<span class="anvrightTxt" style="margin-left: -1rem;font-weight: bold;color: red;margin-top: -0.4rem;">
+											<p style="margin-top: 1.7rem;">快</p>
+											<p style="margin-top: -3.8rem;margin-left: 0.15rem;">3</p>
+									</span>
+							</li>
+							<li style="width: 30%;"><a onclick="navGames('JSC_90','K3');" style="display: -webkit-box;"><i class="jsc_90_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">极速快3</p><p class="anvrightTime anvTime_JSC_90"></p></div></a></li>
+							<li style="width: 25%;"><a onclick="navGames('JSC','K3');" style="display: -webkit-box;"><i class="jsc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">江苏骰宝</p><p class="anvrightTime anvTime_JSC"></p></div></a></li>
+							<li style="width: 25%;"><a onclick="navGames('AHK3','K3');" style="display: -webkit-box;"><i class="ahk3_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">安徽快3</p><p class="anvrightTime anvTime_AHK3"></p></div></a></li>
+						</ul>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 30%;margin-left: 10%;"><a onclick="navGames('GXK3','K3');" style="display: -webkit-box;"><i class="gxk3_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">广西快3</p><p class="anvrightTime anvTime_GXK3"></p></div></a></li>
+							<li style="width: 25%; display:none;"><a onclick="navGames('JLK3','K3');" style="display: -webkit-box;"><i class="jlk3_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">吉林快3</p><p class="anvrightTime anvTime_JLK3"></p></div></a></li>
+						</ul>
+						</dt>
+					</dl>
+					<dl id="d3_bl" class="active topdl">
+						<dt class="div_tb topHide" style="-moz-user-select: none;">
+							<span class="anvrightTxt" style="margin-left: 0.5rem;font-weight: bold;color: red;margin-top: -0.4rem;">3D</span>
+							<span class="anvrightTxt" style="margin-left: 6rem;font-weight: bold;color: red;margin-top: -0.4rem;">3<span style="color: #999999;">个游戏</span></span>
+							<span class=" icon icon-down iconleftColor" style="margin-top: -1rem;" onclick="toggleShow(d3_bl)"></span>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 10%;padding: 1rem;height: 3rem;margin-left: -2rem;margin-top: -1rem;" onclick="toggleHide(d3_bl)">
+								<span class="icon icon-up iconlefttb" style="margin-left: 0.3rem;"></span>
+								<span class="anvrightTxt" style="margin-left: -1rem;font-weight: bold;color: red;margin-top: -0.4rem;">
+											<p style="margin-top: -0.5rem;">3</p>
+											<p style="margin-top: -3.8rem;">D</p>
+									</span>
+							</li>
+							<li style="width: 30%;"><a onclick="navGames('FC3D_90','3D');" style="display: -webkit-box;"><i class="fc3d_90_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">极速3D</p><p class="anvrightTime anvTime_FC3D_90"></p></div></a></li>
+							<li style="width: 25%;"><a onclick="navGames('FC3D','3D');" style="display: -webkit-box;"><i class="fc3d_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">福彩3D</p><p class="anvrightTime anvTime_FC3D"></p></div></a></li>
+							<li style="width: 25%;"><a onclick="navGames('TC3D','3D');" style="display: -webkit-box;"><i class="tc3d_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">排列三</p><p class="anvrightTime anvTime_TC3D"></p></div></a></li>
+						</ul>
+						</dt>
+					</dl>
+					<dl id="pcegg_bl" class="active topdl">
+						<dt class="div_tb topHide" style="-moz-user-select: none;">
+							<span class="anvrightTxt" style="margin-left: 0.5rem;font-weight: bold;color: red;margin-top: -0.4rem;">PC蛋蛋</span>
+							<span class="anvrightTxt" style="margin-left: 6rem;font-weight: bold;color: red;margin-top: -0.4rem;">6<span style="color: #999999;">个游戏</span></span>
+							<span class=" icon icon-down iconleftColor" style="margin-top: -1rem;" onclick="toggleShow(pcegg_bl)"></span>
+						</dt>
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 10%;padding: 1rem;height: 11.5rem;margin-left: -2rem;margin-top: -3rem;" onclick="toggleHide(pcegg_bl)">
+								<span class="icon icon-up iconlefttb" style="margin-left: 0.3rem;margin-top: 2rem;"></span>
+								<span class="anvrightTxt" style="margin-left: -1rem;font-weight: bold;color: red;margin-top: -0.4rem;">
+											<p style="margin-top: 3rem;">PC</p>
+											<p style="margin-top: -3.8rem;margin-left: 0.1rem;">蛋</p>
+	                   						<p style="margin-top: -3.8rem;margin-left: 0.1rem;">蛋</p>
+									</span>
+							</li>
+							<li style="width: 30%;"><a onclick="navGames('PCEGG_90','PCEGG');" style="display: -webkit-box;"><i class="bjkl8pc_90_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">极速</p><p class="anvrightTime anvTime_PCEGG_90"></p></div></a></li>
+
+							<li style="width: 25%;"><a onclick="navGames('JNDKL8_PCEGG','PCEGG');" style="display: -webkit-box;"><i class="jndkl8pc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">加拿大</p><p class="anvrightTime anvTime_JNDKL8_PCEGG"></p></div></a></li>
+							<li style="width: 25%;"><a onclick="navGames('SLFKKL8_PCEGG','PCEGG');" style="display: -webkit-box;"><i class="slfkkl8pc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">斯洛伐克</p><p class="anvrightTime anvTime_SLFKKL8_PCEGG"></p></div></a></li>
+						</ul>
+						</dt>
+
+						<dt class="btnleft btn-repost" style="-moz-user-select: none;">
+						<ul>
+							<li style="width: 30%;margin-left: 10%;"><a onclick="navGames('METKL8_PCEGG','PCEGG');" style="display: -webkit-box;"><i class="metkl8pc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">马耳他</p><p class="anvrightTime anvTime_METKL8_PCEGG"></p></div></a></li>
+							<li style="width: 25%;"><a onclick="navGames('TWBGKL8_PCEGG','PCEGG');" style="display: -webkit-box;"><i class="twbgkl8pc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">台湾</p><p class="anvrightTime anvTime_TWBGKL8_PCEGG"></p></div></a></li>
+							<li style="width: 30%;"><a onclick="navGames('BJKL8_PCEGG','PCEGG');" style="display: -webkit-box;"><i class="bjkl8pc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">北京</p><p class="anvrightTime anvTime_BJKL8_PCEGG"></p></div></a></li>
+						</ul>
+						</dt>
+						<!-- <dt class="btnleft btn-repost" style="-moz-user-select: none;">
+                            <ul>
+                            <li style="width: 30%; display:none;"><a onclick="navGames('HGKL8_PCEGG','PCEGG');" style="margin-left:0.5rem;display: -webkit-box;"><i class="hgkl8pc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">韩国</p><p class="anvrightTime anvTime_HGKL8_PCEGG"></p></div></a></li>
+                            <li style="width: 25%; display:none;"><a onclick="navGames('JNDDKL8_PCEGG','PCEGG');" style="margin-left:-0.3rem;display: -webkit-box;"><i class="jnddkl8pc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">大西部</p><p class="anvrightTime anvTime_JNDDKL8_PCEGG"></p></div></a></li>
+                            <li style="width: 25%; display:none;"><a onclick="navGames('DJKL8_PCEGG','PCEGG');" style="margin-left:0.4rem;display: -webkit-box;"><i class="djkl8pc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">东京</p><p class="anvrightTime anvTime_DJKL8_PCEGG"></p></div></a></li>
+                            </ul>
+                        </dt>
+                        <dt class="btnleft btn-repost" style="-moz-user-select: none;">
+                            <ul>
+
+<li style="width: 25%; display:none;"><a onclick="navGames('AZKL8_PCEGG','PCEGG');" style="margin-left:-1rem;display: -webkit-box;"><i class="azkl8pc_tb tb_icon "></i><div><p style="line-height: 0px;font-weight: bold;">澳洲</p><p class="anvrightTime anvTime_AZKL8_PCEGG"></p></div></a></li>
+                            </ul>
+                        </dt> -->
+					</dl>
+				</div>
+			</div>
+			<script type="text/javascript">
+                var lotteryPage = String(null);
+                if(lotteryPage == "1"){
+                    document.getElementById('panel-js-left').style.visibility="hidden";
+                }
+			</script></div>
+
+	</div>
+</div>
+
+
+	<!-- 游戏规则 -->
+	<div class="popup popup-rule page-group" style="overflow: hidden;">
+	<div id="rule_html">
+		<header >
+			<div class="fl close-popup" ><a class="retum-btn" style="-moz-user-select: none;"><i class="icon icon-left"></i><span id="reuntText">返回</span></a></div>
+			<div class="textaligns" >
+				<span style="-moz-user-select: none;" id = "stitle_resultType">北京赛车游戏规则</span>
+			</div>
+		</header>
+		<div class="bar_style item-inner_text bar-header-secondary bsdfcolor">
+			<div class="gameSelect borderType">
+				<div class="select-box" id = "selectRuleId"></div>
+				<select  id = "picker_ruleType">
+					<option value="LOTTO_90">极速六合</option>
+					<option value="JSSC60" selected="">一分赛车</option>
+					<option value="JSSC">极速赛车</option>
+					<option value="BJC">北京赛车(PK10)</option>
+					<option value="XYFT">幸运飞艇</option>
+
+					<option value="JSCQ">极速时时彩</option>
+					<option value="JSCQ60">一分时时彩</option>
+					<option value="SSC">重庆时时彩</option>
+					<option value="TJSC">天津时时彩</option>
+					<option value="XJSC">新疆时时彩</option>
+					<option value="YNSC">云南时时彩</option>
+					<option value="SHSC">上海时时乐</option>
+					<!-- <option value="JXSC">江西时时彩</option> -->
+
+					<option value="GD115_90">极速十一选五</option>
+					<option value="GD115">广东十一选五</option>
+					<option value="JX115">江西十一选五</option>
+					<option value="SD115">山东十一运夺金</option>
+					<option value="BJ115">北京十一选五</option>
+					<option value="SH115">上海十一选五</option>
+					<option value="LN115">辽宁十一选五</option>
+					<option value="HB115">湖北十一选五</option>
+					<option value="JS115">江苏十一选五</option>
+					<option value="AH115">安徽十一选五</option>
+
+					<option value="KLC_90">极速快乐十分</option>
+					<option value="KLC" >广东快乐十分</option>
+					<option value="TJKC">天津快乐十分</option>
+					<option value="HNKC">湖南快乐十分</option>
+					<option value="GXKC">广西快乐十分</option>
+					<option value="XYC">幸运农场</option>
+					<option value="YNKC">云南快乐十分</option>
+
+					<option value="BJKL8_90">极速快乐8</option>
+					<option value="BJKL8">北京快乐8</option>
+					<!-- <option value="AZKL8">澳洲快乐8</option> -->
+					<option value="JNDKL8">加拿大卑斯</option>
+					<!-- <option value="HGKL8">韩国快乐8</option> -->
+					<!-- <option value="JNDDKL8">加拿大西部</option> -->
+					<option value="SLFKKL8">斯洛伐克</option>
+					<option value="METKL8">马耳他</option>
+					<option value="TWBGKL8">台湾宾果</option>
+					<!-- <option value="DJKL8">东京快乐8</option> -->
+
+					<option value="JSC_90">极速快3</option>
+					<option value="JSC">江苏骰宝(快3)</option>
+					<option value="AHK3">安徽快3</option>
+					<!-- <option value="JLK3">吉林快3</option> -->
+					<option value="GXK3">广西快3</option>
+
+					<option value="FC3D_90">极速3D</option>
+					<option value="FC3D">福彩3D</option>
+					<option value="TC3D">排列三</option>
+
+					<option value="PCEGG_90">极速PC蛋蛋</option>
+					<option value="BJKL8_PCEGG">北京PC蛋蛋</option>
+					<!-- <option value="AZKL8_PCEGG">澳洲PC蛋蛋</option> -->
+					<option value="JNDKL8_PCEGG">加拿大PC蛋蛋</option>
+					<!-- <option value="HGKL8_PCEGG">韩国PC蛋蛋</option> -->
+					<!-- <option value="JNDDKL8_PCEGG">大西部PC蛋蛋</option> -->
+					<option value="SLFKKL8_PCEGG">斯洛伐克PC蛋蛋</option>
+					<option value="METKL8_PCEGG">马耳他PC蛋蛋</option>
+					<option value="TWBGKL8_PCEGG">台湾宾果PC蛋蛋</option>
+					<!-- <option value="DJKL8_PCEGG">东京PC蛋蛋</option> -->
+				</select>
+			</div>
+		</div>
+		<div class="content content-padded fontsize07" style = "top: 86px;padding-right: .5rem;padding-left: .5rem;">
+			<div id = "ruleHtmlget" class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="popup popup-result page-group" style="overflow: hidden;">
+	<div id="results_html">
+		<header >
+			<div class="fl close-popup" ><a class="retum-btn" style="-moz-user-select: none;"><i class="icon icon-left"></i><span id="reuntText">返回</span></a></div>
+			<div class="textaligns" >
+				<span style="-moz-user-select: none;">开奖结果</span>
+			</div>
+		</header>
+		<div class="bar_style item-inner_text bar-header-secondary bsdfcolor">
+			<div class = "inners_width50">
+				<div class="gameSelect borderType">
+					<div class="select-box" id = "selectResultId"></div>
+					<select  id = "picker_resultsType">
+						<option value="JSSC60" selected="">一分赛车</option>
+						<option value="JSSC">极速赛车</option>
+						<option value="BJC">北京赛车(PK10)</option>
+						<option value="XYFT">幸运飞艇</option>
+						<option value="LOTTO_90">极速六合</option>
+
+						<option value="JSCQ">极速时时彩</option>
+						<option value="JSCQ60">一分时时彩</option>
+						<option value="SSC">重庆时时彩</option>
+						<option value="TJSC">天津时时彩</option>
+						<option value="XJSC">新疆时时彩</option>
+						<option value="YNSC">云南时时彩</option>
+						<option value="SHSC">上海时时乐</option>
+						<!-- <option value="JXSC">江西时时彩</option> -->
+
+						<option value="GD115_90">极速十一选五</option>
+						<option value="GD115">广东十一选五</option>
+						<option value="JX115">江西十一选五</option>
+						<option value="SD115">山东十一运夺金</option>
+						<option value="BJ115">北京十一选五</option>
+						<option value="SH115">上海十一选五</option>
+						<option value="LN115">辽宁十一选五</option>
+						<option value="HB115">湖北十一选五</option>
+						<option value="JS115">江苏十一选五</option>
+						<option value="AH115">安徽十一选五</option>
+
+						<option value="KLC_90">极速快乐十分</option>
+						<option value="KLC" >广东快乐十分</option>
+						<option value="TJKC">天津快乐十分</option>
+						<option value="HNKC">湖南快乐十分</option>
+						<option value="GXKC">广西快乐十分</option>
+						<option value="XYC">幸运农场</option>
+						<option value="YNKC">云南快乐十分</option>
+
+						<option value="BJKL8_90">极速快乐8</option>
+						<option value="BJKL8">北京快乐8</option>
+						<!-- <option value="AZKL8">澳洲快乐8</option> -->
+						<option value="JNDKL8">加拿大卑斯</option>
+						<!-- <option value="HGKL8">韩国快乐8</option> -->
+						<!-- <option value="JNDDKL8">加拿大西部</option> -->
+						<option value="SLFKKL8">斯洛伐克</option>
+						<option value="METKL8">马耳他</option>
+						<option value="TWBGKL8">台湾宾果</option>
+						<!-- <option value="DJKL8">东京快乐8</option> -->
+
+						<option value="JSC_90">极速快3</option>
+						<option value="JSC">江苏骰宝(快3)</option>
+						<option value="AHK3">安徽快3</option>
+						<!-- <option value="JLK3">吉林快3</option> -->
+						<option value="GXK3">广西快3</option>
+
+						<option value="FC3D_90">极速3D</option>
+						<option value="FC3D">福彩3D</option>
+						<option value="TC3D">排列三</option>
+
+						<option value="PCEGG_90">极速PC蛋蛋</option>
+						<option value="BJKL8_PCEGG">北京PC蛋蛋</option>
+						<!-- <option value="AZKL8_PCEGG">澳洲PC蛋蛋</option> -->
+						<option value="JNDKL8_PCEGG">加拿大PC蛋蛋</option>
+						<!-- <option value="HGKL8_PCEGG">韩国PC蛋蛋</option> -->
+						<!-- <option value="JNDDKL8_PCEGG">大西部PC蛋蛋</option> -->
+						<option value="SLFKKL8_PCEGG">斯洛伐克PC蛋蛋</option>
+						<option value="METKL8_PCEGG">马耳他PC蛋蛋</option>
+						<option value="TWBGKL8_PCEGG">台湾宾果PC蛋蛋</option>
+						<!-- <option value="DJKL8_PCEGG">东京PC蛋蛋</option> -->
+					</select>
+				</div>
+			</div>
+			<div class = "inners_width50">
+				<div class="resultschipi">
+					<select id="results_time" onchange="showIssueResults()"></select>
+					<i></i>
+				</div>
+			</div>
+
+		</div>
+		<div class="content" style = "top: 67px;">
+			<div class="list-block contacts-block" >
+				<div class="list-group">
+					<ul id = "display_results" class = "lottery-box">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="popup popup-details page-group" style="overflow: hidden;">
+		<div id = "just_html">
+			<header >
+				<div class="fl close-popup" ><a class="retum-btn" style="-moz-user-select: none;"><i class="icon icon-left"></i><span id="reuntText">返回</span></a></div>
+				<div class="textaligns" >
+					<span style="-moz-user-select: none;">即时注单</span>
+				</div>
+			</header>
+			<div class="bar_style item-inner_text bar-header-secondary toubackground">
+				<div class="item-inner item-inner_width20 inem-inner_line2">时间</div>
+				<div class="item-inner item-inner_width28 inem-inner_line2">类型</div>
+				<div class="item-inner item-inner_width40 inem-inner_line2">玩法</div>
+				<div class="item-inner item-inner_width13 inem-inner_line2">金额</div>
+			</div>
+
+			<div class="content" style = "top: 67px;">
+				<div class="list-block contacts-block">
+					<div class="list-group">
+						<ul id = "immediateUl">
+						</ul>
+					</div>
+					<div class="card-footer item-inner_text item-inner_div pagenumsId inem-inner_font05" id = "pagenumsId" >
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="popup popup-history page-group" style="overflow: hidden;">
+		<div id = "history_html" >
+			<header >
+				<div class="fl close-popup" ><a class="retum-btn" style="-moz-user-select: none;"><i class="icon icon-left"></i><span id="reuntText">返回</span></a></div>
+				<div class="textaligns" >
+					<span style="-moz-user-select: none;">账户历史</span>
+				</div>
+			</header>
+			<div class="bar_style item-inner_text bar-header-secondary toubackground">
+				<div class="item-inner item-inner_width33 inem-inner_line2">日期</div>
+				<div class="item-inner item-inner_width33 inem-inner_line2">投注金额</div>
+				<div class="item-inner item-inner_width33 inem-inner_line2">亏盈</div>
+			</div>
+			<div class="content" style = "top: 67px;">
+				<div class="list-block contacts-block" >
+					<div class="list-group">
+						<ul id = "historyUl" >
+							<!-- 							<li class = "item-inner_text border_1px inem-inner_font05 item-inner_div fontsize07">
+																<div class=" item-inner_width40">07-08  星期一</div>
+																<div class=" item-inner_width30">1000</div>
+																<div class=" item-inner_width30"><span style = "color: red;">2.234</span></div>
+														</li>-->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id = "specific_html" style = "display: none;">
+			<header >
+				<div class="fl close-popup" ><a class="retum-btn" style="-moz-user-select: none;"><i class="icon icon-left"></i><span id="reuntText">返回</span></a></div>
+				<div class="textaligns" >
+					<span style="-moz-user-select: none;">详细报表</span>
+				</div>
+			</header>
+			<div class="bar_style item-inner_text bar-header-secondary toubackground">
+				<div class="item-inner item-inner_width20 inem-inner_line2">时间</div>
+				<div class="item-inner item-inner_width26 inem-inner_line2">类型</div>
+				<div class="item-inner item-inner_width26 inem-inner_line2">玩法</div>
+				<div class="item-inner item-inner_width14 inem-inner_line2">下注</div>
+				<div class="item-inner item-inner_width14 inem-inner_line2">亏盈</div>
+			</div>
+			<div class="content"  style = "top: 67px;">
+				<div class="list-block contacts-block">
+					<div class="list-group">
+						<ul id = "specificUl">
+							<!-- 							<li class = "item-inner_text border_1px inem-inner_font05">
+															<div class="item-inner_div ">
+																<div class=" item-inner_width26 ">07-07<br>23:23:23</div>
+																<div class=" item-inner_width26 ">山东十一运夺金<br><span style = "color: blue;">345345</span>期</div>
+																<div class=" item-inner_width26 ">亚冠-大<br><span style = "color: red;">@2.321</span></div>
+																<div class=" item-inner_width12 ">1000</div>
+																<div class=" item-inner_width12 "><span style = "color: red;">20000</span></div>
+															</div>
+														</li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<input type="hidden" id="contextPath"value="/lotteryweb" />
+	<input type="hidden" value='4b5d2201-f374-4429-bde0-53bbf19e50af' id="sessionId"/>
+	<input type="hidden" value='' id="site" />
+	<input type="hidden" value='' id="ptn" />
+	<input type="hidden" value='' id="referer" />
+	<input type="hidden" value="" id="mainPath"/> <!-- 转入的域名 -->
+	<script type='text/javascript' src='taobao/zepto.min.js?20180226' charset='utf-8'></script>
+	<script type='text/javascript' src='taobao/fastclick.js?20180226' charset='utf-8'></script>
+	<script type='text/javascript' src='taobao/sm.min.js?20180226' charset='utf-8'></script>
+	<script type='text/javascript' src='js/json2.js?20180226' charset='utf-8'></script>
+	<script type='text/javascript' src='js/manhuatoTop.js?20180226' charset='utf-8'></script>
+
+	<script type='text/javascript' src='js/results_page.js?20180226' charset='utf-8'></script>
+	<script type='text/javascript' src='js/data_processing.js?20180226' charset='utf-8'></script>
+</body>
+</html>
