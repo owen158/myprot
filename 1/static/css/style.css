@@ -1,0 +1,25 @@
+.Bg-Ganrett-Title {
+  background-image: linear-gradient(180deg, #4e4d4d, #171719);
+}
+.Bg-BackGround {
+  background: #4e4d4d url("http://mobile.beike188.com/modelVIP/images/bg.png");
+}
+.Bg-menu {
+  background: #282828;
+}
+.Bg-notice {
+  background-image: linear-gradient(270deg, #bb9850, #f5efd7, #bb9850);
+}
+.Bg-notice-size {
+  color: #333;
+}
+.Bg-Btn {
+  background: #5f5f5d;
+  color: #fff;
+}
+.Bg-menu-title-size {
+  color: #222;
+}
+.Bg-Nav {
+  background: #e5d193;
+}

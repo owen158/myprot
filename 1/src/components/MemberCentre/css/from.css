@@ -1,0 +1,177 @@
+/*搜索*/
+.Bg-Ganrett-Title {
+  background-image: linear-gradient(180deg, #4e4d4d, #171719);
+}
+.Bg-BackGround {
+  background: #4e4d4d url("http://mobile.beike188.com/modelVIP/images/bg.png");
+}
+.Bg-menu {
+  background: #282828;
+}
+.Bg-notice {
+  background-image: linear-gradient(270deg, #bb9850, #f5efd7, #bb9850);
+}
+.Bg-notice-size {
+  color: #333;
+}
+.Bg-Btn {
+  background: #5f5f5d;
+  color: #fff;
+}
+.Bg-menu-title-size {
+  color: #222;
+}
+.Bg-Nav {
+  background: #e5d193;
+}
+.Public .pagination > span {
+  padding-top: 0.2rem;
+}
+.SubmitForm {
+  border-bottom: 1px solid #d2d2d2;
+  font-size: 0;
+}
+.SubmitForm .Rec_text {
+  color: #666;
+}
+.SubmitForm .item-nav {
+  height: 0.8rem;
+}
+.SubmitForm .item-nav .main-nav {
+  margin: 0.1rem 0;
+  height: 0.6rem;
+}
+.SubmitForm .item-nav .main-nav .tad {
+  display: block;
+  line-height: 0.6rem;
+  text-align: center;
+  font-size: 0.25rem;
+  color: #fff;
+}
+.SubmitForm .item-nav .main-nav select {
+  height: 0.6rem;
+  width: 95%;
+  margin: 0 auto;
+  outline: none;
+}
+.SubmitForm .item-nav .RecordBoxBtn {
+  width: 95%;
+  margin: 0.1rem auto;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  border-radius: 3px;
+  font-size: 0.3rem;
+  background: #5f5f5d;
+  color: #fff;
+}
+#detepik .fa {
+  top: 0.05rem;
+}
+.wrapper-cont {
+  font-size: 0;
+}
+.wrapper-cont .Rec_text {
+  height: 0.6rem;
+  line-height: 0.6rem;
+  color: #fff;
+  font-size: 0.3rem;
+}
+.wrapper-cont .recording-list {
+  margin-top: 0.3rem;
+  margin-bottom: 0.1rem;
+}
+.wrapper-cont .item {
+  padding: 0 0.15rem;
+}
+.wrapper-cont .item .tad-sup,
+.wrapper-cont .item .tad-sub {
+  border-left: 1px solid #757777;
+  border-right: 1px solid #757777;
+  padding-left: 0.15rem;
+}
+.wrapper-cont .item .tad-sup {
+  border-top: 1px solid #757777;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  font-weight: bold;
+  text-align: left;
+  font-size: 0.3rem;
+  color: #fff;
+  background: #d2d2d2;
+}
+.wrapper-cont .item .tad-sub {
+  height: 0.4rem;
+  line-height: 0.4rem;
+  border-bottom: 1px solid #757777;
+  text-align: left;
+  color: #696969;
+  font-size: 0.25rem;
+}
+.wrapper-cont .item .main-sup {
+  height: 0.5rem;
+  line-height: 0.5rem;
+  color: #a2a1a1;
+  font-size: 0.22rem;
+  font-weight: 500;
+}
+.wrapper-cont .item .main-sup,
+.wrapper-cont .item .main-sub {
+  border-left: 1px solid #757777;
+  border-right: 1px solid #757777;
+  border-bottom: 1px solid #757777;
+}
+.wrapper-cont .item .main-sup > div:not(:nth-child(1)),
+.wrapper-cont .item .main-sub > div:not(:nth-child(1)) {
+  border-left: 1px solid #757777;
+}
+.wrapper-cont .item .main-sub {
+  height: 0.4rem;
+  line-height: 0.4rem;
+  font-size: 0.25rem;
+  color: #222;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.wrapper-cont #item-main .main-sub {
+  padding-left: 0.2rem;
+  color: #666;
+  font-weight: bold;
+}
+.wrapper-cont #item-main .main-sub,
+.wrapper-cont #item-main .main-text {
+  text-align: left;
+  border-left: 1px solid #757777;
+  border-right: 1px solid #757777;
+}
+.wrapper-cont #item-main .main-text {
+  height: 0.8rem;
+  line-height: 0.4rem;
+  font-size: 0.25rem;
+  text-indent: 0.4rem;
+  color: #222;
+  border-bottom: 1px solid #757777;
+}
+.wrapper-cont .column-title {
+  margin-top: 0.2rem;
+  height: 1rem;
+}
+.wrapper-cont .column-title .main {
+  height: 1rem;
+}
+.wrapper-cont .column-title .main .sup {
+  height: 0.55rem;
+  line-height: 0.55rem;
+  background: #d62f27;
+  font-size: 0.3rem;
+  color: #fff;
+}
+.wrapper-cont .column-title .main .sub {
+  height: 0.45rem;
+  line-height: 0.45rem;
+  font-size: 0.25rem;
+  border-bottom: 1px solid #757777;
+}
+.wrapper-cont .column-title .main:not(:nth-child(1)) .sub {
+  border-left: 1px solid #757777;
+}

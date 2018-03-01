@@ -1,0 +1,157 @@
+﻿@bg-c1:#d62f27;
+@bg-c2:#f5f5f9;
+@bg-c3:#282828;
+@bg-c4:#fafcff;
+@bg-c5:#fff;
+
+@text-c1:#d62f27;
+@text-c2:#222;
+@text-c3:#fff;
+@text-c4:#666;
+
+@bor-c1:#d62f27;
+@bor-c2:#ededed;
+@bor-c1:#d2d2d2;
+@bor-c4:#483d8b;
+//new 公用头部背景
+
+.Bg-Active{
+  background: #fff;
+  color: #d62f27 ;
+}
+@Bg-Active:#fff;
+@Bg-Nav-Active:#e5d193;
+
+.Bg-menu{
+  background: #282828;
+}
+.Bg-notice{
+  background-image: linear-gradient(270deg,#0b002a,#1f1054,#0b002a);
+}
+.Bg-notice-size{
+  color: #333;
+}
+//.Bg-Btn{
+//  padding: 0.07rem 0.15rem;
+//  font-size: 0.2rem;
+//  color: #fff;
+//  margin-right: 0.3rem;
+//  border-radius: 0.06rem;
+//  background: linear-gradient(90deg,#a01f0a 0%, #e91e1e 100%);
+//  animation: gradientChange 1.5s infinite;
+//}
+.Bg-menu-title-size{
+  color: #222;
+}
+.Bg-Nav{
+  background:#1e0f52;
+}
+@Nav-size:#e5d193;
+
+.border(@a,@b){
+  border:@a solid @b;
+}
+@border:#d2d2d2;
+@keyframes gradientChange  {
+  100% {
+    background: linear-gradient(90deg,  #e91e1e 0%, #6f27b0 100%);
+  }
+}
+
+//主题文字
+@size-color:#333;
+@size-white:white;
+@size-info:#a2a29b;
+
+//*************************** 字体
+
+//主题文字
+@colorOne:#333;//公用字体颜色
+@colorTwo:#fff;//公用头部背景字体颜色
+@colorThree:#fff;
+.HSC(@q,@b,@c,@i,@y:center){
+  height: @q;
+  line-height: @b;
+  font-size: @c;
+  color: @i;
+  text-align: @y;
+}
+
+//*************************** 边框
+//边框
+@borOne:#d2d2d2;
+
+
+//边框
+.borOne(@a){
+  border:@a solid @borOne;
+}
+
+//倒角
+.borderRadius(@radius){
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
+
+//边框阴影
+.boxShadow(@x:0,@y:0,@blur:1px,@color:#000){
+  -moz-box-shadow: @arguments;
+  -webkit-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+//*************************** 背景
+
+//公用背景，颜色
+
+@BgOne:#fff;//公用背景颜色
+@BgTwo:#d62f27;//公用头部背景颜色
+@BgThree:#282828;
+
+
+//背景色
+.Bg-BackGround{
+  //background: repeating-linear-gradient(-135deg,#232323, #232323 2px, #232323 2px, #000 3px);
+  background:@BgOne url("http://192.168.0.140:82/mobileTX/images393/bg.png");
+}
+
+// 公用头部在背景颜色
+.Bg-Ganrett-Title{
+  background: @BgTwo;
+  color: @colorTwo;
+  //background-image: linear-gradient(180deg,#493491,#31197b);
+}
+
+.Bg-Header-Title{
+  background:#d62f27 ;
+  color: #fff;
+}
+
+//导航栏背景色
+.Bg-Nav-Title{
+  background: #00ffff;
+  color: #000;
+}
+.Bg-Nav-Title-Active{
+  background: #e4e4e4;
+  color: #000;
+}
+//底部
+.Bg-Footer{
+  background: #e4e4e4;
+  color: #0b002a;
+}
+//按钮
+.Bg-Btn{
+  display: block;
+  width: 90%;
+  margin: 0.2rem auto;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  font-size: 0.25rem;
+  color: @colorTwo;
+  .borderRadius(0.06rem);
+  background: linear-gradient(90deg,#a01f0a 0%, #e91e1e 100%);
+  animation: gradientChange 1.5s infinite;
+}
+

@@ -1,0 +1,130 @@
+﻿/*搜索*/
+ @import "../../../../static/css/style";
+  .Public  .pagination>span{
+   padding-top: 0.2rem;
+  }
+
+
+
+.SubmitForm{
+  border-bottom: 1px solid @size-info;
+  font-size: 0;
+  .tad{
+    font-size: 0.25rem;
+    line-height: 28px;
+  }
+  .el-col{
+    margin: 3px 0;
+  }
+  .form-btn{
+    margin: 0.15rem 0;
+  }
+}
+
+
+
+
+.wrapper-cont{
+  font-size: 0;
+  .Rec_text{
+    height: 0.6rem;
+    line-height: 0.6rem;
+    color:@size-color;
+    font-size: 0.3rem;
+  }
+  .recording-list{
+    margin-top: 0.3rem;
+    margin-bottom: 0.1rem;
+  }
+  .item{
+    padding: 0 0.15rem;
+    .tad-sup,.tad-sub{
+      border-left:1px solid @border;
+      border-right:1px solid @border;
+      padding-left: 0.15rem;
+    }
+    .tad-sup{
+      border-top:1px solid @border;
+      height: 0.5rem;
+      line-height: 0.5rem;
+      font-weight: bold;
+      text-align: left;
+      font-size: 0.3rem;
+      color:@size-color;
+      .Bg-Ganrett-Title;
+    }
+    .tad-sub{
+      height: 0.4rem;
+      line-height: 0.4rem;
+      border-bottom: 1px solid @border;
+      text-align: left;
+      //color:@size-color;
+      color: @size-info;
+      font-size: 0.25rem;
+    }
+    .main-sup{
+      height: 0.5rem;
+      line-height: 0.5rem;
+      color:@size-info;
+      font-size: 0.22rem;
+      font-weight: 500;
+    }
+    .main-sup,.main-sub{
+      border-left:1px solid @border;
+      border-right: 1px solid @border;
+      border-bottom: 1px solid @border;
+    }
+    .main-sup>div:not(:nth-child(1)),.main-sub>div:not(:nth-child(1)){
+      border-left: 1px solid @border;
+    }
+    .main-sub{
+      height: 0.4rem;
+      line-height: 0.4rem;
+      font-size: 0.25rem;
+      color:@size-color;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  #item-main{
+    .main-sub{
+      padding-left: 0.2rem;
+      color:@size-info;
+      font-weight: bold;
+    }
+    .main-sub,.main-text{
+      text-align: left;
+      border-left:1px solid @border;
+      border-right:1px solid @border;
+    }
+    .main-text{
+      height: 0.8rem;
+      line-height: 0.4rem;
+      font-size: 0.25rem;
+      text-indent: 0.4rem;
+      color:@size-color;
+      border-bottom:1px solid @border;
+    }
+  }
+  .column-title{
+    margin-top: 0.2rem;
+    .main{
+      .sup{
+        height: 0.55rem;
+        line-height: 0.55rem;
+        font-size: 0.3rem;
+        .Bg-Btn;
+      }
+      .sub{
+        height: 0.45rem;
+        line-height: 0.45rem;
+        font-size: 0.25rem;
+        border-bottom:1px solid @border;
+      }
+    }
+    .main:not(:nth-child(1)) .sub{
+      border-left: 1px solid @border;
+    }
+  }
+}
