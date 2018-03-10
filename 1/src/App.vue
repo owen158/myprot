@@ -38,6 +38,15 @@ export default {
     mounted() {
         vm = this;
         document.title =vm.userNew.Pname;
+        this.$nextTick(function () {
+            var time =setInterval(function () {//pay.js 加载完成后关闭定时器
+                if(typeof cardlist != 'undefined'){
+//                    vm.$store.dispatch('inceuserNew', {id: 12, data:Pays});
+                    vm.$store.dispatch('inceuserNew', {id: 13, data:cardlist});
+                    clearInterval(time);
+                }
+            },100)
+        })
     },
     methods:{
         handleClose(done) {
@@ -56,14 +65,6 @@ export default {
         }
     },
     components: {
-        'remote-js': {
-            render(createElement) {
-                return createElement('script', {attrs: {type: 'text/javascript', src: this.src}});
-            },
-            props: {
-                src: {type: String, required: true},
-            },
-        }
     }
 }
 </script>
@@ -74,7 +75,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  /*background:@bg-c2;*/
   color: @text-c2;
   /*公用系统提示*/
   .el-dialog--center .el-dialog__footer{
@@ -94,6 +94,29 @@ export default {
     font-size: 0.35rem;
     display: block;
     line-height: 45px;
+  }
+  .rnkey{
+    position: fixed;
+    top:0;
+    left:0;
+    font-size: 0;
+    z-index: 30;
+    i{
+      font-size: 0.5rem;
+    }
+  }
+  .TopHeader{
+    position: fixed;
+    width:100%;
+    top:0;
+    left:0;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    font-size: 0.35rem;
+    font-weight: 100;
+    z-index: 8;
+    .Bg-Header-Title;
   }
   .el-dialog--center .el-dialog__header{
     padding:0;

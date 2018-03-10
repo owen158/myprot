@@ -1,6 +1,6 @@
 ﻿<template>
     <div class='MemberCentre' ref="BackG">
-        <Top :text="userNew.text"></Top>
+        <TopCounter :title="'会员中心'" :Boo="false" :src="'/'"></TopCounter>
         <div class="A-title MemberBox">
             <div  v-if="userNew.Login === false" class="row MemberTitle">
                 <div class="col-2 userlf A-user">
@@ -74,7 +74,6 @@
 </template>
 <script>
     var b=true,el,Type,vm;
-    import Top from '../Top/Top.vue'
     export default {
         data () {
             return {
@@ -182,7 +181,6 @@
         created() {
         },
         components: {
-            Top
         }
     }
 </script>

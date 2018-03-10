@@ -1,7 +1,6 @@
 ﻿<template>
     <div id="MG_game" class='MG_game gameThree'>
-        <Top :text="userNew.text"></Top>
-        <withdraw :src="withdraw"></withdraw>
+        <TopCounter :title="'MG 游戏'" :Boo="true" :src="'/AppPage/ElectronicGames'"></TopCounter>
         <div class="row A-search" style="height: 2rem">
             <div class="col-6 A-lf">
                  <img src="http://192.168.0.140:82/mobileTX/images393/Home/MG/microgaming.png" alt="">
@@ -104,8 +103,6 @@
 </template>
 <script>
     var vm,el;
-    import withdraw from '../public/return.vue'
-    import Top from '../Top/Top.vue'
     import gamelist from './js/josn'
     export default {
         data () {
@@ -181,13 +178,11 @@
         created() {
         },
         components: {
-            Top,
-            withdraw
         }
     }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang='less' >
+<style lang='less' scoped>
 @import './css/gamethree.less';
 .MG_game{
     background: #121212;

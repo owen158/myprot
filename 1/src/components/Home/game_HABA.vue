@@ -1,7 +1,6 @@
 ﻿<template>
     <div id="HABA" class='gamehaba'>
-        <Top :text="userNew.text"></Top>
-        <withdraw :src="withdraw"></withdraw>
+        <TopCounter :title="'HABA 游戏'" :Boo="true" :src="'/AppPage/ElectronicGames'"></TopCounter>
         <div class="row A-search">
             <div class="col-6 A-lf HABA">
                 <img src="http://192.168.0.140:82/mobileTX/images393/Home/HABA/HABA1.png" alt="">
@@ -63,14 +62,11 @@
 </template>
 <script>
     var vm,el;
-    import withdraw from '../public/return.vue'
-    import Top from '../Top/Top.vue'
     import Habanero from './js/json2'
     export default {
         data () {
             return {
                 one:Habanero,
-                withdraw:'/AppPage/ElectronicGames',
                 query:'',
                 jud:{
                     judgment:false,
@@ -157,14 +153,12 @@
         created() {
         },
         components: {
-            Top,
-            withdraw
         }
     }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang='less'>
+<style lang='less' scoped>
     @import "./css/gamethree.less";
     .gamehaba{
         background: #121212;

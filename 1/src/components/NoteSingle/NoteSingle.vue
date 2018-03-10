@@ -1,6 +1,6 @@
 ﻿<template>
     <div class='NoteSingle' ref="BackG">
-        <Top :text="userNew.text"></Top>
+        <TopCounter :title="'在线客服'" :Boo="false"></TopCounter>
         <div class="wrapper">
             <div class="wrapper-box">
                 <h2>联系方式</h2>
@@ -38,11 +38,9 @@
     </div>
 </template>
 <script>
-    import Top from '../Top/Top.vue'
     export default {
         data () {
             return {
-
             }
         },
         computed: {
@@ -59,7 +57,6 @@
             },
         },
         components: {
-            Top
         }
     }
 </script>

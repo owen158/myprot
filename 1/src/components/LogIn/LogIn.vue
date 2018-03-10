@@ -1,8 +1,9 @@
 ﻿<template>
-    <div class='LogIn'  ref="BackG">
+    <div class='LogIn reg'  ref="BackG">
         <el-container >
-            <Top :text="userNew.text"></Top>
-            <withdraw :src="withdraw"></withdraw>
+            <TopCounter :title="'登录'" :src="'/'" :Boo="true"></TopCounter>
+            <!--<Top :text=""></Top>-->
+            <!--<withdraw :src="withdraw"></withdraw>-->
             <el-main>
                 <p class="Title row" style="margin-top: 0.2rem"><span class="x-icon-logo"></span></p>
                 <el-form label-position="right" status-icon :rules="rules" ref="ruleForm2" label-width="0px" :model="obj">
@@ -40,8 +41,6 @@
 </template>
 <script>
     var vm;
-    import withdraw from '../public/return.vue'
-    import Top from '../Top/Top.vue'
     export default {
         data () {
             let validatetname = (rule, value, callback) => {
@@ -139,8 +138,6 @@
         created() {
         },
         components: {
-            Top,
-            withdraw
         }
     }
 </script>
@@ -157,26 +154,6 @@
        line-height: 0.8rem;
        color:@size-color;
    }
-    .el-button{
-        padding: 12px 50px;
-    }
-    .el-form-item__content{
-        position: relative;
-        #ImgCode{
-            position: absolute;
-            width: 70px;
-            height: 35px;
-            right: 5px;
-            top:2px;
-            border:1px solid transparent;
-            z-index: 5;
-        }
-    }
-    .el-form-item{
-        margin-bottom: 17px;
-    }
-    .el-input__prefix{
-        color: @size-info;
-    }
+
 }
 </style>

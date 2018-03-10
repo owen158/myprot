@@ -26,6 +26,14 @@ module.exports = {
       '@': resolve('src')
     }
   },
+  externals: {
+      'vue':'Vue',
+      'vue-router':'VueRouter',
+      'element-ui': 'ELEMENT',
+      'vuex': 'Vuex',
+      'jquery': '$',
+      // 'jQuery': '$',
+  },
   module: {
     rules: [
       {
@@ -56,11 +64,11 @@ module.exports = {
       }
     ]
   },
-    plugins: [
-        new webpack.optimize.CommonsChunkPlugin('common.js'),
-        new webpack.ProvidePlugin({
-            jQuery: "jquery",
-            $: "jquery"
-        })
-    ]
+    // plugins: [
+    //     new webpack.optimize.CommonsChunkPlugin('common.js'),
+    //     new webpack.ProvidePlugin({
+    //         jQuery: "jquery",
+    //         $: "jquery"
+    //     })
+    // ]
 }

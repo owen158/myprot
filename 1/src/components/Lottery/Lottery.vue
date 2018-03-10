@@ -1,6 +1,6 @@
-﻿﻿<template>
+﻿<template>
     <div class='LotteryWrapper' ref="BackG">
-        <Top :text="userNew.text"></Top>
+        <TopCounter :title="'存取款'" :Boo="false" :src="''"></TopCounter>
         <div class="NoBox">
             <div  class="row item" data-Type="">
                 <router-link to="/deposit">
@@ -24,7 +24,6 @@
 </template>
 <script>
     var el,Type;
-    import Top from '../Top/Top.vue';
     export default {
         data () {
             return {
@@ -60,7 +59,6 @@
         created () {
         },
         components: {
-            Top
         }
     }
 </script>

@@ -1,7 +1,6 @@
 ﻿<template>
     <div class='ScanCode' ref="BackG">
-        <Top :text="userNew.text"></Top>
-        <withdraw :src="withdraw"></withdraw>
+        <TopCounter :title="'扫码支付'" :Boo="true" :src="'/deposit'"></TopCounter>
           <div class="Lscanbox row">
               <div class="row" data-Type="3" @click="Page($event)">
                   <a href="javascript:void(0)" class="Lscan-a row">
@@ -33,13 +32,10 @@
 
 <script>
     var el,vm;
-    import withdraw from '../public/return.vue'
-    import Top from '../Top/Top.vue'
     export default {
         data () {
             return {
                 Type:null,
-                withdraw:'/deposit'
             }
         },
         computed: {
@@ -65,8 +61,6 @@
         created(){
         },
         components: {
-            Top,
-            withdraw
         }
     }
 </script>

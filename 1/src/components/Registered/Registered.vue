@@ -1,8 +1,7 @@
 ﻿<template>
-    <div class='Register' ref="BackG">
+    <div class='Register reg' ref="BackG">
         <el-container >
-            <Top :text="userNew.text"></Top>
-            <withdraw :src="withdraw"></withdraw>
+            <TopCounter :title="'会员注册'" :src="'/'" :Boo="true"></TopCounter>
             <el-main>
                 <el-form label-position="right" status-icon :rules="rules" ref="ruleForm2" status-icon label-width="0px" :model="reg">
                     <el-form-item label="" prop="userName">
@@ -79,8 +78,6 @@
 </template>
 <script>
     var vm;
-    import withdraw from '../public/return.vue'
-    import Top from '../Top/Top.vue'
     export default {
         data () {
             let validatetname = (rule, value, callback) => {
@@ -174,7 +171,6 @@
                 },300);
             };
             return {
-                withdraw:'/',
                 reg:{
                     userName:'',//用户名
                     passWord: '',//密码
@@ -244,30 +240,8 @@
                 var src = vm.userNew.jrg+'validateCode?timesp'+(new Date()).valueOf();
                 vm.$refs.ImgCode.setAttribute('src',src)
             },
-//            <!--TermsOpen:function () {-->
-//                <!--this.Terms = true;-->
-//            <!--},-->
-//            <!--TermsOff:function () {-->
-//                <!--vm.checkedNames = true;  //单选框-->
-//                <!--this.Terms = false;-->
-//            <!--},-->
-//            <!--submit:function () {-->
-//                <!--vm = this;-->
-//<!--//                vm.reg.repassWord = vm.reg.passWord;-->
-//<!--//                vm.reg.qkpwd = "0000";-->
-//                <!--vm.reg.reqkpwd = vm.reg.qkpwd;-->
-//                <!--if(this.checkedNames != true){-->
-//                    <!--vm.checkedNames = true;  //单选框-->
-//                    <!--vm.$store.dispatch("inceCloseNew",{id:1,Closepop:true,Closepoptext:'是否同意用户协议'});-->
-//                    <!--vm.LoginImg();-->
-//                    <!--return;-->
-//                <!--}-->
-//                <!--vm.$BugRegister(vm,vm.reg);-->
-//            <!--}-->
         },
         components: {
-            Top,
-            withdraw
         }
     }
 </script>
@@ -277,31 +251,6 @@
 .Register {
     .Bg-BackGround;
     padding-top: 0.8rem;
-    .el-form-item__content{
-        position: relative;
-        #ImgCode{
-            position: absolute;
-            width: 70px;
-            height: 35px;
-            right: 5px;
-            top:2px;
-            border:1px solid transparent;
-            z-index: 5;
-        }
-    }
-    .el-checkbox-group{
-        text-align: left;
-        .el-checkbox__label{
-            color: @size-color;
-            font-size: 12px;
-        }
-    }
-    .el-form-item{
-        margin-bottom: 17px;
-    }
-    .el-button{
-        padding: 12px 50px;
-    }
     .el-checkbox__input.is-checked+.el-checkbox__label{
         color: @size-color;
         font-size: 12px;
@@ -330,7 +279,6 @@
             right: 10px;
             top:10px;
             color: #fff;
-
         }
 
     }

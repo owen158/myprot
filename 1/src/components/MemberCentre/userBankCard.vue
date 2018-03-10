@@ -48,7 +48,6 @@
     export default {
         data () {
             return {
-                text:'我的银行卡',
                 userId:{
                     cardId:'',
                     password:""

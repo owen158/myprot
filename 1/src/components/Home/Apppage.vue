@@ -1,6 +1,6 @@
 ﻿<template>
     <div class='AppPage' ref="BackG">
-        <Top></Top>
+        <TopCounter :title="''" :Boo="false"></TopCounter>
         <span id="copy" @click="menu()" class="iconfont icon-tubiaozhizuomoban-copy"></span>
         <div  ref="wrapperBoxL"  class="wrapperBoxL">
             <h2>导航</h2>
@@ -85,6 +85,7 @@
         </div>
         <bnner></bnner>
         <notice></notice>
+        <!--<returnCounter :src="'123465'" :Boo="true"></returnCounter>-->
         <el-tabs  v-model="activeName" @tab-click="handleClick" id="header-top">
             <el-tab-pane :label="item.text" v-for="item in Nav" :name="item.src"></el-tab-pane>
         </el-tabs>
@@ -206,7 +207,6 @@
 </template>
 <script>
     var el,vm;
-    import Top from '../Top/Top.vue'
     import notice from '../public/notice.vue'
     import bnner from '../public/bnner.vue'
     export default {
@@ -418,9 +418,9 @@
         created(){
         },
         components: {
-            Top,
             bnner,
-            notice
+            notice,
+
         }
     }
 </script>

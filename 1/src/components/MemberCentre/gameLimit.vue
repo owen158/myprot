@@ -1,7 +1,6 @@
 ﻿<template>
-    <div class='gameLimit' ref="BackG">
-        <Top :text="text"></Top>
-        <withdraw :src="withdraw"></withdraw>
+    <div class='gameLimit add' ref="BackG">
+        <TopCounter :title="'个人信息'" :Boo="true" :src="'/MemberCentre'"></TopCounter>
         <el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
             <el-tab-pane label="个人资料" name="first">
                 <el-row>
@@ -86,7 +85,7 @@
                             <el-form-item label="" prop="rmk">
                                 <el-input type="textarea" v-model="obj.rmk" placeholder="添加备注 (可不填)"></el-input>
                             </el-form-item>
-                            <el-form-item>
+                            <el-form-item style="text-align: center">
                                 <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
                                 <el-button @click="resetForm('ruleForm')">重置</el-button>
                             </el-form-item>
@@ -99,8 +98,6 @@
 </template>
 <script>
     var vm ;
-    import withdraw from '../public/return.vue'
-    import Top from '../Top/Top.vue'
     export default {
         data () {
             let validaterealName = (rule, value, callback) => {
@@ -130,8 +127,6 @@
                 },300);
             };
             return {
-                text:'会员信息',
-                withdraw:'/MemberCentre',
                 activeName2: 'first',
                 obj:{
                     userName:'',
@@ -185,8 +180,6 @@
             vm = this;
         },
         components: {
-            Top,
-            withdraw
         }
     }
 </script>
@@ -217,15 +210,6 @@
     }
     .modify{
         width: 100%;
-        .el-form-item__content{
-            line-height: 30px;
-        }
-        .el-form-item{
-            margin-bottom: 17px;
-        }
-        .el-input__inner{
-            height: 30px;
-        }
     }
 }
 </style>

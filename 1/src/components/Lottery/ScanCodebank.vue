@@ -1,8 +1,9 @@
 ﻿<template>
   <div class="ScanCodebank" ref="BackGr">
     <el-container >
-      <Top :text="text"></Top>
-      <withdraw :src="withdraw"></withdraw>
+      <TopCounter :title="'确认支付'" :Boo="true" :src="'/ScanCode'"></TopCounter>
+      <!--<Top :text="text"></Top>-->
+      <!--<withdraw :src="withdraw"></withdraw>-->
       <el-main v-show="judgment">
         <div class="G-error">
           <span class="el-icon-warning" style="color: red;padding-right: 3px;"></span>暂无可选二维码，联系管理员配置
@@ -53,8 +54,6 @@
 </template>
 <script>
   var vm;
-  import withdraw from '../public/return.vue'
-  import Top from '../Top/Top.vue'
     export default {
         data () {
             var validatePass = (rule, value, callback) => {
@@ -90,10 +89,8 @@
                 },300);
             };
             return {
-                text:'确认支付',
                 man:'*',
                 min:'*',
-                withdraw:'/ScanCode',
                 judgment:true,
                 Fata:{
                     id:'',
@@ -191,8 +188,6 @@
             }
         },
         components: {
-            Top,
-            withdraw
         }
     }
 </script>

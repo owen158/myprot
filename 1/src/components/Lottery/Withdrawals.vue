@@ -1,5 +1,5 @@
 ﻿<template>
-    <div class='Withdrawals' ref="BackG">
+    <div class='Withdrawals add' ref="BackG">
         <el-container>
             <el-main>
                 <p class="drawalsTop">
@@ -183,24 +183,6 @@
     padding-bottom: 0.8rem;
     margin-top: 0.15rem;
     font-size: 0;
-    .el-form-item{
-        text-align: left;
-    }
-    .el-form-item__label{
-        line-height: 20px;
-        padding: 0;
-        color:@size-color;
-    }
-    .el-form-item{
-        margin-bottom: 17px;
-    }
-    .el-form--label-top .el-form-item__label{
-        padding: 0;
-    }
-    .el-input.is-disabled .el-input__inner{
-        /*background-color: #c6c9ce;*/
-        /*color: #606266;*/
-    }
     .drawalsTop{
         height: 0.5rem;
         line-height: 0.5rem;

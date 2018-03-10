@@ -1,7 +1,6 @@
 ﻿﻿<template>
-    <div class='interchange' ref="BackG">
-        <Top :text="text"></Top>
-        <withdraw :src="withdraw"></withdraw>
+    <div class='interchange add' ref="BackG">
+        <TopCounter :title="'平台互转'" :Boo="true" :src="'/MemberCentre'"></TopCounter>
         <div class="interchangeBox row">
             <div class="title">
                 <div class="col-6">
@@ -63,8 +62,6 @@
 
 <script>
     var Boo=false,Type,vm;
-    import withdraw from '../public/return.vue'
-    import Top from '../Top/Top.vue'
     export default {
         data () {
             var validatePass = (rule, value, callback) => {
@@ -102,8 +99,6 @@
                 },300);
             };
             return {
-                text:'平台互转',
-                withdraw:'/MemberCentre',
                 left:'',
                 right:"",
                 Money:{
@@ -242,8 +237,6 @@
             vm=this;
         },
         components: {
-            Top,
-            withdraw
         }
     }
 </script>
@@ -265,22 +258,6 @@
     padding-top: 0.8rem;
     font-size: 0;
     padding-bottom: 1rem;
-    .el-form-item__content{
-        line-height: 35px;
-        position: relative;
-        #ImgCode{
-            position: absolute;
-            right: 3px;
-            top:1px;
-            height: 33px;
-            width: 60px;
-        }
-    }
-    .el-input__inner{
-        height: 35px;
-    }
-    .el-form-item{
-    }
 }
 .interchangeBox{
     font-size:0;
@@ -387,12 +364,12 @@
             width:69%;
             border:none;
         }
-        #ImgCode{
-            position: absolute;
-            right:0;top:0;
-            width:1.6rem;
-            height: 0.7rem;
-        }
+        /*#ImgCode{*/
+            /*position: absolute;*/
+            /*right:0;top:0;*/
+            /*width:1.6rem;*/
+            /*height: 0.7rem;*/
+        /*}*/
         select{
             width:55%;
         }

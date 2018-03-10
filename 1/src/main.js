@@ -4,7 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import 'babel-polyfill'//e6~e5 兼容
 import router from './router'
+
+import VueCookies from 'vue-cookies'
+Vue.use(VueCookies);
+
 import store from '@/router/store'
+
 /**
  *
  * bug 2018 01 01
@@ -28,15 +33,38 @@ Vue.use(VueAwesomeSwiper);//轮播
  * API 接口
  */
 import Membercentre from './router/Membercentre'
-Vue.use(Membercentre)//个人中心
+Vue.use(Membercentre);//个人中心
 
-
-// import $ from 'jquery'
-import '../static/css/reset.css'
 import '../static/css/public.less'
-import '../static/js/head'
+import '../src/components/LogIn/style.less'
 import '../static/css/iconfont.css'
 import bug from "./router/public"
+
+
+Vue.component('TopCounter', {
+    template: '<div class="TopHeader"><div v-show="Boo" class="rnkey" v-on:click="incrementCounter"><i class="iconfont icon-mjiantou-copy"></i></div>{{title}}</div>',
+    props: {
+        src: {
+            type: String
+        },
+        Boo: {
+            type: Boolean
+        },
+        title: {
+            type: String
+        },
+    },
+    data: function () {
+        return {
+            counter: 0
+        }
+    },
+    methods: {
+        incrementCounter: function () {
+            router.push({path:this.src})
+        }
+    },
+})
 
 
 /**
@@ -47,10 +75,10 @@ import bug from "./router/public"
  *
  */
 import { Message } from 'element-ui';
-import ElementUI from 'element-ui'
+import ELEMENT from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
-Vue.use(ElementUI,{ zhLocale });
+Vue.use(ELEMENT,{ zhLocale });
 
 
 Vue.config.productionTip = false;
@@ -60,69 +88,6 @@ if (process.BROWSER_BUILD) {
     Vue.use(VueAwesomeSwiper)
 }
 router.beforeEach(({meta,path}, from, next) => {
-    let text= null;
-    switch (path.toLowerCase()) {
-        case '/login':
-            text='登录'
-            break;
-        case '/registered':
-            text='会员注册';
-            break;
-        case '/notesingle':
-            text='在线客服';
-            break;
-        case '/information':
-            text='填写存款信息';
-            break;
-        case '/scancode':
-            text='扫码支付';
-            break;
-        case '/scancodebank':
-            text='确认支付';
-            break;
-        case '/alipayscanpay':
-            text='支付订单';
-            break;
-        case '/deposit':
-            text='存取款';
-            break;
-        case '/withdrawals':
-            text='存取款';
-            break;
-        case '/userbankcard':
-            text='存取款';
-            break;
-        case '/usercapitalpwd':
-            text='存取款';
-            break;
-        case '/membercentre':
-            text='会员中心';
-            break;
-        case '/collection':
-            text='优惠活动';
-            break;
-        case '/gamehaba':
-            text='HABA 游戏'
-            break;
-        case '/gamemg':
-            text='MG 游戏'
-            break;
-        default:
-            text='';
-    }
-    store.dispatch("inceCloseNew",{id:3,text:text});
-    if(path === "/login" || path === '/Registered'){
-        bug.ReQuest.call(this,{},'checklogin.do',function (data) {
-            if (data.msg == "faild") {
-                store.dispatch('inceuserNew', {id: 0, Login: false});
-            } else if (data.msg == "islogin") {
-                store.dispatch('inceuserNew', {id: 0, Login: false});
-            } else if (data.msg == "success") {
-                store.dispatch('inceuserNew', {id: 1, Login: true, userkey: data.userkey, userName: data.userName});
-                return  next({path:'/'});
-            }
-        })
-    }
     bug.ReQuest.call(this,{},"checklogin.do",function (data) {
         if (data.msg == "faild") {
             if (meta.requiresAuth === true) {
@@ -142,9 +107,57 @@ router.beforeEach(({meta,path}, from, next) => {
             }
         } else if (data.msg == "success") {
             store.dispatch('inceuserNew', {id: 1, Login: true, userkey: data.userkey, userName: data.userName});
+            if(path === "/login" || path === '/Registered'){
+                return  next({path:'/'});
+            }
             if (path === '/AppPage/LooteryGame' || path === '/AppPage/LiveVideo' || path === '/AppPage/ElectronicGames' || path === '/AppPage/Sportsevents' || path === '/AppPage/KaiyuanChess') {
                 store.dispatch("incrObtain",{id:0,data:{BType:"WALLET"}});
             }else if (path === '/deposit') {
+                //************新增 2018 03 06**********//
+                bug.ReQuest.call(this,{},"PlatformPay/paymentChannel", function (obj) {//新增 2018 03 06
+                    bug.mask(false);
+                    let objs=[];
+                    if(obj.MBchannel){
+                        for(let i = 0 ;i< obj.MBchannel.length;i++){
+                            switch (Number(obj.MBchannel[i])) {
+                                case 21:
+                                    objs.push({title:'网银支付',text:"Online payment",type:'5',src:'/Recharge',icon:'x-icon x-icon-Online'}) ;
+                                    break;
+                                case 22 :
+                                    objs.push({title:'扫码支付',text: "Scan Code",type:'18',src:'/ScanCode',icon:'x-icon x-icon-ScanCode'});
+                                    break;
+                                case 23 :
+                                    objs.push({title:'微信支付',text: "Wechat transfer",type:'7',src:'/Recharge',icon:'x-icon x-icon-wechat'});
+                                    break;
+                                case 24 :
+                                    objs.push({title:'支付宝支付',text: "Alipay transfer",type:'6',src:'/Recharge',icon:'x-icon x-icon-Alipay'});
+                                    break;
+                                case 25 :
+                                    objs.push({title:'财付通支付',text: "TenPay transfer",type:'8',src:'/Recharge',icon:'x-icon x-icon-tenpay'});
+                                    break;
+                                case 26 :
+                                    objs.push({title:'京东支付',text:'Jingdong pay',type:'12',src:'/Recharge',icon:'x-icon x-icon-Jingdong'});
+                                    break;
+                                case 27 :
+                                    objs.push({title:'银联扫码',text:'UnionPay Code',type:'10',src:'/Recharge',icon:'x-icon x-icon-UnionPay'});
+                                    break;
+                                case 28 :
+                                    objs.push({title:'银行汇款',text: "Bank tranfer",type:'16',src:'/information',icon:'x-icon x-icon-Banktranfer'});
+                                    break;
+                                case 29 :
+                                    objs.push({title:'快捷支付',text: "Quick payment",type:'14',src:'/Recharge',icon:'x-icon x-icon-Quick'});
+                                    break;
+                                default:
+                                    objs='';
+                            }
+                        }
+                        store.dispatch('inceuserNew', {id: 14, data: objs});
+                    }else{
+                        store.dispatch('inceuserNew', {id: 14, data: ''});
+                    }
+
+                });
+                //************新增 2018 03 06**********//
                 bug.ReQuest.call(this,{}, "User/getUserCard", function (obj) {
                     if (obj.length > 0) {
                         store.dispatch("inceuserNew", {id: 9, cardNum: obj[0]});

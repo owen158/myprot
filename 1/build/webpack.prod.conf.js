@@ -8,6 +8,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+// var PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 var env = config.build.env
 
@@ -35,6 +36,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       },
       sourceMap: true
     }),
+
     // extract css into its own file
     new ExtractTextPlugin({
       filename: utils.assetsPath('css/[name].[contenthash].css')
@@ -75,7 +77,8 @@ var webpackConfig = merge(baseWebpackConfig, {
             path.join(__dirname, '../node_modules')
           ) === 0
         )
-      }
+      },
+      // names: ["common", "webpackAssets"]
     }),
     // extract webpack runtime and module manifest to its own file in order to
     // prevent vendor hash from being updated whenever app bundle is updated
@@ -90,7 +93,16 @@ var webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+    // new PrerenderSpaPlugin(
+    //     // 输出目录的绝对路径
+    //     path.join(__dirname, '../dist'),
+    //     // 预渲染的路由
+    //     [ '/','/AppPage/KaiyuanChess' ]
+    // ),
+    // new webpack.optimize.CommonsChunkPlugin(
+    //     {names: ["common", "webpackAssets"]}
+    // ),
   ]
 })
 

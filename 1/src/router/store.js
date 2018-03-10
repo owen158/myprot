@@ -1,26 +1,18 @@
 /**
  * Created by Administrator on 2017/10/2. Bug
  */
-import Vue from 'vue'
+// import Vue from 'vue'
 
 /**
  * 状态管理
  */
 import Vuex from 'vuex'
-Vue.use(Vuex);
-
-/**
- * cookeis
- */
-import VueCookies from 'vue-cookies'
-Vue.use(VueCookies);
 
 
 /**
  * 公用js
  */
 import bug from "./public"
-
 
 /**
  * 代理
@@ -37,7 +29,6 @@ function geturl() {
         }
     }
 }
-
 /**
  * 判断APP
  */
@@ -58,6 +49,7 @@ export default new Vuex.Store({
         // 平台信息
         userNew:{
             Pname:bug.name,
+            cardlist:'',//银行列表
             proxyname:geturl(),// 代理商
             jrg:bug.xpj_src,// src
             cagent:bug.cagent,// 代理号
@@ -73,7 +65,7 @@ export default new Vuex.Store({
             applet:App(),
             appsrc:bug.appsrc,
             drop:false,//退出系统提示
-            text:'',//公用头部信息
+            text:'',//公用头部信息(暂停使用)
         },
         Recharge:{//查询记录专用
             id:'',
@@ -100,13 +92,14 @@ export default new Vuex.Store({
         },
         // 存取款专用
         bankcard:{// 支付专用
+            PlatformPay:'',//新增 2018 03 06
             PaymentList:'',//获取列表
             judgment:false,
             err:'',
             src:'',
             type:'',
             cardNum:'',
-            pays:Pays,
+            // pays:Pays,
             judgmentcardNum:false,
             Config:{
                 marking_quantity:'0',
@@ -179,6 +172,11 @@ export default new Vuex.Store({
         INCENEWUSERLOGINDROP(state,value){ //New user  drop 退出系统提示
             state.userNew.drop = value
         },
+        //************新增 2018 03 06**********//
+        INCENEWUSERLOGINCARDLIST(state,value){ //New user  cardlist 银行列表
+            state.userNew.cardlist = value
+        },
+        //************新增 2018 03 06**********//
         // 查询记录Recharge
         INCENRECHARGEJUDGAMENT(state,value){ //New Recharge judgment
             state.Recharge.judgment = value
@@ -256,6 +254,12 @@ export default new Vuex.Store({
         INCEBANKCARDCONFIG(state,value) {//card  cardNum
             state.bankcard.Config = value
         },
+        //************新增 2018 03 06**********//
+        INCEBANKCARDPLATFORMPY(state,value) {//card  cardNum PlatformPay
+            // 新增 2018 03 06
+            state.bankcard.PlatformPay = value
+        },
+        //************新增 2018 03 06**********//
         INCEBANKCARDJUDGMENTCARDNUM(state,value) {//card judgment
             state.bankcard.judgmentcardNum = value
         },
@@ -310,6 +314,12 @@ export default new Vuex.Store({
                 commit("INCEBANKCARDJUDGMENTCARDNUM",value.judgment);
             }else if(value.id === 12){ // pay.js
                 commit("INCEBANKCARDPAYS",value.data);
+            }else if(value.id === 13){//银行列表
+                commit("INCENEWUSERLOGINCARDLIST",value.data);
+                //************新增 2018 03 06**********//
+            }else if(value.id === 14){// 新增 2018 03 06
+                commit("INCEBANKCARDPLATFORMPY",value.data);
+                //************新增 2018 03 06**********//
             }
         },
         incrrecharge({commit},value){//个人
@@ -328,6 +338,8 @@ export default new Vuex.Store({
                 if(parseInt(obj[0].cnt) === 0){
                     commit("INCENRECHARGEJUDGAMENT",false);
                     commit("INCENRECHARGETOTAL","0");
+                    commit("INCENRECHARGECOLUMN",obj[1]);
+                    return;
                 }else{
                     commit("INCENRECHARGETOTAL",obj[0].cnt);
                     commit("INCENRECHARGECOLUMN",obj[1]);
@@ -343,6 +355,7 @@ export default new Vuex.Store({
                 if(parseInt(obj[0].cnt) == 0){
                     commit("INCENRECHARGEJUDGAMENT",false);
                     commit("INCENRECHARGETOTAL","0");
+                    return;
                 }else{
                     commit("INCENRECHARGETOTAL",obj[0].cnt);
                     let bj = obj.slice(1);
@@ -357,6 +370,7 @@ export default new Vuex.Store({
                 if(parseInt(obj[0].cnt) == 0){
                     commit("INCENRECHARGEJUDGAMENT",false);
                     commit("INCENRECHARGETOTAL","0");
+                    return;
                 }else{
                     commit("INCENRECHARGETOTAL",obj[0].cnt);
                     let bj = obj.slice(1);
@@ -371,6 +385,7 @@ export default new Vuex.Store({
                 if(parseInt(obj[0].cnt) == 0){
                     commit("INCENRECHARGEJUDGAMENT",false);
                     commit("INCENRECHARGETOTAL","0");
+                    return;
                 }else{
                     commit("INCENRECHARGETOTAL",obj[0].cnt);
                     let bj = obj.slice(1);
@@ -403,6 +418,7 @@ export default new Vuex.Store({
             }
             bug.mask()
             if(value.id === 0){//投注记录
+                console.log(value);
                 bug.ReQuest.call(this,{
                     pageSize:value.data.pageSize,
                     pageNo:value.data.pageNo,

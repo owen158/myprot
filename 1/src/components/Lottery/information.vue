@@ -2,8 +2,7 @@
     <div class="information" ref="BackG">
         <el-container >
             <el-main>
-                <Top :text="userNew.text"></Top>
-                <withdraw :src="withdraw"></withdraw>
+                <TopCounter :title="'填写存款信息'" :Boo="true" :src="'/deposit'"></TopCounter>
                 <p class="A-title">
                     汇款前请联系客服确认汇款信息
                     <router-link style="color:#219be4;text-decoration: underline" to="/NoteSingle">在线客服</router-link>
@@ -50,8 +49,6 @@
 </template>
 <script>
     var vm;
-    import withdraw from '../public/return.vue'
-    import Top from '../Top/Top.vue'
     export default {
         data () {
             let validaterealName = (rule, value, callback) => {
@@ -97,7 +94,6 @@
                 },300);
             };
             return {
-                withdraw:'/deposit',
                 ruleForm: {
                     name: '',
                     account: '',
@@ -162,14 +158,12 @@
             },
         },
         components: {
-            Top,
-            withdraw
         }
     }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang='less' scoped>
+<style lang='less'>
 @import "../../../static/css/style.less";
 .information{
     padding-top: 0.8rem;

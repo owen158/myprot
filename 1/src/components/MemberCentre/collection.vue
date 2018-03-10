@@ -1,7 +1,6 @@
 ﻿<template>
     <div class='collection' ref="BackG">
-        <Top :text="userNew.text"></Top>
-        <withdraw :src="withdraw"></withdraw>
+        <TopCounter :title="'优惠活动'" :Boo="true" :src="'/MemberCentre'"></TopCounter>
         <div class="wrapper-cen">
             <div class="row Mobileouhui" v-for="v in annouationNew.offer">
                 <h2 @click="fun($event)">
@@ -16,12 +15,9 @@
 </template>
 <script>
     var vm,el;
-    import withdraw from '../public/return.vue'
-    import Top from '../Top/Top.vue'
     export default {
         data () {
             return {
-                withdraw:'/MemberCentre',
             }
         },
         computed: {
@@ -46,8 +42,6 @@
             },
         },
         components: {
-            Top,
-            withdraw
         }
     }
 </script>

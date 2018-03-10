@@ -1,13 +1,8 @@
 /**
  * Created by Administrator on 2017/10/28.
  */
-import store from '@/router/store'
 import { Loading } from 'element-ui';
 import { Message } from 'element-ui';
-
-import $ from 'jquery'
-
-
 /**
  * 内网地址 192.168.0.61:393
  */

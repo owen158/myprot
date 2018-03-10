@@ -1,7 +1,6 @@
 ﻿<template>
-    <div class='userSettings' ref="BackG">
-        <Top :text="text"></Top>
-        <withdraw :src="withdraw"></withdraw>
+    <div class='userSettings add' ref="BackG">
+        <TopCounter :title="'修改密码'" :Boo="true" :src="'/MemberCentre'"></TopCounter>
         <el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
             <el-tab-pane label="登录密码" name="first">
                 <el-container class='modifyloginpass'>
@@ -52,8 +51,6 @@
 </template>
 <script>
     var vm;
-    import Top from '../Top/Top.vue'
-    import withdraw from '../public/return.vue'
     export default {
         data () {
             let validatepassword = (rule, value, callback) => {
@@ -144,9 +141,7 @@
             };
             return {
                 activeName2: 'first',
-                withdraw:'/MemberCentre',
                 transitionName: 'slide-left',
-                text:'修改密码',
                 mflgpas:{
                     password:'',
                     npassword:'',
@@ -213,8 +208,6 @@
             },
         },
         components: {
-            withdraw,
-            Top
         }
     }
 </script>
@@ -226,28 +219,6 @@
     .Bg-BackGround;
     width:100%;
     font-size: 0;
-    .el-tabs__nav{
-        width: 100%;
-    }
-    .el-tabs__item{
-        width: 50%;
-    }
-    .el-form-item__label{
-        line-height: 20px;
-    }
-    .el-form-item{
-        text-align: left;
-        margin-bottom: 17px;
-    }
-    .el-form--label-top .el-form-item__label{
-        padding-bottom: 0;
-    }
-    .el-form-item__content{
-        line-height: 30px;
-    }
-    .el-input__inner{
-        height: 30px;
-    }
     .A-text{
         font-size: 0.25rem;
         line-height: 0.5rem;

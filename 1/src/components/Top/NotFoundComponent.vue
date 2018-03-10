@@ -1,7 +1,6 @@
 ﻿<template>
     <div class='NotFoundComponent fixed'>
-        <Top></Top>
-        <withdraw :src="withdraw"></withdraw>
+        <TopCounter :title="'系统提示'" :Boo="true" :src="'/'"></TopCounter>
         <div class="bg">
             <img width="100%" src="http://192.168.0.140:82/mobileTX/images393/public/34324.jpg" alt="">
         </div>
@@ -9,18 +8,12 @@
 </template>
 
 <script>
-    import withdraw from '../public/return.vue'
-    import Top from  './Top.vue'
     export default {
         data () {
             return {
-                text:'系统提示',
-                withdraw:'/'
             }
         },
         components: {
-            Top,
-            withdraw
         }
     }
 </script>

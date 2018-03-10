@@ -1,7 +1,6 @@
 ﻿<template>
     <div class='rechargeRecord' ref="BackG">
-        <Top :text="userNew.text"></Top>
-        <withdraw :src="withdraw"></withdraw>
+        <TopCounter :title="text" :Boo="true" :src="'/MemberCentre'"></TopCounter>
         <div class="row" v-if="Recharge.id === 'rechargeRecord'">
             <el-row class="SubmitForm">
                 <el-col :span="4">
@@ -751,24 +750,10 @@
 <script>
     var vm;
     let vueIns = null;
-    import withdraw from '../public/return.vue'
-    import Top from '../Top/Top.vue'
-//    import { zh } from 'flatpickr/dist/l10n/zh';
     export default {
         data () {
             return {
-                withdraw:'/MemberCentre',
-//                StartTimeDay: {
-//                    locale: zh,
-//                    enable: [
-//                        {
-//                            from: new Date().fp_incr(-30),
-//                            to: "today" // 7 days from now
-//                        }
-//                    ],
-//                    defaultDate : new Date().fp_incr(-1)
-////                    enableTime: true
-//                },
+                text:'',
                 canEdit:false,
                 pickerOptions0: {
                     disabledDate(time) {
@@ -877,23 +862,23 @@
                 vm.obj.bdate=vm.$datatboy('0');
                 vm.obj.edate=vm.$datatboy('0');
                 if(vm.Recharge.id === "rechargeRecord"){
-                    vm.$store.dispatch("inceCloseNew",{id:3,text:'充值记录'});
+                    vm.text = '充值记录';
                     vm.rechargeRecord.bdate=vm.obj.bdate;
                     vm.rechargeRecord.edate=vm.obj.edate
                 }else if(vm.Recharge.id === "bonusDetails"){//bonusDetails
-                    vm.$store.dispatch("inceCloseNew",{id:3,text:'资金流水'});
+                    vm.text ='资金流水';
                     vm.bonusDetails.startTime = vm.obj.bdate;
                     vm.bonusDetails.endTime = vm.obj.edate;
                 }else if(vm.Recharge.id === "withdrawRecord"){//withdrawRecord
-                    vm.$store.dispatch("inceCloseNew",{id:3,text:'提现记录'});
+                    vm.text ='提现记录';
                     vm.withdrawRecord.bdate=vm.obj.bdate;
                     vm.withdrawRecord.edate=vm.obj.edate;
                 }else if(vm.Recharge.id === "accountDetails"){//accountDetails
-                    vm.$store.dispatch("inceCloseNew",{id:3,text:'转账记录'});
+                    vm.text ='转账记录'
                     vm.accountDetails.bdate=vm.obj.bdate;
                     vm.accountDetails.edate=vm.obj.edate;
                 }else if(vm.Recharge.id === "lotteryForm"){///lotteryForm
-                    vm.$store.dispatch("inceCloseNew",{id:3,text:'投注记录'});
+                    vm.text ='投注记录';
                     vm.lotteryForm.bdate=vm.obj.bdate;
                     vm.lotteryForm.edate=vm.obj.edate;
                 }
@@ -965,8 +950,6 @@
         },
 
         components: {
-            Top,
-            withdraw
         }
     }
 </script>

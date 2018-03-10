@@ -1,7 +1,6 @@
 ﻿<template>
     <div class='AlipayscanPay' ref="BackG">
-        <Top :text="userNew.text"></Top>
-        <withdraw :src="withdraw"></withdraw>
+        <TopCounter :title="'支付订单'" :src="'/deposit'" :Boo="true"></TopCounter>
         <div  v-if="AlipayscanPayNum === 1">
             <div style="font-size: 0.35rem;" id="alipay1"></div>
         </div>
@@ -45,12 +44,9 @@
 </template>
 <script>
     var vm;
-    import withdraw from '../public/return.vue'
-    import Top from '../Top/Top.vue'
     export default {
         data () {
             return {
-                withdraw:'/deposit',
                 bac:'#fff'
             }
         },
@@ -88,8 +84,6 @@
             }
         },
         components: {
-            Top,
-            withdraw
         }
     }
 </script>

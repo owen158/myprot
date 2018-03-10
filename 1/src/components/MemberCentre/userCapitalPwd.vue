@@ -1,5 +1,5 @@
 ﻿<template>
-    <el-container class='userCapitalPwd'>
+    <el-container class='userCapitalPwd add'>
         <el-main>
             <div class="row Carpittitle" >
                  为了您账户安全，真实姓名需要与绑定银行卡姓名一致
@@ -134,7 +134,6 @@
         methods: {
             submitForm(formName) {
                 let vm = this;
-                console.log(formName)
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
                         vm.$BugNewAddCard(vm,vm.addtext);
@@ -163,22 +162,6 @@
     .Bg-BackGround;
     padding-bottom: 90px;
     font-size: 0;
-    .el-form-item__label{
-        height: 20px;
-        line-height: 20px;
-        padding-bottom: 0;
-        color:@size-color;
-    }
-    .el-form-item{
-        margin-bottom: 17px;
-        text-align: left;
-    }
-    .el-form-item__content{
-        line-height: 30px;
-    }
-    .el-input__inner{
-        height: 30px;
-    }
     .Carpittitle{
         height: 0.6rem;
         font-size: 0.22rem;
@@ -186,6 +169,5 @@
         color:#b3b3b3;
         text-align: left;
     }
-
 }
 </style>
