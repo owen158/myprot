@@ -1,0 +1,1 @@
+function sum(e,n){return e+n}console.log("这事file 中的内容"),sum(5,7),console.log("只是index js"),alert("这是index js");
