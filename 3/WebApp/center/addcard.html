@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<!--<link rel="stylesheet" type="text/css" href="css/app.css" />-->
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<style>
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mui-action-back">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">添加银行卡</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded" style="margin: 5px;">
+				<h5> 为了您账户安全，真实姓名需要与绑定银行卡姓名一致</h5>
+				<div class="mui-input-row">
+					<input type="text" class="mui-input-clear" placeholder="中文名">
+				</div>
+				<div class="mui-input-row ">
+					<input type="text" class="mui-input-clear" placeholder="请输入银行卡号">
+				</div>
+				<div class="mui-input-row ">
+					<button style="margin: 0;width: 100%;text-align: left;" id='showUserPicker' data-value="" class="mui-btn mui-btn-block" type='button'>选择银行种类</button>
+				</div>
+				<div class="mui-input-row">
+					<button style="margin: 0;width: 100%;text-align: left;margin-bottom: 15px;margin-top: 15px;" id='showCityPicker' class="mui-btn mui-btn-block" type='button'>开户行地址</button>
+				</div>
+				<div class="mui-input-row">
+					<input type="password" class="mui-input-clear" placeholder="资金密码">
+				</div>
+				<div class="mui-input-row">
+					<button type="button" id="submit" style="width: 100%;" class="mui-btn mui-btn-primary mui-btn-block" data-loading-icon="">确认</button>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script src="js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			(function($, doc) {
+				$.init();
+				var old_back = $.back;
+				$.back = function() {
+					var btn = ["确定", "取消"];
+					$.confirm('确认关闭当前添加银行卡页面？', '系统提示', btn, function(e) {
+						if(e.index == 0) {
+							//执行mui封装好的窗口关闭逻辑；
+							old_back();
+						}
+					});
+				}
+				$.ready(function() {
+					var _getParam = function(obj, param) {
+						return obj[param] || '';
+					};
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: '1',
+						text: '中国农业银行'
+					}, {
+						value: '2',
+						text: '中国银行'
+					}, {
+						value: '3',
+						text: '交通银行'
+					}, {
+						value: '4',
+						text: '中国建设银行'
+					}, {
+						value: '5',
+						text: '中国工商银行'
+					}, {
+						value: '6',
+						text: '中国邮政储蓄银行'
+					}, {
+						value: '7',
+						text: '招商银行'
+					}, {
+						value: '8',
+						text: '浦发银行'
+					}, {
+						value: '9',
+						text: '中国光大银行'
+					}, {
+						value: '10',
+						text: '中信银行'
+					}, {
+						value: '11',
+						text: '平安银行'
+					}, {
+						value: '12',
+						text: '中国民生银行'
+					}, {
+						value: '13',
+						text: '华夏银行'
+					}, {
+						value: '14',
+						text: '广发银行'
+					}, {
+						value: '15',
+						text: '北京银行'
+					}, {
+						value: '16',
+						text: '上海银行'
+					}, {
+						value: '17',
+						text: '兴业银行'
+					}]);
+					var showUserPickerButton = doc.getElementById('showUserPicker');
+					var userResult = doc.getElementById('userResult');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							showUserPickerButton.innerText = items[0].text;
+							showUserPickerButton.setAttribute("data-value", items[0].value);
+							//							JSON.stringify(items[0]);
+							//返回 false 可以阻止选择框的关闭
+							//							return false;
+						});
+					}, false);
+					var cityPicker = new mui.PopPicker({
+						layer: 2
+					});
+					cityPicker.setData(cityData);
+					var showCityPickerButton = document.getElementById('showCityPicker');
+					var cityResult = document.getElementById('cityResult');
+					showCityPickerButton.addEventListener('tap', function(event) {
+						cityPicker.show(function(items) {
+							showCityPickerButton.innerText = items[0].text + " " + items[1].text;
+							showCityPickerButton.setAttribute("data-value", items[0].text + "," + items[1].text);
+							//返回 false 可以阻止选择框的关闭
+							//							return false;
+						});
+					}, false);
+					$(document.body).on('tap', '#submit', function(e) {
+						$(this).button('loading');
+						setTimeout(function() {
+							$(this).button('reset');
+						}.bind(this), 10000);
+					});
+				})
+			})(mui, document)
+		</script>
+	</body>
+
+</html>

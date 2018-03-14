@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<script src="../js/head.js" type="text/javascript" charset="utf-8"></script>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mui-action-back">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">会员信息</h1>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item" href="#item1mobile">
+						个人资料
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						修改资料
+					</a>
+					<!--<a class="mui-control-item" href="#item3mobile">
+						银行卡
+					</a>-->
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" style="min-height: 6rem;border-bottom: none;" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="mui-scroll">
+									<ul class="mui-table-view">
+										<li class="mui-table-view-cell">用户名</li>
+										<li class="mui-table-view-cell">真实姓名</li>
+										<li class="mui-table-view-cell">手机号</li>
+										<li class="mui-table-view-cell">钱包余额</li>
+										<li class="mui-table-view-cell">注册时间</li>
+										<li class="mui-table-view-cell">最后登录时间</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" style="min-height: 9.7rem;border-bottom: none;" class="mui-slider-item mui-control-content">
+						<div id="scroll2" class="mui-scroll-wrapper">
+							<div class="mui-content-padded" style="margin: 5px;">
+								<h5>
+									 
+					        		<!--汇款前请联系客服确认汇款信息 <span>在线客服</span>-->
+					        	</h5>
+								<div class="mui-input-row">
+									<input type="text" class="mui-input-clear" placeholder="姓名">
+								</div>
+								<div class="mui-input-row">
+									<input type="text" class="mui-input-clear" placeholder="手机号">
+								</div>
+								<div class="mui-input-row">
+									<input type="text" class="mui-input-clear" placeholder="邮箱">
+								</div>
+								<div class="mui-input-row">
+									<input type="text" class="mui-input-clear" placeholder="备注（可不填）">
+								</div>
+								
+								<!--<div class="mui-input-row">
+									<button style="margin: 0 0 15px 0;width: 100%;text-align: left;" id='showCityPicker' data-value="" class="mui-btn mui-btn-block" type='button'>是否申请彩金</button>
+								</div>
+								<h5>
+					        		*转帐完成后请保留单据作为核对证明。<br> <br>
+					                    *必须填写表单内容，不能为空。<br> <br>
+					                    *每笔转帐请提交一次。<br> <br>
+					        	</h5>-->
+								<div class="mui-input-row">
+									<button type="button" id="submit" style="width: 100%;" class="mui-btn mui-btn-primary mui-btn-block" data-loading-icon="">确认</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+
+			(function($, doc) {
+				$.init({
+					swipeBack: true //启用右滑关闭功能
+				});
+				$('.mui-scroll-wrapper').scroll({
+					indicators: true //是否显示滚动条
+				});
+				$.ready(function() {
+					var userPicker;
+				})
+				$(document.body).on('tap', '#submit', function(e) {
+					$(this).button('loading');
+					setTimeout(function() {
+						$(this).button('reset');
+					}.bind(this), 1000);
+				});
+			})(mui, document)
+		</script>
+	</body>
+
+</html>

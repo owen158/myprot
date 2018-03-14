@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title">在线客服</h1>
+		</header>
+		<div class="mui-content">
+			
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function(){
+				mui.init({
+			    subpages:[{
+			      url:'https://tb.53kf.com/code/client/10166897/1',
+			      id:'https://tb.53kf.com/code/client/10166897/1',
+			      styles:{
+			        top:'45px',//mui标题栏默认高度为45px；
+			        bottom:'0px'//默认为0px，可不定义；
+			      }
+			    }]
+			  });
+			});
+			var old_back = mui.back;
+			mui.back = function(){
+			  var btn = ["确定","取消"];
+			  mui.confirm('确认关闭当前窗口？','Hello MUI',btn,function(e){
+			    if(e.index==0){
+			    	//执行mui封装好的窗口关闭逻辑；
+			    	old_back();
+			    }
+			  });
+			}
+		</script>
+	</body>
+
+</html>

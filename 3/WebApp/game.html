@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>天下网络</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<style>
+			/*#header{
+				/*background: transparent;*/
+				/*top: 0;
+				left: 0;
+				height: 0;
+				border: none;
+				box-shadow: none;*/
+			/*}*/
+			/*.mui-bar-transparent{ background-color: rgba(0, 0, 0, 0.0);}*/
+		</style>
+	</head>
+	<body>
+		<!--mui-bar-transparent-->
+		<header id="header" class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title"></h1>
+		</header>
+		<div class="mui-content">
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			var version = plus.webview.currentWebview();
+			(function($) {
+			$.init({
+				swipeBack: true
+				//启用右滑关闭功能
+			});
+			var old_back = $.back;
+				$.back = function() {
+					var btn = ["确定", "取消"];
+					$.confirm('确认退出当前游戏页面？', '系统提示', btn, function(e) {
+						if(e.index == 0) {
+							//执行mui封装好的窗口关闭逻辑；
+							old_back();
+						}
+					});
+				}
+			$.ready(function() {
+//				console.log(JSON.stringify(version));
+				$('.mui-title')[0].innerHTML = version.version.text;
+				$.plusReady(function() {
+					$.openWindow({
+						url: version.version.url,
+						id: version.version.id,
+						styles: {
+							top: '44px', //新页面顶部位置
+							bottom:0, //新页面底部位置
+							scalable: true,
+							width: '100%', //新页面宽度，默认为100%
+							height: "100%", //新页面高度，默认为100%
+						},
+						extras: {
+							version: ""
+							//					..... //自定义扩展参数，可以用来处理页面间传值
+						},
+						createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+						show: {
+							autoShow: true, //页面loaded事件发生后自动显示，默认为true
+							//					aniShow: animationType, //页面显示动画，默认为”slide-in-right“；
+							//					duration: animationTime //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+						},
+						waiting: {
+							autoShow: true, //自动显示等待框，默认为true
+							title: '正在加载', //等待对话框上显示的提示内容
+							 width: '', //String类型,等待框背景区域的宽度.值支持像素值("500px")或百分比("50%"),百分比相对于屏幕的宽计算,如果不设置则根据内容自动计算合适的宽度.
+				            height: '', //String类型,等待框背景区域的高度.值支持像素绝对值("500px")或百分比("50%")，如果不设置则根据内容自动计算合适的高度.
+				            color: '', //String类型,等待框中文字的颜色.颜色值支持(参考CSS颜色规范):颜色名称(参考CSS Color Names)/十六进制值/rgb值/rgba值,默认值为白色.
+				            size: '', //String类型,等待框中文字的字体大小.如"14px"表示使用14像素高的文字,未设置则使用系统默认字体大小.
+				            textalign: 'center', //String类型,等待对话框中标题文字的水平对齐方式.left:水平居左对齐显示.center:水平居中对齐显示.right:水平居右对齐显示.默认:center.
+				            padding: '10%', //String类型,等待对话框的内边距.值支持像素值("10px")和百分比("5%"),百分比相对于屏幕的宽计算,默认值为"3%".
+				            background: 'rgba(0,0,0,0.6)', //String类型,等待对话框显示区域的背景色.背景色的值支持(参考CSS颜色规范):颜色名称(参考CSS Color Names)/十六进制值/rgb值/rgba值,默认值为rgba(0,0,0,0.8).
+				            style: '', //String类型,等待对话框样式.black:黑色雪花样式,通常在背景主色为浅色时使用.white表示等待框为白色雪花样式,通常在背景主色为深色时使用.默认:white.安卓不支持.
+				            modal: true, //Boolen类型,等待框是否模态显示.模态显示时用户不可操作直到等待对话框关闭，否则用户在等待对话框显示时也可操作下面的内容.默认true.
+				            round: '10px', //Number类型,等待框显示区域的圆角.值支持像素值"10px",未设置时使用默认值"10px".
+				            padlock: false, //Boolen类型,点击等待显示区域是否自动关闭.true:点击等待对话框显示区域时自动关闭.false:不关闭.默认:false.
+				            back: '', //String类型,返回键处理方式.none:截获处理返回键,但不做任何响应.close:截获处理返回键并关闭等待框.transmit:不截获返回键,向后传递给Webview窗口继续处理(与未显示等待框的情况一致).iOS不支持.
+				            loading: { //WaitingLoadingOptions类型,自定义等待框上loading图标样式.
+				                display: 'none', //String类型,loading图标显示样式.block:图标与文字分开两行显示,上面显示loading图标,下面显示文字.inline:loading图标与文字在同一行显示,左边显示loading图标,右边显示文字.none:不显示loading图标.
+				                height: '', //String类型,loading图标高度.设置loading图标的高度(宽度等比率缩放),取值类型:像素值,如"14px"表示14像素高.
+				                icon: '', //String类型,loading图标路径.自定义loading图标的路径,png格式,并且必须是本地资源地址;loading图要求宽是高的整数倍,显示等待框时按照图片的高横向截取每帧刷新.
+				                interval: 100 //Number类型,loading图每帧刷新间隔.单位为ms(毫秒),默认值为100ms.
+				            }
+						}
+					})
+				})
+			})
+//			})
+
+			})(mui);
+		</script>
+	</body>
+
+</html>

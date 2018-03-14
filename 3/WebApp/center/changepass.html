@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="../js/head.js" type="text/javascript" charset="utf-8"></script>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">修改密码</h1>
+		</header>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item" href="#item1mobile">
+						登录密码
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						资金密码
+					</a>
+					<!--<a class="mui-control-item" href="#item3mobile">
+						银行卡
+					</a>-->
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" style="min-height: 6rem;border-bottom: none;" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="mui-content-padded" style="margin: 5px;">
+									<h5>
+									 
+					        		登录密码
+					        	</h5>
+									<div class="mui-input-row">
+										<input type="text" class="mui-input-clear" placeholder="原密码">
+									</div>
+									<div class="mui-input-row">
+										<input type="text" class="mui-input-clear" placeholder="新密码">
+									</div>
+									<div class="mui-input-row">
+										<input type="text" class="mui-input-clear" placeholder="确认密码">
+									</div>
+
+									<div class="mui-input-row">
+										<button type="button" id="submit" style="width: 100%;" class="mui-btn mui-btn-primary mui-btn-block" data-loading-icon="">确认</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" style="min-height: 9.7rem;border-bottom: none;" class="mui-slider-item mui-control-content">
+						<div id="scroll2" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="mui-content-padded" style="margin: 5px;">
+									<h5>
+					        		资金密码
+					        	</h5>
+									<div class="mui-input-row">
+										<input type="password" class="mui-input-clear" placeholder="原密码">
+									</div>
+									<div class="mui-input-row">
+										<input type="password" class="mui-input-clear" placeholder="新密码">
+									</div>
+									<div class="mui-input-row">
+										<input type="password" class="mui-input-clear" placeholder="确认密码">
+									</div>
+
+									<div class="mui-input-row">
+										<button type="button" id="submit" style="width: 100%;" class="mui-btn mui-btn-primary mui-btn-block" data-loading-icon="">确认</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			(function($, doc) {
+				$.init({
+					swipeBack: true //启用右滑关闭功能
+				});
+				$('.mui-scroll-wrapper').scroll({
+					indicators: true //是否显示滚动条
+				});
+				var old_back = $.back;
+				$.back = function() {
+					var btn = ["确定", "取消"];
+					$.confirm('确认关闭当前页面？', '系统提示', btn, function(e) {
+						if(e.index == 0) {
+							//执行mui封装好的窗口关闭逻辑；
+							old_back();
+						}
+					});
+				}
+				$.ready(function() {
+					var userPicker;
+				})
+				$(document.body).on('tap', '#submit', function(e) {
+					$(this).button('loading');
+					setTimeout(function() {
+						$(this).button('reset');
+					}.bind(this), 1000);
+				});
+			})(mui, document)
+		</script>
+	</body>
+
+</html>

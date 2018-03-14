@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			.mui-card-content-inner{
+				text-align: center;
+			}
+			.mui-card-content-inner img{
+				width: 140px;
+				height: 140px;
+				display: block;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">支付</h1>
+		</header>
+		<div class="mui-content">
+			<!--<h5 style="padding: 2px 8px;">暂无可选二维码，联系管理员配置 <span>在线客服</span></h5>-->
+			<h5 style="padding: 2px 8px;">只能扫描支付哦，如有疑问请联系 <span>在线客服</span></h5>
+			<div class="mui-card">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<img src="" alt="" />
+					</div>
+				</div>
+				<div class="mui-card-footer">扫描二维码付款成功后，填写汇款信息！</div>
+			</div>
+			<div class="mui-content-padded" style="margin: 5px;">
+				<div class="mui-input-row">
+					<input type="text" class="mui-input-clear" placeholder="存款金额">
+				</div>
+				<h5> 单笔限额 20-50000</h5>
+				<div class="mui-input-row ">
+					<input type="text" class="mui-input-clear" placeholder="请输入后4位订单号">
+				</div>
+				<div class="mui-input-row">
+					<button type="button" id="submit" style="width: 100%;" class="mui-btn mui-btn-primary mui-btn-block" data-loading-icon="">确认</button>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			var self = plus.webview.currentWebview();
+			(function($, doc) {
+				$.init();
+				var old_back = $.back;
+				$(".mui-title")[0].innerHTML=self.version.title
+				$.back = function() {
+					var btn = ["确定", "取消"];
+					$.confirm('确认关闭当前'+self.version.title+'页面？', '系统提示', btn, function(e) {
+						if(e.index == 0) {
+							//执行mui封装好的窗口关闭逻辑；
+							old_back();
+						}
+					});
+				}
+				$.ready(function() {
+					var userPicker;
+				})
+				$(document.body).on('tap', '#submit', function(e) {
+					$(this).button('loading');
+					setTimeout(function() {
+						$(this).button('reset');
+					}.bind(this), 1000);
+				});
+			})(mui, document)
+		</script>
+	</body>
+
+</html>

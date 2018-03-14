@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+			.mui-media-body {
+				position: relative;
+			}
+			
+			.Refresh {
+				position: absolute;
+				right: 0px;
+				top: 5px;
+				font-size: 30px;
+			}
+			
+			.mui-slider-indicator {
+				background: #555555;
+			}
+			
+			.mui-grid-view.mui-grid-9 {
+				background: #efeff4;
+			}
+			
+			.mui-content .mui-segmented-control a.mui-control-item {
+				color: #fff;
+			}
+			
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+				padding: 5px 15px;
+			}
+			
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+				border-right: 1px solid #e7e7e7;
+				border-bottom: 1px solid #E7E7E7;
+			}
+			
+			.nav-href {
+				height: 40px;
+			}
+			
+			.nav-href>div {
+				line-height: 40px;
+				;
+				text-align: center;
+				background: #E5E5E5;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<ul style="margin-top: 0;" class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:void(0);">
+						<span class="mui-media-object mui-pull-left mui-icon mui-icon-contact"></span>
+						<div class="mui-media-body">
+							<span id='account'></span>
+							<p class="mui-ellipsis">45646</p>
+							<span class="Refresh mui-icon mui-icon-reload"></span>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<div class="mui-row nav-href">
+				<div data-src="deposit" class="mui-col-sm-4 mui-col-xs-4 tad">充值</div>
+				<div data-src="Withdrawals" class="mui-col-sm-4 mui-col-xs-4 tad">提现</div>
+				<div data-src="interchange" class="mui-col-sm-4 mui-col-xs-4 tad">余额互转</div>
+			</div>
+			<ul class="mui-table-view mui-grid-view mui-grid-9">
+				<li data-src="Capital" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<span class="mui-icon mui-icon-home"></span>
+						<div class="mui-media-body">个人资料</div>
+					</a>
+				</li>
+				<li data-src='userBankCard' class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<span class="mui-icon mui-icon-email"></span>
+						<div class="mui-media-body">银行卡</div>
+					</a>
+				</li>
+				<li data-src='changepass' class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<span class="mui-icon mui-icon-locked"></span>
+						<div class="mui-media-body">修改密码</div>
+					</a>
+				</li>
+				<li data-src="lotteryForm" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<span class="mui-icon mui-icon-location"></span>
+						<div class="mui-media-body">投注记录</div>
+					</a>
+				</li>
+				<li data-src="accountDetails" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<span class="mui-icon mui-icon-search"></span>
+						<div class="mui-media-body">转账记录</div>
+					</a>
+				</li>
+				<!--rechargeRecord-->
+				<li data-src="pullrefresh" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<span class="mui-icon mui-icon-phone"></span>
+						<div class="mui-media-body">充值记录</div>
+					</a>
+				</li>
+				<li data-src="withdrawRecord" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<span class="mui-icon mui-icon-gear"></span>
+						<div class="mui-media-body">提款记录</div>
+					</a>
+				</li>
+				<li data-src="bonusDetails" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<span class="mui-icon mui-icon-info"></span>
+						<div class="mui-media-body">资金流水</div>
+					</a>
+				</li>
+				<li data-src='collection' class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<span class="mui-icon mui-icon-more"></span>
+						<div class="mui-media-body">优惠活动</div>
+					</a>
+				</li>
+				<li data-src="Out" class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#">
+						<span class="mui-icon mui-icon-more"></span>
+						<div class="mui-media-body">退出</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/public.js"></script>
+	<script src="js/app.js"></script>
+	<script>
+		(function($, doc) {
+			$.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			var user  = JSON.parse(localStorage.getItem('$state'));
+			 $('#account')[0].innerHTML = user.userName.substring(3);
+			$('.mui-table-view').on('tap', '.mui-table-view-cell', function(e) {
+				console.log(this)
+				var targetTab = this.getAttribute('data-src');
+				console.log(this.getAttribute('data-type'));
+				if(targetTab === "Out") {
+					var btnArray = [{
+						title: "注销当前账号"
+					}];
+					plus.nativeUI.actionSheet({
+						cancel: "取消",
+						buttons: btnArray
+					}, function(event) {
+						var index = event.index;
+						if(index === 1){
+							app.setState({});
+							plus.webview.getLaunchWebview().show("pop-in");
+						}
+					});
+					return ;
+					//				}, false);
+				}
+
+				
+				Bug.WebviewOptions.url = 'center/' + targetTab + ".html";
+				Bug.WebviewOptions.id = targetTab
+				var obj={
+					id:targetTab,
+					type:'',
+					title:'',
+				};
+				obj.id = targetTab
+				Bug.NewOpen(Bug.WebviewOptions, obj)
+
+//				
+			});
+			$('.nav-href').on('tap', '.tad', function(e) {
+				var targetTab = this.getAttribute('data-src');
+				if(targetTab === 'tab-webview-subpage-contact') {
+					Bug.WebviewOptions.url = targetTab + ".html";
+				} else {
+					Bug.WebviewOptions.url = 'center/' + targetTab + ".html";
+				}
+				Bug.WebviewOptions.id = targetTab;
+				Bug.NewOpen(Bug.WebviewOptions, {
+					id: targetTab
+				})
+			});
+		}(mui, document));
+	</script>
+	</script>
+
+</html>

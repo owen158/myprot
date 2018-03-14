@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>天下网络</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/reset.css" />
+		<script src="js/vue.js"></script>
+		<script src="js/head.js"></script>
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+				font-size: 100%;
+			}
+			
+			.mui-control-content {
+				min-height: 6.95rem;
+			}
+			
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+			
+			.mui-scroll {
+				margin-bottom: 5px;
+			}
+			
+			.col-4 {
+				float: left;
+				width: 33%;
+			}
+			.col-3{
+				float: left;
+			}
+			.Game {
+				padding: 0.15rem;
+			}
+			
+			.Game-Box {
+				padding: 0.15rem;
+				/*width: 2rem;*/
+				/*margin: 0 auto;*/
+				height: 1.5rem;
+			}
+			.Game-sup {
+				height: 1rem;
+			}
+			
+			.Game-sub {
+				height: 0.45rem;
+				line-height: 0.45rem;
+				text-align: center;
+				color: #fff;
+				font-size: 0.2rem;
+			}
+			.row:before,
+			.row:after {
+				display: table;
+				line-height: 0;
+				content: "";
+			}
+			.row:after {
+				clear: both;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="slider" class="mui-slider">
+			<div class="mui-slider-group mui-slider-loop">
+				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#">
+						<img src="images/txyl_lunbo_04.jpg">
+					</a>
+				</div>
+				<!-- 第一张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="images/txyl_lunbo_01.jpg">
+					</a>
+				</div>
+				<!-- 第二张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="images/txyl_lunbo_02.jpg">
+					</a>
+				</div>
+				<!-- 第三张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="images/txyl_lunbo_03.jpg">
+					</a>
+				</div>
+				<!-- 第四张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="images/txyl_lunbo_04.jpg">
+					</a>
+				</div>
+				<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#">
+						<img src="images/txyl_lunbo_01.jpg">
+					</a>
+				</div>
+			</div>
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
+		<div class="mui-content" id="example">
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item" href="#item1mobile">
+						彩票游戏
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						真人视讯
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+						电子游戏
+					</a>
+					<a class="mui-control-item" href="#item4mobile">
+						体育赛事
+					</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" style="border-bottom: none;" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div id="sliderOne" class="mui-slider">
+								<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+									<a style="line-height: 0.5rem;" class="mui-control-item" href="#item5mobile">
+										IG (新) 彩票
+									</a>
+									<a style="line-height: 0.5rem;" class="mui-control-item" href="#item6mobile">
+										IG 彩票
+									</a>
+									<a style="line-height: 0.5rem;" class="mui-control-item" href="#item7mobile">
+										VR 彩票
+									</a>
+								</div>
+								<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+								<div class="mui-slider-group">
+									<div id="item5mobile" style="border-bottom: none;min-height: 6.4rem;" class="mui-slider-item mui-control-content mui-active">
+										<div id="scroll1" class="mui-scroll-wrapper">
+											<div class="mui-scroll" id="LiveVideo">
+												<div class="Game col-3" v-for="v in NewIGPJ" :data-id="v.id" :data-type="v.Type" :data-mobile="v.Mod" :data-title="v.title">
+													<div class="Game-Box" :style="{background: 'url(' + v.img + ') center no-repeat',backgroundSize:'100% 100%'}">
+														<div class="Game-sup"></div>
+														<!--<div class="Game-sub">{{v.title}}</div>-->
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="item6mobile" style="border-bottom: none;min-height: 6.4rem;" class="mui-slider-item mui-control-content">
+										<div id="scroll2" class="mui-scroll-wrapper">
+											<div class="mui-scroll">
+												<div class="Game col-3" v-for="v in IGLooter" :data-id="v.id" :data-type="v.Type" :data-mobile="v.Mod" :data-title="v.title">
+													<div class="Game-Box" :style="{background: 'url(' + v.img + ') center no-repeat',backgroundSize:'100% 100%'}">
+														<div class="Game-sup"></div>
+														<!--<div class="Game-sub">{{v.title}}</div>-->
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="item7mobile" style="border-bottom: none;min-height: 6.5rem;" class="mui-slider-item mui-control-content">
+										<div id="scroll3" class="mui-scroll-wrapper">
+											<div class="mui-scroll">
+												<div class="Game col-3" v-for="v in VrLooter" :data-id="v.id" :data-type="v.Type" :data-mobile="v.Mod" :data-title="v.title">
+													<div class="Game-Box" :style="{background: 'url(' + v.img + ') center no-repeat',backgroundSize:'100% 100%'}">
+														<div class="Game-sup"></div>
+														<!--<div class="Game-sub">{{v.title}}</div>-->
+													</div>
+												</div>
+												<div class="row"></div>
+												<div class="Game col-3" v-for="v in VrLiveVideo" :data-id="v.id" :data-type="v.Type" :data-mobile="v.Mod" :data-title="v.title">
+													<div class="Game-Box" :style="{background: 'url(' + v.img + ') center no-repeat',backgroundSize:'100% 100%'}">
+														<div class="Game-sup"></div>
+														<!--<div class="Game-sub">{{v.title}}</div>-->
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" style="border-bottom: none;" class="mui-slider-item mui-control-content">
+						<div id="scroll2" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="Game col-3" v-for="v in LiveVideo" :data-id="v.id" :data-type="v.Type" :data-mobile="v.Mod" :data-title="v.title">
+									<div class="Game-Box" :style="{background: 'url(' + v.img + ') center no-repeat',backgroundSize:'100% 100%'}">
+										<div class="Game-sup"></div>
+										<div class="Game-sub">{{v.title}}</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="item3mobile" style="border-bottom: none;" class="mui-slider-item mui-control-content">
+						<div id="scroll3" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="mui-scroll">
+									<div class="Game col-3" v-for="v in ElectronicGames" :data-id="v.id" :data-type="v.Type" :data-mobile="v.Mod" :data-title="v.title">
+										<div class="Game-Box" :style="{background: 'url(' + v.img + ') center no-repeat',backgroundSize:'100% 100%'}">
+											<div class="Game-sup"></div>
+											<div class="Game-sub">{{v.title}}</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="item4mobile" style="border-bottom: none;" class="mui-slider-item mui-control-content">
+						<div id="scroll4" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="Game col-3" v-for="v in Sportsevents" :data-id="v.id" :data-type="v.Type" :data-mobile="v.Mod" :data-title="v.title">
+									<div class="Game-Box" :style="{background: 'url(' + v.img + ') center no-repeat',backgroundSize:'100% 100%'}">
+										<div class="Game-sup"></div>
+										<div class="Game-sub">{{v.title}}</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/public.js"></script>
+	<script src="js/jquery-1.6.3.min.js"></script>
+	<script src="js/Regular.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/Game-json.js"></script>
+	<script>
+		var vm = new Vue({
+			el: '#example',
+			// 选项
+			data: {
+				//	真人视讯
+				LiveVideo: [{
+						img: 'images/LiveVideo/cg.png',
+						title: 'Cagayan88',
+						sub: '开始游戏',
+						Type: "CG",
+						id: "",
+						Mod: ""
+					},
+					{
+						img: 'images/LiveVideo/ds.png',
+						title: 'DS太阳城',
+						sub: '开始游戏',
+						Type: "DS",
+						id: "",
+						Mod: ""
+					},
+					{
+						img: 'images/LiveVideo/ag.png',
+						title: 'AGIN国际厅',
+						sub: '开始游戏',
+						Type: "AGIN",
+						id: "",
+						Mod: "mobile"
+					},
+					{
+						img: 'images/LiveVideo/sun.png',
+						title: '申博视讯',
+						sub: '开始游戏',
+						Type: "SB",
+						id: "3",
+						Mod: ""
+					},
+					{
+						img: 'images/LiveVideo/og.png',
+						title: 'OG视讯',
+						sub: '开始游戏',
+						Type: "OG",
+						id: "",
+						Mod: ""
+					},
+					{
+						img: 'images/LiveVideo/bbin.png',
+						title: 'BBIN视讯',
+						sub: '开始游戏',
+						Type: "BBIN",
+						id: "1",
+						Mod: ""
+					}
+				],
+				//	电子游艺
+				ElectronicGames: [{
+						img: 'images/ElectronicGames/pt.png',
+						title: 'PT电子',
+						sub: '开始游戏',
+						Type: "PT",
+						id: '',
+						Mod: ''
+					},
+					{
+						img: 'images/ElectronicGames/mg.png',
+						title: 'MG电子',
+						sub: '开始游戏',
+						Type: "GAMEMG",
+						id: '',
+						Mod: ''
+					},
+					{
+						img: 'images/ElectronicGames/haba.png',
+						title: 'HABA电子',
+						sub: '开始游戏',
+						Type: "GAMEHABA",
+						id: '',
+						Mod: ''
+					},
+					{
+						img: 'images/ElectronicGames/bbin.png',
+						title: 'BBIN电子',
+						sub: '开始游戏',
+						Type: "BBIN",
+						id: '2',
+						Mod: ''
+					},
+					{
+						img: 'images/ElectronicGames/sun.png',
+						title: 'TGP电子',
+						sub: '开始游戏',
+						Type: "SB",
+						id: '4',
+						Mod: ''
+					}
+				],
+				//	体育赛事
+				Sportsevents: [{
+					img: 'images/Sportsevents/hg.png',
+					title: '皇冠体育',
+					sub: '开始游戏',
+					Type: "HG",
+					id: "",
+					Mod: "MB"
+				}],
+				//	彩票游戏
+				NewIGPJ: [{
+						img: 'images/LooteryGame/x_pk10.png',
+						title: 'PK拾',
+						Type: "IGPJLOTTERY",
+						id: '2',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/x_ssc.png',
+						title: '时时彩',
+						Type: "IGPJLOTTERY",
+						id: '1',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/x_kl10f.png',
+						title: '快乐十分',
+						Type: "IGPJLOTTERY",
+						id: '4',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/x_11x5.png',
+						title: '11选5',
+						Type: "IGPJLOTTERY",
+						id: '18',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/x_kl8.png',
+						title: '快乐8分',
+						Type: "IGPJLOTTERY",
+						id: '28',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/x_k3.png',
+						title: '快3',
+						Type: "IGPJLOTTERY",
+						id: '3',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/x_fc3d.png',
+						title: '3D',
+						Type: "IGPJLOTTERY",
+						id: '36',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/x_pcdd.png',
+						title: 'PC蛋蛋',
+						Type: "IGPJLOTTERY",
+						id: '44',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/x_lhc.png',
+						title: '六合彩',
+						Type: "IGPJLOTTO",
+						id: '',
+						Mod: 'MB'
+					}
+				],
+				IGLooter: [{
+						img: 'images/LooteryGame/j_pk.png',
+						title: 'PK拾',
+						Type: "IGLOTTERY",
+						id: '2',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/j_ssc.png',
+						title: '时时彩',
+						Type: "IGLOTTERY",
+						id: '1',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/j_kl.png',
+						title: '快乐十分',
+						Type: "IGLOTTERY",
+						id: '4',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/j_11x5.png',
+						title: '11选5',
+						Type: "IGLOTTERY",
+						id: '18',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/j_k8.png',
+						title: '快乐8分',
+						Type: "IGLOTTERY",
+						id: '28',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/j_k3.png',
+						title: '快3',
+						Type: "IGLOTTERY",
+						id: '3',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/j_3d.png',
+						title: '3D',
+						Type: "IGLOTTERY",
+						id: '36',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/j_pc.png',
+						title: 'PC蛋蛋',
+						Type: "IGLOTTERY",
+						id: '44',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/j_xgc.png',
+						title: '六合彩',
+						Type: "IGLOTTO",
+						id: '',
+						Mod: 'MB'
+					}
+				],
+				VrLooter: [{
+						img: 'images/LooteryGame/officail_vrjx2.png',
+						title: 'VR金星1.5分彩',
+						Type: "VR",
+						id: '1',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/officail_sc2.png',
+						title: 'VR赛车',
+						Type: "VR",
+						id: '2',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/officail_sfc2.png',
+						title: 'VR3分彩',
+						Type: "VR",
+						id: '11',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/officail_vrhs2.png',
+						title: 'VR 火星1.5分彩 ',
+						Type: "VR",
+						id: '12',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/officail_ft2.png',
+						title: 'VR快艇',
+						Type: "VR",
+						id: '13',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/officail_vrbjl2.png',
+						title: 'VR百家乐',
+						Type: "VR",
+						id: '15',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/officail_vrsix2.png',
+						title: 'VR六合彩',
+						Type: "VR",
+						id: '16',
+						Mod: 'MB'
+					}
+				],
+				VrLiveVideo: [{
+						img: 'images/LooteryGame/ssc1.png',
+						title: '重庆时时彩',
+						Type: "VR",
+						id: '3',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/xjsc.png',
+						title: '新疆时时彩',
+						Type: "VR",
+						id: '4',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/tjsc.png',
+						title: '天津时时彩',
+						Type: "VR",
+						id: '5',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/gd115.png',
+						title: '广东11选5',
+						Type: "VR",
+						id: '6',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/jx115.png',
+						title: '江西11选5',
+						Type: "VR",
+						id: '7',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/bjc.png',
+						title: '北京赛车',
+						Type: "VR",
+						id: '8',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/ahk3.png',
+						title: '江苏快三',
+						Type: "VR",
+						id: '9',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/xyc.png',
+						title: '幸运28',
+						Type: "VR",
+						id: '10',
+						Mod: 'MB'
+					},
+					{
+						img: 'images/LooteryGame/card.png',
+						title: '香港六合彩',
+						Type: "VR",
+						id: '14',
+						Mod: 'MB'
+					}
+				]
+			}
+		})
+		mui('.mui-scroll-wrapper').scroll({
+			indicators: true //是否显示滚动条
+		});
+		//启用右滑关闭功能 
+		mui.init({swipeBack: true});
+		(function($) {
+			var slider = $("#slider");
+			slider.slider({
+				interval: 5000
+			});
+			var mask = mui.createMask();
+			Reg.ajax(mui,"checklogin.do",{},function(calls){
+				if (calls.msg == "faild") {
+					mui.openWindow({
+						url: 'login.html',
+						id: 'login',
+						preload: true,
+						show: {
+							aniShow: 'pop-in'
+						},
+						styles: {
+							popGesture: 'hide'
+						},
+						waiting: {
+							autoShow: false
+						}
+					});
+	           } else if (calls.msg == "islogin") {
+	            	mui.openWindow({
+						url: 'login.html',
+						id: 'login',
+						preload: true,
+						show: {
+							aniShow: 'pop-in'
+						},
+						styles: {
+							popGesture: 'hide'
+						},
+						waiting: {
+							autoShow: false
+						}
+					});
+	           } else if (calls.msg == "success") {
+	            	console.log(JSON.stringify(calls))
+	            }
+			})
+//			console.log(localStorage.getItem('$state'))
+			$('.mui-scroll').on('tap', '.Game', function(e) {
+				let _this = this;
+				var targetTab ={
+					  	gameType:this.getAttribute('data-type'),
+	                    gameID:this.getAttribute('data-id'),
+	                    model:this.getAttribute('data-mobile')
+				}
+				Bug.WebviewOptions.url = "game.html"
+				Bug.WebviewOptions.id = targetTab.gameID;
+				mask.show();
+				Reg.ClickAjax(mui,'User/forwardGame',targetTab,function(obj){
+					mask.close();
+					if(obj.msg == "error"){
+						mui.alert('系统错误', '系统提示框', function() {  }); 
+	                }else if(obj.msg =='process'){
+						mui.alert('维护中', '系统提示框', function() {  }); 
+	                }else{
+	                	let type ='';
+						if(targetTab.gameType === "IGLOTTERY" || targetTab.gameType === "IGLOTTO"){
+			                type = 'IG 彩票';
+			            }else if(targetTab.gameType === "IGPJLOTTERY" || targetTab.gameType === "IGPJLOTTO"){
+			                type = 'IG (新)彩票';
+			            }else if(targetTab.gameType === "VR"){
+			            	type = 'VR 彩票';
+			            }else{
+			                type = _this.getAttribute('data-title');
+			            }
+	                    Bug.NewOpen(Bug.WebviewOptions, {
+							text: type,
+							url: obj.msg,
+							id: "game"
+						})
+	                }
+				}) 
+			})
+		})(mui);
+					
+	</script>
+
+</html>

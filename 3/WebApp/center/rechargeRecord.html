@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<!--<link rel="stylesheet" type="text/css" href="css/app.css" />-->
+		<link href="css/mui.dtpicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.css" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<style>
+			html,
+			body,
+			.mui-content {
+				height: 0px;
+				margin: 0px;
+				background-color: #efeff4;
+			}
+			
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			
+			* {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+			}
+			.mui-content>.mui-table-view:first-child {
+				margin-top: -1px;
+			}
+			.mui-btn {
+				margin: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">充值记录</h1>
+		</header>
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<ul class="mui-table-view mui-table-view-chevron"></ul>
+			</div>
+		</div>
+		<!--<div class="mui-content" style="margin: 2px;">
+			<div class="mui-row" id="secbox">
+				<div class="mui-col-sm-6 mui-col-xs-6">
+					<div class="mui-row">
+						<div style="font-size: 13px;;" class="mui-col-sm-4 mui-col-xs-4">
+							开始时间:
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<button id='demo1' style="font-size: 13px;" data-options='{"type":"date","beginYear":2010,"beginMonth":10,"endYear":2020}' class="btn mui-btn mui-btn-block">选择日期时间</button>
+						</div>
+					</div>
+					<div class="mui-row" style="margin-top: 3px;">
+						<div style="font-size: 13px;;" class="mui-col-sm-4 mui-col-xs-4">
+							结束时间:
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<button id='demo2' style="font-size: 13px;" data-options='{"type":"date","beginYear":2010,"beginMonth":10,"endYear":2020}' class="btn mui-btn mui-btn-block">选择日期时间</button>
+						</div>
+					</div>
+				</div>
+				<div class="mui-col-sm-6 mui-col-xs-6">
+					<div class="mui-row">
+						<div style="font-size: 13px;;" class="mui-col-sm-4 mui-col-xs-4">
+							转账类型:
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<button id='gaming' data-type="" style="font-size: 13px;" class="btn mui-btn mui-btn-block">所有</button>
+						</div>
+					</div>
+					<div class="mui-row" style="margin-top: 3px;;">
+						<div style="font-size: 13px;" class="mui-col-sm-4 mui-col-xs-4">
+							转账状态:
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<button data-type="" id='status' style="font-size: 13px;" class="btn mui-btn mui-btn-block">所有</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mui-row">
+				<button type="button" id="submit" style="width: 100%;" class="mui-btn mui-btn-primary mui-btn-block" data-loading-icon="">确认</button>
+			</div>
+			<div class="mui-content-padded">
+				<div id='result' class="ui-alert"></div>
+			</div>
+		</div>-->
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/public.js"></script>
+		<script src="js/game.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<!--<script src="js/mui.picker.min.js"></script>-->
+		<script src="js/mui.dtpicker.js"></script>
+		<script>
+//			mui.init({
+//			  pullRefresh : {
+//			    container:"#pullrefresh",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+//			    down : {
+//			      height:50,//可选,默认50.触发下拉刷新拖动距离,
+//			      auto: true,//可选,默认false.首次加载自动下拉刷新一次
+//			      contentdown : "下拉可以刷新",//可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+//			      contentover : "释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+//			      contentrefresh : "正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+//			      callback :pullupRefresh //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+//			    }
+//			  }
+//			});
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						style:'circle',
+						callback: pulldownRefresh
+					},
+					up: {
+						auto:true,
+						contentrefresh: '正在加载...',
+						callback: pullupRefresh
+					}
+				}
+			});
+			
+			var count = 0;
+			function pullupRefresh() {
+				console.log(123)
+				setTimeout(function() {
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+					var table = document.body.querySelector('.mui-table-view');
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+					var newCount = cells.length>0?5:20;//首次加载20条，满屏
+					for (var i = cells.length, len = i + newCount; i < len; i++) {
+						var li = document.createElement('li');
+						li.className = 'mui-table-view-cell';
+						li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+						table.appendChild(li);
+					}
+				}, 1500);
+			}
+
+			function addData() {
+				var table = document.body.querySelector('.mui-table-view');
+				var cells = document.body.querySelectorAll('.mui-table-view-cell');
+				for(var i = cells.length, len = i + 5; i < len; i++) {
+					var li = document.createElement('li');
+					li.className = 'mui-table-view-cell';
+					li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+					//下拉刷新，新纪录插到最前面；
+					table.insertBefore(li, table.firstChild);
+				}
+			}
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				console.log(456)
+				setTimeout(function() {
+					addData();
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+					mui.toast("为你推荐了5篇文章");
+				}, 1500);
+			}
+			//			var viewslef = plus.webview.currentWebview();
+//			(function($) {
+//				$.init();
+//				var result = $('#result')[0];
+//				var btns1 = $('#demo1')[0];
+//				//开始时间
+//				btns1.addEventListener('tap', function() {
+//					var _self = this;
+//					Bug.NewEnd(btns1, _self, $)
+//				}, false);
+//				//				结束时间
+//				var btns2 = $('#demo2')[0];
+//				btns2.addEventListener('tap', function() {
+//					var _self = this;
+//					Bug.NewEnd(btns2, _self, $)
+//				}, false);
+//				//转账类型
+//				var gaminguserPicker = new $.PopPicker();
+//				gaminguserPicker.setData([{
+//					text: '所有',
+//					value: '',
+//				}, {
+//					text: '网银',
+//					value: '网银',
+//				}, {
+//					text: '微信',
+//					value: '微信',
+//				}, {
+//					text: '支付宝',
+//					value: '支付宝',
+//				}, {
+//					text: '银行汇款',
+//					value: '银行汇款',
+//				}]);
+//				var gaming = document.getElementById('gaming');
+//				gaming.addEventListener('tap', function(event) {
+//					gaminguserPicker.show(function(items) {
+//						gaming.innerText = items[0].text;
+//						gaming.setAttribute("data-type", items[0].value);
+//					});
+//				}, false);
+//				//转账状态
+//				var statususerPicker = new $.PopPicker();
+//				statususerPicker.setData([{
+//					text: '所有',
+//					value: ''
+//				}, {
+//					text: '处理中',
+//					value: '处理中'
+//				}, {
+//					text: '交易失败',
+//					value: '交易失败'
+//				}, {
+//					text: '交易成功',
+//					value: '交易成功'
+//				}])
+//				var status = document.getElementById('status');
+//				status.addEventListener('tap', function(event) {
+//					statususerPicker.show(function(items) {
+//						status.innerText = items[0].text;
+//						status.setAttribute("data-type", items[0].value);
+//					});
+//				}, false);
+//				var rechargeRecord = {
+//					pageSize: 5,
+//					pageNo: 1,
+//					bdate: '',
+//					edate: '',
+//					Type: '',
+//					status: ''
+//				};
+//				$(document.body).on('tap', '#submit', function(e) {
+//					rechargeRecord.bdate = btns1.innerText;
+//					rechargeRecord.edate = btns2.innerText
+//					rechargeRecord.Type = gaming.getAttribute("data-type");
+//					rechargeRecord.status = status.getAttribute("data-type");
+//					$(this).button('loading');
+//					setTimeout(function() {
+//						$(this).button('reset');
+//						console.log(JSON.stringify(rechargeRecord))
+//					}.bind(this), 2000);
+//				});
+//			})(mui);
+		</script>
+	</body>
+
+</html>

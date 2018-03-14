@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<style>
+			.mui-table-view {
+				/*padding: 0;*/
+			}
+			
+			.mui-table-view .mui-media {
+				/*padding: 0;*/
+				/*border-bottom:1px solid #E5E5E5 ;*/
+				/*border-bottom: 1px;*/
+			}
+			
+			.mui-table-view .mui-media a .mui-media-object {
+				border-bottom: 1px solid #E5E5E5;
+				background: #E5E5E5;
+				display: block;
+				/*padding: 0;*/
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mui-action-back">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">平台互转</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-row">
+				<div class="mui-col-sm-6 mui-col-xs-6">
+					中心钱包
+				</div>
+				<div class="mui-col-sm-6 mui-col-xs-6">
+					刷新余额
+				</div>
+			</div>
+			<div class="mui-row">
+				<div class="mui-col-sm-3 mui-col-xs-3">
+					<div class="">465</div>
+					<div class="">465</div>
+				</div>
+				<div class="mui-col-sm-3 mui-col-xs-3">
+					<div class="">465</div>
+					<div class="">465</div>
+				</div>
+				<div class="mui-col-sm-3 mui-col-xs-3">
+					<div class="">465</div>
+					<div class="">465</div>
+				</div>
+				<div class="mui-col-sm-3 mui-col-xs-3">
+					<div class="">465</div>
+					<div class="">465</div>
+				</div>
+				<div class="mui-col-sm-3 mui-col-xs-3">
+					<div class="">465</div>
+					<div class="">465</div>
+				</div>
+				<div class="mui-col-sm-3 mui-col-xs-3">
+					<div class="">465</div>
+					<div class="">465</div>
+				</div>
+				<div class="mui-col-sm-3 mui-col-xs-3">
+					<div class="">465</div>
+					<div class="">465</div>
+				</div>
+				<div class="mui-col-sm-3 mui-col-xs-3">
+					<div class="">465</div>
+					<div class="">465</div>
+				</div>
+				<div class="mui-col-sm-3 mui-col-xs-3">
+					<div class="">465</div>
+					<div class="">465</div>
+				</div>
+			</div>
+			<h5 class="title" style="padding-left: 15px">提示：互转金额￥ 1 - 100000</h5>
+
+			<div class="mui-row">
+				<div class="mui-col-sm-5 mui-col-xs-5">
+					<button style="left: 0;border: transparent;padding: 0;background: #E5E5E5;" id='showUserPicker' data-value="" class="mui-btn mui-btn-block" type='button'>AG国际厅</button>
+
+				</div>
+				<div class="mui-col-sm-2 mui-col-xs-2">456</div>
+				<div class="mui-col-sm-5 mui-col-xs-5">
+					<button style="left: 0;border: transparent;padding: 0;background: #E5E5E5;" id='showCityPick' data-value="" class="mui-btn mui-btn-block" type='button'>中心平台</button>
+
+				</div>
+			</div>
+			<div class="mui-content-padded" style="margin: 5px;">
+				<h5>
+	        		<!--汇款前请联系客服确认汇款信息 <span>在线客服</span>-->
+	        	</h5>
+				<div class="mui-input-row">
+					<input type="text" class="mui-input-clear" placeholder="金额">
+				</div>
+				<div class="mui-input-row">
+					<input type="text" class="mui-input-clear" placeholder="验证码">
+				</div>
+				<!--<div class="mui-input-row">
+					<input type="text" class="mui-input-clear" placeholder="存款金额">
+				</div>
+				<div class="mui-input-row">
+					<input type="text" class="mui-input-clear" disabled="disabled" placeholder="2017-11-27（系统默认当前时间）">
+				</div>
+				<div class="mui-input-row">
+					<button style="margin: 0 0 15px 0;width: 100%;text-align: left;" id='showUserPicker' data-value="" class="mui-btn mui-btn-block" type='button'>选择存款方式</button>
+				</div>
+				<div class="mui-input-row">
+					<button style="margin: 0 0 15px 0;width: 100%;text-align: left;" id='showCityPicker' data-value="" class="mui-btn mui-btn-block" type='button'>是否申请彩金</button>
+				</div>
+				<h5>
+	        		*转帐完成后请保留单据作为核对证明。<br> <br>
+	                    *必须填写表单内容，不能为空。<br> <br>
+	                    *每笔转帐请提交一次。<br> <br>
+	        	</h5>-->
+				<div class="mui-input-row">
+					<button type="button" id="submit" style="width: 100%;" class="mui-btn mui-btn-primary mui-btn-block" data-loading-icon="">确认</button>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="js/game.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script type="text/javascript">
+			function dom(doc,text,id,type,mobile){
+				doc.innerText = text;
+				doc.setAttribute("data-id", id);
+				doc.setAttribute("data-moblie", mobile);
+				doc.setAttribute("data-type", type);
+			}
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					var showUserPickerButton = doc.getElementById('showUserPicker');
+					var showCityPick = doc.getElementById('showCityPick');
+					dom(doc.getElementById('showUserPicker'),game[0].text,game[0].id,game[0].model,game[0].type)
+					var userPicker = new $.PopPicker();
+					var len = game.length -1
+					userPicker.setData(game);
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							if(items[0].text == "中心钱包"){
+								dom(showCityPick,game[0].text,game[0].id,game[0].model,game[0].type)
+								dom(showUserPickerButton,items[0].text,items[0].id,items[0].model,items[0].type)
+							}else if(items[0].text != "中心钱包"){
+								dom(showCityPick,game[len].text,game[len].id,game[len].model,game[len].type)
+								dom(showUserPickerButton,items[0].text,items[0].id,items[0].model,items[0].type)
+							}
+						});
+					}, false);
+					showCityPick.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							if(items[0].text === "中心钱包"){
+								dom(showUserPickerButton,game[0].text,game[0].id,game[0].model,game[0].type)
+								dom(showCityPick,items[0].text,items[0].id,items[0].model,items[0].type)
+							}else if(items[0].text != "中心钱包"){
+								dom(showUserPickerButton,game[len].text,game[len].id,game[len].model,game[len].type)
+								dom(showCityPick,items[0].text,items[0].id,items[0].model,items[0].type)
+							}
+						});
+					}, false);
+					$(document.body).on('tap', '#submit', function(e) {
+						$(this).button('loading');
+						setTimeout(function() {
+							$(this).button('reset');
+						}.bind(this), 2000);
+					});
+				})
+			})(mui, document)
+		</script>
+	</body>
+
+</html>

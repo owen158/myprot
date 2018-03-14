@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mui-action-back">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">提现</h1>
+		</header>
+		<div class="mui-content" ></div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			(function($) {
+				$.init({
+					swipeBack: true //启用右滑关闭功能
+				});
+				$('.mui-scroll-wrapper').scroll({
+					indicators: true //是否显示滚动条
+				});
+				var old_back = $.back;
+
+				$.back = function() {
+					var btn = ["确定", "取消"];
+					$.confirm('确认关闭当前页面？', '系统提示', btn, function(e) {
+						if(e.index == 0) {
+							//执行mui封装好的窗口关闭逻辑；
+							old_back();
+						}
+					});
+				}
+//				console.log(JSON.stringify(self))
+				var html2 = '<div class="mui-content-padded" style="margin: 5px;">' +
+					'<h5 class="mui-plus-visible">银行卡号：</h5>' +
+					'<div class="mui-input-row">' +
+					'<input id="search" type="text" disabled="disabled" class="mui-input-clear" placeholder="1000">' +
+					'</div>' +
+					'<h5 class="mui-plus-visible">要求打码量：</h5>' +
+					'<div class="mui-input-row">' +
+					'<input id="search" type="text" disabled="disabled" class="mui-input-clear" placeholder="1000">' +
+					'</div>' +
+					'<h5 class="mui-plus-visible">完成打码量：</h5>' +
+					'<div class="mui-input-row">' +
+					'<input id="search" type="text" disabled="disabled" class="mui-input-clear" placeholder="1000">' +
+					'</div>' +
+					'<h5 class="mui-plus-visible">提款金额：￥100-500000</h5>' +
+					'<div class="mui-input-row">' +
+					'<input  type="text" class="mui-input-clear" placeholder="金额">' +
+					'</div>' +
+					'<div class="mui-input-row">' +
+					'<input type="password" placeholder="取款密码" class="mui-input-clear">' +
+					'</div>' +
+					'<div class="mui-input-row">' +
+					'<button type="button" id="submit" style="width: 100%;" class="mui-btn mui-btn-primary mui-btn-block" data-loading-icon="">确认</button>' +
+					'</div>'	+
+					'</div>';
+//				var html3 = '<div onclick="addcard()" class="mui-card">' +
+//					'<div class="mui-card-content">' +
+//					'<div class="mui-card-content-inner">' +
+//					'<span class="mui-icon mui-icon-plusempty"></span>添加银行卡' +
+//					'</div>'
+//				'</div>'
+//				'</div>';
+				
+
+				$('.mui-content')[0].innerHTML = html2;
+//				var item3 = document.getElementById('item3mobile');
+//				document.getElementById('slider').addEventListener('slide', function(e) {
+//					if(e.detail.slideNumber === 1) {
+//						if(item2.querySelector('.mui-loading')) {
+//							setTimeout(function() {
+//								console.log("在线取款")
+//								item2.querySelector('.mui-scroll').innerHTML = html2;
+//							}, 0);
+//						}
+//					} else if(e.detail.slideNumber === 2) {
+//						if(item3.querySelector('.mui-loading')) {
+//							setTimeout(function() {
+//								console.log("添加银行卡页面")
+//								item3.querySelector('.mui-scroll').innerHTML = html3;
+//							}, 0);
+//						} else {
+//							console.log("添加银行卡页面")
+//						}
+//					}
+//				});
+//				$(".mui-table-view").on('tap', '.mui-table-view-cell', function(e) {
+//					var targetTab = this.getAttribute('data-src');
+//					var title = null;
+//					Bug.WebviewOptions.id = targetTab;
+//					if(this.getAttribute('data-id') === "5") {
+//						title = "网银支付"
+//					} else if(this.getAttribute('data-id') === "6") {
+//						title = "支付宝支付"
+//					} else if(this.getAttribute('data-id') === "7") {
+//						title = "微信支付"
+//					} else if(this.getAttribute('data-id') === "8") {
+//						title = "财付通支付"
+//					} else if(targetTab === "information") {
+//						title = "存款"
+//					}
+//					Bug.WebviewOptions.url = 'center/' + targetTab + ".html";
+//
+//					Bug.NewOpen(Bug.WebviewOptions, {
+//						id: targetTab,
+//						title: title
+//					})
+					//				$(this).button('loading');
+					//				setTimeout(function() {
+					//					$(this).button('reset');
+					//				}.bind(this), 10000);
+//				});
+				$(document.body).on('tap', '#submit', function(e) {
+					$(this).button('loading');
+					setTimeout(function() {
+						$(this).button('reset');
+					}.bind(this), 1000);
+				});
+			})(mui);
+		</script>
+	</body>
+
+</html>

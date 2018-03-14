@@ -1,0 +1,234 @@
+/*html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* custom */
+a {
+    color: #7e8c8d;
+    text-decoration: none;
+    -webkit-backface-visibility: hidden;
+}
+
+li {
+    list-style: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 5px;
+    background-color: rgba(125, 125, 125, 0.7);
+    -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    width: 5px;
+    background-color: rgba(125, 125, 125, 0.7);
+    -webkit-border-radius: 6px;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color:    #bfbfbf;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color:    #bfbfbf;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color:    #bfbfbf;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color:    #bfbfbf;
+}
+html, body {
+    width: 100%;
+    font-size:100%;
+}
+.alearfix:after{
+    content: " ";
+    display: block;
+    height:0;
+    width:100%;
+    clear:both;
+}*/
+.row:before,
+.row:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+.row:after {
+    clear: both;
+}
+/*select,input,label,div,p,a,span,b{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alearfix{zoom:1;}*/
+/*.container{width:1000px;margin: 0 auto}*/
+/*a{*/
+    /*color: #c9dcf9;*/
+/*}*/
+/*html{font-size:100%;}*/
+.col-12 {
+    width: 100%;
+}
+
+.col-11 {
+    width: 91.6666666667%;
+}
+
+.col-10{
+    width:83.3333333333%;
+}
+
+.col-9 {
+    width:75%;
+}
+.col-8 {
+    width: 66.6666666667%;
+}
+.col-7 {
+    width: 58.3333333333%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-5{
+    width: 41.6666666667%;
+}
+.col-4 {
+    width: 33.3333333333%;
+}
+.col-3 {
+    width: 25%;
+}
+.col-2 {
+    width: 16.6666666667%;
+}
+
+.col-1 {
+    width: 8.33333333333%;
+}
+.col-d{
+    width:20%;
+    float: left;
+}
+/*[ class *='col-']{
+    float: left;
+}*/
+.lf{
+    float: left;
+}
+.rf{
+    float: right;
+}
+[class^="x-icon"]{
+  display: inline-block;
+  margin: 0 auto;
+  background: url('../images/icon.png');
+  background-size:330px 350px;
+}
+.x-icon-pc{
+  width: 152px;
+  height: 46px;
+  background-position: -176px -52px;
+}
+.x-icon-Online{
+  width: 48px;
+  height: 40px;
+  background-position:-48px 0;
+}
+.x-icon-home-logo{
+  width: 96px;
+  height: 40px;
+  background-position: -0px -55px;
+}
+.x-icon-logo{
+  width: 196px;
+  height: 70px;
+  background-position: -0px -99px;
+}
+.x-icon-Alipay{
+  width: 40px;
+  height: 40px;
+  background-position: -96px 0;
+}
+.x-icon-ScanCode{
+  width: 40px;
+  height: 40px;
+  background-position: -145px 0;
+}
+.x-icon-wechat{
+  width: 40px;
+  height: 40px;
+  background-position: -191px 0;
+}
+.x-icon-tenpay{
+  width: 41px;
+  height: 40px;
+  background-position: -237px 0;
+}
+.x-icon-Banktranfer{
+  width: 40px;
+  height: 40px;
+  background-position: 0 0;
+}
+.mui-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    background-color: rgba(0,0,0,.3);
+}

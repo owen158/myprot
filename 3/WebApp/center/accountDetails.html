@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<!--<link rel="stylesheet" type="text/css" href="css/app.css" />-->
+		<link href="css/mui.dtpicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.css" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<style>
+			html,
+			body,
+			.mui-content {
+				height: 0px;
+				margin: 0px;
+				background-color: #efeff4;
+			}
+			
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			
+			* {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+			}
+			
+			.mui-btn {
+				margin: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">转账记录</h1>
+		</header>
+		<div class="mui-content" style="margin: 2px;;">
+			<div class="mui-row" id="secbox">
+				<div class="mui-col-sm-6 mui-col-xs-6">
+					<div class="mui-row">
+						<div style="font-size: 13px;" class="mui-col-sm-4 mui-col-xs-4">
+							开始时间:
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<button id='demo1' style="font-size: 13px;" data-options='{"type":"date","beginYear":2010,"beginMonth":10,"endYear":2020}' class="btn mui-btn mui-btn-block">选择日期时间</button>
+						</div>
+					</div>
+					<div class="mui-row" style="margin-top: 3px;">
+						<div style="font-size: 13px;" class="mui-col-sm-4 mui-col-xs-4">
+							结束时间:
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<button id='demo2' style="font-size: 13px;" data-options='{"type":"date","beginYear":2010,"beginMonth":10,"endYear":2020}' class="btn mui-btn mui-btn-block">选择日期时间</button>
+						</div>
+					</div>
+				</div>
+				<div class="mui-col-sm-6 mui-col-xs-6">
+					<div class="mui-row">
+						<div style="font-size: 13px;;" class="mui-col-sm-4 mui-col-xs-4">
+							转账状态:
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<button id='status' data-type="" style="font-size: 13px;" class="btn mui-btn mui-btn-block">所有</button>
+						</div>
+					</div>
+					<div class="mui-row" style="margin-top: 3px;;">
+						<div style="font-size: 13px;;" class="mui-col-sm-4 mui-col-xs-4">
+							游戏平台:
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<button data-type="" id='gaming' style="font-size: 13px;" class="btn mui-btn mui-btn-block">游戏平台</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mui-row">
+				<button type="button" id="submit" style="width: 100%;" class="mui-btn mui-btn-primary mui-btn-block" data-loading-icon="">确认</button>
+			</div>
+			<div class="mui-content-padded">
+				<div id='result' class="ui-alert"></div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/public.js"></script>
+		<script src="js/game.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<!--<script src="js/mui.picker.min.js"></script>-->
+		<script src="js/mui.dtpicker.js"></script>
+		<script>
+//			var viewslef = plus.webview.currentWebview();
+			(function($) {
+				$.init();
+				var result = $('#result')[0];
+				var btns1 = $('#demo1')[0];
+				//开始时间
+				btns1.addEventListener('tap', function() {
+					var _self = this;
+					Bug.NewEnd(btns1, _self, $)
+				}, false);
+				//				结束时间
+				var btns2 = $('#demo2')[0];
+				btns2.addEventListener('tap', function() {
+					var _self = this;
+					Bug.NewEnd(btns2, _self, $)
+				}, false);
+				//游戏平台
+				var gaminguserPicker = new $.PopPicker();
+				gaminguserPicker.setData(game);
+				var gaming = document.getElementById('gaming');
+				gaming.addEventListener('tap', function(event) {
+					gaminguserPicker.show(function(items) {
+						gaming.innerText = items[0].text;
+						gaming.setAttribute("data-type", items[0].type);
+					});
+				}, false);
+				var statususerPicker = new $.PopPicker();
+				statususerPicker.setData([{
+					text: '所有',
+					value: ''
+				}, {
+					text: '转入游戏',
+					value: 'OUT'
+				}, {
+					text: '转入平台',
+					value: 'IN'
+				}])
+				
+				var status = document.getElementById('status');
+				status.addEventListener('tap', function(event) {
+					statususerPicker.show(function(items) {
+						status.innerText = items[0].text;
+						status.setAttribute("data-type", items[0].value);
+					});
+				}, false);
+				var accountDetails = {
+                    pageSize:5,
+                    pageNo:1,
+                    bdate:'',
+                    edate:'',
+                    Type:'',
+                    Ttype:''
+               };
+				$(document.body).on('tap', '#submit', function(e) {
+					accountDetails.bdate = btns1.innerText;
+					accountDetails.edate = btns2.innerText
+					accountDetails.Type = gaming.getAttribute("data-type");
+					accountDetails.Ttype = status.getAttribute("data-type");
+					$(this).button('loading');
+					setTimeout(function() {
+						$(this).button('reset');
+						console.log(JSON.stringify(accountDetails))
+					}.bind(this), 2000);
+				});
+			})(mui);
+		</script>
+	</body>
+
+</html>

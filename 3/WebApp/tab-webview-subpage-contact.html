@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>天下网络</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<script src="js/head.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="css/mui.min.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+				font-size: 100%;
+			}
+			.title {
+				margin: 10px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			.oa-contact-cell.mui-table .mui-table-cell {
+				/*padding: 3px 0;*/
+				vertical-align: middle;
+			}
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+			
+			.oa-contact-avatar {
+				width: 1rem;
+			}
+			/*.oa-contact-avatar img {
+				border-radius: 50%;
+			}*/
+			
+			.oa-contact-content {
+				width: 100%;
+			}
+			
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			
+			.oa-contact-name,
+			oa-contact-position {
+				float: left;
+			}
+			
+			.mui-content .mui-table-view-cell {
+				padding: 15px 15px;
+				;
+			}
+			
+			.mui-card {
+				margin: 10px 10px;
+			}
+			
+			.mui-card-content-inner {
+				/*padding: 5px;*/
+				margin: 25px 0;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item" href="#item1mobile">
+						在线存款
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						在线取款
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+						银行卡
+					</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" style="min-height: 8rem;border-bottom: none;" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="title">请选择支付方式</div>
+								<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+									<!--<li data-src="Online" data-id="5" class="mui-table-view-cell">
+										<div class="mui-slider-cell">
+											<div class="oa-contact-cell mui-table">
+												<div class="oa-contact-avatar mui-table-cell">
+													<span class="x-icon-Online"></span>
+													<!--<img src="http://placehold.it/60x60" />-->
+												<!--</div>-->
+												<!--<div class="oa-contact-content mui-table-cell">
+													<div class="mui-clearfix">
+														<h4 class="oa-contact-name">网银支付</h4>-->
+														<!--<span class="oa-contact-position mui-h6">董事长</span>-->
+													<!--</div>
+													<p class="oa-contact-email mui-h6">
+														Online payment
+													</p>
+												</div>
+											</div>
+										</div>-->
+									<!--</li>-->
+								
+									<li data-src="Online" data-id="6" class="mui-table-view-cell">
+										<div class="mui-slider-cell">
+											<div class="oa-contact-cell mui-table">
+												<div class="oa-contact-avatar mui-table-cell">
+													<span class="x-icon-Alipay"></span>
+												</div>
+												<div class="oa-contact-content mui-table-cell">
+													<div class="mui-clearfix">
+														<h4 class="oa-contact-name">支付宝付款</h4>
+														<!--<span class="oa-contact-position mui-h6">员工</span>-->
+													</div>
+													<p class="oa-contact-email mui-h6">
+														Alipay transfer
+													</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li data-src="Online" data-id="7" class="mui-table-view-cell">
+										<div class="mui-slider-cell">
+											<div class="oa-contact-cell mui-table">
+												<div class="oa-contact-avatar mui-table-cell">
+													<span class="x-icon-wechat"></span>
+												</div>
+												<div class="oa-contact-content mui-table-cell">
+													<div class="mui-clearfix">
+														<h4 class="oa-contact-name">微信支付</h4>
+														<!--<span class="oa-contact-position mui-h6">员工</span>-->
+													</div>
+													<p class="oa-contact-email mui-h6">
+														Wechat transfer
+													</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li data-src="Online" data-id="8" class="mui-table-view-cell">
+										<div class="mui-slider-cell">
+											<div class="oa-contact-cell mui-table">
+												<div class="oa-contact-avatar mui-table-cell">
+													<span class="x-icon-tenpay"></span>
+												</div>
+												<div class="oa-contact-content mui-table-cell">
+													<div class="mui-clearfix">
+														<h4 class="oa-contact-name">财付通</h4>
+														<!--<span class="oa-contact-position mui-h6">员工</span>-->
+													</div>
+													<p class="oa-contact-email mui-h6">
+														TenPay transfer
+													</p>
+												</div>
+											</div>
+										</div>
+									</li>
+										<li data-src="ScanCode" class="mui-table-view-cell">
+										<div class="mui-slider-cell">
+											<div class="oa-contact-cell mui-table">
+												<div class="oa-contact-avatar mui-table-cell">
+													<span class="x-icon-ScanCode"></span>
+												</div>
+												<div class="oa-contact-content mui-table-cell">
+													<div class="mui-clearfix">
+														<h4 class="oa-contact-name">扫码支付</h4>
+														<!--<span class="oa-contact-position mui-h6">总经理</span>-->
+													</div>
+													<p class="oa-contact-email mui-h6">
+														Scan Code
+													</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li data-src="information" class="mui-table-view-cell">
+											<div class="mui-slider-cell">
+												<div class="oa-contact-cell mui-table">
+													<div class="oa-contact-avatar mui-table-cell">
+														<span class="x-icon-Banktranfer"></span>
+													</div>
+													<div class="oa-contact-content mui-table-cell">
+														<div class="mui-clearfix">
+															<h4 class="oa-contact-name">银行汇款</h4>
+															<!--<span class="oa-contact-position mui-h6">员工</span>-->
+														</div>
+														<p class="oa-contact-email mui-h6">
+															Bank tranfer
+														</p>
+													</div>
+												</div>
+											</div>
+										</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" style="min-height: 9.7rem;border-bottom: none;" class="mui-slider-item mui-control-content">
+						<div id="scroll2" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="mui-loading">
+									<div class="mui-spinner">
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div id="item3mobile" style="min-height: 6.7rem;border-bottom: none;" class="mui-slider-item mui-control-content">
+						<div id="scroll3" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="mui-loading">
+									<div class="mui-spinner">
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/Regular.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		var self = plus.webview.currentWebview();
+		(function($) {
+			$.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			$('.mui-scroll-wrapper').scroll({
+				indicators: true //是否显示滚动条
+			});
+			var html2 = '<div class="mui-content-padded" style="margin: 5px;">' +
+				'<h5 class="mui-plus-visible">银行卡号：</h5>' +
+				'<div class="mui-input-row">' +
+				'<input id="search" type="text" disabled="disabled" class="mui-input-clear" placeholder="1000">' +
+				'</div>' +
+				'<h5 class="mui-plus-visible">要求打码量：</h5>' +
+				'<div class="mui-input-row">' +
+				'<input id="search" type="text" disabled="disabled" class="mui-input-clear" placeholder="1000">' +
+				'</div>' +
+				'<h5 class="mui-plus-visible">完成打码量：</h5>' +
+				'<div class="mui-input-row">' +
+				'<input id="search" type="text" disabled="disabled" class="mui-input-clear" placeholder="1000">' +
+				'</div>' +
+				'<h5 class="mui-plus-visible">提款金额：￥100-500000</h5>' +
+				'<div class="mui-input-row">' +
+				'<input  type="text" class="mui-input-clear" placeholder="金额">' +
+				'</div>' +
+				'<div class="mui-input-row mui-password">' +
+				'<input type="password" placeholder="取款密码" class="mui-input-password">' +
+				'</div>' +
+				'<div class="mui-input-row">' +
+					'<button type="button" id="submit" style="width: 100%;" class="mui-btn mui-btn-primary mui-btn-block" data-loading-icon="">确认</button>' +
+				'</div>'	+
+				'</div>';
+			var html3 = '<div onclick="addcard()" class="mui-card">' +
+				'<div class="mui-card-content">' +
+				'<div class="mui-card-content-inner">' +
+				'<span class="mui-icon mui-icon-plusempty"></span>添加银行卡' +
+				'</div>'
+			'</div>'
+			'</div>';
+			var item2 = document.getElementById('item2mobile');
+			var item3 = document.getElementById('item3mobile');
+			document.getElementById('slider').addEventListener('slide', function(e) {
+				if(e.detail.slideNumber === 1) {
+					if(item2.querySelector('.mui-loading')) {
+						setTimeout(function() {
+							console.log("在线取款")
+							item2.querySelector('.mui-scroll').innerHTML = html2;
+						}, 0);
+					}
+				} else if(e.detail.slideNumber === 2) {
+					if(item3.querySelector('.mui-loading')) {
+						setTimeout(function() {
+							console.log("添加银行卡页面")
+							item3.querySelector('.mui-scroll').innerHTML = html3;
+						}, 0);
+					} else {
+						console.log("添加银行卡页面")
+					}
+				}
+			});
+			function PaymentList(id,title){
+				Reg.ajax(mui,'PlatformPay/getPaymentList',{type:id},function(data){
+					if(data.status === 'error'){
+						Bug.WebviewOptions.url="center/Online.html";
+						Bug.NewOpen(Bug.WebviewOptions,{id:'Online',type:id,title:title,obj:data})	
+	                }else {
+	                    Bug.WebviewOptions.url="center/Online.html";
+						Bug.NewOpen(Bug.WebviewOptions,{id:'Online',type:id,title:title,obj:data})
+	                }
+				})
+			}
+			$(".mui-table-view").on('tap', '.mui-table-view-cell', function(e) {
+				var targetTab = this.getAttribute('data-src');
+				var title = null;
+				Bug.WebviewOptions.id = targetTab;
+				if(this.getAttribute('data-id') === "5"){
+					title = "网银支付";
+					PaymentList(this.getAttribute('data-id'),title);
+				}else if(this.getAttribute('data-id') === "6"){
+					title = "支付宝支付"
+					PaymentList(this.getAttribute('data-id'),title);
+				}else if(this.getAttribute('data-id') === "7"){
+					title = "微信支付"
+					PaymentList(this.getAttribute('data-id'),title);
+				}else if(this.getAttribute('data-id') === "8"){
+					title = "财付通支付"
+					PaymentList(this.getAttribute('data-id'),title);
+				}else if(targetTab === "information"){
+					title = "存款"
+					Bug.WebviewOptions.url='center/'+targetTab +".html";
+					Bug.NewOpen(Bug.WebviewOptions,{id:targetTab,title:title})
+				}else{
+					Bug.WebviewOptions.url='center/'+targetTab +".html";
+					Bug.NewOpen(Bug.WebviewOptions,{id:targetTab,title:title})
+				}
+				
+//				$(this).button('loading');
+//				setTimeout(function() {
+//					$(this).button('reset');
+//				}.bind(this), 10000);
+			});
+		})(mui);
+		function addcard(){
+			Bug.WebviewOptions.id = "AddBankCard";
+			Bug.WebviewOptions.url="center/AddBankCard.html"
+			Bug.NewOpen(Bug.WebviewOptions,"")
+		}
+	</script>
+
+</html>

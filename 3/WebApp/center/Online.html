@@ -1,0 +1,672 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<script src="../js/vue.js"></script>
+		<!--<link rel="stylesheet" type="text/css" href="css/app.css"/>-->
+		<style>
+			.mui-card {
+				background: transparent;
+				border: transparent;
+			}
+			.mui-card .mui-input-group {
+				background: transparent;
+			}
+			
+			.mui-card .mui-input-group .mui-input-row {
+				display: inline-block;
+				width: 48%;
+				margin: 2px 0.5%;
+				background: #fff;
+				border-radius: 3px;
+				;
+				border: 1px solid #e5e5e5;
+				;
+			}
+			.mui-card .mui-input-group .mui-input-row:after {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title"></h1>
+		</header>
+		<div class="mui-content" id='Online'>
+			<!--<h5 style="display: none;" class="mui-content-padded">图标左对齐</h5>-->
+
+			<h5 class="mui-content-padded">存款金额(*范围 ￥ <span id="MinMoney">{{RadioId.min}}</span> - <span id="ManMoney">{{RadioId.man}}</span>)</h5>
+			<div class="mui-card">
+				<form class="mui-input-group">
+					<div class="mui-input-row mui-radio" v-for='(item,key) in list' @click="onlineobj.bankcode = ''">
+						<label >支付  {{key + 1}}</label>
+						<input data-src="YS" v-model="picked" :value=key name="radio1" type="radio" checked="checked">
+					</div>
+				</form>
+			</div>
+			<div class="mui-content-padded" style="margin: 5px;">
+				<div class="mui-input-row" v-if='type === "5"' >
+					<button v-if="(typeof RadioId.paymentName=='string') != true" style="margin: 0 0 15px 0;width: 100%;text-align: left;" id='showUserPicker' data-value="" class="mui-btn mui-btn-block" type='button'>选择银行</button>
+				</div>
+				<div class="mui-input-row">
+					<input v-model="onlineobj.acounmt" type="text" onKeyUp="value=value.replace(/[^\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" class="mui-input-clear" placeholder="存款金额">
+				</div>
+				<!--<h5>
+	        		*转帐完成后请保留单据作为核对证明。<br> <br>
+	                    *必须填写表单内容，不能为空。<br> <br>
+	                    *每笔转帐请提交一次。<br> <br>
+	        	</h5>-->
+				<div class="mui-input-row">
+					<button type="button" id="submit" style="width: 100%;" class="mui-btn mui-btn-primary mui-btn-block" data-loading-icon="">确认</button>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script src="../js/Regular.js"></script>
+		<script src="../js/public.js"></script>
+		<script src="js/banlist.js"></script>
+		<script type="text/javascript">
+			var self = plus.webview.currentWebview();
+			var vm = new Vue({
+				el: '#Online',
+				data: {
+					picked:0,
+					type:self.version.type,
+					list:self.version.obj.typeList,
+					onlineobj:{
+						bankcode:'',
+						acounmt:''
+					},
+					cardlist:{
+	                    YS:[
+	                        {'value':'1031000','text':'农业银行'},
+	                        {'value':'1021000','text':'工商银行'},
+	                        {'value':'1051000','text':'建设银行'},
+	                        {'value':'3012900','text':'交通银行'},
+	                        {'value':'1041000','text':'中国银行'},
+	                        {'value':'3085840','text':'招商银行'},
+	                        {'value':'3051000','text':'民生银行'},
+	                        {'value':'3031000','text':'光大银行'},
+	                        {'value':'3131000','text':'北京银行'},
+	                        {'value':'3071000','text':'平安银行'},
+	                        {'value':'3222900','text':'上海农村商业银行'},
+	                        {'value':'3093910','text':'兴业银行'},
+	                        {'value':'4031000','text':'中国邮政'},
+	                        {'value':'3102900','text':'浦发银行'},
+	                        {'value':'3021000','text':'中信银行'},
+	                        {'value':'3065810','text':'广发银行'},
+	                        {'value':'3133010','text':'南京银行'},
+	                        {'value':'3133320','text':'宁波银行'},
+	                        {'value':'5021000','text':'东亚银行'}
+	                    ],
+	                    HS:[
+	                        {'value':'CMB','text':'招商银行'},
+	                        {'value':'ICBC','text':'工商银行'},
+	                        {'value':'CCB','text':'建设银行'},
+	                        {'value':'BOC','text':'中国银行'},
+	                        {'value':'ABC','text':'农业银行'},
+	                        {'value':'BOCM','text':'交通银行'},
+	                        {'value':'SPDB','text':'浦发银行'},
+	                        {'value':'CGB','text':'广发银行'},
+	                        {'value':'CITIC','text':'中信银行'},
+	                        {'value':'CEB','text':'光大银行'},
+	                        {'value':'CIB','text':'兴业银行'},
+	                        {'value':'PAYH','text':'平安银行'},
+	                        {'value':'CMBC','text':'民生银行'},
+	                        {'value':'HXB','text':'华夏银行'},
+	                        {'value':'PSBC','text':'邮储银行'},
+	                        {'value':'BCCB','text':'北京银行'},
+	                        {'value':'SHBANK','text':'上海银行'}
+	                    ],
+	                    SHB:[
+	                        {'value':'ABC','text':'农业银行'},
+	                        {'value':'ICBC','text':'工商银行'},
+	                        {'value':'CCB','text':'建设银行'},
+	                        {'value':'BCOM','text':'交通银行'},
+	                        {'value':'BOC','text':'中国银行'},
+	                        {'value':'CMB','text':'招商银行'},
+	                        {'value':'CMBC','text':'民生银行'},
+	                        {'value':'CEBB','text':'光大银行'},
+	                        {'value':'BOB','text':'北京银行'},
+	                        {'value':'SHB','text':'上海银行'},
+	                        {'value':'NBB','text':'宁波银行'},
+	                        {'value':'HXB','text':'华夏银行'},
+	                        {'value':'CIB','text':'兴业银行'},
+	                        {'value':'PSBC','text':'中国邮政银行'},
+	                        {'value':'SPABANK','text':'平安银行'},
+	                        {'value':'SPDB','text':'浦发银行'},
+	                        {'value':'ECITIC','text':'中信银行'},
+	                        {'value':'HZB','text':'杭州银行'},
+	                        {'value':'GDB','text':'广发银行'}
+	                    ],
+	                    ZF:[
+	                        {'value':'ABC','text':'农业银行'},
+	                        {'value':'ICBC','text':'工商银行'},
+	                        {'value':'CCB','text':'建设银行'},
+	                        {'value':'BCOM','text':'交通银行'},
+	                        {'value':'BOC','text':'中国银行'},
+	                        {'value':'CMB','text':'招商银行'},
+	                        {'value':'CMBC','text':'民生银行'},
+	                        {'value':'CEBB','text':'光大银行'},
+	                        {'value':'BOB','text':'北京银行'},
+	                        {'value':'SHB','text':'上海银行'},
+	                        {'value':'NBB','text':'宁波银行'},
+	                        {'value':'HXB','text':'华夏银行'},
+	                        {'value':'CIB','text':'兴业银行'},
+	                        {'value':'PSBC','text':'中国邮政'},
+	                        {'value':'SPABANK','text':'平安银行'},
+	                        {'value':'SPDB','text':'浦发银行'},
+	                        {'value':'ECITIC','text':'中信银行'},
+	                        {'value':'HZB','text':'杭州银行'},
+	                        {'value':'GDB','text':'广发银行'}
+	                    ],
+	                    TCP:[
+	                        {'value':'POST','text':'邮政储蓄银行'},
+	                        {'value':'ICBC','text':'工商银行'},
+	                        {'value':'ECITIC','text':'中信银行'},
+	                        {'value':'CIB','text':'兴业银行'},
+	                        {'value':'CCB','text':'建设银行'},
+	                        {'value':'BOC','text':'中国银行'},
+	                        {'value':'ABC','text':'中国农业银行'},
+	                        {'value':'CEB','text':'中国光大银行'},
+	                        {'value':'CGB','text':'广发银行'},
+	                        {'value':'HXB','text':'华夏银行'},
+	                        {'value':'PINGANBANK','text':'平安银行'},
+	                        {'value':'SHB','text':'上海银行'},
+	                        {'value':'BOCO','text':'交通银行'},
+	                        {'value':'CMBC','text':'中国民生银行'},
+	                        {'value':'CMBCHINA','text':'招商银行'},
+	                        {'value':'BCCB','text':'北京银行'}
+	                    ],
+	                    DDB:[
+	                        {'value':'ABC','text':'农业银行'},
+	                        {'value':'ICBC','text':'工商银行'},
+	                        {'value':'CCB','text':'建设银行'},
+	                        {'value':'BCOM','text':'交通银行'},
+	                        {'value':'BOC','text':'中国银行'},
+	                        {'value':'CMB','text':'招商银行'},
+	                        {'value':'CMBC','text':'民生银行'},
+	                        {'value':'CEBB','text':'光大银行'},
+	                        {'value':'BOB','text':'北京银行'},
+	                        {'value':'SHB','text':'上海银行'},
+	                        {'value':'NBB','text':'宁波银行'},
+	                        {'value':'HXB','text':'华夏银行'},
+	                        {'value':'CIB','text':'兴业银行'},
+	                        {'value':'PSBC','text':'中国邮政银行'},
+	                        {'value':'SPABANK','text':'平安银行'},
+	                        {'value':'SPDB','text':'浦发银行'},
+	                        {'value':'ECITIC','text':'中信银行'},
+	                        {'value':'HZB','text':'杭州银行'},
+	                        {'value':'GDB','text':'广发银行'}
+	                    ],
+	                    GST:[
+	                        {'value':'ABC','text':'农业银行'},
+	                        {'value':'ICBC','text':'工商银行'},
+	                        {'value':'CCB','text':'建设银行'},
+	                        {'value':'PSBC','text':'中国邮政银行'},
+	                        {'value':'BOC','text':'中国银行'},
+	                        {'value':'CMB','text':'招商银行'},
+	                        {'value':'BCOM','text':'交通银行'},
+	                        {'value':'SPDB','text':'浦发银行'},
+	                        {'value':'CEBB','text':'光大银行'},
+	                        {'value':'ECITIC','text':'中信银行'},
+	                        {'value':'SPABANK','text':'平安银行'},
+	                        {'value':'CMBC','text':'民生银行'},
+	                        {'value':'HXB','text':'华夏银行'},
+	                        {'value':'GDB','text':'广发银行'}
+	                    ],
+	                    MKT:[
+	                        {'value':'ABC','text':'农业银行'},
+	                        {'value':'BOC','text':'中国银行'},
+	                        {'value':'BOCOM','text':'交通银行'},
+	                        {'value':'CCB','text':'建设银行'},
+	                        {'value':'ICBC','text':'工商银行'},
+	                        {'value':'PSBC','text':'中国邮政银行'},
+	                        {'value':'SPDB','text':'浦发银行'},
+	                        {'value':'CEBBANK','text':'光大银行'},
+	                        {'value':'ECITIC','text':'中信银行'},
+	                        {'value':'PINGAN','text':'平安银行'},
+	                        {'value':'CMBCS','text':'民生银行'},
+	                        {'value':'HXB','text':'华夏银行'},
+	                        {'value':'CGB','text':'广发银行'},
+	                        {'value':'BCCB','text':'北京银行'},
+	                        {'value':'BOS','text':'上海银行'},
+	                        {'value':'CIB','text':'兴业银行'}
+	                    ],
+	                    BFT:[
+	                        {'value':'ICBC','text':'工商银行'},
+	                        {'value':'ABC','text':'农业银行'},
+	                        {'value':'BOC','text':'中国银行'},
+	                        {'value':'CCB','text':'建设银行'},
+	                        {'value':'COMM','text':'交通银行'},
+	                        {'value':'CMB','text':'招商银行'},
+	                        {'value':'SPDB','text':'浦发银行'},
+	                        {'value':'CIB','text':'兴业银行'},
+	                        {'value':'CMBC','text':'民生银行'},
+	                        {'value':'GDB','text':'广发银行'},
+	                        {'value':'CNCB','text':'中信银行'},
+	                        {'value':'CEB','text':'光大银行'},
+	                        {'value':'HXB','text':'华夏银行'},
+	                        {'value':'PSBC','text':'中国邮政银行'},
+	                        {'value':'PAB','text':'平安银行'},
+	                        {'value':'BOBJ','text':'北京银行'},
+	                        {'value':'BONB','text':'宁波银行'}
+	                    ],
+	                    XQ:[
+	                        {'value':'icbc','text':'工商银行'},
+	                        {'value':'abc','text':'农业银行'},
+	                        {'value':'ccb','text':'建设银行'},
+	                        {'value':'boc','text':'中国银行'},
+	                        {'value':'comm','text':'交通银行'},
+	                        {'value':'cmb','text':'招商银行'},
+	                        {'value':'cmbc','text':'民生银行'},
+	                        {'value':'cib','text':'兴业银行'},
+	                        {'value':'spdb','text':'浦发银行'},
+	                        {'value':'hxb','text':'华夏银行'},
+	                        {'value':'ecitic','text':'中信银行'},
+	                        {'value':'ceb','text':'光大银行'},
+	                        {'value':'gdb','text':'广发银行'},
+	                        {'value':'post','text':'中国邮政银行'},
+	                        {'value':'sdb','text':'深发展银行'},
+	                        {'value':'bea','text':'东亚银行'},
+	                        {'value':'nb','text':'宁波银行'},
+	                        {'value':'nb','text':'北京银行'},
+	                        {'value':'pingan','text':'平安银行'},
+	                        {'value':'bjrcb','text':'北京农村商业银行'}
+	                    ],
+	                    HT:[
+	                        {'value':'ABC','text':'中国农业银行'},
+	                        {'value':'BOC','text':'中国银行'},
+	                        {'value':'BOCOM','text':'交通银行'},
+	                        {'value':'CCB','text':'中国建设银行'},
+	                        {'value':'ICBC','text':'中国工商银行'},
+	                        {'value':'PSBC','text':'中国邮政储蓄银行'},
+	                        {'value':'CMBC','text':'招商银行'},
+	                        {'value':'SPDB','text':'浦发银行'},
+	                        {'value':'CEBBANK','text':'中国光大银行'},
+	                        {'value':'ECITIC','text':'中信银行'},
+	                        {'value':'PINGAN','text':'平安银行'},
+	                        {'value':'CMBCS','text':'中国民生银行'},
+	                        {'value':'HXB','text':'华夏银行'},
+	                        {'value':'CGB','text':'广发银行'},
+	                        {'value':'BCCB','text':'北京银行'},
+	                        {'value':'BOS','text':'上海银行'},
+	                        {'value':'CIB','text':'兴业银行'}
+	                    ],
+	                    YEE:[
+	                        {'value':'ICBC-NET-B2C','text':'工商银行'},
+	                        {'value':'CMBCHINA-NET-B2C','text':'招商银行'},
+	                        {'value':'CCB-NET-B2C','text':'建设银行'},
+	                        {'value':'BOCO-NET-B2C','text':'交通银行[借]'},
+	                        {'value':'CIB-NET-B2C','text':'兴业银行'},
+	                        {'value':'CMBC-NET-B2C','text':'中国民生银行'},
+	                        {'value':'CEB-NET-B2C','text':'光大银行'},
+	                        {'value':'BOC-NET-B2C','text':'中国银行'},
+	                        {'value':'PINGANBANK-NET-B2C','text':'平安银行'},
+	                        {'value':'ECITIC-NET-B2C','text':'中信银行'},
+	                        {'value':'SDB-NET-B2C','text':'深圳发展银行'},
+	                        {'value':'GDB-NET-B2C','text':'广发银行'},
+	                        {'value':'SHB-NET-B2C','text':'上海银行'},
+	                        {'value':'SPDB-NET-B2C','text':'上海浦东发展银行'},
+	                        {'value':'HXB-NET-B2C','text':'华夏银行「借」'},
+	                        {'value':'BCCB-NET-B2C','text':'北京银行'},
+	                        {'value':'ABC-NET-B2C','text':'中国农业银行'},
+	                        {'value':'POST-NET-B2C','text':'中国邮政储蓄银行「借」'},
+	                    ],
+	                    OK:[
+	                        {'value':'ICBC','text':'工商银行'},
+	                        {'value':'CMB','text':'招商银行'},
+	                        {'value':'CCB','text':'建设银行'},
+	                        {'value':'BOC','text':'中国银行'},
+	                        {'value':'ABC','text':'农业银行'},
+	                        {'value':'BOCM','text':'交通银行'},
+	                        {'value':'SPDB','text':'浦发银行'},
+	                        {'value':'CGB','text':'广发银行'},
+	                        {'value':'CTITC','text':'中信银行'},
+	                        {'value':'CEB','text':'光大银行'},
+	                        {'value':'CIB','text':'兴业银行'},
+	                        {'value':'SDB','text':'平安银行'},
+	                        {'value':'CMBC','text':'民生银行'},
+	                        {'value':'HXB','text':'华夏银行'},
+	                        {'value':'PSBC','text':'邮储银行'},
+	                        {'value':'BCCB','text':'北京银行'},
+	                        {'value':'SHBANK','text':'上海银行'},
+	                        {'value':'BOHAI','text':'渤海银行'},
+	                        {'value':'SHNS','text':'上海农商'}
+	                    ],
+	                    GH:[
+	                        {'value':'ICBC','text':'工商银行'},
+	                        {'value':'ABC','text':'农业银行'},
+	                        {'value':'CCB','text':'建设银行'},
+	                        {'value':'BOC','text':'中国银行'},
+	                        {'value':'CMB','text':'招商银行'},
+	                        {'value':'BCCB','text':'北京银行'},
+	                        {'value':'BOCO','text':'交通银行'},
+	                        {'value':'CIB','text':'兴业银行'},
+	                        {'value':'NJCB','text':'南京银行'},
+	                        {'value':'CMBC','text':'民生银行'},
+	                        {'value':'CEB','text':'光大银行'},
+	                        {'value':'PINGANBANK','text':'平安银行'},
+	                        {'value':'CBHB','text':'渤海银行'},
+	                        {'value':'HKBEA','text':'东亚银行'},
+	                        {'value':'NBCB','text':'宁波银行'},
+	                        {'value':'CTTIC','text':'中信银行'},
+	                        {'value':'GDB','text':'广发银行'},
+	                        {'value':'SHB','text':'上海银行'},
+	                        {'value':'SPDB','text':'上海浦东发展银行'},
+	                        {'value':'PSBS','text':'中国邮政'},
+	                        {'value':'HXB','text':'华夏银行'},
+	                        {'value':'BJRCB','text':'北京农村商业银行'},
+	                        {'value':'SRCB','text':'上海农商银行'},
+	                        {'value':'SDB','text':'深圳发展银行'},
+	                        {'value':'CZB','text':'浙江稠州商业银行'},
+	                        {'value':'SRCB','text':'上海农商行'}
+	                    ]
+	                },
+				},
+				computed: {
+				    RadioId:{
+					     get:function(){
+					     	var obj = {id:'',min:'',man:"",paymentName:null,judgment:''};
+					     	if(self.version.obj.typeList != undefined){
+					     		obj.id=self.version.obj.typeList[Number(this.picked)].id;
+					     		obj.min=self.version.obj.typeList[Number(this.picked)].minquota;
+					     		obj.man=self.version.obj.typeList[Number(this.picked)].maxquota;
+					     		obj.judgment = true;
+					     		if(self.version.type === '5'){
+					     			for(let key in this.cardlist){
+				                        if(key === self.version.obj.typeList[Number(this.picked)].paymentName){
+				                            obj.paymentName = this.cardlist[key]
+				                        }
+				                   }
+				                    if(obj.paymentName === undefined){
+				                        obj.paymentName = self.version.obj.typeList[Number(this.picked)].paymentName;
+				                    }
+				                    return obj;
+					     		}else{
+					     			obj.paymentName = self.version.obj.typeList[Number(this.picked)].paymentName;
+					     			return obj;
+					     		}
+					     	}else{
+					     		obj.judgment = false;
+					     		return obj;
+					     	}
+	                    }
+				   }
+			  	}
+
+			});
+			
+			(function($, doc) {
+				$.init();
+				var wxChannel = null; // 微信支付  
+	            var aliChannel = null; // 支付宝支付  
+	            var channel = null;   //支付通道 
+	            var ALIPAYSERVER='http://demo.dcloud.net.cn/helloh5/payment/alipay.php?total=';  
+        		var WXPAYSERVER='http://demo.dcloud.net.cn/helloh5/payment/wxpay.php?total=';  
+	            $.plusReady(function() {    
+		            // 获取支付通道  
+		                plus.payment.getChannels(function(channels){  
+		                for (var i in channels) { 
+		                        if (channels[i].id == "wxpay") { 
+		                             wxChannel=channels[i];  
+		                        }else{ 
+		                            aliChannel=channels[i];  
+		                        } 
+		                    }     
+		                },function(e){  
+		                 alert("获取支付通道失败："+e.message);  
+		                });  
+		        })  
+				$(".mui-title")[0].innerHTML=self.version.title;
+				var old_back = $.back;
+				$.back = function() {
+					var btn = ["确定", "取消"];
+					$.confirm('确认关闭当前'+self.version.title+'页面？', '系统提示', btn, function(e) {
+						if(e.index == 0) {
+							//执行mui封装好的窗口关闭逻辑；
+							old_back();
+						}
+					});
+				}
+				document.addEventListener( "plusready", onPlusReady, false );
+				// 扩展API加载完毕，现在可以正常调用扩展API
+				function onPlusReady() {
+				
+				}
+				$.ready(function() {
+					var showCityPickerButton = document.getElementById('showUserPicker');
+					if(self.version.type === '5'){
+						var userPicker;
+						$('.mui-title')[0].innerHTML=self.version.title;
+						userPicker = new $.PopPicker();
+						var _getParam = function(obj, param) {
+							return obj[param] || '';
+						};
+						$(".mui-input-group").on('tap', '.mui-radio', function(e) {
+							showCityPickerButton.innerText ="选择银行";
+							showCityPickerButton.setAttribute("data-value", "");
+							if((typeof vm.RadioId.paymentName=='string') != true){
+								userPicker.setData(vm.RadioId.paymentName);
+							}
+						});
+						showCityPickerButton.addEventListener('tap', function(event) {
+							userPicker.show(function(items) {
+								showCityPickerButton.innerText = items[0].text;
+//								 = items[0].value;
+								showCityPickerButton.setAttribute("data-value", items[0].value);
+								//返回 false 可以阻止选择框的关闭
+	//							return false;
+							});
+						}, false);
+						if((typeof vm.RadioId.paymentName=='string') != true){
+							userPicker.setData(vm.RadioId.paymentName);
+						}
+					}
+					var submitButton = doc.getElementById('submit');
+					submitButton.addEventListener('tap', function(event) {
+						if((typeof vm.RadioId.paymentName=='string') != true){
+							vm.onlineobj.bankcode = showCityPickerButton.attributes["data-value"].value;
+							if(vm.onlineobj.bankcode === ""){
+								plus.nativeUI.toast('请选择银行');
+								return;
+							}
+						}
+						if(vm.onlineobj.acounmt === ''){
+							vm.onlineobj.acounmt = '';
+							plus.nativeUI.toast('金额不能低于'+vm.RadioId.min+'元 或 高于'+vm.RadioId.man);
+							return;
+						}
+						if(Number(vm.onlineobj.acounmt) < vm.RadioId.min ||Number(vm.onlineobj.acounmt) > vm.RadioId.man){
+							vm.onlineobj.acounmt = '';
+							plus.nativeUI.toast('金额不能低于'+vm.RadioId.min+'元 或 高于'+vm.RadioId.man);
+							return;
+						}
+						if(self.version.type === '5'){
+							let src,one;
+							src = Reg.src+'PlatformPay/onlineBanking';
+							if(vm.RadioId.paymentName === "DC"){//
+                                one = "?bankcode="+'B2C'+"&acounmt="+vm.onlineobj.acounmt+"&"+"payId="+vm.RadioId.id;
+//                              Bug.WebviewOptions.id = vm.RadioId.paymentName;
+								window.open(src+one);
+//								return Bug.NewPage(Bug.WebviewOptions,self.version.title);
+                            }else if(vm.RadioId.paymentName === "JFK"){
+                                one = "?bankcode="+'1003'+"&"+"appSence=1002"+"&"+"acounmt="+vm.onlineobj.acounmt+"&"+"payId="+vm.RadioId.id;
+//                              Bug.WebviewOptions.id = vm.RadioId.paymentName;
+								window.open(src+one);
+//								return Bug.NewPage(Bug.WebviewOptions,self.version.title)
+                            }else  if(vm.RadioId.paymentName === 'AK'){
+                                one = "?bankcode= H5_ONLINE_BANK_PAY&mobile=mobile&acounmt="+vm.onlineobj.acounmt+"&"+"payId="+vm.RadioId.id;
+//                              Bug.WebviewOptions.id = vm.RadioId.paymentName;
+								window.open(src+one);
+//								return Bug.NewPage(Bug.WebviewOptions,self.version.title)
+                            }else if(self.version.obj.typeList[Number(vm.picked)].paymentName === 'BFT'){
+                                one = "?bankcode="+vm.onlineobj.bankcode+"&"+"mobile=WAP_PAY_B2C"+"&"+"acounmt="+vm.onlineobj.acounmt+"&"+"payId="+vm.RadioId.id;
+//                              Bug.WebviewOptions.id = vm.RadioId.paymentName;
+								window.open(src+one);
+//								return Bug.NewPage(Bug.WebviewOptions,self.version.title)
+                            }else if(self.version.obj.typeList[Number(vm.picked)].paymentName === 'XQ'){
+                                one = "?bankcode="+vm.onlineobj.bankcode+"&"+"mobile=mobile&acounmt="+vm.onlineobj.acounmt+"&"+"payId="+vm.RadioId.id;
+//                              Bug.WebviewOptions.id = vm.RadioId.paymentName;
+								window.open(src+one);
+//								return Bug.NewPage(Bug.WebviewOptions,self.version.title)
+                            }else{
+	                            one = "?bankcode="+vm.onlineobj.bankcode+"&"+"acounmt="+vm.onlineobj.acounmt+"&"+"payId="+vm.RadioId.id;
+//	                            Bug.WebviewOptions.id = vm.RadioId.paymentName;
+//								window.location.href=src+one;
+								window.open(src+one);
+//								return Bug.NewPage(Bug.WebviewOptions,self.version.title)
+                            }
+                           
+						}
+						 let objs = {
+	                            	acounmt:'',
+				                    scancode:'',
+				                    payId:''
+	                            }
+                             switch (self.version.type) {
+                                case '6':
+                                    objs.scancode = 'ali';
+                                    break;
+                                case '7':
+                                    objs.scancode = 'wx';
+                                    break;
+                                case '8':
+                                    objs.scancode = 'cft';
+                                    break;
+                                default:
+                                    objs.scancode = null;
+                            }
+                             console.log(45465)
+                            objs.acounmt = vm.onlineobj.acounmt;
+                            objs.payId = vm.RadioId.id;
+							Reg.ClickAjax(mui,'PlatformPay/scanPay',objs,function(obj){
+								console.log(JSON.stringify(obj))
+								if(obj.status== 'success'){
+				                    if(obj.res_type == '1'){
+				                        if(obj.html != undefined || obj.html != ""){
+				                            obj.html = obj.html.replace(/<body/gi, '<div')
+				                            obj.html = obj.html.replace(/body>/gi, 'div>')
+//				                            vm.$store.dispatch("incealipayscanpay",obj.html);
+				                        }
+				                    }
+				                    if(obj.res_type == '2'){
+				                    	Bug.WebviewOptions.url = "../game.html"
+										Bug.WebviewOptions.id = 'games';
+//				                        vm.$store.dispatch("incealipayscanpaynum",2);
+//				                        obj.user_name = obj.user_name.substring(3);
+				                        if(self.version.type === '6'){
+				                    		ALIPAYSERVER = obj.qrcode;
+				                    		Bug.NewOpen(Bug.WebviewOptions, {
+												text: '支付宝支付',
+												url: ALIPAYSERVER,
+												id: "game"
+											})
+//				                    		window.location.href = obj.qrcode
+//				                    		pay('alipay')
+				                    	}else if(self.version.type === '7'){
+//				                    		WXPAYSERVER = obj.qrcode;
+//				                    		Bug.NewOpen(Bug.WebviewOptions, {
+//												text: '微信支付',
+//												url: WXPAYSERVER,
+//												id: "game"
+//											})
+											plus.runtime.launchApplication( launchApp(obj.qrcode));
+				                    		console.log(789456)
+//				                    		window.location.href = obj.qrcode
+											plus.runtime.openURL('ALIPAYSERVER');
+//				                    		pay('wxpay')
+				                    	}
+//				                        vm.$store.dispatch("incealipayscanpay",obj);
+//				                        vm.$router.push({path:'/AlipayscanPay'})
+				                        return
+				                    }
+				                    if(obj.res_type == '3'){
+//				                        vm.$store.dispatch("incealipayscanpaynum",3);
+				                        obj.user_name = obj.user_name.substring(3);
+//				                        vm.$store.dispatch("incealipayscanpay",obj);
+//				                        vm.$router.push({path:'/AlipayscanPay'})
+				                        return
+				                    }else if(obj.res_type == '4'){
+				                    	if(self.version.type === '6'){
+				                    		ALIPAYSERVER = obj.html;
+				                    		pay('alipay')
+				                    	}else if(self.version.type === '7'){
+				                    		WXPAYSERVER = obj.html
+//				                    		pay('wxpay')
+				                    	}
+//				                        window.location.href=obj.html;
+//				                        return;
+				                    }
+				                }else{
+				                    plus.nativeUI.toast(obj.msg);
+				                }
+							})
+						
+					});
+				});
+        		 // 2. 发起支付请求  
+		        function pay(id){  
+		                // 从服务器请求支付订单  
+		                var PAYSERVER='';  
+	                if(id=='alipay'){  
+		                PAYSERVER=ALIPAYSERVER;  
+		                channel = aliChannel;  
+		            }else if(id=='wxpay'){  
+	                    PAYSERVER=WXPAYSERVER;  
+	                    channel = wxChannel;  
+	                }else{  
+	                    plus.nativeUI.alert("不支持此支付通道！",null,"捐赠");  
+	                    return;  
+		            }  
+	                var xhr=new XMLHttpRequest();  
+	                var amount = vm.onlineobj.acounmt; 
+		            xhr.onreadystatechange=function(){  
+		                    switch(xhr.readyState){  
+		                        case 4:  
+		                        if(xhr.status==200){  
+		                            plus.payment.request(channel,xhr.responseText,function(result){  
+		                                plus.nativeUI.alert("支付成功！",function(){  
+		                                back();  
+		                            });  
+		                            },function(error){  
+		                                plus.nativeUI.alert("支付失败：" + error.code);  
+		                            });  
+		                        }else{  
+		                            alert("获取订单信息失败！");  
+		                        }  
+		                        break;  
+		                    default:  
+		                    break;  
+		                }  
+		         	}  
+		            xhr.open('GET',PAYSERVER+amount);  
+		            xhr.send();  
+		            
+		    	}  
+	     function launchApp(src) {
+			if ( plus.os.name == "Android" ) {
+				plus.runtime.launchApplication( {pname:"com.android.browser"
+					,extra:{url:src}}, function ( e ) {
+						alert( "Open system default browser failed: " + e.message );
+				} );
+			} else if ( plus.os.name == "iOS" ) {
+				plus.runtime.launchApplication( {action:src}, function ( e ) {
+					alert( "Open system default browser failed: " + e.message );
+				} );
+			}
+		}
+			})(mui, document)
+		</script>
+</body>
+</html>

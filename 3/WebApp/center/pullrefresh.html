@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link href="css/mui.dtpicker.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.css" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" href="layui/css/layui.css" />
+		<style type="text/css">
+			.mui-content>.mui-table-view:first-child {
+				margin-top: -1px;
+			}
+				h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			
+			* {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+			}
+			.mui-content>.mui-table-view:first-child {
+				margin-top: -1px;
+			}
+			.mui-btn {
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">资金流水</h1>
+		</header>
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content">
+			<div class="mui-row" id="secbox">
+				<div class="mui-col-sm-6 mui-col-xs-6">
+					<div class="mui-row">
+						<div style="font-size: 13px;;" class="mui-col-sm-4 mui-col-xs-4">
+							开始时间:
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<button id='demo1' style="font-size: 13px;" data-options='{"type":"datetime","beginYear":2010,"beginMonth":10,"endYear":2020}' class="btn mui-btn mui-btn-block">选择日期时间</button>
+						</div>
+					</div>
+					<div class="mui-row" style="margin-top: 3px;">
+						<div style="font-size: 13px;;" class="mui-col-sm-4 mui-col-xs-4">
+							结束时间:
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<button id='demo2' style="font-size: 13px;" data-options='{"type":"datetime","beginYear":2010,"beginMonth":10,"endYear":2020}' class="btn mui-btn mui-btn-block">选择日期时间</button>
+						</div>
+					</div>
+				</div>
+				<div class="mui-col-sm-6 mui-col-xs-6">
+					<div class="mui-row">
+						<div style="font-size: 13px;;" class="mui-col-sm-4 mui-col-xs-4">
+							转账类型:
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<button id='gaming' data-type="" style="font-size: 13px;" class="btn mui-btn mui-btn-block">所有</button>
+						</div>
+					</div>
+					<div class="mui-row" style="margin-top: 3px;;">
+						<div style="font-size: 13px;" class="mui-col-sm-4 mui-col-xs-4">
+							转账状态:
+						</div>
+						<div class="mui-col-sm-8 mui-col-xs-8">
+							<button data-type="" id='status' style="font-size: 13px;" class="btn mui-btn mui-btn-block">所有</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mui-row">
+				<button type="button" id="submit" style="width: 100%;" class="mui-btn mui-btn-primary mui-btn-block" data-loading-icon="">确认</button>
+			</div>
+			<!--数据列表-->
+			<ul class="mui-table-view mui-table-view-chevron"></ul>
+			<div id="demo8"></div>
+			<ul id="biuuu_city_list"></ul>          
+		</div>
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src='../js/Regular.js'></script>
+		<script src="../js/public.js"></script>
+		<script src="js/game.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<!--<script src="js/mui.picker.min.js"></script>-->
+		<script src="js/mui.dtpicker.js"></script>
+		<script>
+			//时间插件
+			(function($) {
+				$.init();
+				var result = $('#result')[0];
+				var btns1 = $('#demo1')[0];
+				//开始时间
+				btns1.addEventListener('tap', function() {
+					var _self = this;
+					Bug.NewEnd(btns1, _self, $)
+				}, false);
+				//				结束时间
+				var btns2 = $('#demo2')[0];
+				btns2.addEventListener('tap', function() {
+					var _self = this;
+					Bug.NewEnd(btns2, _self, $)
+				}, false);
+				//转账类型
+				var gaminguserPicker = new $.PopPicker();
+				gaminguserPicker.setData([{
+					text: '所有',
+					value: '',
+				}, {
+					text: '网银',
+					value: '网银',
+				}, {
+					text: '微信',
+					value: '微信',
+				}, {
+					text: '支付宝',
+					value: '支付宝',
+				}, {
+					text: '银行汇款',
+					value: '银行汇款',
+				}]);
+				var gaming = document.getElementById('gaming');
+				gaming.addEventListener('tap', function(event) {
+					gaminguserPicker.show(function(items) {
+						gaming.innerText = items[0].text;
+						gaming.setAttribute("data-type", items[0].value);
+					});
+				}, false);
+				//转账状态
+				var statususerPicker = new $.PopPicker();
+				statususerPicker.setData([{
+					text: '所有',
+					value: ''
+				}, {
+					text: '处理中',
+					value: '处理中'
+				}, {
+					text: '交易失败',
+					value: '交易失败'
+				}, {
+					text: '交易成功',
+					value: '交易成功'
+				}])
+				var status = document.getElementById('status');
+				status.addEventListener('tap', function(event) {
+					statususerPicker.show(function(items) {
+						status.innerText = items[0].text;
+						status.setAttribute("data-type", items[0].value);
+					});
+				}, false);
+				var rechargeRecord = {
+					pageSize:'5',
+					pageNo:'1',
+					startTime:Reg.daytime(30000),
+					endTime:Reg.daytime(0)
+				};
+				$(document.body).on('tap', '#submit', function(e) {
+					rechargeRecord.bdate = btns1.innerText;
+					rechargeRecord.edate = btns2.innerText
+					rechargeRecord.Type = gaming.getAttribute("data-type");
+					rechargeRecord.status = status.getAttribute("data-type");
+					$(this).button('loading');
+					setTimeout(function() {
+						$(this).button('reset');
+						console.log(JSON.stringify(rechargeRecord))
+					}.bind(this), 2000);
+				});
+			})(mui);
+			 //
+//			mui.init({
+//				pullRefresh: {
+//					container: '#pullrefresh',
+//					down: {
+//						style:'circle',
+//						callback: pulldownRefresh
+//					},
+//					up: {
+//						auto:true,
+//						contentrefresh: '正在加载...',
+//						callback: pullupRefresh
+//					}
+//				}
+//			});
+//			mui('body').on('tap','.mui-backdrop',function(){
+//			    // 取消暂时禁止滚动
+//			    mui('#pullrefresh').pullRefresh().setStopped(true);
+//			})
+//			var count = 0;
+//			let data = {
+//					pageSize:'5',
+//					pageNo:'1',
+//					startTime:Reg.daytime(30000),
+//					endTime:Reg.daytime(0)
+//			};
+//			function pullupRefresh() {// ajax 记录
+//					if(count != 0){
+//						data.pageNo = count +1;
+//					};
+//					Reg.ajax(mui,'User/queryByTreasurePage',data,function(obj){
+//						var cnt=0;
+//						setTimeout(function() {
+//							mui('#pullrefresh').pullRefresh().endPullup((++count) > (Number(obj.total)/5)); //参数为true代表没有更多数据了。
+//							var table = document.body.querySelector('.mui-table-view');
+//							var cells = document.body.querySelectorAll('.mui-table-view-cell');
+//							var newCount = cells.length>0?5:5;//首次加载20条，满屏
+//							for (var i = cells.length, len = i + newCount; i < len; i++) {
+//								var li = document.createElement('li');
+//								li.className = 'mui-table-view-cell';
+//								if(i <= Number(obj.total)){
+//									li.innerHTML = '<a class="mui-navigate-right">'+Reg.franttime(obj.data[i - cells.length].addtime.time)+'-' + obj.data[i - cells.length].new_money+ '</a>';
+//									table.appendChild(li);
+//								}
+//							}
+//						}, 1500);
+//					});
+//			};
+//			function addData() {
+//				var table = document.body.querySelector('.mui-table-view');
+//				var cells = document.body.querySelectorAll('.mui-table-view-cell');
+//				for(var i = cells.length, len = i + 5; i < len; i++) {
+//					var li = document.createElement('li');
+//					li.className = 'mui-table-view-cell';
+//					li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+//					//下拉刷新，新纪录插到最前面；
+//					table.insertBefore(li, table.firstChild);
+//				}
+//			}
+//			/**
+//			 * 下拉刷新具体业务实现
+//			 */
+//			function pulldownRefresh() {
+//				mui('#pullrefresh').pullRefresh().endPulldown(false);
+////				setTimeout(function() {
+//////					addData();
+////					mui('#pullrefresh').pullRefresh().endPulldown(false);
+//////					mui.toast("为你推荐了5篇文章");
+////				}, 1500);
+//			}
+//			
+		</script>
+	</body>
+
+</html>

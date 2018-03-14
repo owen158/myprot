@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		 <header class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+            <h1 class="mui-title"></h1>
+        </header>
+        <div class="mui-content">
+        	<div class="mui-content-padded" style="margin: 5px;">
+	        	<h5>
+	        		汇款前请联系客服确认汇款信息 <span>在线客服</span>
+	        	</h5>
+				<div class="mui-input-row">
+					<input type="text" class="mui-input-clear" placeholder="存款人姓名(*转账账号对应的姓名)">
+				</div>
+				<div class="mui-input-row">
+					<input type="text" class="mui-input-clear" placeholder="支付账号(*例如：***9558，可填后4位)">
+				</div>
+				<div class="mui-input-row">
+					<input type="text" class="mui-input-clear" placeholder="存款金额">
+				</div>
+				<div class="mui-input-row">
+					<input type="text" class="mui-input-clear" disabled="disabled" placeholder="2017-11-27（系统默认当前时间）">
+				</div>
+				<div class="mui-input-row">
+					<button style="margin: 0 0 15px 0;width: 100%;text-align: left;" id='showUserPicker' data-value="" class="mui-btn mui-btn-block" type='button'>选择存款方式</button>
+				</div>
+				<div class="mui-input-row">
+					<button style="margin: 0 0 15px 0;width: 100%;text-align: left;" id='showCityPicker' data-value="" class="mui-btn mui-btn-block" type='button'>是否申请彩金</button>
+				</div>
+				<h5>
+	        		*转帐完成后请保留单据作为核对证明。<br> <br>
+	                    *必须填写表单内容，不能为空。<br> <br>
+	                    *每笔转帐请提交一次。<br> <br>
+	        	</h5>
+	        	<div class="mui-input-row">
+					<button type="button" id="submit" style="width: 100%;" class="mui-btn mui-btn-primary mui-btn-block" data-loading-icon="">确认</button>
+				</div>
+        	</div>
+        </div>
+		<script src="../js/mui.min.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script type="text/javascript">
+			var self = plus.webview.currentWebview();
+			(function($, doc) {
+				$.init();
+				var old_back = $.back;
+				$(".mui-title")[0].innerHTML=self.version.title
+				$.back = function() {
+					var btn = ["确定", "取消"];
+					$.confirm('确认关闭当前'+self.version.title+'页面？', '系统提示', btn, function(e) {
+						if(e.index == 0) {
+							//执行mui封装好的窗口关闭逻辑；
+							old_back();
+						}
+					});
+				}
+				$.ready(function() {
+					var _getParam = function(obj, param) {
+						return obj[param] || '';
+					};
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: '1',
+						text: '网银转账'
+					}, {
+						value: '2',
+						text: '支付宝'
+					}, {
+						value: '3',
+						text: '财付通'
+					}, {
+						value: '4',
+						text: '微信'
+					}, {
+						value: '5',
+						text: 'ATM自动柜员机'
+					}, {
+						value: '6',
+						text: 'ATM现金入款'
+					}, {
+						value: '7',
+						text: '银行柜台'
+					}]);
+					var showUserPickerButton = doc.getElementById('showUserPicker');
+
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							showUserPickerButton.innerText = items[0].text;
+							showUserPickerButton.setAttribute("data-value", items[0].value);
+							//							JSON.stringify(items[0]);
+							//返回 false 可以阻止选择框的关闭
+							//							return false;
+						});
+					}, false);
+					var cityPicker = new $.PopPicker();
+					cityPicker.setData([{
+						value: '0',
+						text: '申请'
+					}, {
+						value: '1',
+						text: '不申请'
+					}]);
+					var showCityPickerButton = document.getElementById('showCityPicker');
+
+					showCityPickerButton.addEventListener('tap', function(event) {
+						cityPicker.show(function(items) {
+							showCityPickerButton.innerText = items[0].text;
+							showCityPickerButton.setAttribute("data-value", items[0].value);
+							//返回 false 可以阻止选择框的关闭
+							//							return false;
+						});
+					}, false);
+					$(document.body).on('tap', '#submit', function(e) {
+						$(this).button('loading');
+						setTimeout(function() {
+							$(this).button('reset');
+						}.bind(this), 2000);
+					});
+				})
+			})(mui, document)
+		</script>
+	</body>
+
+</html>

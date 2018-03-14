@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<script src="../js/head.js" type="text/javascript" charset="utf-8"></script>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		
+		<style>
+			.oa-contact-cell.mui-table .mui-table-cell {
+				/*padding: 3px 0;*/
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+			
+			.oa-contact-avatar {
+				width: 1rem;
+			}
+			/*.oa-contact-avatar img {
+				border-radius: 50%;
+			}*/
+			
+			.oa-contact-content {
+				width: 100%;
+			}
+			
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			.oa-contact-name,
+			oa-contact-position {
+				float: left;
+			}
+			
+			.mui-content .mui-table-view-cell {
+				padding: 20px 15px;
+				;
+			}
+			
+			.mui-card {
+				margin: 10px 10px;
+			}
+			
+			.mui-card-content-inner {
+				/*padding: 5px;*/
+				margin: 25px 0;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">扫码支付</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+				<li data-id="1" class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<span class="x-icon-Alipay"></span>
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<h4 class="oa-contact-name">支付宝付款</h4>
+									<!--<span class="oa-contact-position mui-h6">员工</span>-->
+								</div>
+								<p class="oa-contact-email mui-h6">
+									Alipay transfer
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li data-id="2" class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<span class="x-icon-wechat"></span>
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<h4 class="oa-contact-name">微信支付</h4>
+									<!--<span class="oa-contact-position mui-h6">员工</span>-->
+								</div>
+								<p class="oa-contact-email mui-h6">
+									Wechat transfer
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li data-id="3" class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<span class="x-icon-tenpay"></span>
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<h4 class="oa-contact-name">财付通</h4>
+									<!--<span class="oa-contact-position mui-h6">员工</span>-->
+								</div>
+								<p class="oa-contact-email mui-h6">
+									TenPay transfer
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			(function($) {
+				$.init({
+					swipeBack: true //启用右滑关闭功能
+				});
+				$(".mui-table-view").on('tap', '.mui-table-view-cell', function(e) {
+					var targetTab = this.getAttribute('data-id');
+					var title = null;
+					if(targetTab === "1"){
+						title = "支付宝"
+					}else if(targetTab === "2"){
+						title = "微信"
+					}else if(targetTab === "3"){
+						title = "财付通"
+					}
+					Bug.WebviewOptions.id = 'ScanCodebank';
+					Bug.WebviewOptions.url= "ScanCodebank.html";
+					Bug.NewOpen(Bug.WebviewOptions,{title:title})
+				});
+			})(mui);
+		</script>
+	</body>
+
+</html>

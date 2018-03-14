@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<script src="js/vue.js"></script>
+		<style>
+			.area {
+				margin: 20px auto 0px auto;
+			}
+			.mui-input-group:first-child {
+				margin-top: 20px;
+			}
+			.mui-input-group label {
+				width: 22%;
+			}
+			.mui-input-row label~input,
+			.mui-input-row label~select,
+			.mui-input-row label~textarea {
+				width: 78%;
+			}
+			.mui-checkbox input[type=checkbox],
+			.mui-radio input[type=radio] {
+				top: 6px;
+			}
+			.mui-content-padded {
+				margin-top: 25px;
+			}
+			.mui-btn {
+				padding: 10px;
+			}
+			.mui-input-row{
+				position: relative;
+			}
+			#codeimg{
+				position: absolute;
+				right: 5px;
+				top: 2px;
+				width: 70px;;
+				height: 36px;;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">注册</h1>
+		</header>
+		<div class="mui-content" id="regs">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>账号</label>
+					<input id='account' v-model="obj.userName" type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input id='password' v-model="obj.passWord" type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+				</div>
+				<div class="mui-input-row">
+					<label>确认</label>
+					<input id='repassWord' v-model="obj.repassWord" type="password" class="mui-input-clear mui-input" placeholder="请确认密码">
+				</div>
+				<div style='height: 10px;background: #efeff4;'></div>
+				<div class="mui-input-row">
+					<label>姓名</label>
+					<input id='realName' v-model="obj.realName" type="text" class="mui-input-clear mui-input" placeholder="真实姓名">
+				</div>
+				<div class="mui-input-row">
+					<label>手机号</label>
+					<input id='mobileNo' v-model="obj.mobileNo" type="text" class="mui-input-clear mui-input" placeholder="手机号">
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input id='qkpwd' v-model="obj.qkpwd" type="password" class="mui-input-clear mui-input" placeholder="请输入4位数字的取款密码">
+				</div>
+				<!--<div class="mui-input-row">
+					<label>邮箱</label>
+					<input id='email' type="email" class="mui-input-clear mui-input" placeholder="请输入邮箱">
+				</div>-->
+				<!--<div class="mui-input-row">
+					<label>验证码</label>
+					<input id='code' type="text" class="mui-input-clear mui-input" placeholder="请输入验证码">
+					<img id="codeimg" src="" alt="" />
+				</div>-->
+			</form>
+			<div class="mui-content-padded">
+				<button id='reg' class="mui-btn mui-btn-block mui-btn-primary">注册</button>
+			</div>
+			<div class="mui-content-padded">
+				<p>注册真实可用，注册成功后的用户可用于登录，但是示例程序并未和服务端交互，用户相关数据仅存储于本地。</p>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/Regular.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/app.js"></script>
+		<script>
+			var vm = new Vue({
+				el: '#regs',
+				data: {
+						obj:{
+							userName:'',//用户名
+		                    passWord: '',//密码
+		                    repassWord:'',//确认密码
+		                    mobileNo:'',//手机号
+		                    imgcode:'',//验证码
+		                    reguuid:'',//token
+		                    qkpwd:'',//取款密码
+		                    reqkpwd:'',//确认取款密码
+		                    realName:'',//真实姓名
+		                    cagent:'',//字段
+		                    isMobile:1,//类型
+		                    proxyname:'',//
+		                    isImgCode:0
+						}
+				}
+			});
+			(function($, doc) {
+				$.init();
+				$.plusReady(function() {
+					var settings = app.getSettings();
+					var mainPage = plus.webview.getWebviewById("tab-webview-main");
+					var main_loaded_flag = false;
+					if(!mainPage){
+						mainPage = $.preload({
+							"id": 'tab-webview-main',
+							"url": 'tab-webview-main.html'
+						});
+					}else{
+						main_loaded_flag = true;
+					}
+					mainPage.addEventListener("loaded",function () {
+						main_loaded_flag = true;
+					});
+					var toMain = function() {
+						//使用定时器的原因：
+						//可能执行太快，main页面loaded事件尚未触发就执行自定义事件，此时必然会失败
+						var id = setInterval(function () {
+							if(main_loaded_flag){
+								clearInterval(id);
+								$.fire(mainPage, 'show', null);
+								mainPage.show("pop-in");
+							}
+						},20);
+					};
+					var mask = mui.createMask();
+					var regButton = doc.getElementById('reg');
+					Reg.ajax(mui,"checklogin.do",{},function(calls){
+						if (calls.msg == "faild") {
+			           	} else if (calls.msg == "islogin") {
+			           	} else if (calls.msg == "success") {
+			            	localStorage.setItem('$state', JSON.stringify(calls));
+			            	toMain();
+			           	}
+					})
+					regButton.addEventListener('tap', function(event) {
+						app.reg(vm.obj, function(err) {
+							if (err) {
+								plus.nativeUI.toast(err);
+								return;
+							}
+							Reg.ajax(mui,'User/getToken',{},function(ken){
+								vm.obj.reguuid=ken.msg;
+								vm.obj.reqkpwd=vm.obj.qkpwd;
+								vm.obj.cagent = Reg.cagent;
+								console.log(JSON.stringify(vm.obj));
+								mask.show();
+								Reg.ajax(mui,'User/register',vm.obj,function(data){
+									mask.close();
+									 switch (data.msg) {
+				                        case '001':
+				                            plus.nativeUI.toast('用户名为空');
+				                            break;
+				                        case '002':
+				                        	plus.nativeUI.toast('用户名格式不正确');
+				                            break;
+				                        case '003':
+				                            plus.nativeUI.toast('手机号为空');
+				                            break;
+				                        case '004':
+				                            plus.nativeUI.toast('手机号不正确');
+				                            break;
+				                        case '005':
+				                            plus.nativeUI.toast('密码为空');
+				                            break;
+				                        case '006':
+				                            plus.nativeUI.toast('确认密码为空');
+				                            break;
+				                        case '007':
+				                            plus.nativeUI.toast('两次密码不一致');
+				                            break;
+				                        case '008':
+				                            plus.nativeUI.toast('密码格式不正确');
+				                            break;
+				                        case '009':
+				                            plus.nativeUI.toast('账号已存在');
+				                            break;
+				                        case '010':
+				                            plus.nativeUI.toast('reguuid为空,如有疑问联系在线客服');
+				                            break;
+				                        case '011':
+				                            plus.nativeUI.toast('图片验证码为空');
+				                            break;
+				                        case '012':
+				                            plus.nativeUI.toast('图片验证码错误');
+				                            break;
+				                        case '013':
+				                            plus.nativeUI.toast('取款密码为空');
+				                            break;
+				                        case '014':
+				                            plus.nativeUI.toast('确认取款密码为空');
+				                            break;
+				                        case '015':
+				                            plus.nativeUI.toast('两次取款密码不一致');
+				                            break;
+				                        case '016':
+				                            plus.nativeUI.toast('取款密码格式不正确');
+				                            break;
+				                        case '017':
+				                            plus.nativeUI.toast('取款密码不能与登录密码相同');
+				                            break;
+				                        case 'success':
+				                            plus.nativeUI.toast('申请成功');
+				                            localStorage.setItem('$state', JSON.stringify(data));
+				                            toMain();
+				                            break;
+				                        case 'error':
+				                            plus.nativeUI.toast('网络异常');
+				                            break;
+				                    }
+								})
+							})
+//							plus.nativeUI.toast('注册成功');
+							/*
+							 * 注意：
+							 * 1、因本示例应用启动页就是登录页面，因此注册成功后，直接显示登录页即可；
+							 * 2、如果真实案例中，启动页不是登录页，则需修改，使用mui.openWindow打开真实的登录页面
+							 */
+//							plus.webview.getLaunchWebview().show("pop-in",200,function () {
+//								plus.webview.currentWebview().close("none");
+//							});
+							//若启动页不是登录页，则需通过如下方式打开登录页
+//							$.openWindow({
+//								url: 'login.html',
+//								id: 'login',
+//								show: {
+//									aniShow: 'pop-in'
+//								}
+//							});
+						});
+					});
+				});
+			}(mui, document));
+		</script>
+	</body>
+
+</html>
