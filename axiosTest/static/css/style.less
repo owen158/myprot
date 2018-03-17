@@ -1,0 +1,124 @@
+@base: #2c3e50;
+.Theme{
+  background: @base;
+}
+.ThemeSize{
+  color:@base;
+}
+
+.btn{
+  background:@base ;
+  color:#fff;
+}
+@text-c1:#333;
+@text-c2:#fff;
+@text-c3:#fde269;
+@text-c4:#3c3a42;
+@text-c5:#696969;
+@text-c6:#b0b0b0;
+@text-c7:#6a6a6b;
+@text-c8:#437fbd;
+// b0b0b0
+@bg-c1:#2c2b31;
+@bg-c2:#414247;
+@bg-c3:#437fbd;
+@bg-c4:dimgray;
+@bg-c5:#35343a;
+@border-c1:#1f1e23;
+@border-c2:#7b6d48;
+.solid{
+  border-top:1px solid @border-c1;
+  margin: 0.15rem 0;
+  border-bottom: 1px solid @text-c4;
+}
+.solid-bottom{
+  border-bottom:1px solid @border-c2;
+}
+.box-shadow(@a,@b,@c,@d,@l){
+  -webkit-box-shadow:@a @b @c @d @l;
+  -moz-box-shadow:@a @b @c @d @l;
+  box-shadow: @a @b @c @d @l;
+}
+.border(@a){
+  -webkit-border-radius: @a;
+  -moz-border-radius: @a;
+  border-radius: @a;
+}
+.box-sizing{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.text-c1{
+  color:@text-c3
+}
+.Tips{
+  text-align: left;
+  padding-left: 0.25rem;
+  width: 100%;
+  h2{
+    height: 0.8rem;
+    line-height: 0.8rem;
+    font-size: 0.4rem;
+    color:@text-c6
+  }
+  p{
+    height: 0.5rem;
+    line-height: 0.5rem;
+    color:@text-c5;
+    font-size: 0.3rem;
+  }
+}
+.height-row{
+  height: 0.2rem;
+}
+.border-box(@a,@b){
+  border:@a solid @b;
+}
+.Submit{
+  display: block;
+  width: 95%;
+  margin: 0.5rem auto;
+  font-size: 0.35rem;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  background:@bg-c2 ;
+  color:#fff;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  .border(3px);
+}
+.page-box{
+  width: 100%;
+  font-size: 0;
+  padding-top: 0.9rem;
+  padding-bottom: 0.8rem;
+  min-height: 100%;
+  background: @bg-c1;
+}
+.fixed{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 100;
+}
+//******************* 表单 *********************
+//.demo--radio{display:none}
+.demo--radioInput{
+  position: absolute;
+  background-color: @bg-c1;
+  border: 1px solid @border-c2;
+  border-radius: 100%;
+  display: inline-block;
+  height: 18px;
+  left:0.1rem;
+  vertical-align: middle;
+  width: 18px;
+  line-height: 1;
+}
+.demo--radio:checked + .demo--radioInput:after{background-color:@text-c3;border-radius:100%;content:"";display:inline-block;height:12px;margin:2px;width:12px}
+.demo--checkbox.demo--radioInput,.demo--radio:checked + .demo--checkbox.demo--radioInput:after{border-radius:0}
+//******************* 表单 *********************

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>用户中心-站内信</title>
+</head>
+<link rel="stylesheet" type="text/css" href="user_css/user.css" />
+<link rel="stylesheet" type="text/css" href="user_css/reset.css" />
+<link rel="stylesheet" type="text/css" href="user_css/messagelist.css" />
+
+<body>
+<div class="wrap">
+  <div class="top_bar clear">
+    <p><a href="../index.html"><img src="http://image.beike188.com/POLY/user_img/bllogo.png" /></a></p>
+    <ul class="top_nav">
+      <li><a onclick="loadgame('HG','','PC');">体育赛事</a></li>
+      <li><a href="../column/casino.html">视讯直播</a></li>
+      <li><a href="../column/slot.html~platform=PT.html">PT电子</a></li>
+      <li><a href="../column/slot.html">MG电子</a></li>
+      <li><a href="../column/promo.html">优惠活动</a></li> <li><a href="">联系我们</a></li>
+    </ul>
+    <div class="header_info"> <a class="first" href="javascript:;"></a>| <a class="last" href="##">注销</a> <a class="button" href="http://f88.live800.com/live800/chatClient/chatbox.jsp?companyID=779799&configID=144546&jid=9355144430" target="_blank">在线客服</a> </div>
+  </div>
+  <!--notice-->
+			<div class="notice">
+               <div class="eveb_header_notice">
+                  <h4><i class="icon_small icon_header_notice"></i>公告：</h4>
+                  <!--轮播-->
+                  <div class="txtScroll-top">
+                      <!--<div class="bd">
+                          <ul class="infoList">
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+                          </ul>
+                      </div>
+                      <div class="hd">
+                          <a class="next"></a>
+                          <ul></ul>
+                          <a class="prev"></a>
+
+                      </div>-->
+                      <!--文字滚动-->
+							        <div class="header-center_gd">
+							            <div class="picMarquee-left">
+							              <ul class="header_marquee" behavior="scroll">
+							              </ul>
+							            </div>
+							        </div>
+							        <!--文字滚动-end-->
+            </div><!--轮播-end-->
+            </div>
+            </div><!--notice-end-->
+  <ul class="user_nav clear">
+    <li><a href="user_center.html"><i class="icon_home"></i>会员首页</a></li>
+    <li><a href="deposit.html"><i class="icon_bank"></i>存款</a></li>
+    <li><a href="drawing.html"><i class="icon_withdraw"></i>提款</a></li>
+    <!--<li><a href="transfer_accounts.html"><i class="icon_transfer"></i>转账</a></li>
+    <li style="background-color: #ddb79a;"><a href="messagelist.html"><i class="icon_letter"></i>站内信</a></li>-->
+    <li><a href="market.html"><i class="icon_market"></i>市场活动</a></li>
+    <li><a href="history.html"><i class="icon_record"></i>历史记录</a></li>
+    <li><a href="Account_settings.html"><i class="icon_set"></i>账户设置</a></li>
+  </ul>
+
+  <!--站内信开始-->
+  <div class="eveb_content">
+    <h2><i class="icon"></i>站内信</h2>
+    <div class="eveb_sub_nav">
+      <ul class="eveb_sub_nav_type fl">
+        <li class="on"><a id="showAll" href="javascript:;">全部 (<em>0</em>)</a></li>
+        <li><a id="showUnReaded" href="javascript:;">未读 (<em>0</em>)</a></li>
+        <li><a id="showReaded" href="javascript:;">已读 (<em>0</em>)</a></li>
+      </ul>
+      <div class="eveb_search"> 起止时间：
+         <input  type="text" size="10" class="Wdate beginTime" onclick="WdatePicker({minDate:'%y-%M-{%d-30}',maxDate:'%y-%M-%d'})" />
+          -
+          <input   type="text" size="10" class="Wdate endTime" onclick="WdatePicker({minDate:'%y-%M-{%d-30}',maxDate:'%y-%M-%d'})" />
+          <a id="refreshDataList" href="javascript:;" class="button_small button_1">筛选</a>
+          <a id="theDay" href="javascript:;" class="button_small button_4" onclick="today()">今日</a> 
+          <a id="threeDay" href="javascript:;" class="button_small button_4" onclick="threeDay()">3天</a>
+          <a id="theWeek" href="javascript:;" class="button_small button_4 the_week">本周</a>
+      </div>
+    </div>
+
+    <!-- tab内容 -->
+    <ul class="eveb_letter_list" id="mainBody">
+      <li>
+        <div class="eveb_letter_title"><span>正在加载数据...</span> </div>
+      </li>
+      <li style="display:none">
+        <div class="eveb_letter_title"><span>正在加载数据...</span></div>
+      </li>
+      <li style="display:none">
+        <div class="eveb_letter_title"><span>正在加载数据...</span></div>
+      </li>
+    </ul>
+    <div class="eveb_list_footer">
+      <div class="eveb_list_select fl">
+        <label>
+          <input type="checkbox" id="selectAll" />
+          全选</label>
+        <a id="btnDelete" href="javascript:;" class="button_small button_3 delete_confirm">删除</a> <a id="btnRead" href="javascript:;" class="button_small button_3 readed_confirm">标记为已读</a> </div>
+      <!--分页start-->
+      <div id="pagination" class="fr"></div>
+      <!--分页end-->
+    </div>
+  </div>
+
+  <!--底部-->
+  <div class="user_footer">
+    <div class="footer_link"> <a href="../help/index.html?key=0">关于我们</a>| <a href="../agent/index.html">代理专区</a>| <a href="../help/index.html?key=2">新手指南</a>| <a href="../help/index.html?key=1">联系我们</a>| <a href="../column/download.html">手机下注</a> </div>
+    <div class="copyright "> <p style="float:left;margin-right: 20px;">Copyright © 2017 天下网络 All Right Reserved</p>  <p style="float:left">PT游戏是由PT TransPacific在PAGCOR<img style="width:15px;" src="http://image.beike188.com/POLY/images/pagcorlogo.png">的授权下部署</p> </div>
+  </div>
+</div>
+</body>
+<script src="user_js/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="../bundles/jquery.SuperSlide.2.1.1.js"></script>
+<script src="user_js/user.js" type="text/javascript" charset="utf-8"></script>
+<script language="javascript" type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+<script src="user_js/date.js" type="text/javascript" charset="utf-8"></script>
+<script src="../bundles/game_plat.js"></script>
+<script src="../Scripts/page/jquery.marquee.min.js"></script>
+<script type="text/javascript" src="../Scripts/page/page_common.js"></script>
+<!--<script type="text/javascript" src="../Scripts/page/checkinput.js"></script>-->
+<script src="../bundles/loadpage.js"></script>
+<script type="text/javascript">
+// 切换到相关页
+$(function (){
+  $(".eveb_sub_nav_type li").click(function(){
+        $(".eveb_sub_nav_type li").eq($(this).index()).addClass("on").siblings().removeClass('on');
+        $(".eveb_letter_list li").hide().eq($(this).index()).show();
+ })
+})
+ //公告
+//jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:1});
+</script>
+</html>

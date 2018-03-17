@@ -1,0 +1,84 @@
+#banner {
+	background: url(../images/game_banner.jpg) no-repeat center
+}
+.lobby>ul{
+	text-align: left;
+	margin-top:30px;
+}
+.lobby ul li {
+	margin:2px 10px;
+	width: 308px;
+	height: 287px;
+	list-style:none;
+	float:left;
+	position: relative;
+   
+}
+.lobby ul li a{
+	display: block;
+	width: 308px;
+	height: 287px;
+	z-index: 2;
+}
+.lobby ul .mg {
+	background: url(../images/game_mg.png) no-repeat
+}
+.lobby ul .bb{
+	background: url(../images/game_bb.png) no-repeat
+}
+.lobby ul .prg{
+	background: url(../images/game_prg.png) no-repeat
+}
+.lobby ul .ag{
+	background: url(../images/game_ag.png) no-repeat
+}
+.lobby ul .pt{
+	background: url(../images/game_pt.png) no-repeat
+}
+.lobby ul .gpi{
+	background: url(../images/game_gpi.png) no-repeat
+}
+.lobby ul .gns{
+	background: url(../images/game_gns.png) no-repeat
+}
+.lobby ul .sg{
+	background: url(../images/game_sg.png) no-repeat
+}
+.lobby ul .fish{
+	background: url(../images/game_fish.png) no-repeat
+}
+.lobby ul .mw{
+	background: url(../images/game_mw.png) no-repeat
+}
+.lobby ul .more{
+	background: url(../images/game_more.png) no-repeat
+}
+.lobby ul li .game-listzz {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 308px;
+	height: 287px;
+	background-color: #000;
+	filter: alpha(opacity=60);-moz-opacity: 0.6; opacity: 0.6; 
+	display:none;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+/*ul.game-list:hover li:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 308px;
+	height: 287px;
+	background-color: rgba(0,0,0,.6);
+	-moz-transition: background-color .2s ease;
+	-webkit-transition: background-color .2s ease;
+	-o-transition: background-color .2s ease;
+	transition: background-color .2s ease;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px
+}*/

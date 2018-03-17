@@ -1,0 +1,190 @@
+/* CSS Document */
+* { padding: 0; margin: 0; }
+body { font-family:"Microsoft YaHei",SimSun,SimHei; font-size: 14px; color: #686868; background:#f6edde; }
+a, input { list-style: none; margin: 0; padding: 0; }
+h1, h2, h3, h4, h5, h6, ul, li, ol, form, img, p, div { margin: 0; padding: 0; border: none; list-style-type: none; }
+a, a:hover{ text-decoration: none; }
+a{ color:#686868; }
+a:hover{ color:#5f4234; }
+i, small, em{ font-style:normal; }
+td { margin: 0; padding: 0; }
+
+/*common样式*/
+.l{float:left;}
+.r{float:right;}
+.ml10{ margin-left:10px; }
+.mr10{ margin-right:10px; }
+.mt10{ margin-top:10px; }
+.mb10{ margin-bottom:10px; }
+.mt20{ margin-top:20px; }
+.mb20{ margin-bottom:20px; }
+.mr20{ margin-right:20px; }
+.pdt10{ padding:10px 0; }
+.clear { clear: both; }
+.radius{ border-radius: 100px; -webkit-border-radius: 100px; -moz-border-radius: 100px; -ms-border-radius: 100px; -o-border-radius: 100px; }
+.fontst { font-family: "宋体"; }
+.font12 { font-size: 12px; }
+.c-blue{ color:#c9dcf9; }
+.c-white { color: #ffffff; }
+.c-red{ color:#ee0909; }
+.c-blues{ color:#5f4234; }
+.b-blue{ background:#5f4234; }
+.b-pink{ background:#ee1571; }
+.b-red{ background:#ee0909; }
+.b-yellow{ background:#ee9015; }
+.b-grenn{ background:#12bb00; }
+.vermid { vertical-align: middle; }
+.container { width: 1000px; margin: 0 auto; }
+.fullwidth { width: 100%; }
+.no-weight { font-weight: normal; }
+.clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden; }
+.btf:hover{ filter:alpha(opacity=80); -moz-opacity:0.8; opacity:0.8; }
+.b-b{ border-bottom:1px solid #dadada; }
+.b-t{ border-top:2px solid #ddb79a; }
+.b-l{ border-left:1px solid #dadada; }
+.b-r{ border-right:1px solid #dadada; }
+.h3-title{ height:42px; padding:15px 0; }
+.h3-title h3{ width:130px; height:42px; background:url(http://image.beike188.com/POLY/images/icon2.png) no-repeat; float:left; }
+
+/*头部通用*/
+.head{ height:55px; padding:20px 0; }
+.head h1 a{ display:block; width:163px; height:55px; background:url(http://image.beike188.com/POLY/images/agent_logo.jpg) no-repeat; }
+.head .center{ width:565px; height:15px; font-size:12px; padding-left:40px; margin-top:20px; float:left; overflow:hidden;  }
+.head .center span{ display:block; height:20px; background:url(http://image.beike188.com/POLY/images/icon2.png) no-repeat -384px -42px; padding:0 5px 0 20px; float:left; }
+.head .center ul{ padding:0 50px; height:20px; overflow:hidden; }
+.head .center li{ display:block; height:20px; float:left; margin-right: 10px;}
+.head .center li a{ display:block; width:100%;  }
+.head-btn{ margin-top:13px; }
+.head-btn a{ display:block; width:87px; height:35px; color:#ffffff; font-size:16px; text-align:center; line-height:35px;  background:url(http://image.beike188.com/POLY/images/icon2.png) no-repeat; }
+.head-btn .login{ background-position:-174px -166px; float:left; }
+.head-btn .registered{ background-position:-174px -201px; float:left; }
+
+/*浏览器判断*/
+.browser{ height:40px; color:#ffffff; font-size:12px; line-height:40px; background:#262626; }
+.browser-center{ }
+.browser-center a{ color:#ffd800; }
+.browser-center span{ background:url(http://image.beike188.com/POLY/images/icon2.png) no-repeat -386px -107px; padding-left:16px; margin-left:10px; }
+.browser-center .closed{ display:block; height:20px; color:#ffffff; line-height:20px; background:url(http://image.beike188.com/POLY/images/icon2.png) no-repeat -387px -82px; cursor:pointer; padding-left:15px; margin-top:10px; float:right; overflow:hidden; }
+
+/*导航*/
+.nav-bg{ height:55px; background:#5f4234; }
+.navBar{ position:relative; z-index:2; color:#dadada; height:55px; line-height:30px;  }
+.nav{ margin:0 auto;  }
+.nav a{ color:#ffffff; margin:13px 20px 0 0; height:30px;  }
+.nav h3{ float:left;  font-size:100%; font-weight:normal; font-size:16px;  }
+.nav .m{ float:left;  position:relative; }
+.nav .s{ float:left; width:8px; text-align:center; color:#eee;   }
+.nav h3 a{  display:block; height:30px; padding:0 20px; float:left;  }
+.nav .on a{ color:#5f4234; background:#ffffff; border-radius: 100px; -webkit-border-radius: 100px; -moz-border-radius: 100px; -ms-border-radius: 100px; -o-border-radius: 100px;  }
+
+/*焦点图*/
+.banner{ width:100%;  position:relative;  height:460px; /*background:url(http://image.beike188.com/POLY/images/bg/banner-bg.gif) no-repeat center top;*/ border-bottom:1px solid #dadada; margin-bottom:10px; overflow:hidden; }
+.banner_img{ margin:0 auto; position:relative; z-index:1; overflow:hidden;  }
+.banner_img ul{ width:100% !important;  }
+.banner_img li{ width:100% !important;  height:460px; overflow:hidden; text-align:center; background:center 0 no-repeat;  }
+.banner_img li a{ display:block; height:410px; }
+.banner_btn{ width:100%; position:absolute;text-align: center; z-index:1; bottom:10px; left:0; height:30px; line-height:30px; }
+.banner_btn ul{ height:20px; text-align:center; border-radius: 100px; -webkit-border-radius: 100px; -moz-border-radius: 100px; -ms-border-radius: 100px; -o-border-radius: 100px; padding-top:5px; }
+.banner_btn ul li{ cursor:pointer; display:inline-block; *display:inline; zoom:1; width:15px; height:15px; margin:1px; overflow:hidden; background:url(http://image.beike188.com/POLY/images/icoCircle1.png) no-repeat 0px -15px;  line-height:999px; border-radius: 100px; -webkit-border-radius: 100px; -moz-border-radius: 100px; -ms-border-radius: 100px; -o-border-radius: 100px; margin:0px 5px; }
+.banner_btn ul .on{ background:url(http://image.beike188.com/POLY/images/icoCircle1.png) no-repeat 0px 0px }
+.banner .prev,
+.banner .next{  display:block;  position:absolute; z-index:1; top:50%; margin-top:-30px; left:15%;  z-index:1; width:29px; height:55px; background:url(http://image.beike188.com/POLY/images/icon2.png) no-repeat -186px -22px; cursor:pointer; display:none;  }
+.banner .next{ left:auto; right:15%; background-position:-225px -22px; }
+
+.character{ height:405px; background:url(http://image.beike188.com/POLY/images/character.jpg) no-repeat; margin:20px auto; overflow:hidden; }
+
+/*内容页*/
+.main{ overflow:hidden; margin:40px auto;background: #fff ;
+ -webkit-border-radius:5px;
+ -moz-border-radius:5px;
+ border-radius:5px;}
+.main-l{ width:210px; padding-right:37px; overflow:hidden; background:url(http://image.beike188.com/POLY/images/arcitle-bg.gif) no-repeat right top; padding-bottom:1000px; margin-bottom:-1000px; }
+.main-l li a{ display:block; width:170px; height:54px; font-size:16px; background:url(http://image.beike188.com/POLY/images/icon2.png) no-repeat -365px -162px; line-height:54px; padding-left:40px;  }
+.main-l li a:hover{ color:#5f4234; }
+.main-l li a.hover{ color:#ffffff; background:#5f4234 url(http://image.beike188.com/POLY/images/icon2.png) no-repeat -365px -213px; }
+.main-r{ width:753px; overflow:hidden; padding-bottom:1000px; margin-bottom:-1000px; }
+.main-r h1{ display:block; width:717px; height:54px; font-size:30px; color:#000; line-height:54px; padding-left:36px; }
+.main-r h1 i{ font-size:14px; color:#b4b4b4; font-weight:normal; padding-left:5px; }
+.main-nr{ width:681px; padding:20px 36px 150px 36px; background:url(http://image.beike188.com/POLY/images/main-r-bg.gif) no-repeat center bottom; }
+.main-nr p{ font-size:14px; line-height:25px; margin-bottom:10px; }
+.main-nr p a{ font-size:14px; color:#dd2726; text-decoration:underline; }
+.main-nr img{ display:block; text-align:center; margin:0 auto; }
+.main-nr table{ border:solid #e4e4e4; border-width:1px 0px 0px 1px; font-size:12px; color:#383838; text-align:center; line-height:40px; margin:20px auto; }
+.main-nr table td{ border:solid #e4e4e4; border-width:0px 1px 1px 0px; }
+
+/*使用帮助*/
+.bottom-using{ overflow:hidden; margin-bottom:40px; }
+.h3-using{ width:302px; }
+.h3-using h3{ background-position:0 -239px; }
+.h3-share{ width:220px; }
+.h3-share h3{ background-position:0 -290px;}
+.using{ width:312px; margin-right:30px; }
+.using li{ display:block; width:90px; height:17px; line-height:17px; float:left; margin:5px 14px 5px 0; }
+.using li i{ display:inline-block; width:17px; height:17px; background:url(http://image.beike188.com/POLY/images/icon2.png) no-repeat; margin:2px 8px 0 0; float:left; vertical-align:top; overflow:hidden; }
+.using li i.using-ico1{ background-position:-167px -351px; }
+.using li i.using-ico2{ background-position:-167px -374px; }
+.using li i.using-ico3{ background-position:-167px -398px; }
+.using li i.using-ico4{ background-position:-195px -351px; }
+.using li i.using-ico5{ background-position:-195px -376px; }
+.using li i.using-ico6{ background-position:-195px -398px; }
+.using li a{ vertical-align:top; }
+
+/*分享我们*/
+.share{ width:240px; margin-right:10px; }
+.share ul{ padding-top:17px; }
+.share li{ float:left; margin-right:20px; }
+.share li a{ display:block; width:40px; height:40px; background:url(http://image.beike188.com/POLY/images/icon2.png) no-repeat; }
+.share li a.qq{ background-position:0px -341px; }
+.share li a.qq:hover{ background-position:0px -381px; }
+.share li a.weixin{ background-position:-40px -341px; }
+.share li a.weixin:hover{ background-position:-40px -381px; }
+.share li a.weibo{ background-position:-80px -341px; }
+.share li a.weibo:hover{ background-position:-80px -381px; }
+.share li a.sina{ background-position:-120px -341px; }
+.share li a.sina:hover{ background-position:-120px -381px; }
+.phone-code{ width:404px; height:119px; background:url(http://image.beike188.com/POLY/images/code.png) no-repeat; margin-top:10px; }
+
+/*代理注册*/
+.register{ width:1000px; margin:40px auto; overflow:hidden; }
+.register-tab-btn{ width:600px; height:40px; border-bottom:1px solid #dadada; margin:0px auto; }
+.register-tab-btn ul{ padding-left:198px; }
+.register-tab-btn li{ width:100px; height:40px; font-size:16px; text-align:center; line-height:40px; cursor:pointer; float:left; }
+.register-tab-btn li a{ display:block; width:100px; height:40px; }
+.register-tab-btn li.on{ color:#5f4234; background:#ffffff; border-left:1px solid #dadada; border-top:1px solid #dadada; border-right:1px solid #dadada; }
+.register-tab-btn li.on a{ color:#5f4234; }
+.proxy-login{ width:400px; margin:40px auto 0 auto; overflow:hidden; }
+.proxy-login li{ display:block; width:400px; height:40px; margin-bottom:20px; }
+.proxy-login li span{ width:60px; height:40px; line-height:40px; text-align:center; float:left; }
+.proxy-login .text{ width:328px; height:38px; border:1px solid #f1f1f1; padding-left:10px; float:left; }
+.proxy-login .proxy-btn1{ display:block; width:300px; height:50px; font-size:16px; color:#ffffff; text-align:center; line-height:50px; background:#5f4234; border:0px; cursor:pointer; margin:30px 0 0 60px; }
+.proxy-login .proxy-btn1:hover{ background:#ee0909; }
+.proxy-register{ width:500px; margin:30px auto; }
+.proxy-register dl{ display:block; width:500px; overflow:hidden; margin:0px auto; }
+.proxy-register dt{ display:block; width:500px; height:30px; margin:0px auto; }
+.proxy-register dt i{ display:block; width:100px; height:30px; color:#5f4234; line-height:30px; text-align:left; }
+.proxy-register dd{ display:block; width:500px; padding:10px 0px; overflow:hidden; }
+.proxy-register dd span{ width:160px; height:40px; line-height:40px; padding-right:10px; float:left; text-align:right; }
+.proxy-register .text{ width:290px; height:38px; color:#686868; line-height:38px; padding-left:10px; border:1px solid #dadada; float:left; }
+.proxy-register em{ width:20px; height:40px; font-size:16px; line-height:40px; text-align:center; float:left; }
+.proxy-register textarea{ width:290px; height:110px; font-size:14px; color:#686868; line-height:20px; resize:none; max-width:290px; max-height:110px; border:1px solid #dadada; padding:10px 0 0 10px; float:left; }
+.proxy-register .extension{ line-height:20px !important; padding-top:20px !important; }
+.proxy-register .proxy-btn2{ display:block; width:300px; height:50px; font-size:16px; color:#ffffff; text-align:center; line-height:50px; background:#5f4234; border:0px; cursor:pointer; margin:10px 0 0 170px; }
+.proxy-register .proxy-btn2:hover{ background:#ee0909; }
+
+/*底部信息通用*/
+.footer-link{ height:50px; color:#dadada; line-height:50px; text-align:center; }
+.footer-link a{ padding:0 5px; }
+.copyright{ color:#b4b4b4; font-size:12px; line-height:20px; text-align:center; padding:10px 0 20px 0; }
+.footer-img{ height:100px; background:#4f4f4f url(http://image.beike188.com/POLY/images/footer-img.png) no-repeat center center; }
+
+/*最新公告*/
+
+.header-center{ width:475px; height:20px;float:right; overflow:hidden; }
+ /*.header-centerzcq{ margin-right: 70px;}*/
+ .header-center span{ display:block; width: 85px; height:20px; background:url(http://image.beike188.com/POLY/images/icon.png) no-repeat -384px -42px; padding:0 5px 0 20px; float:left;}
+ .header-center ul{ padding:0 50px; height:20px; overflow:hidden; }
+ .header-center li{ height:20px; text-align:left; _display:inline; width:auto !important; margin-right:20px; float:left; }
+ .header-center li a{ display:block; width:100%;  }
+
+.header-center-d{ width:555px; height:25px; font-size:12px; color:#fff; margin-top:3px; float:left; overflow:hidden;  }
+.header-center-d span{ display:block; height:20px; background:url(http://image.beike188.com/POLY/images/icon.png) no-repeat -384px -22px; padding:0 5px 0 20px; float:left; }

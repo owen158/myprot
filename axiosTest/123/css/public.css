@@ -1,0 +1,255 @@
+
+.login-hide,login-show{
+    display: none;
+}
+.login{
+    display: none;
+}
+.lf{
+    float: left;
+}
+.rf{
+    float: right;
+}
+.login-btn{
+    cursor: pointer;
+}
+.longout{
+    display: none;
+}
+.loginout{
+    float: right;
+    text-align: center;
+    margin-left: 28px;
+    cursor:pointer;
+}
+body{
+    position: relative;
+    background: #f6edde;
+}
+#service-right,#service-left{
+    position: absolute;
+    top:0;
+}
+.red{
+    color:red;
+
+}
+table{
+    border-collapse:collapse;
+}
+.cursor{
+    cursor: pointer;
+}
+.item{
+    display: block;
+    width: 100%;
+}
+input:focus {
+    color: #000;
+    border:none;
+}
+.center{
+    text-align: center;
+}
+.blue{
+    color:blue;
+}
+.orange{
+    color:orange;
+}
+#submit{
+    text-align: center;
+    line-height: 28px;
+}
+#girl02,#girl{
+    margin-top: 144px;
+    height:416px;
+    width:120px;
+    position: relative;
+}
+#girl02 a,#girl a{
+    position: absolute;
+    bottom:-9px;
+    left:0;
+    background: #5f4234;
+    height: 30px;
+    width:96%;
+    text-align: center;
+    line-height: 30px;
+    color:#fff;
+    border-top: 1px solid #b7b7b7;
+
+}
+#girl02{
+    margin-top: 128px;
+    height: 431px;
+}
+/*#girl a{{*/
+/*}*/
+/*}*/
+.login-sup,.login-sub{
+    width:100%;
+    height:28px;
+    line-height:28px;
+    padding-left: 5px;
+}
+.login-sup{
+    border-bottom: 1px solid #bbb;
+}
+.login-sub ul{
+    list-style: none;
+    height: 28px;
+}
+.login-sub ul li{
+    display: inline-block;
+    cursor:pointer;
+}
+.login-sub ul li a{
+    text-decoration: none;
+    color:#000;
+}
+.login-sub ul li span{
+    color:red;
+}
+#money, #lebo_money{
+    color:#428bca;
+}
+.login-sup span{
+    display: inline-block;margin: 0 10px;
+}
+body{
+
+}
+#list li.active{
+    background:url(../images/depositnavbg_03.png) no-repeat center;
+    -webkit-background-size:100% 100%;
+    background-size:100% 100%;
+}
+.wrapper{
+
+}
+/*首页一开始的弹窗*/
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    z-index: 201;
+    display: none;
+}
+
+.mess {
+    position: absolute;
+    width: 666px;
+    padding: 8px;
+    text-align: center;
+    display: block;
+    left: 651.5px;
+    top: 40px;
+    border: 1px solid #cfb3a1;
+    background: #fff;
+    color: #ffffff;
+    border-radius: 6px;
+    z-index: 202;
+}
+
+.mess p {
+    margin: 0;
+    padding: 0;
+}
+
+.Poptop {
+    overflow: hidden;
+    font-family: microsoft yahei;
+    border: 1px solid #cfb3a1;
+    background: #5f4234;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 6px;
+    line-height: 30px;
+    height: 30px;
+    font-size: 12px;
+    position: relative;
+}
+
+.Poptitle {
+    color: #fff;
+    font-size: 12px;
+    line-height: 30px;
+    float: left;
+    padding-left: 5px;
+    text-align:center;
+}
+a#closeicon{
+    position: absolute;
+    right: .3em;
+    top: 50%;
+    width: 19px;
+    margin: -10px 0 0 0;
+    padding: 1px;
+    height: 18px;
+}
+a#closeicon:hover {
+    border: 1px solid #d1c5d8;
+    background: #eae6ea;
+    font-weight: bold;
+    color: #734d99;
+    border-radius: 6px;
+}
+a#closeicon span{
+    background-image: url(http://image.beike188.com/POLY/images/login.png);
+    width: 17px;
+    height: 16px;
+    background-position: -8px -143px;
+    display: block;
+    margin: 1px;
+
+}
+a#closeicon:hover span{
+    /*background-image: url("images/ui-icons_734d99_256x240.png");*/
+    /*background-position: -96px -128px;*/
+    display: block;
+    margin: 1px;
+    width: 16px;
+    height: 16px;
+}
+/*.login-hide,.login-show{*/
+    /*display: none;*/
+/*}*/
+p.Popcontent{
+    /*padding:5px;*/
+    border:1px solid #909090;
+    border-radius:5px;
+    margin-top:5px;
+}
+.Popcontent img{
+    width:647px;
+    height:462px;
+    border-radius:5px;
+}
+
+.delete_card{ width:100%; min-height:980px; height:100%; background:#000; filter:alpha(opacity=20); -moz-opacity:0.2; -khtml-opacity: 0.2; opacity: 0.2; position:fixed; left:0px; top:0px; z-index:200;display: none }
+.delete_card_content{
+    width:430px;
+    height:250px;
+    padding:10px;
+    background:#fff;
+    display: none;
+    overflow:hidden;
+    margin:0px auto;
+    position:fixed;
+    left:35%; top:30%;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    z-index:102;
+}
+.delete_card_content h2{
+    margin: 0;
+    font-size: 18px;
+}

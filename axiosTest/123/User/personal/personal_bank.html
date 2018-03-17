@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>澳门威尼斯人</title>
+    <link rel="shortcut icon" href="../../images/favicon.ico" />
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/site.css">
+    <link rel="stylesheet" href="../../css/public.css">
+    <link rel="stylesheet" href="./css/personal.css">
+    <link rel="stylesheet" href="./css/bank.css">
+    <link rel="stylesheet" href="./css/qubilc_content.css">
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+    <script src="../js/pubilc_content.js"></script>
+    <!--<script>-->
+        <!--$(document).ready(function(){-->
+            <!--$('.footer_wrapper').load('footer.html');-->
+        <!--});-->
+        <!--$(document).ready(function(){-->
+            <!--$('.nav-header').load('vipheader.html');-->
+        <!--});-->
+    <!--</script>-->
+    <script type="text/javascript" src="../../User/jquery.cookie.js"></script>
+    <script src='../../User/validation.js'></script>
+    <script src="../../personal/pubilc.js"></script>
+    <script src='../../User/P_ublic.js'></script>
+    <script src='../../personal/logo.js'></script>
+    <script src="../../User/drop_out.js"></script>
+    <script src="../js/personal.js"></script>
+</head>
+<body>
+<div class="xploading_bg"></div>
+<div class="xploading" > <img src='../../images/Refresh.gif' />Loading... </div>
+<div class="wrapper">
+    <script>Content.Header('.wrapper')</script>
+    <!--<div class="nav-header">-->
+        <!--&lt;!&ndash;<div class="nav-bar">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="logo py"><a href="../../vzt6.html">返回主页</a></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<ul class="nav py">&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><a href="../../Lobby/Sport.html">体育赛事</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><a href="../../Lobby/Live.html">视讯直播</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><a href="">PT电子</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><a href="">MG电子</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><a href="">优惠活动</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><a href="">联系我们</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="hader-info py">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="user">&ndash;&gt;-->
+                    <!--&lt;!&ndash;用户名: <span id="lebo_money"></span>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div id="submit" onclick="dropout('../../vzt6.html')" class="loginout login-btn">退出</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="notice">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="eveb_header_notice">&ndash;&gt;-->
+                <!--&lt;!&ndash;<h4 class="py">公告：</h4>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="txtScroll py">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<ul>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li>新葡京线上娱乐城十存十送优惠</li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="nav-personal">&ndash;&gt;-->
+            <!--&lt;!&ndash;<ul class="nav-user">&ndash;&gt;-->
+                <!--&lt;!&ndash;<li > <a href="personal_home.html"><i class="icon_home"></i>会员首页</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li class="active" ><a href="personal_bank.html"><i class="icon_bank"></i>存款</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><a href="personal_drawing.html"><i class="icon_withdraw"></i>提款</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><a href="Transfer.html"><i class="icon_transfer"></i>转账</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><a href="messagelist.html"><i class="icon_letter"></i>站内信</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><a href="market.html"><i class="icon_market"></i>市场活动</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><a href="history.html"><i class="icon_record"></i>历时记录</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li><a href=""><i class="icon_set"></i>账户设置</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--</div>-->
+    <div class="container bank">
+        <h2 class="header"><span class="icon py"></span><span class="text py">在线支付</span></h2>
+        <hr style="margin: 20px 0">
+        <div class="wrapper">
+            <ul id="bank" class="list">
+                <li mank="#card_tran" class="py  active">银行转账</li>
+                <li mank="#card_Micro" class="py">微信/支付宝</li>
+            </ul>
+            <div class="cont">
+                <div id="card_tran" class="item active">
+                    <form >
+                        <div class="main" style="height: 40px;">
+                            <div style="width:13%;line-height: 40px;text-align: right" class="py"><label for="">充值金额：</label></div>
+                            <div class="py ipt" style="width:176px;height: 30px;"><input id="card_mony" onkeyup="this.value=this.value.replace(/^0|\D/gi,'')" type="text" placeholder="金额"></div>
+                             <span>*单笔金额最低100元，最高500,000元</span>
+                        </div>
+                        <div class="main" style="height: 160px;">
+                            <div style="width:13%;text-align: right" class="py">
+                                <label for="">选择银行：</label>
+                            </div>
+                            <div id="check_box" style="width:80%;" class="py">
+                                <p>
+                                    <input value="ABC" type="checkbox" id="ABC"><label for="ABC"><em class="abc"></em></label>
+                                    <input value="ICBC" type="checkbox" id="ICBC"><label for="ICBC"><em class="icbc"></em></label>
+                                    <input value="CCB" type="checkbox" id="CCB"><label for="CCB"><em class="ccb"></em></label>
+                                    <input value="BOCOM" type="checkbox" id="BOCOM"><label for="BOCOM"><em class="BOCOM"></em></label>
+                                    <input value="BOC" type="checkbox" id="BOC"><label for="BOC"><em class="BOC"></em></label>
+                                </p>
+                                <p>
+                                    <input value="CMBC" type="checkbox" id="CMBC"><label for="CMBC"><em class="CMBC"></em></label>
+                                    <input value="CMBCS" type="checkbox" id="CMBCS"><label for="CMBCS"><em class="CMBCS"></em></label>
+                                    <input value="CEBBANK" type="checkbox" id="CEBBANK"><label for="CEBBANK"><em class="CEBBANK"></em></label>
+                                    <input value="BCCB" type="checkbox" id="BCCB"><label for="BCCB"><em class="BCCB"></em></label>
+                                    <input value="PINGAN" type="checkbox" id="PINGAN"><label for="PINGAN"><em class="PINGAN"></em></label>
+
+                                </p>
+                                <p>
+                                    <input value="HXB" type="checkbox" id="HXB"><label for="HXB"><em class="HXB"></em></label>
+                                    <input value="BOS" type="checkbox" id="BOS"><label for="BOS"><em class="BOS"></em></label>
+                                    <input value="CIB" type="checkbox" id="CIB"><label for="CIB"><em class="CIB"></em></label>
+                                    <input value="PSBC" type="checkbox" id="PSBC"><label for="PSBC"><em class="PSBC"></em></label>
+                                    <input value="SPDB" type="checkbox" id="SPDB"><label for="SPDB"><em class="SPDB"></em></label>
+
+                                </p>
+                                <input value="ECITIC" type="checkbox" id="ECITIC"><label for="ECITIC"><em class="ECITIC"></em></label>
+                                <input value="CGB" type="checkbox" id="CGB"><label for="CGB"><em class="CGB"></em></label>
+                            </div>
+                        </div>
+                        <div class="main">
+                            <div style="width:13%" class="py"></div>
+                            <div class="py">
+                                <div style=" cursor: pointer;" id="submit" onclick="Submit('1')" class="login-btn submit-btn">生成订单</div>
+                            </div>
+                        </div>
+                        <p>*  最低存款金额：<span class="red">100</span> 元<br>支持 <span class="orange">150</span> 多家网银进行转帐，存款完成，系统自动即时入帐！<br>温馨提示：<br>
+                            <span class="blue">1</span>、在线存款仅提供小额入款，推荐您使用更高存款额度的“公司入款”；<br><span class="blue">2</span>、支付成功后，务必点击确定键、或『返回商家』按钮，金额会立即加入；<br>
+                            存款遇到问题？请立即联系”线上客服”为您服务。</p>
+
+                    </form>
+
+                </div>
+                <div id="card_Micro" class="item">
+                    <ul id="list" class="micro">
+                        <li mank="#letter" class="active"><img src="../../images/depositwx_06.jpg" alt=""></li>
+                        <li mank="#Alipay"><img src="../../images/depositzfb_03.jpg" alt=""></li>
+                    </ul>
+                    <div class="content">
+                        <div id="letter" class="letter item active">
+                            <div class="main">
+                                <h3 style="padding-left: 20px;text-align:center;color:#666">微信</h3>
+                            </div>
+                            <div class="main">
+                                <div style="line-height: 40px;" class="py"><label for="">金额：</label></div>
+                                <div class="py ipt"><input type="text" id="chargepay" onkeyup="this.value=this.value.replace(/^0|\D/gi,'')"></div>
+                            </div>
+                            <div class="main">
+                                <p style="color:#BBB">最少充值100元,最多充值500,000元</p>
+                            </div>
+                            <div style="margin-bottom: 5px;margin-top: 5px;" class="main-text">
+                                <div onclick="Recharge('2','#chargepay')" class="btn tjbtn login-btn">生成订单</div>
+                            </div>
+                            <div class="main-text">
+                                <p>*  最低存款金额：<span class="red">100</span> 元<br>支持 <span class="orange">150</span> 多家网银进行转帐，存款完成，系统自动即时入帐！<br>温馨提示：<br>
+                                    <span class="blue">1</span>、在线存款仅提供小额入款，推荐您使用更高存款额度的“公司入款”；<br><span class="blue">2</span>、支付成功后，务必点击确定键、或『返回商家』按钮，金额会立即加入；<br>
+                                    存款遇到问题？请立即联系”线上客服”为您服务。</p>
+                            </div>
+                            <div style="margin-top: 5px;" class="main-text zxbtn login-btn">
+                                <div class="btn">在线客服</div>
+                            </div>
+                        </div>
+                        <div id="Alipay" class="Alipay item">
+                            <div class="main">
+                                <h3 style="padding-left: 20px;text-align:center;color:#666;">支付宝</h3>
+                            </div>
+                            <div class="main">
+                                <div style="line-height: 40px;" class="py">
+                                    <label for="">金额：</label>
+                                </div>
+                                <div class="py ipt">
+                                    <input type="text" id="charge" onkeyup="this.value=this.value.replace(/^0|\D/gi,'')">
+                                </div>
+                            </div>
+                            <div class="main">
+                                <p style="color:#BBB">最少充值100元,最多充值500,000元</p>
+                            </div>
+                            <div style="margin-bottom: 5px;margin-top: 5px;" class="main-text">
+                                <div onclick="Recharge('3','#charge')" class="btn tjbtn login-btn">生成订单</div>
+                            </div>
+                            <div class="main-text">
+                                <p>*  最低存款金额：<span class="red">100</span> 元<br>支持 <span class="orange">150</span> 多家网银进行转帐，存款完成，系统自动即时入帐！<br>温馨提示：<br>
+                                    <span class="blue">1</span>、在线存款仅提供小额入款，推荐您使用更高存款额度的“公司入款”；<br><span class="blue">2</span>、支付成功后，务必点击确定键、或『返回商家』按钮，金额会立即加入；<br>
+                                    存款遇到问题？请立即联系”线上客服”为您服务。</p>
+                            </div>
+                            <div style="margin-top: 5px;" class="main-text zxbtn login-btn">
+                                <div class="btn">在线客服</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer_wrapper"><script>Content.Footer('.footer_wrapper')</script></div>
+</body>
+</html>
+<script src="../js/bank.js"></script>

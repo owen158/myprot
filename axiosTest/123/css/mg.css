@@ -1,0 +1,180 @@
+.wrapper ul.list{
+    padding:0;
+    width: 100%;
+    margin:0;
+    font-size: 0;
+    list-style: none;
+}
+.wrapper ul.list li{
+    width:20%;
+    height: 200px;
+    display: inline-block;
+    padding: 0 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    vertical-align: top;
+}
+.py{
+    display: inline-block;
+    vertical-align: top;
+}
+.wrapper ul.list li .content{
+    width:100%;
+    height:200px;
+    /*background: #FFF;*/
+    /*box-shadow:0 2px 5px #bbb ;*/
+    /*box-show:;*/
+}
+.border{
+    /*background: #FFF;*/
+}
+.wrapper ul.list li .content .sup-text{
+    width:80%;
+    margin:0 auto;
+    display:block;
+    text-align: center;
+    /*background: #AFEEEE;*/
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+}
+.wrapper ul.list li .content .sup-text a{
+    display: block;
+}
+.wrapper ul.list{
+    text-align: left;
+}
+.wrapper ul.list li .content .sup-text,.wrapper ul.list li .content .sub-text{
+    /*background: #cbb085;*/
+}
+/*.wrapper ul.list li:hover .sub-text{*/
+    /*display: block;*/
+/*}*/
+a{
+    text-decoration: none;
+    color:#0e0e0e;
+}
+#gameMenus li{
+
+}
+ul{
+    list-style: none;
+}
+#gameMenus,#gameMenus li,#content .nav,#content .nav .text{
+    height:40px;
+}
+#gameMenus li.active a,#content .nav .text{
+    background:#816148 ;
+}
+#gameMenus li.active a{
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    color:#fff;
+}
+
+#content .nav .text,#gameMenus li{
+    text-align: center;
+}
+#gameMenus li{
+    display: inline-block;
+    vertical-align: top;
+    width:85px;
+
+}
+#gameMenus li a{
+    display:inline-block;
+    width:100%;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 5px;
+}
+#content .nav{
+    margin: 10px auto 0 auto;
+    width:1000px;
+    text-align: left;
+    background: #f5deb3;
+}
+.sub-text{
+    height: 30px;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 14px;
+    /*display: none;*/
+}
+/*.sub-text .r{*/
+    /*background: rebeccapurple;*/
+    /*color:	#ff6c00;*/
+    /*font-weight: 900;*/
+    /*margin-left: 2px;*/
+/*}*/
+/*.sub-text .l{*/
+    /*background:SeaGreen ;*/
+/*}*/
+.sub-text a{
+    width:70%;
+    margin: 0 auto;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    display:block;
+    background:SeaGreen ;
+    /*background: #cbb085;*/
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    color:#fff;
+}
+#content .nav .text{
+    width:100px;
+    line-height: 40px;
+    font-size: 14px;
+    color:#fff;
+}
+.wrapper ul.list li{
+    position: relative;
+}
+.bak-show{
+    position:absolute;
+    left:10%;
+    top:0;
+    text-align: center;
+    display: none;
+    height: 135px;
+    line-height: 135px;
+    width:80%;
+
+}
+.bak-show a{
+    padding:5px 15px;
+    font-size: 14px;
+    background: red;
+    opacity: 1;
+}
+/*.wrapper ul.list li:hover .bak-show{*/
+    /*display: block;*/
+    /*background: #0e0e0e;*/
+    /*opacity: 0.3;*/
+    /*z-index: 10;*/
+/*}*/
+.wrapper ul.list li .content .image{
+    position: relative;
+    border-radius: 2px;
+}
+.wrapper ul.list li .content .image img{
+    position: absolute;
+
+    left:0;
+}
+.wrapper ul.list li .content:hover .image img{
+    left:-145px;
+}
+.image{
+    width:78%;
+    margin: 0px auto;
+    height: 135px;
+    /*border:1px solid #000000;*/
+    background: url(../Lobby/img/BTN_108Heroes.jpg);
+    overflow: hidden;
+}
+.image

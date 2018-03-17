@@ -1,0 +1,306 @@
+.drawing{
+
+}
+.drawing .header{
+    height: 31px;
+    padding:0;
+    margin:0;
+}
+.drawing .header .icon{
+    display: inline-block;
+    width:43px;
+    background: url(../../../images/drawing_pic_03.png) no-repeat;
+    height: 31px;
+}
+.drawing .header .text{
+    padding-left: 15px;
+    height: 31px;
+    line-height: 31px;
+    font-size:20px;
+}
+.drawing  .wrapper{
+    width:100%;
+}
+.drawing  .wrapper .addcard{
+    width:100%;
+    font-size: 0;
+    list-style: none;
+}
+.drawing  .wrapper .addcard li{
+    display: inline-block;
+    vertical-align: top;
+    width:300px;
+    height: 220px;
+    margin: 3px 6px;
+}
+.drawing  .wrapper .addcard li .addcard-main{
+    width:100%;
+    cursor: pointer;
+}
+.drawing  .wrapper .addcard li .cardname{
+    width:100%;
+    height: 40px;
+    line-height: 40px;
+    font-size:16px;
+    font-weight: 600;
+    padding-left: 15px;
+}
+.drawing  .wrapper .addcard li .cardnmb{
+    font-size:16px;
+    margin-top: 50px;
+    text-align: center;
+}
+.drawing  .wrapper .addcard li.addbak .card{
+    width:100%;
+    height: 180px;
+    background: url(../../../images/card.jpg) no-repeat;
+}
+.drawing  .wrapper .addcard li.addborder .card{
+    width:100%;
+    height: 180px;
+    padding-top: 30px;
+    border:1px solid #ff6c00;
+    box-shadow: 0 1px 5px #bbb;
+}
+
+.drawing  .wrapper .addcard li.addbak .cardinformation{
+    margin-top: 10px;
+    width:100%;
+    height: 30px;
+    line-height: 30px;
+    color:#bbb;
+    font-size: 14px;
+}
+.drawing  .wrapper .addcard li.addbak{
+    position: relative;
+}
+.drawing  .wrapper .addcard li.addbak .delete{
+    position: absolute;
+    top:5px;
+    right:5px;
+    height: 30px;
+    cursor: pointer;
+    width:30px;
+}
+.drawing  .wrapper .addcard li.addbak .delete img{
+    width:100%;
+}
+.drawing  .wrapper .addcard li.addbak .cardinformation div span{
+    color:#666;
+    font-size: 12px;
+}
+.drawing  .wrapper .addcard li .addcard-main .addimg,.drawing  .wrapper .addcard li .addcard-main .text{
+    text-align: center;
+}
+.drawing  .wrapper .addcard li .addcard-main .addimg{
+}
+.drawing  .wrapper .addcard li .addcard-main .text{
+    font-size: 16px;
+    margin-top: 5px;
+}
+.drawing  .wrapper .cardmoney{
+    height: 40px;
+    width:100%;
+    margin: 5px 0;
+    background: #faf9e6;
+    border: 1px solid #c3c1c1;
+}
+.drawing  .wrapper .content{
+    height: auto;
+}
+.drawing  .wrapper .content,.drawing  .wrapper .content .item{
+    width:100%;
+}
+.drawing  .wrapper .content .item,.drawing  .wrapper .content .item .lft,.drawing  .wrapper .content .item .rft{
+    height: 40px;
+}
+.drawing  .wrapper .content .item .rft{
+    width:150px;
+}
+.drawing  .wrapper .content .item .lft{
+    width:14%;
+    line-height: 40px;
+    text-align: right;
+    padding-right: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.drawing  .wrapper .content .item .rft input,.drawing  .wrapper .content .item .rft select{
+    width:150px;
+    font-size: 14px;
+    height: 20px;
+    padding-left: 3px;
+    border:none;
+    outline:none;
+}
+.drawing  .wrapper .content .item .ipt{
+    height: 30px;
+    width:152px;
+    padding-top: 5px;
+    margin-top: 5px;
+    border:1px solid #b7b7b7;
+}
+.drawing  .wrapper .content .item p{
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    padding-left: 15px;
+}
+.drawing  .wrapper .content .item .rft .btn{
+    background: orange;
+    width: 100%;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 10px;
+    color:#fff;
+    box-shadow: 0 1px 5px #bbb;
+}
+.drawing  .wrapper .cardmoney p{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size:14px;
+
+}
+body{
+    position: relative;
+}
+#add_card{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: #000;
+    background: none\9;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+.add_card{
+    width:100%; min-height:980px; height:100%; background:#000; filter:alpha(opacity=20); -moz-opacity:0.2; -khtml-opacity: 0.2; opacity: 0.2; position:fixed; left:0px; top:0px; z-index:101;display: none
+}
+.delete_card{ width:100%; min-height:980px; height:100%; background:#000; filter:alpha(opacity=20); -moz-opacity:0.2; -khtml-opacity: 0.2; opacity: 0.2; position:fixed; left:0px; top:0px; z-index:101;display: none }
+.delete_card_content{
+    width:430px;
+    height:250px;
+    padding:10px;
+    background:#fff;
+    display: none;
+    overflow:hidden;
+    margin:0px auto;
+    position:fixed;
+    left:35%; top:30%;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    z-index:102;
+}
+.delete_card_content h2{
+    margin: 0;
+    font-size: 18px;
+}
+.delete_card_content .item{
+    height: 40px;
+}
+.delete_card_content .item .last{
+    width:25%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    text-align: right;
+}
+.delete_card_content .item .fist{
+    width:172px;
+    height: 30px;
+    text-align: left;
+    padding-top: 5px;
+    margin-top: 5px;
+    border:1px solid #b7b7b7;
+}
+.delete_card_content .item .fist input{
+    width:170px;
+    padding-left: 3px;
+    height:20px;
+    border:none;
+    outline:none;
+}
+.add_card_content{
+    width:400px;
+    height:500px;
+    padding:10px;
+    background:#fff;
+    display: none;
+    overflow:hidden;
+    margin:0px auto;
+    position:fixed;
+    left:38%; top:10%;
+    z-index:102;
+}
+.add_card_content h2{
+    width:100%;
+    height: 40px;
+    line-height: 40px;
+}
+.add_card_content .item{
+    width:100%;
+    height: 40px;
+}
+.add_card_content .item label{
+    width:20%;
+    font-weight: 400;
+    text-align: right;
+    height: 40px;
+    line-height: 40px;
+}
+.add_card_content .item .item-main{
+    width:206px;
+}
+.add_card_content .item .tipt{
+    border:1px solid #BBBBBB;
+    height: 30px;
+    padding-top: 3px;
+    margin-top: 5px;
+}
+.add_card_content .item .item-main input{
+    width:204px;
+}
+.add_card_content .item .item-main input,.add_card_content .item .item-main select{
+    height: 23px;
+    padding-left: 3px;
+    border:none;
+    outline:none;
+}
+.add_card_content .item .item-main select{
+    width:100px;
+}
+.add_card_content .item .item-main .btn,.delete_card_content .item .item-main .btn{
+    width:80px;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 5px;
+    height: 30px;
+    line-height: 30px;
+    /*-webkit-border-radius: 3px;*/
+    /*-moz-border-radius: 3px;*/
+    /*border-radius: 3px;;*/
+    -moz-border-radius: 3px; /* Firefox */
+    -webkit-border-radius: 3px; /* Safari 和 Chrome http://www.manongjc.com/article/1214.html */
+    border-radius: 3px; /* Opera 10.5+, 以及使用了IE-CSS3的IE浏览器 */
+    behavior: url(ie-css3.htc);
+    cursor: pointer;
+    box-shadow: 0 1px 5px #bbb;
+}
+.add_card_content .item .item-main .Add_to,.delete_card_content .item .item-main .Add_to{
+    background: #ff7f00;
+    color:#FFf;
+}
+.add_card_content .item .item-main .cancel,.delete_card_content .item .item-main .cancel{
+    background: #fff;
+    color:#666;
+    border:1px solid #b3b3b3;
+}

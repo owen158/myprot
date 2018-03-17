@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>澳门威尼斯人</title>
+    <link rel="shortcut icon" href="../../images/favicon.ico" />
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/site.css">
+    <link rel="stylesheet" href="../../css/public.css">
+    <link rel="stylesheet" href="./css/personal.css">
+    <link rel="stylesheet" href="../../css/panel.css">
+    <link rel="stylesheet" href="./css/drawing.css">
+    <link rel="stylesheet" href="./css/qubilc_content.css">
+    <script src="lody/assets/js/data.js"></script>
+    <script src="../../js/jquery-1.8.2.min.js"></script>
+    <!--<script>-->
+        <!--$(document).ready(function(){-->
+            <!--$('.footer_wrapper').load('footer.html');-->
+        <!--});-->
+        <!--$(document).ready(function(){-->
+            <!--$('.nav-header').load('vipheader.html');-->
+        <!--});-->
+    <!--</script>-->
+    <script src="lody/dist/jquery.city.select.min.js"></script>
+    <script src="lody/assets/js/prettify.js"></script>
+    <script src="../js/pubilc_content.js"></script>
+    <script type="text/javascript" src="../../User/jquery.cookie.js"></script>
+    <script src='../../User/validation.js'></script>
+    <script src="../../personal/pubilc.js"></script>
+    <script src='../../User/P_ublic.js'></script>
+    <script src='../../personal/logo.js'></script>
+    <script src="../../User/drop_out.js"></script>
+    <script src="../js/personal.js"></script>
+</head>
+<body>
+<div class="xploading_bg"></div>
+<div class="xploading" > <img src='../../images/Refresh.gif' />Loading... </div>
+<div class="delete_card"></div>
+<div class="delete_card_content"  style="font-size: 15px;">
+    <h2>删除银行卡</h2>
+    <div class="item" style="margin-top: 60px;margin-bottom: 40px;">
+        <div class="py last">请输入取款密码:</div>
+        <div class="py fist fist-ipt" style="width:172px;"><input class="cardpassword" type="password"></div>
+    </div>
+    <div  style="margin-top: 5px;height:60px;padding-top: 20px;border-top:1px solid #bfbfbf" class="item">
+        <label style="width:25%;" class="py" for=""></label>
+        <div  class="item-main py">
+            <div onclick="Deletetocard()" class="py Add_to btn">删除</div><div onclick="Deletetcancel(this)" class="py cancel btn">取消</div>
+        </div>
+    </div>
+</div>
+<div class="wrapper">
+    <script>Content.Header('.wrapper')</script>
+    <div class="container drawing">
+        <h2 class="header"><span class="icon py"></span ><span class="text py">提款</span></h2>
+        <hr style="margin: 20px 0">
+       <div class="wrapper">
+           <div class="addcard">
+               <ul class="sub-nav" style="text-align: left">
+                   <li class="addbak italic">
+                       <!--<div class="card">-->
+                           <!--<p class="cardname">建设银行</p>-->
+                           <!--<p class="cardnmb">1234567894512456</p>-->
+                       <!--</div>-->
+                       <!--<div class="cardinformation">-->
+                           <!--<div class="name lf">开户人：<span>中国</span></div>-->
+                           <!--<div class="Open rf">开户行：<span>台湾</span></div>-->
+                       <!--</div>-->
+                       <!--<span  class="delete"><img src="" alt=""></span>-->
+                   </li>
+                   <li onclick="add()" class="addborder">
+                       <div class="card">
+                           <div class="addcard-main">
+                               <p class="addimg"><img src="../../images/drawing_pic_07.png" alt=""></p>
+                               <p class="text">添加银行卡</p>
+                           </div>
+                       </div>
+                   </li>
+               </ul>
+           </div>
+           <div class="cardmoney">
+               <p>您目前中心钱包帐户余额为：<span class="orange getmoney"></span>元</p>
+           </div>
+           <div class="content">
+               <div class="item">
+                   <div class="py lft">开户名</div>
+                   <div class="py rft bk ipt" style="background: #bfbfbf"><input id="card_name"  style="background:#bfbfbf;" disabled="disabled" type="button"></div>
+               </div>
+               <div class="item">
+                   <div class="py lft">银行卡号</div>
+                   <div class="py rft ipt">
+                       <select onchange="cardNmB(this)" name="" id="cardNmB">
+                       </select>
+                   </div>
+               </div>
+               <div class="item">
+                   <div class="py lft">提款金额</div>
+                   <div class="py rft ipt"><input type="text" class="qkmoney" onkeyup="this.value=this.value.replace(/^0|\D/gi,'')"></div>
+                   <p class="py">* 最小提款金额为：<span class="red">100</span>元 / 最大提款金额：<span class="red">500,000</span>元</p>
+               </div>
+               <div class="item">
+                   <div class="py lft">提款密码</div>
+                   <div class="py rft ipt"><input class="tkpass" type="password"></div>
+                   <p class="py"><a class="orange" href="">修改提款密码？</a></p>
+               </div>
+               <div style="border-top:1px solid #bfbfbf;margin-top: 15px;" class="item">
+                   <div class="py lft"></div>
+                   <div class="py rft">
+                       <div onclick="tocard()" class="py btn cursor">生成订单</div>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</div>
+<div class="add_card"></div>
+<div class="add_card_content"  style="font-size: 15px;">
+    <h2>绑定银行卡</h2>
+    <div class="content">
+        <form>
+            <div class="item">
+                <label class="py" for="">所属银行:</label>
+                <div class="item-main py tipt" style="width:102px;">
+                    <select id="bindcard_bankId" class="bindcard_bankId">
+                        <option value="">请选择</option>
+                        <option value="1">中国农业银行</option>
+                        <option value="2">中国银行</option>
+                        <option value="3">交通银行</option>
+                        <option value="4">中国建设银行</option>
+                        <option value="5">中国工商银行</option>
+                        <option value="6">中国邮政储蓄银行</option>
+                        <option value="7">招商银行</option>
+                        <option value="8">浦发银行</option>
+                        <option value="9">中国光大银行</option>
+                        <option value="10">中信银行</option>
+                        <option value="11">平安银行</option>
+                        <option value="12">中国民生银行</option>
+                        <option value="13">华夏银行</option>
+                        <option value="14">广发银行</option>
+                        <option value="15">北京银行</option>
+                        <option value="16">上海银行</option>
+                        <option value="17">兴业银行</option>
+                    </select>
+                </div>
+            </div>
+            <div class="item">
+                <label class="py" for="">开户人:</label>
+                <div  class="item-main tipt py">
+                    <input id="cardname" type="text">
+                </div>
+            </div>
+            <div class="item">
+                <label class="py" for="">省份:</label>
+                <div  class="item-main py tipt">
+                    <select style="width:98px;" id="province">
+                        <option value="载入中">载入中</option>
+                    </select>
+                    <select style="width:98px;" id="city">
+                        <option value="载入中">载入中</option>
+                    </select>
+                </div>
+            </div>
+            <div class="item">
+                <label class="py" for="">开户支行:</label>
+                <div  class="item-main py tipt">
+                    <input id="city_province" type="text">
+                </div>
+            </div>
+            <div class="item">
+                <label class="py" for="">银行卡号:</label>
+                <div  class="item-main py tipt">
+                    <input id="card_nmb" onkeydown="if(event.keyCode==13)event.keyCode=9" onKeypress="if
+((event.keyCode<48 || event.keyCode>57)) event.returnValue=false" type="text">
+                </div>
+            </div>
+            <div class="item">
+                <label class="py" for="">取款密码:</label>
+                <div  class="item-main py tipt">
+                    <input id="pass"  type="password" placeholder="请输入取款密码">
+                </div>
+            </div>
+            <div class="item">
+                <label class="py" for=""></label>
+                <div  class="item-main py">
+                   <div onclick="Addtocard()" class="py Add_to btn">添加</div><div onclick="cancel()" class="py cancel btn">取消</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--<footer id="footer"></footer>-->
+<div class="footer_wrapper"><script>Content.Footer('.footer_wrapper')</script></div>
+</body>
+</html>
+<script>
+    $(function () {
+        $('#province, #city').citylist({
+            data    : data,
+            id      : 'id',
+            children: 'cities',
+            name    : 'name',
+            metaTag : 'name'
+        });
+    });
+</script>
+<script src="../js/verification.js"></script>
+<script src="../js/drawing.js"></script>

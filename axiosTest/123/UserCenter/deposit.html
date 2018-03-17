@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>用户中心</title>
+</head>
+<link rel="stylesheet" href="user_css/user.css" />
+<link rel="stylesheet" type="text/css" href="user_css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="user_css/deposit.css"/>
+<body>
+<div class="wrap">
+  <div class="top_bar clear">
+    <p><a href="../vzt6.html"><img src="http://image.beike188.com/POLY/user_img/bllogo.png" /></a></p>
+    <ul class="top_nav">
+      <li><a onclick="loadgame('HG','','PC');">体育赛事</a></li>
+      <li><a href="../Lobby/Live.html">视讯直播</a></li>
+      <li><a href="../Lobby/game_pt.html">PT电子</a></li>
+      <li><a href="../Lobby/game_Mg.html">MG电子</a></li>
+      <li><a href="../Promotion.html">优惠活动</a></li> <li><a href="">联系我们</a></li>
+    </ul>
+    <div class="header_info"> <a  class="first" href="javascript:;"></a>| <a class="last" href="##">注销</a> <a class="button" href="http://f88.live800.com/live800/chatClient/chatbox.jsp?companyID=779799&configID=144546&jid=9355144430" target="_blank">在线客服</a> </div>
+  </div>
+  <!--notice-->
+			<div class="notice">
+               <div class="eveb_header_notice">
+                  <h4><i class="icon_small icon_header_notice"></i>公告：</h4>
+                  <!--轮播-->
+                  <div class="txtScroll-top">
+                      <!--<div class="bd">
+                          <ul class="infoList">
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+                          </ul>
+                      </div>
+                      <div class="hd">
+                          <a class="next"></a>
+                          <ul></ul>
+                          <a class="prev"></a>
+
+                      </div>-->
+                      <!--文字滚动-->
+				        <div class="header-center_gd">
+				            <div class="picMarquee-left">
+				              <ul class="header_marquee" behavior="scroll">
+				              </ul>
+				            </div>
+				        </div>
+				        <!--文字滚动-end-->
+            </div><!--轮播-end-->
+            </div>
+            </div><!--notice-end-->
+  <ul class="user_nav clear">
+    <li><a href="user_center.html"><i class="icon_home"></i>会员首页</a></li>
+    <li style="background-color: #ddb79a;"><a href="deposit.html"><i class="icon_bank"></i>存款</a></li>
+    <li><a href="drawing.html"><i class="icon_withdraw"></i>提款</a></li>
+    <li><a href="transfer_accounts.html"><i class="icon_transfer"></i>转账</a></li>
+    <!--<li><a href="messagelist.html"><i class="icon_letter"></i>站内信</a></li>
+    <li><a href="market.html"><i class="icon_market"></i>市场活动</a></li>-->
+    <li><a href="history.html"><i class="icon_record"></i>历史记录</a></li>
+    <li><a href="Account_settings.html"><i class="icon_set"></i>账户设置</a></li>
+  </ul>
+  <!---->
+  <div class="content">
+    <!--tab-->
+    <div class="deposit_tabbox">
+          <h2><i class="icon_medium icon_bank"><img src="http://image.beike188.com/POLY/user_img/deposit_wy_03.png"></i>在线支付</h2>
+          <hr />
+          <!-- tabbox -->
+          <div class="deposit_nav">
+              <div class="tabnav">
+                <ul>
+                   <li class="cur" >银行转账</li>
+                   <li>微信/支付宝</li>
+               </ul>
+             </div>
+
+             <div class="clear" style=" display:none;"></div>
+              <!--切换内容box-->
+               <div class="tabcontent_box">
+                  <!-- 银行转账 -->
+                  <div class="tabcontent on">
+                    <form name="eveb_bankzzz">
+                       <ul class="eveb_form3">
+                         <li> <span>充值金额：</span>
+                           <input id="online_amount" class="online_amount" name="online_amount" type="text" size="6" onkeyup='this.value=this.value.replace(/^0|\D/gi,"")' >
+                           <label for="money" class="error">* 单笔金额最低100元，最高500,000元</label>
+                         </li>
+                         <li> <span>选择银行：</span>
+                           <div class="eveb_form_box3 eveb_bank_list3">
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="ABC" bankname="农业银行" mercode="2010349954">
+                               <em class="banklogo bank-abchina" title="农业银行"></em> </label>
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="ICBC" bankname="工商银行" mercode="2010349954">
+                               <em class="banklogo bank-icbc" title="工商银行"></em> </label>
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="CCB" bankname="建设银行" mercode="2010349954">
+                               <em class="banklogo bank-ccb" title="建设银行"></em> </label>
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="BOCOM" bankname="交通银行" mercode="2010349954">
+                               <em class="banklogo bank-comm" title="交通银行"></em> </label>
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="BOC" bankname="中国银行" mercode="2010349954">
+                               <em class="banklogo bank-chinabank" title="中国银行"></em> </label>
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="CMBC" bankname="招商银行" mercode="2010349954">
+                               <em class="banklogo bank-cmb" title="招商银行"></em> </label>
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="CMBCS" bankname="民生银行" mercode="2010349954">
+                               <em class="banklogo bank-cmbc" title="民生银行"></em> </label>
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="CEBBANK" bankname="光大银行" mercode="2010349954">
+                               <em class="banklogo bank-cebbank" title="光大银行"></em> </label>
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="BCCB" bankname="北京银行" mercode="2010349954">
+                               <em class="banklogo bank-bankofbeijing" title="北京银行"></em> </label>
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="PINGAN" bankname="平安银行" mercode="2010349954">
+                               <em class="banklogo bank-pingan" title="平安银行"></em> </label>
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="HXB" bankname="华夏银行" mercode="2010349954">
+                               <em class="banklogo bank-hxb" title="华夏银行"></em> </label>
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="BOS" bankname="上海银行" mercode="2010349954">
+                               <em class="banklogo bank-bankofshanghai" title="上海银行"></em> </label>
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="CIB" bankname="兴业银行" mercode="2010349954">
+                               <em class="banklogo bank-cib" title="兴业银行"></em> </label>
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="PSBC" bankname="中国邮政" mercode="2010349954">
+                               <em class="banklogo bank-psbc" title="中国邮政"></em> </label>
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="SPDB" bankname="浦发银行" mercode="2010349954">
+                               <em class="banklogo bank-spdb" title="浦发银行"></em> </label>
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="ECITIC" bankname="中信银行" mercode="2010349954">
+                               <em class="banklogo bank-ecitic" title="中信银行"></em> </label>
+                             <label>
+                               <input type="radio" name="payPlatform" pay="pay" value="DINPAYNEW" bankcode="CGB" bankname="广发银行" mercode="2010349954">
+                               <em class="banklogo bank-cgbchina" title="广发银行"></em> </label>
+                           </div>
+                           <div class="clear"></div>
+                           <!-- <div class="fr">
+                             <label for="bank" class="error" style="display:none;"></label>
+                             <a href="javascript:;" class="button_small button_2" id="eveb_bank_open">更多银行</a> <a href="javascript:;" class="button_small button_2" id="eveb_bank_close" style="display:none;">收起</a> </div> -->
+                         </li>
+                       </ul>
+                       <div class="eveb_form_submit">
+                         <input type="button" value="生成订单" class="button_medium button_1 submitPay">
+                       </div>
+                       <input type="hidden" name="payMerCode" id="payMerCode" value="">
+                       <input type="hidden" id="payBankCode" name="payBankCode" value="">
+                       <input type="hidden" id="payBankName" name="payBankName" value="">
+                       <input type="hidden" id="thirdPayDepositSingleMin" value="100">
+                       <input type="hidden" id="thirdPayDepositSingleMax" value="500000">
+                       <input type="hidden" id="WebSite" name="WebSite" value="">
+                     </form>
+                  </div><!-- 银行转账 -end-->
+
+                  <!--弹窗 黑底-->
+                  <div class="eveb_popup_wrap"></div>
+                  <!--弹窗 银行存款成功-->
+                  <div class="eveb_popup" id="eveb_popup_bank_ok">
+                    <div class="eveb_popup_hd">
+                      <h4 class="fl">存款</h4>
+                      <a href="javascript:;" class="icon_mini icon_close fr" title="关闭"></a> </div>
+                    <div class="eveb_popup_bd">
+                      <div class="eveb_popup_content"> <span><i class="icon_big icon_ok_3"></i></span>
+                        <p>恭喜您，成功提交存款单！单号：<strong class="green" id="orderId">loading...</strong></p>
+                        <p>转账成功后，请即时联系在线客服为您添加额度。</p>
+                      </div>
+                      <div class="eveb_popup_btn"> <a name="pop_close" href="javascripts:;" class="button_medium button_1">知道了</a> <a href="" class="button_medium button_3">查看记录</a> <a href="" class="button_medium button_3">前往转账</a> </div>
+                    </div>
+                  </div>
+                  <!--弹窗 银行存款成功-end-->
+
+                  <!-- 微信支付宝 -->
+                  <div class="tabcontent">
+
+                    <ul class="tabnav2">
+                       <li  datatype = "2" id = "pay_Judge" class="cur2"><img src="http://image.beike188.com/POLY/user_img/depositwx_06.jpg" /></li>
+                       <li  datatype = "3" ><img src="http://image.beike188.com/POLY/user_img/depositzfb_03.jpg" /></li>
+                   </ul>
+                   <div class="clear" style=" display:none;"></div>
+                   <div class="tabcontent_box2">
+
+                      <div class="tabcontent2 on2">
+                        <form name="tabcontent_num">
+                           <dl class="tabcontent2_wx">
+                             <dd>100</dd>
+                             <dd class="wxbj">200</dd>
+                             <dd>500</dd>
+                             <dd>1000</dd>
+                             <dd>2000</dd>
+                             <dd>5000</dd>
+                             <!-- <dt><span id="num">200</span>元</dt> -->
+                             <dt><input type="text" class="num1 num num_weixin" value="200"   onkeyup="this.value=this.value.replace(/\D/gi,'')"   required="required" />元</dt>
+
+                           </dl>
+
+                           <p>最少充值100元,最多充值500,000元,</p>
+                           <hr />
+                           <div class="eveb_form_submit">
+                             <input type="button" value="立即支付" class="button_medium button_1 alisubmitPay">
+                           </div>
+                         </form>
+                      </div>
+                      <div class="tabcontent2">
+                       <form name="tabcontent_num2">
+                        <dl class="tabcontent2_wx2">
+                          <dd>100</dd>
+                          <dd class="wxbj">200</dd>
+                          <dd>500</dd>
+                          <dd>1000</dd>
+                          <dd>2000</dd>
+                          <dd>5000</dd>
+
+                          <dt><input type="text" class="num2 num num_alipay" value="200"  onkeyup="this.value=this.value.replace(/\D/gi,'')" onpaste="return !clipboardData.getData('text').match(/\D/)"  required="required" />元</dt>
+                        </dl>
+
+                        <p>最少充值100元,最多充值500,000元,</p>
+                        <hr />
+                        <div class="eveb_form_submit">
+                          <input type="button" value="立即支付" class="button_medium button_1 alisubmitPay">
+                        </div>
+
+                      </form>
+                      </div>
+
+    			        </div>
+                  </div><!-- 微信支付宝 -end-->
+              </div><!--切换内容box-->
+              <div class="deposit_scsm">
+                  <p>*  最低存款金额：100元<br />支持150多家网银进行转帐，存款完成，系统自动即时入帐！<br />温馨提示：<br />
+                    1、在线存款仅提供小额入款，推荐您使用更高存款额度的“公司入款”；<br />2、支付成功后，务必点击确定键、或『返回商家』按钮，金额会立即加入；<br />
+     存款遇到问题？请立即联系”线上客服”为您服务。</p>
+              </div>
+
+          </div><!-- tabbox -end-->
+          <hr />
+    </div><!--tab-end-->
+  </div>
+  <div class="user_footer">
+    <div class="footer_link"> <a href="../help/index.html?key=0">关于我们</a>| <a href="../agent/index.html">代理专区</a>| <a href="../help/index.html?key=2">新手指南</a>| <a href="../help/index.html?key=1">联系我们</a>| <a href="../column/download.html">手机下注</a> </div>
+    <div class="copyright "> <p style="float:left;margin-right: 20px;">Copyright © 2017 天下网络 All Right Reserved</p>  <p style="float:left">PT游戏是由PT TransPacific在PAGCOR<img style="width:15px;" src="http://image.beike188.com/POLY/images/pagcorlogo.png">的授权下部署</p> </div>
+  </div>
+</div>
+</body>
+<script src="user_js/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="../personal/jquery.SuperSlide.2.1.1.js"></script>
+<script src="user_js/user.js" type="text/javascript" charset="utf-8"></script>
+<script src="user_js/deposit.js"></script><!--deposit页面js-->
+<script src="../personal/game_plat.js"></script>
+<script src="../personal/jquery.marquee.min.js"></script>
+<script type="text/javascript" src="../personal/page_common.js"></script>
+<!--<script type="text/javascript" src="../Scripts/page/checkinput.js"></script>-->
+<script src="../personal/loadpage.js"></script>
+<!--公告-->
+<!--<script type="text/javascript">
+jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:1});
+</script>-->
+</html>

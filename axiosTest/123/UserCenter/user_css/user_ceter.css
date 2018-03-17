@@ -1,0 +1,228 @@
+.wrap .content{
+	width: 1085px;
+	height: 400px;
+	margin: 0 auto;
+	background: #FFF;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+  	zoom: 1;
+  	padding: 40px;
+}
+.wrap .content .user_box{
+	width: 1085px;
+	text-align: center;
+	font-size: 12px;
+	border-collapse: collapse;
+	border: 1px solid #DDD;
+	padding: 0;
+  
+}
+.wrap .content .user_box th{
+	height: 45px;
+	line-height: 45px;;
+    color: #666;
+    background: url(http://image.beike188.com/POLY/user_img/center_th.png);
+     font-weight: normal;
+}
+.wrap .content .user_box td{
+	height: 46px;
+	line-height: 46px;;
+}
+.wrap .content .content_certific{
+	width: 33.3%;
+	margin-top: 20px;
+}
+.wrap .content .content_certific .cer_inner{
+	margin-right: 10px;
+	height: 177px;
+	border: 1px solid #DDD;
+}
+.wrap .content .content_certific .cer_inner h4{
+	height: 45px;
+	line-height: 45px;;
+    color: #666;
+    font-weight: normal;
+    line-height: 40px;
+    padding: 0 10px;
+    font-size: 16px;
+    background-image: url(http://image.beike188.com/POLY/user_img/center_th.png);
+}
+.wrap .content .content_certific .cer_inner .cer_validation li{
+	float: left;
+	width: 33.3%;
+	text-align: center;
+	
+}
+.wrap .content .content_certific .cer_inner .cer_validation li i{
+	width: 80px;
+    height: 80px;
+    line-height: 45px;;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+#cer_li_1 i{
+	background: url(http://image.beike188.com/POLY/user_img/icon.png);
+	background-position: 0px -185px;
+}
+#cer_li_2 i{
+	background: url(http://image.beike188.com/POLY/user_img/icon.png);
+	background-position: -80px -185px;
+}
+#cer_li_3 i{
+	background: url(http://image.beike188.com/POLY/user_img/icon.png);
+	background-position: -160px -185px;
+}
+
+.wrap .content .content_level{
+	width: 33.3%;
+	margin-top: 20px;
+	
+}
+.wrap .content .content_level .lev_inner{
+	margin-right: 10px;
+	margin-left: 10px;
+	height: 177px;
+	border: 1px solid #DDD;
+}
+ .vipLevel_img{ 
+	 display: inline-block;
+	 width:21px;
+	 height:19px; 
+	 vertical-align: text-bottom; 
+	 margin-left: 3px;
+	 margin-right: 3px;
+	 margin-bottom: 3px;
+	 background-image: url(http://image.beike188.com/POLY/user_img/c_diamondm.png);
+}
+#lev_em{
+	font-size: 20px;
+    font-family: "Arial";
+    color: #FF7F00;
+    margin-right: 3px;
+}
+#lev_gif{
+	padding: 2px 5px;
+    border-radius: 3px;
+    border: 1px solid #DDD;
+    color: #666;
+    font-size: 12px;
+    margin-right: 10px;
+    float: right;
+    margin-top: 3px;
+    height: 30px;
+}
+#lev_gif img{
+	border: 0;
+    vertical-align: top;
+}
+.c_money{
+	padding: 2px 5px;
+    border-radius: 3px;
+    border: 1px solid #DDD;
+    color: #666;
+    font-size: 12px;
+    margin-right: 10px;
+}
+#purse,#game_balance{
+	font-size: 20px;
+    font-family: "Arial";
+    margin-right: 3px;
+}
+.wrap .content .content_level .lev_inner li{
+	height: 43px;
+    line-height: 40px;
+    border-bottom: 1px dashed #DDD;
+    padding-left: 10px;
+}
+.wrap .content .content_letter{
+	width: 33.3%;
+	margin-top: 20px;
+}
+.wrap .content .content_letter .let_inner{
+	margin-left: 10px;
+	height: 177px;
+	border: 1px solid #DDD;
+}
+.wrap .content .content_letter .let_inner h4{
+	height: 45px;
+    color: #666;
+    font-weight: normal;
+    line-height: 40px;
+    padding: 0 10px;
+    font-size: 16px;
+    background: url(http://image.beike188.com/POLY/user_img/center_th.png);
+}
+.wrap .content .content_letter .let_inner a{
+	color: #ff7f00;
+    text-decoration: none;
+    float: right;
+    font-size: 12px;
+}
+.wrap .content .content_letter .let_inner .let_ul{
+	padding: 10px 10px 0 10px;
+    height: 120px;
+    overflow: hidden;
+}
+#balance{
+	padding: 2px 5px;
+    border-radius: 3px;
+    border: 1px solid #DDD;
+    color: #666;
+    font-size: 12px;
+    margin-right: 10px;
+}
+.wrap .content .content_discount{
+	width: 33.33%;
+	margin-top: 20px;
+	
+}
+.wrap .content .content_discount .dis_inner{
+	margin-right: 10px;
+	background: #F5F5F5;
+    height: 88px;
+    text-align: center;
+    position: relative;
+    border: 1px solid #DDD;
+}
+.wrap .content .content_discount .dis_inner p{
+	font-size: 16px;
+    margin-top: 18px;
+}
+.wrap .content .content_discount .dis_inner  a{
+		display: inline-block;
+	    width: 50px;
+	    height: 20px;
+	    margin-top: 10px;
+	    background-image: url(http://image.beike188.com/POLY/user_img/icon.png);
+}
+
+#dis_btnl{
+	    background-position: 0px -355px;
+}
+#dis_btnr{
+		background-position: -50px -355px;
+}
+.wrap .content .content_discount .dis_inner .dis_num{
+	position: absolute;
+    right: 15px;
+    top: 20px;
+    font-size: 20px;
+}
+.wrap .content .content_discount .dis_inner .dis_num em{
+	color: #ff7f00;
+	font-size: 40px;
+}
+.wrap .content .content_swiper{
+	width: 66.66%;
+	margin-top: 20px;
+	
+}
+.wrap .content .content_swiper .swi_inner{
+	margin-left: 10px;
+	background: #F5F5F5;
+    height: 88px;
+    text-align: center;
+    position: relative;
+    border: 1px solid #DDD;
+}

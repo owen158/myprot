@@ -1,0 +1,107 @@
+dl,dt,dd{ margin:0px; padding:0;}
+body{ font-family:"微软雅黑","宋体";}
+#banner {
+	background:url(../images/Promotion_banner.jpg) no-repeat center;
+}
+/*#un-lobby {
+	min-height: 450px;
+	padding-bottom: 10px
+}
+#un-lobby #unlobby-title {
+	display: none
+}
+ul.navtab {
+	width: 970px;
+	margin: 0 auto 10px;
+	border-bottom: 1px solid #816148
+}
+ul.navtab li {
+	float: left;
+	display: inline-block;
+	height: 38px;
+	padding: 0 20px;
+	margin-right: 2px;
+	color: #8b4513;
+	font-size: 14px;
+	font-family: 'Microsoft JhengHei';
+	line-height: 38px;
+	background: #f5deb3
+}
+ul.navtab li:hover, ul.navtab li.tab {
+	color: #fff;
+	background: #816148
+}
+ul.discount {
+	padding: 0 16px;
+	list-style: none
+}
+ul.discount>li:first-child {
+	width: 980px;
+	height: 150px;
+	margin-bottom: 5px;
+	cursor: pointer
+}
+ul.discount>li[ng-bind-html] {
+	width: 980px;
+	color: #4e1e1e;
+	text-align: left
+}
+li[ng-bind-html] h3 {
+}
+li[ng-bind-html] h4 {
+	color: red;
+	font-size: 15px;
+	text-align: left
+}
+li[ng-bind-html] h5 {
+}
+li[ng-bind-html] p {
+}
+li[ng-bind-html] dd {
+	margin-left: 0
+}
+li[ng-bind-html] table {
+	width: 100%
+}
+li[ng-bind-html] table tr, li[ng-bind-html] table th, li[ng-bind-html] table td {
+	line-height: 2em;
+	text-align: center;
+	border: 1px solid #967a67;
+	background: #f6edde
+}
+li[ng-bind-html] table th {
+	color: #4e1e1e;
+	font-size: 15px;
+	font-weight: bold
+}
+li[ng-bind-html] ol {
+	padding-left: 20px;
+	list-style-type: decimal
+}
+li[ng-bind-html] ol li {
+}
+
+*/
+
+
+
+.Promotion_content{ width:1000px; height:auto; margin:0px auto; overflow:hidden; margin-bottom:80px;}
+
+/*选项卡*/
+.wrapper_tabbox{ width:986px; margin:0px auto; overflow:hidden;}
+.slideTxtBox{ width:986px; margin:0px auto;}
+.slideTxtBox .hd{ height:39px; line-height:38px;   position:relative; border-bottom:1px solid #816148;}
+.slideTxtBox .hd ul{ float:left;  position:absolute; left:0px; top:0px; height:38px;   }
+.slideTxtBox .hd ul li{ float:left; width:110px; text-align:center; background:#f5deb3; list-style:none;}
+.slideTxtBox .hd ul li.on{ height:38px;  background:#816148; color:#fff;}
+.slideTxtBox .bd{ margin-top:10px;}
+.slideTxtBox .bd ul{ height:aoto; zoom:1;  }
+
+.slideTxtBox .bd li{ height:auto; line-height:24px; margin-bottom: 10px;  }
+.slideTxtBox .bd li h2{ width:984px; height:30px !important; line-height:30px; text-align:center; border:1px solid #967a67; font-size:14px;}
+.slideTxtBox .bd li h2 a{ color:#f00;}
+.slideTxtBox .bd li .wrapper_tabbox_img{ width:986px; height:156px; overflow:hidden; margin:0px auto;}
+.slideTxtBox .bd li .wrapper_tabbox_content{ display:none; width:986px; height:auto; overflow:hidden;}
+.slideTxtBox .bd li .wrapper_tabbox_content dl{}
+.slideTxtBox .bd li .wrapper_tabbox_content dl dt{ height:60px; line-height:60px; font-size:16px; color:#f00; font-weight:bold;}
+.slideTxtBox .bd li .wrapper_tabbox_content dl dd{ margin:5px 0px;}

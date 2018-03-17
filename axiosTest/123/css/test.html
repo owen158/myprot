@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<button  id="btn">按钮</button>
+</body>
+<script>
+	var  btn = document.getElementById('btn');
+
+	btn.onclick = function(){
+		console.log(this);
+		var _this=this;
+		window.setTimeout(function () {
+			console.log(this);
+		},1000)
+	}
+	// function test(){
+	// 	console.log(this)
+	// }
+</script>
+</html>

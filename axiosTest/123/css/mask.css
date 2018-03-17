@@ -1,0 +1,153 @@
+/*遮罩层*/
+.mask{
+    width:100%;
+    min-height:980px;
+    height:100%;
+    background:#000;
+    filter:alpha(opacity=20);
+    -moz-opacity:0.2;
+    -khtml-opacity: 0.2;
+    opacity: 0.2;
+    position:fixed;
+    left:0px;
+    top:0px;
+    z-index:150;
+}
+.maskWrapper{
+    width:130px;
+    height:40px;
+    background:#fff;
+    overflow:hidden;
+    margin:0px auto;
+    position:fixed;
+    left:36%;
+    top:21%;
+    z-index:151;
+}
+.mask-con{
+    width: 400px;
+    height: 200px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+}
+.mask-con .Notice{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color:#222222;
+    border-bottom: 1px solid #e5e5e5;
+}
+.mask-con .wrapper{
+    width: 400px;
+}
+.mask-con .mask-text{
+    height: 120px;
+    padding-top: 38px;
+    text-align: center;
+}
+.mask－onfirm{
+    text-align: center;
+    height: 40px;
+    border-top:1px solid #e5e5e5;
+    line-height: 40px;
+}
+.mask－onfirm span{
+    background: darkred;
+    padding:5px 50px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+    color:#fff;
+    cursor: pointer;
+}
+/*loadding*/
+.maskloading{
+    width:130px;
+    height:40px;
+    background:#fff;
+    overflow:hidden;
+    margin:0px auto;
+    position:fixed; left:47%; top:21%;
+    z-index:151;
+}
+.maskloading img{
+    width:40px;
+    vertical-align:middle;
+    margin:0px 5px;
+}
+/*登录状态*/
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+}
+.wrapper-login{
+    display:inline-block;
+    width:511px;
+    height: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+    font-size: 13px;
+}
+.LoginIn{
+    width:100%;
+}
+.LoginIn .item{
+    width:130px;
+    background: #fff;
+    margin-right: 3px;
+    display: inline-block;
+    height: 30px;
+}
+.LoginIn .item input{
+    height: 20px;
+    width:128px;
+    border:none;
+    font-size: 14px;
+    outline:none;
+    padding-left: 3px;
+    margin-top: 4px;
+}
+.LoginIn .item {
+    position: relative;
+}
+.LoginIn .item img{
+    position: absolute;
+    width:55px;
+    height: 30px;
+    right:0;
+    top:0px;
+}
+.wrapper-login .main{
+    display: inline-block;
+    width:47px;
+    font-size: 14px;
+    margin: 0 0 0 3px;
+    vertical-align: top;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    background: #fff47e;
+}
+.LoginOut{
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+}
+.LoginOut .UserName,.LoginOut .UserMoney,.LoginOut a{
+    font-size: 14px;
+    padding:0 3px;
+    color:#ff7700;
+
+}
+.LoginOut>a{
+    color:#222222;
+}

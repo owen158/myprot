@@ -1,0 +1,20 @@
+#banner {
+	background: url('../Web.Portal/images/sport/banner_sport.jpg') no-repeat center
+}
+ul.game-list li {
+	margin: 0 5px;
+	width: 311px;
+	height: 397px
+}
+ul.game-list li[game-box="bb"] {
+	background: url('../Web.Portal/images/sport/01.png') no-repeat
+}
+ul.game-list li[game-box="saba"] {
+	background: url('../Web.Portal/images/sport/02.png') no-repeat
+}
+ul.game-list li[game-box="hg"] {
+	background: url('../Web.Portal/images/sport/03.png') no-repeat
+}
+ul.game-list li:hover {
+	background-position: bottom
+}

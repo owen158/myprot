@@ -1,0 +1,168 @@
+
+.container .Vipbox{
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid #bbb;
+    padding: 0;
+}
+.container .Vipbox thead {
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    border-bottom: 1px solid #bbb;
+}
+.container .Vipbox tbody{
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+}
+.container .vipcentent{
+    width:100%;
+    margin-top: 20px;
+}
+.container .vipcentent li{
+    display: inline-block;
+    vertical-align: top;
+    border:1px solid #bbb;
+    font-size:13px;
+    width:32%;
+    height: 180px;
+}
+.vipcentent .md{
+    margin: 0 2% 0 2%;
+}
+.container .vipcentent li.md p{
+    border-bottom: 1px dotted #bbb;
+}
+
+.container .vipcentent li .box{
+    width:100%;
+    height: 135px;
+    border:none;
+}
+.container .vipcentent li .box li{
+    width:32%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    height: 135px;
+    border:none;
+    color:#666;
+}
+.vipcentent li .box li.mailbox i{
+    background-position: -5px -191px;
+}
+.vipcentent li .box li.Mobile{
+}
+.vipcentent li .box li.Mobile i{
+    background-position: -87px -191px;
+}
+.vipcentent li .box li.card i{
+    background-position: -167px -191px;
+}
+.vipcentent li .box li i{
+    display: inline-block;
+    width: 65px;
+    margin: 10px 0;
+    height: 65px;
+    background: url(../../../images/icon.png);
+    vertical-align: middle;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.vipcentent li .box li span{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size:14px;
+}
+.vipcentent li .box li.mailbox{
+    text-align: center;
+}
+.container .vipcentent li p{
+    width:100%;
+    height: 45px;
+    font-size:16px;
+    line-height: 45px;
+    padding-left: 15px;
+    border-bottom: 1px solid #bbb;
+}
+.container .vipcentent li .text{
+    padding: 5px;
+}
+#vip_money{
+    font-size: 14px;
+    color:red;
+}
+.container .vipcentent li p a{
+    font-size:12px;
+}
+.container .offer{
+    margin-top: 15px;
+    height: 90px;
+    width:100%;
+}
+.container .offer .sup-left{
+    width:32%;
+    height: 90px;
+    border:1px solid #bbb;
+}
+.container .offer .sup-left .rf{
+    width:30%;
+}
+.container .offer .sup-left .rf{
+    height: 90px;
+    line-height: 90px;
+    font-size:18px;
+    text-align: center;
+}
+.container .offer .sup-left .rf .font{
+    font-size:26px;
+    color:#ff7f00;
+}
+.container .offer .sup-left .lf{
+    width:70%;
+    text-align: right;
+    font-size: 15px;
+}
+.container .offer .sup-left .lf .sup{
+    height: 40px;
+    padding-top: 20px;
+
+}
+.container .offer .sup-left .lf .sub,.container .offer .sup-left .lf .sup{
+    width:100%;
+}
+.container .offer .sup-left .lf .sub{
+    height: 50px;
+    text-align: right;
+}
+.container .offer .sup-left .lf a.last{
+    background-position: 0px -355px;
+}
+.container .offer .sup-left .lf a.fist{
+    background-position: -50px -355px;
+}
+
+.container .offer .sup-left .lf a{
+    float:right;
+    width: 50px;
+    margin-left: 10px;
+    margin-top: 5px;
+    height: 20px;
+    background: url(../../../images/icon.png);
+    vertical-align: middle;
+    overflow: hidden;
+    cursor: pointer;
+}
+.container .offer .sup-right{
+    width:66%;
+    margin-left: 2%;
+    height: 90px;
+    border:1px solid #bbb;
+}
+#jsoaeig{
+    width:15px;
+}

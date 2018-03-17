@@ -1,0 +1,101 @@
+@import "../../../static/css/style";
+.formWrapper{
+  form{
+    //padding: 0.5rem 0.5rem;
+    font-size: 0;
+    .item-form{
+      position: relative;
+      height: 0.7rem;
+      margin: 0;
+      text-align: left;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border-top:1px solid @border-c2;
+      background:@bg-c5;
+      line-height: 0.7rem;
+      input{
+        width: 100%;
+        height: 0.5rem;
+        margin-top: 0.1rem;
+        outline: none;
+        font-size: 0.25rem;
+        background: @bg-c5;
+        color:@text-c6;
+        padding-left: 1.2rem;
+      }
+      input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+        color:    @text-c5;
+      }
+      input:-moz-placeholder, textarea:-moz-placeholder {
+        color:    @text-c5;
+      }
+      input::-moz-placeholder, textarea::-moz-placeholder {
+        color:    @text-c5;
+      }
+      input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+        color:    @text-c5;
+      }
+      .select{
+        margin-right: 0.1rem;
+        margin-left: 1.2rem;
+      }
+      select{
+        width: 2.65rem;
+        margin-top: 0.1rem;
+        height: 0.5rem;
+        .border(3px);
+      }
+      label{
+        position: absolute;
+        left:0;
+        top:0;
+        text-align: center;
+        width: 1.1rem;
+        color:@text-c6;
+        font-size: 0.3rem;
+        height: 100%;
+        line-height: 0.7rem;
+        i{
+          font-size: 0.5rem;
+          color:@text-c3;
+        }
+      }
+      .ImgCode{
+        position: absolute;
+        right:0.1rem;
+        top:0.015rem;
+        height: 0.6rem;
+        width: 1.3rem;
+        background: red;
+      }
+    }
+    .item-form:last-child{
+      border-bottom:1px solid @border-c2;;
+    }
+  }
+  .logRegisterSubmit{
+    margin: 0.3rem auto;
+    width: 100%;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    font-weight: bold;
+    font-size: 0.3rem;
+    background:@bg-c2;
+    color:@text-c6;
+
+  }
+}
+
+.Promptbox{
+  height: 0.5rem;
+  line-height: 0.5rem;
+  background: #bfbfbf;
+  margin-top: 0.2rem;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;;
+  font-size: 0.25rem;
+  color:#2f2f2f;
+  text-align: center;
+}

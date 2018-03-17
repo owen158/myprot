@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>用户中心-历史记录</title>
+</head>
+<link rel="stylesheet" type="text/css" href="user_css/user.css" />
+<link rel="stylesheet" type="text/css" href="user_css/reset.css" />
+<link rel="stylesheet" type="text/css" href="user_css/history.css" />
+
+<body>
+    <div class="wrap">
+        <div class="top_bar clear">
+            <p>
+                <a href="../vzt6.html"><img src="http://image.beike188.com/POLY/user_img/bllogo.png" /></a>
+            </p>
+            <ul class="top_nav">
+                <li><a onclick="loadgame('HG','','PC');">体育赛事</a></li>
+                <li><a href="../Lobby/Live.html">视讯直播</a></li>
+                <li><a href="../Lobby/game_pt.html">PT电子</a></li>
+                <li><a href="../Lobby/game_Mg.html">MG电子</a></li>
+                <li><a href="../Promotion.html">优惠活动</a></li>
+                <li><a href="">联系我们</a></li>
+            </ul>
+            <div class="header_info"> <a class="first" href="javascript:;"></a>| <a class="last" href="##">注销</a> <a class="button" href="http://f88.live800.com/live800/chatClient/chatbox.jsp?companyID=779799&configID=144546&jid=9355144430" target="_blank">在线客服</a> </div>
+        </div>
+        <!--notice-->
+        <div class="notice">
+            <div class="eveb_header_notice">
+                <h4><i class="icon_small icon_header_notice"></i>公告：</h4>
+                <!--轮播-->
+                <div class="txtScroll-top">
+                    <!--<div class="bd">
+                        <ul class="infoList">
+                            <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+                            <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+                            <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+                            <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+                            <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+                            <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+                            <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+                        </ul>
+                    </div>
+                    <div class="hd">
+                        <a class="next"></a>
+                        <ul>
+                        </ul>
+                        <a class="prev"></a>
+                    </div>-->
+                    <!--文字滚动-->
+				        <div class="header-center_gd">
+				            <div class="picMarquee-left">
+				              <ul class="header_marquee" behavior="scroll">
+				              </ul>
+				            </div>
+				        </div>
+				        <!--文字滚动-end-->
+                </div>
+                <!--轮播-end-->
+            </div>
+        </div>
+        <!--notice-end-->
+        <ul class="user_nav clear">
+            <li> <a href="user_center.html"><i class="icon_home"></i>会员首页</a> </li>
+            <li> <a href="deposit.html"><i class="icon_bank"></i>存款</a> </li>
+            <li> <a href="drawing.html"><i class="icon_withdraw"></i>提款</a> </li>
+            <li> <a href="transfer_accounts.html"><i class="icon_transfer"></i>转账</a> </li>
+            <!--<li> <a href="messagelist.html"><i class="icon_letter"></i>站内信</a> </li>
+            <li> <a href="market.html"><i class="icon_market"></i>市场活动</a> </li>-->
+            <li style="background-color: #ddb79a;"> <a href="history.html"><i class="icon_record"></i>历史记录</a> </li>
+            <li> <a href="Account_settings.html"><i class="icon_set"></i>账户设置</a> </li>
+        </ul>
+        <!--历史记录开始-->
+        <div class="content">
+            <div id="menu">
+                <ul>
+                    <li id="dep_history" class="on"> <a style="color:white; margin-top:123px;" href="javascript:void(0);">存款记录</a> </li>
+                    <li id="dr_history"> <a href="javascript:void(0);">提款记录</a> </li>
+                    <li id="tran_history"> <a href="javascript:void(0);">转账记录</a> </li>
+                    <li id="bet_history"> <a href="javascript:void(0);">投注记录</a> </li>
+                    <li> <a href="javascript:void(0);">优惠记录</a> </li>
+                </ul>
+            </div>
+            <div id="right-con">
+                <!-- c1存款记录 -->
+                <div id="c1" class="tab_swiper">
+                    <h2><i class="icon"></i>存款记录</h2>
+                    <div class="eveb_search clear"> 存款类型：
+                        <select id="dpType">
+            <option value="">所有</option>
+            <option value="1">网银</option>
+            <option value="2">微信</option>
+            <option value="3">支付宝</option>
+          </select> 状态：
+                        <select id="dpStatus">
+            <option value="">所有</option>
+            <option value="paying">处理中</option>
+            <option value="success">交易成功</option>
+            <option value="failed">交易失败</option>
+          </select> 起止时间：
+                        <input type="text" size="10" id="d_beginTime" class="Wdate beginTime" onclick="WdatePicker({minDate:'%y-%M-{%d-30}',maxDate:'%y-%M-%d'})" />
+                        <input type="text" size="10" id="d_endTime" class="Wdate endTime" onclick="WdatePicker({minDate:'%y-%M-{%d-30}',maxDate:'%y-%M-%d'})" />
+                        <a id="d_refreshDataList" href="javascript:;" class="button_small button_1">筛选</a> <a id="theDay" href="javascript:;" class="button_small button_4" onclick="today();dep_history.getData();">今日</a> <a id="dep_threeDay" href="javascript:;"
+                            class="button_small button_4"  onclick="threeDay();dep_history.getData();">3天</a> <a onclick="weekday();dep_history.getData();" id="theWeek" href="javascript:;" class="button_small button_4  the_week">本周</a> </div>
+                    <table class="eveb_box eveb_table eveb_table_ck ">
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>转账金额</th>
+                                <th>存款平台</th>
+                                <th>状态</th>
+                            </tr>
+                        </thead>
+                        <tbody id="d_mainBody">
+                        </tbody>
+                    </table>
+                    <div id="d_fenye" class="eveb_amount fl"> 当前小计<span id="d_Subtotal">0</span>元，总计<span id="d_Total">0</span>元 </div>
+                    <!-- 分页 -->
+                    <div class="fr" id="d_fenb">
+                        <!-- <div class="pagination"> <span class="current up">&lt;</span> <span class="current">1</span> <span class="current next">&gt;</span> </div>-->
+                    </div>
+                </div>
+                <!-- c2提款记录 -->
+                <div class="tab_swiper" style="display:none">
+                    <h2><i class="icon"></i>提款记录</h2>
+                    <div class="eveb_search clear">
+                    	
+          		状态：
+                        <select id="drStatus">
+		             	<option value="">所有</option>
+		            	<option value="1">处理中</option>
+		            	<option value="5">交易成功</option>
+          		</select> 起止时间：
+                        <input type="text" size="10" id="dr_beginTime" class="Wdate beginTime" onclick="WdatePicker({minDate:'%y-%M-{%d-30}',maxDate:'%y-%M-%d'})" />
+                        <input type="text" size="10" id="dr_endTime" class="Wdate endTime" onclick="WdatePicker({minDate:'%y-%M-{%d-30}',maxDate:'%y-%M-%d'})" />
+                        <a id="dr_refreshDataList" href="javascript:;" class="button_small button_1">筛选</a> <a href="javascript:;" class="button_small button_4" onclick="today();dr_history.getData();">今日</a> <a id="dr_threeDay" href="javascript:;" class="button_small button_4" onclick="threeDay();dr_history.getData();">3天</a> <a onclick="weekday();dr_history.getData();" href="javascript:;"
+                            class="button_small button_4 the_week">本周</a> </div>
+                    <table class="eveb_box eveb_table ">
+                        <thead>
+                            <tr>
+                                <th>提交日期</th>
+                                <th>申请额度</th>
+                                <th>银行卡号</th>
+                                <th>状态</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dr_mainBody">
+                        
+                        </tbody>
+                    </table>
+                    <div  class="eveb_amount fl"> 当前小计<span id="dr_Subtotal">0</span>元，总计<span id="dr_Total">0</span>元 </div>
+                    <!-- 分页 -->
+                    <div class="fr" id="dr_fenb">
+                        <!-- <div class="pagination"> <span class="current up">&lt;</span> <span class="current">1</span> <span class="current next">&gt;</span> </div>-->
+                    </div>
+                </div>
+                <!-- c3转账记录 -->
+                <div class="tab_swiper" style="display:none">
+                    <h2><i class="icon"></i>转账记录</h2>
+                    <div class="eveb_search clear"> 转账类型：
+                        <select id="game_type">
+            <option value="">所有</option>
+            <option value="IN">转入</option>
+            <option value="OUT">转出</option>
+          </select> 游戏平台：
+                        <select id="gamePlatform">
+            <option value="">所有</option>
+            <option value="CG">CG</option>
+            <option value="AG">AG极速厅</option>
+            <option value="AGIN">AG国际厅</option>
+            <option value="BBIN">BBIN</option>
+            <option value="DS">DS</option>
+            <option value="GGBY">GG捕鱼</option>
+            <option value="OB">欧博</option>
+            <option value="OG">OG</option>
+            <option value="SB">申博(tgp)</option>
+            <option value="MG">MG</option>
+            <option value="HABA">HABA</option>
+            <option value="PT">PT</option>
+            <option value="HG">HG(体育)</option>
+          </select> 起止时间：
+                        <input type="text" size="10" id="z_beginTime" class="Wdate beginTime" onclick="WdatePicker({minDate:'%y-%M-{%d-30}',maxDate:'%y-%M-%d'})" />
+                        <input type="text" size="10" id="z_endTime" class="Wdate endTime" onclick="WdatePicker({minDate:'%y-%M-{%d-30}',maxDate:'%y-%M-%d'})" />
+                        <a id="z_refreshDataList" href="javascript:;" class="button_small button_1">筛选</a> <a href="javascript:;" class="button_small button_4" onclick="today();tran_history.getData();">今日</a> <a href="javascript:;" id="tra_three" class="button_small button_4"
+                            onclick="threeDay();tran_history.getData();">3天</a> <a onclick="weekday();tran_history.getData();" href="javascript:;" class="button_small button_4 the_week">本周</a> </div>
+                    <table id="z_container" class="eveb_box eveb_table eveb_table_ck">
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>转账金额</th>
+                                <th>转账前金额</th>
+                                <th>转账后金额</th>
+                                <th>游戏平台</th>
+                                <th>转账类型</th>
+                            </tr>
+                        </thead>
+                        <tbody id="z_mainBody">
+
+                        </tbody>
+                    </table>
+                    <div id="z_fenye" class="eveb_amount fl"> 当前小计<span id="z_Subtotal">0</span>元，总计<span id="z_Total">0</span>元 </div>
+                    <!-- 分页 -->
+                    <div class="fr" id="z_fenb">
+
+                        <!-- <div class="pagination"> <span class="current up">&lt;</span> <span class="current">1</span> <span class="current next">&gt;</span> </div>-->
+                    </div>
+                </div>
+                <!-- c4投注记录—————————————————————————————————————————————————— -->
+                <div class="tab_swiper" style="display:none">
+                    <h2><i class="icon"></i>投注记录</h2>
+                    <div  class="eveb_search clear"> 类型：<select id="bet_type">
+            <option value="ALL">全部</option>
+            <option value="AG">AG视讯</option>
+            <option value="AGBY">AG捕鱼</option>
+            <option value="BBIN">BBIN视讯 </option>
+            <option value="BBINGAME">BBIN电子</option>           
+            <option value="CG">洲际视讯</option>
+            <option value="SHENBO">申博视讯</option>
+            <option value="TGP">申博电子(TGP)</option>            
+			<option value="DS">DS视讯</option>
+            <option value="GGBY">GG捕鱼</option>
+            <option value="HABA">HABA电子</option>
+            <option value="HG">HG体育</option>
+            <option value="IG">IG彩票</option>
+            <option value="MG">MG电子</option>
+            <option value="OB">欧博视讯</option>
+            <option value="OG">OG视讯</option>
+            <option value="PT">PT电子</option>
+               
+          </select> 起止时间：
+                        <input id="bet_beginTime" style="width: 133px;" type="text" size="10" class="Wdate " onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'%y-%M-{%d-30}',maxDate:'%y-%M-%d'})" />
+                        <input id="bet_endTime" style="width: 133px" size="10" class="Wdate " onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'%y-%M-{%d-30}',maxDate:'%y-%M-%d'})" />
+                        <a id="bet_refreshDataList" href="javascript:;" class="button_small button_1">筛选</a> <a href="javascript:;" class="button_small button_4" onclick="oDay();bet_history.getData();">今日</a> <a href="javascript:;" id="tra_three" class="button_small button_4"
+                            onclick="tDay();bet_history.getData();">3天</a> <a onclick="wDay();bet_history.getData();" href="javascript:;" class="button_small button_4 the_week">本周</a> </div>
+                    <table class="eveb_box eveb_table" id="bet_container">
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>游戏平台</th>
+                                <th>下注金额</th>
+                                <th>派彩金额</th>
+                                <th>输赢金额</th>
+                                <th>有效投注</th>
+                            </tr>
+                        </head>
+                        <tbody id="bet_mainBody">
+                            
+                        </tbody>
+                    </table>
+ 						<!--<div id="bet_fenye" class="eveb_amount fl"> 当前下注小计<span id="bet_Subtotal">0</span>元，总计<span id="bet_Total">0</span>元 </div>-->
+ 						<div class="eveb_amount fl">总投注：当前页小计<span id="bet_Subtotal" >0</span>元</div>
+ 						<div class="eveb_amount fl">派彩：当前页小计<span id="payOut">0</span>元</div>
+                    	<div class="eveb_amount fl">输赢：当前页小计<span id="bet_Total">0</span>元</div>
+                    <!-- 分页 -->
+                    <div class="fr" id="bet_fenb">
+
+                        <!-- <div class="pagination"> <span class="current up">&lt;</span> <span class="current">1</span> <span class="current next">&gt;</span> </div>-->
+                    </div>
+                </div>
+                <!-- c4优惠记录-->
+                <div class="tab_swiper" style="display:none">
+                    <h2><i class="icon"></i>优惠记录</h2>
+                    <div class="eveb_search clear"> 类型：
+                        <select>
+            <option value>所有</option>
+            <option value="0">银行转账</option>
+            <option value="1">第三方支付</option>
+            <option value="2">代理转账</option>
+          </select> 状态：
+                        <select>
+            <option value>所有</option>
+            <option value="0">未支付</option>
+            <option value="1">处理中</option>
+            <option value="2">审核</option>
+            <option value="3">完成</option>
+            <option value="4">拒绝</option>
+            <option value="5">取消</option>
+          </select> 起止时间：
+                        <input type="text" size="10" class="Wdate beginTime" onclick="WdatePicker({minDate:'%y-%M-{%d-30}',maxDate:'%y-%M-%d'})" /> -
+                        <input type="text" size="10" class="Wdate endTime" onclick="WdatePicker({minDate:'%y-%M-{%d-30}',maxDate:'%y-%M-%d'})" />
+                        <a href="javascript:;" class="button_small button_1">筛选</a> <a href="javascript:;" class="button_small button_4" onclick="today()">今日</a> <a href="javascript:;" class="button_small button_4" onclick="threeDay()">3天</a> <a href="javascript:;"
+                            class="button_small button_4 the_week">本周</a> </div>
+                    <table class="eveb_box eveb_table ">
+                        <tbody>
+                            <tr>
+                                <th>日期</th>
+                                <th>游戏平台</th>
+                                <th>总投注额</th>
+                                <th>有效投注额</th>
+                                <th>派彩</th>
+                                <th>单量</th>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <th>2017.11.25</th>
+                                <th>RMB</th>
+                                <th>7300.58</th>
+                                <th>7300.58未支付</th>
+                                <th>456411</th>
+                                <th>无</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="eveb_amount fl">总投注：当前页小计<span>0</span>元，总计<span>0</span>元</div>
+                    <div class="eveb_amount fl">有效投注：当前页小计<span>0</span>元，总计<span>0</span>元</div>
+                    <div class="eveb_amount fl">派彩：当前页小计<span>0</span>元，总计<span>0</span>元</div>
+                    <!-- 分页 -->
+                    <div class="fr">
+                        <div class="pagination"> <span class="current up">&lt;</span> <span class="current">1</span> <span class="current next">&gt;</span> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="user_footer">
+            <div class="footer_link"> <a href="../help/index.html?key=0">关于我们</a>| <a href="../agent/index.html">代理专区</a>| <a href="../help/index.html?key=2">新手指南</a>| <a href="../help/index.html?key=1">联系我们</a>| <a href="../column/download.html">手机下注</a> </div>
+            <div class="copyright "> <p style="float:left;margin-right: 20px;">Copyright © 2017 天下网络 All Right Reserved</p>  <p style="float:left">PT游戏是由PT TransPacific在PAGCOR<img style="width:15px;" src="http://image.beike188.com/POLY/images/pagcorlogo.png">的授权下部署</p> </div>
+        </div>
+    </div>
+    <!--loading-->
+	<div class="xploading_bg"></div>
+	<div class="xploading" > <img src="http://image.beike188.com/POLY/images/xploading.gif" />Loading... </div>
+	<!--loading-end-->
+</body>
+<script src="user_js/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="user_js/laypage.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="../personal/jquery.SuperSlide.2.1.1.js"></script>
+<script src="user_js/user.js" type="text/javascript" charset="utf-8"></script>
+<script language="javascript" type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+<script src="user_js/date.js" type="text/javascript" charset="utf-8"></script>
+<script src="../personal/game_plat.js"></script>
+<script src="../personal/jquery.marquee.min.js"></script>
+<script type="text/javascript" src="../personal/page_common.js"></script>
+<!--<script type="text/javascript" src="../Scripts/page/checkinput.js"></script>-->
+<script src="../personal/loadpage.js"></script>
+<script type="text/javascript">
+    //切换到相关页
+    $(function() {
+        $('#menu  li').on('click', function() {
+            $('#right-con').children('div').hide();
+            $('#menu li').css({
+                'background': 'none'
+            })
+            $('#menu  li').find('a').css('color', 'black');
+            $(this).css({
+                'background-image': 'url(http://image.beike188.com/POLY/user_img/m-arrow.png)',
+                'background-repeat': 'no-repeat',
+                'background-color': '#5f4234',
+                'background-position': '12% 50%'
+            });
+            $(this).find('a').css('color', '#ffffff');
+            $('#right-con').children('div').eq($(this).index()).show();
+        })
+    })
+
+    //公告
+//  jQuery(".txtScroll-top").slide({
+//      titCell: ".hd ul",
+//      mainCell: ".bd ul",
+//      autoPage: true,
+//      effect: "top",
+//      autoPlay: true,
+//      vis: 1
+//  });
+</script>
+
+</html>

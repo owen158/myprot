@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>用户中心</title>
+</head>
+<link rel="stylesheet" href="user_css/user.css" />
+<link rel="stylesheet" type="text/css" href="user_css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="user_css/user_ceter.css"/>
+<body>
+<div class="wrap">
+  <div class="top_bar clear">
+    <p><a href="../vzt6.html"><img src="http://image.beike188.com/POLY/user_img/bllogo.png" /></a></p>
+    <ul class="top_nav">
+      <li><a onclick="loadgame('HG','','PC');">体育赛事</a></li>
+      <li><a href="../Lobby/Live.html">视讯直播</a></li>
+      <li><a href="../Lobby/game_pt.html">PT电子</a></li>
+      <li><a href="../Lobby/game_Mg.html">MG电子</a></li>
+      <li><a href="../Promotion.html">优惠活动</a></li> <li><a href="">联系我们</a></li>
+    </ul>
+    <div class="header_info"> <a  class="first" href="javascript:;"></a>| <a class="last" href="##">注销</a> <a class="button" href="http://f88.live800.com/live800/chatClient/chatbox.jsp?companyID=779799&configID=144546&jid=9355144430" target="_blank">在线客服</a> </div>
+  </div>
+  <!--notice-->
+  <div class="notice">
+    <div class="eveb_header_notice">
+      <h4><i class="icon_small icon_header_notice"></i>公告：</h4>
+      <!--轮播-->
+      <div class="txtScroll-top">
+        <!--<div class="bd">
+          <ul class="infoList">
+            <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+            <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+            <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+            <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+            <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+            <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+            <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+          </ul>
+        </div>
+        <div class="hd"> <a class="next"></a>
+          <ul>
+          </ul>
+          <a class="prev"></a> </div>-->
+          <!--文字滚动-->
+        <div class="header-center_gd">
+            <div class="picMarquee-left">
+              <ul class="header_marquee" behavior="scroll">
+              </ul>
+            </div>
+        </div>
+        <!--文字滚动-end-->
+      </div>
+      <!--轮播-end-->
+    </div>
+  </div>
+  <!--notice-end-->
+  <ul class="user_nav clear">
+    <li style="background-color: #ddb79a;"><a href="user_center.html"><i class="icon_home"></i>会员首页</a></li>
+    <li><a href="deposit.html"><i class="icon_bank"></i>存款</a></li>
+    <li><a href="drawing.html"><i class="icon_withdraw"></i>提款</a></li>
+    <li><a href="transfer_accounts.html"><i class="icon_transfer"></i>转账</a></li>
+    <!--<li><a href="messagelist.html"><i class="icon_letter"></i>站内信</a></li>
+    <li><a href="market.html"><i class="icon_market"></i>市场活动</a></li>-->
+    <li><a href="history.html"><i class="icon_record"></i>历史记录</a></li>
+    <li><a href="Account_settings.html"><i class="icon_set"></i>账户设置</a></li>
+  </ul>
+  <div class="content clear">
+    <table border="0" cellspacing="0" cellpadding="0" class="user_box" >
+      <tr>
+        <!--<th>上次游戏</th>
+        <th>上次游戏登录时间</th>
+        <th>上周有效投注</th>
+        <th>本周有效投注</th>
+        <th>最近一次存款</th>
+        <th>最近一次提款</th>-->
+        <th>用户名</th>
+        <th>注册时间</th>
+        <th>上次游戏登录时间</th>
+        <th>邮箱</th>
+        <th>手机号</th>
+        <th>会员等级</th>
+        <th>账户余额</th>
+      </tr>
+      <tr>
+        <td id="username"></td>
+        <td id="userregdate"></td>
+        <td id="userlogintime"></td>
+        <td id="useremail"></td>
+        <td id="userMobile"></td>
+        <td class="vipLevel"><i class="vipLevel_img"></i></td>
+        <td id="userWallet"></td>
+      </tr>
+    </table>
+    <div class="content_certific" style="float: left;">
+      <div class="cer_inner">
+        <h4>认证状态</h4>
+        <ul class="cer_validation clear">
+          <li id="cer_li_1"><i></i>
+            <p>邮箱</p>
+          </li>
+          <li id="cer_li_2"><i></i>
+            <p>手机</p>
+          </li>
+          <li id="cer_li_3"><i></i>
+            <p>银行卡</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content_level" style="float: left;">
+      <ul class="lev_inner">
+        <li style="font-size: 18px;">欢迎您，您是<!--<span style="color:#db00ef" class="vipLevel"></span>--><i class="vipLevel_img"></i>会员</li>
+        <li class="clear"><a id="balance" href="javascript:;">钱包余额</a><span id="lev_em">-</span>元<a href="deposit.html" id="lev_gif"><img src="http://image.beike188.com/POLY/user_img/c_bank.gif"/></a></li>
+        <!--<li ><a href="" class="c_money">游戏余额</a><span><em id="game_balance">0</em>元</span></li>
+        <li ><a href="" class="c_money">优惠钱包</a><span><em id="purse">0</em>元</span></li>-->
+      </ul>
+    </div>
+    <div class="content_letter" style="float:left">
+      <div class="let_inner">
+        <h4>站内信<a href="###">more</a></h4>
+        <ul class="let_ul">
+          <li>暂无消息</li>
+        </ul>
+      </div>
+    </div>
+    <!--<div class="content_discount" style="float:left">
+      <div class="dis_inner">
+        <p>可申请的优惠共有</p>
+        <div id="dis_btn" style="text-align: center;"> <a id="dis_btnl" href="#" class="prev"></a> <a id="dis_btnr" href="#" class="next"></a> </div>
+        <div class="dis_num"><span id= "first">1</span>/<em>16</em></div>
+      </div>
+    </div>
+    <div class="content_swiper" style="float:left">
+      <ul class="swi_inner" style="overflow:hidden;">
+        <li><img style="width: 100%;height: 90px;" src="http://image.beike188.com/POLY/user_img/min_banner01.jpg"/></li>
+        <li><img style="width: 100%;height: 90px;" src="http://image.beike188.com/POLY/user_img/min_banner02.jpg"/></li>
+        <li><img style="width: 100%;height: 90px;" src="http://image.beike188.com/POLY/user_img/min_banner03.jpg"/></li>
+        <li><img style="width: 100%;height: 90px;" src="http://image.beike188.com/POLY/user_img/min_banner04.jpg"/></li>
+        <li><img style="width: 100%;height: 90px;" src="http://image.beike188.com/POLY/user_img/min_banner05.jpg"/></li>
+        <li><img style="width: 100%;height: 90px;" src="http://image.beike188.com/POLY/user_img/min_banner06.jpg"/></li>
+        <li><img style="width: 100%;height: 90px;" src="http://image.beike188.com/POLY/user_img/min_banner07.jpg"/></li>
+        <li><img style="width: 100%;height: 90px;" src="http://image.beike188.com/POLY/user_img/min_banner08.jpg"/></li>
+        <li><img style="width: 100%;height: 90px;" src="http://image.beike188.com/POLY/user_img/min_banner09.jpg"/></li>
+        <li><img style="width: 100%;height: 90px;" src="http://image.beike188.com/POLY/user_img/min_banner10.jpg"/></li>
+        <li><img style="width: 100%;height: 90px;" src="http://image.beike188.com/POLY/user_img/min_banner11.jpg"/></li>
+        <li><img style="width: 100%;height: 90px;" src="http://image.beike188.com/POLY/user_img/min_banner12.jpg"/></li>
+        <li><img style="width: 100%;height: 90px;" src="http://image.beike188.com/POLY/user_img/min_banner13.jpg"/></li>
+        <li><img style="width: 100%;height: 90px;" src="http://image.beike188.com/POLY/user_img/min_banner14.jpg"/></li>
+        <li><img style="width: 100%;height: 90px;" src="http://image.beike188.com/POLY/user_img/min_banner15.jpg"/></li>
+      </ul>
+    </div>-->
+  </div>
+  <div class="user_footer">
+    <div class="footer_link"> <a href="../help/index.html?key=0">关于我们</a>| <a href="../agent/index.html">代理专区</a>| <a href="../help/index.html?key=2">新手指南</a>| <a href="../help/index.html?key=1">联系我们</a>| <a href="../column/download.html">手机下注</a> </div>
+    <div class="copyright "> <p style="float:left;margin-right: 20px;">Copyright © 2017 天下网络 All Right Reserved</p>  <p style="float:left">PT游戏是由PT TransPacific在PAGCOR<img style="width:15px;" src="http://image.beike188.com/POLY/images/pagcorlogo.png">的授权下部署</p> </div>
+  </div>
+</div>
+</body>
+<script src="user_js/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="user_js/user.js" type="text/javascript" charset="utf-8"></script>
+<script src="user_js/user_center.js" type="text/javascript" charset="utf-8"></script>
+<script src="../personal/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="../personal/game_plat.js"></script>
+<script src="../personal/jquery.marquee.min.js"></script>
+<script type="text/javascript" src="../personal/page_common.js"></script>
+<!--<script type="text/javascript" src="../Scripts/page/checkinput.js"></script>-->
+<script src="../personal/loadpage.js"></script>
+<script type="text/javascript">
+	  jQuery(".content").slide({mainCell:".content_swiper ul",autoPlay:true});
+	   var num =1;
+	   $("#dis_btnr").on('click',function(){
+	   		num++;
+	   	if(num>16){
+	   		num=1;
+	   	}
+
+	   	$('#first').html(num);
+	   })
+	   $('#dis_btnl').on('click',function  () {
+	   	num--;
+	   	if (num<1) {num = 16};
+	   	$('#first').html(num);
+	   })
+      /*公告*/
+//    jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:1});
+
+	</script>
+</html>

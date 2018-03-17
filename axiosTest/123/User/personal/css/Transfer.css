@@ -1,0 +1,100 @@
+.Transger .wrapper,.Transger .wrapper .sub-content{
+    width:100%;
+}
+.Transger .header{
+    height: 31px;
+    padding:0;
+    margin:0;
+}
+.Transger .header .text{
+    padding-left: 15px;
+    height: 31px;
+    line-height: 31px;
+    font-size:20px;
+}
+.Transger .wrapper .sub-content{
+    height: 140px;
+    border:1px solid #c1c2c2
+}
+.Transger .wrapper .sub-content .mod-left{
+    width:15%;
+    border-right:1px solid #c1c2c2
+}
+.Transger .wrapper .sub-content .mod-left,.Transger .wrapper .sub-content .mod-right{
+    height: 140px;
+}
+.Transger .wrapper .sub-content .mod-left .child{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+.Transger .wrapper .sub-content .mod-right{
+    width:85%;
+}
+.Transger .wrapper .sub-content .mod-right .mod{
+    width:100%;
+}
+.Transger .wrapper .sub-content .mod-right .mod .child{
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    font-size: 14px;
+    width:12.5%;
+    height: 68px;
+}
+.Transger .wrapper .sub-content .mod-right .mod .child p{
+    height:20px;
+    line-height: 20px;
+}
+.Transger .wrapper .sub-content .mod-right .mod p.Refresh{
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+.Transger .wrapper .sub-form , .Transger .wrapper .sub-form form,.Transger .wrapper .sub-form .item{
+    width:100%;
+}
+.Transger .wrapper .sub-form form{
+    position: relative;
+}
+.Transger .wrapper .sub-form .item{
+   height: 40px;
+}
+.Transger .wrapper .sub-form .item .mod-left{
+    width:10%;
+    line-height: 40px;
+    font-size:14px;
+    padding-right: 5px;
+    text-align: right;
+    font-weight: bold;
+
+}
+.transger_cotrol{
+    position: absolute;
+    left:243px;
+    top:14px;
+    width:40px;
+    height: 50px;
+}
+.Transger .wrapper .sub-form .mod-right{
+    width:150px;
+    height: 30px;
+    margin-top: 5px;
+    padding-top: 5px;
+    border:1px solid #b7b7b7;
+    position: relative;
+}
+#trancaptcha{
+    position: absolute;
+    top:1px;
+    right: 0;
+}
+.Transger .wrapper .sub-form .mod-right input,.Transger .wrapper .sub-form .mod-right select{
+    width:148px;
+    height: 20px;
+    font-size: 12px;
+    padding-left: 3px;
+    border:none;
+    outline:none;
+}

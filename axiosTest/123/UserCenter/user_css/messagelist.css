@@ -1,0 +1,154 @@
+@charset "utf-8";
+.content {
+	width: 100%;
+	height: 784px;
+	margin: 0 auto;
+	background: #e3e4e4;
+	box-shadow: 0 3px 3px #d8d8d7;
+}
+.eveb_content {
+    background: #FFF;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    padding: 30px;
+    overflow: auto;
+    zoom: 1;
+    min-height: 250px;
+}
+.eveb_content h2{
+    color: #000;
+    font-size: 27px;
+    border-bottom: 1px solid #EEE;
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.eveb_content .icon{
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    background: url(http://image.beike188.com/POLY/user_img/m-messagelist.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin-left: 30px;
+    vertical-align: middle;
+}
+.eveb_sub_nav {
+    border-bottom: 1px solid #CCC;
+    height: 41px;
+}
+.fl {
+    float: left;
+}
+.eveb_sub_nav_type li {
+    float: left;
+    margin-right: 5px;
+}
+.eveb_sub_nav_type a:hover, .eveb_sub_nav_type li.on a:link, .eveb_sub_nav_type li.on a:visited {
+    color: #333;
+    font-weight: bold;
+    border-bottom-color: #fff;
+    background: #FFF;
+}
+.on{
+    color: #333;
+    font-weight: bold;
+    border-bottom-color: #fff;
+    background: #FFF;
+}
+.eveb_sub_nav_type a:link, .eveb_sub_nav_type a:visited {
+    float: left;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #CCC;
+    background: #EEE;
+    color: #666;
+    padding: 0 15px;
+}
+.eveb_sub_nav_type em {
+    font-size: 12px;
+}
+em {
+    font-style: normal;
+}
+.eveb_search {
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+}
+.eveb_sub_nav input {
+    padding: 3px;
+}
+.Wdate {
+    border: #999 1px solid;
+    height: 20px;
+    background: #fff url(http://image.beike188.com/POLY/user_img/datePicker.gif) no-repeat right;
+}
+.button_small {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+.button_1, .button_1:link, .button_1:visited {
+    color: #FFF;
+    background: #ff7f00;
+}
+.button_small, .button_medium {
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Microsoft Yahei';
+}
+.button_4, .button_4:link, .button_4:visited {
+    color: #888;
+    background: #EEE;
+    border: 1px solid #EEE;
+}
+.eveb_letter_title {
+    height: 50px;
+    line-height: 50px;
+    color: #666;
+    overflow: hidden;
+    text-align: center;
+}
+.eveb_letter_list li {
+    border-bottom: 1px #DDD solid;
+    padding: 0 10px;
+    position: relative;
+}
+.eveb_list_footer {
+    margin-top: 20px;
+}
+.eveb_list_select {
+    padding: 0 10px;
+}
+.button_3, .button_3:link, .button_3:visited {
+    border: 1px solid #DDD;
+    color: #888;
+    background: #FFF;
+}
+.fr {
+    float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------*/
+/*.eveb_letter_list{font-size:12px;border-bottom:1px solid #CCC;}*/

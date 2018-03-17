@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>天下网络</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="shortcut icon" href="../images/favicon.ico" />
+<link href="../CdnRedirect/Web.Portal/_Common/Content/jquery-ui/v1.11.3/jquery-ui.min.css" rel="stylesheet"/>
+<link href="../CdnRedirect/Web.Portal/_Common/Content/jquery-ui/v1.11.3/jquery-ui.theme.min.css" rel="stylesheet"/>
+<link href="../CdnRedirect/Web.Portal/_Common/Content/normalize/v3.0.1/normalize.css" rel="stylesheet"/>
+<link href="../css/font-awesome.css" rel="stylesheet"/>
+<link href="../css/custom.css" rel="stylesheet"/>
+<link href="../css/site.css" rel="stylesheet"/>
+<link href="../bundles/lottery.css" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/panel.css">
+<link rel="stylesheet" href="../css/public.css">
+<link href="../Content/Views/Shared/zh-CN.css~version=20150116.css" rel="stylesheet" />
+    <script src="../js/jquery-1.8.2.min.js"></script>
+    <script src="../User/js/pubilc_content.js"></script>
+    <script src="../User/js/panel.js"></script>
+
+    <script src="../personal/pubilc.js"></script>
+    <script src="../personal/logo.js"></script>
+
+    <script src="../CdnRedirect/Web.Portal/_Common/Scripts/jquery/v1.10.2/jquery.min.js"></script>
+<script src="../bundles/common~v=43K0U2PTo3hjXKinjDELLvolTGd1xxqmZDl99bYH0HA1.js"></script>
+<script src="../CdnRedirect/Web.Portal/_Common/Scripts/jquery-marquee/jquery.marquee.min.js"></script>
+<script src="../CdnRedirect/Web.Portal/_Common/Scripts/jquery-ui/v1.11.3/jquery-ui.js"></script>
+<!--<script src="../CdnRedirect/Web.Portal/_Common/Scripts/angularjs/v1.2.14/angular.min.js"></script>-->
+<script src="../CdnRedirect/Web.Portal/_Common/Scripts/moment/v2.9.0/moment-with-locales.min.js"></script>
+<script src="../CdnRedirect/Web.Portal/_Common/Scripts/moment/v2.9.0/moment-timezone-with-data.min.js"></script>
+<script src="../CdnRedirect/Web.Portal/_Common/Scripts/jquery-signalR/v2.1.2/jquery.signalR-2.1.2.js"></script>
+    <script type="text/javascript" src="../User/jquery.cookie.js"></script>
+<!--[if lte IE 9]>
+        <script src="../CdnRedirect/Web.Portal/_Common/Scripts/placeholders.min.js"></script>
+        <script src="../CdnRedirect/Web.Portal/_Common/Scripts/html5shiv.js"></script>
+    <![endif]-->
+
+</head>
+<body  class="layout">
+<div class="xploading_bg"></div>
+<div class="xploading" > <img src='../images/Refresh.gif' />Loading... </div>
+<!--提示面板-->
+<div class="panel"></div>
+<div class="panel-con">
+    <div class="wrapper">
+        <h2 class="Notice">提示</h2>
+        <div class="panel-text"></div>
+        <div onclick="shut.Down('.panel','.panel-con')" class="determine">确定</div>
+    </div>
+</div>
+<!--提示面板-->
+
+<!--登录-->
+<div class="login-panel"></div>
+<div class="login-panel-con">
+    <div class="login-panel-content">
+        <div class="sup-header">
+            <i class="ico icon"></i>
+            <h2 class="py">登录</h2>
+            <span class="py">如您没有账户，点击这里 <a class="orange" href="../register.html">免费开户</a></span>
+        </div>
+        <div class="wrapper">
+            <p onclick="shut.Down('.login-panel','.login-panel-con')" class="guanbi"></p>
+            <form action="">
+                <div class="item">
+                    <span class="icon-user"></span>
+                    <input  class="user-name" type="text" placeholder="用户名">
+                </div>
+                <div class="item">
+                    <span class="icon-pass"></span>
+                    <input  class="pass" type="password" placeholder="密码">
+                </div>
+                <div class="item code-item">
+                    <span class="icon-code"></span>
+                    <input onfocus="chageimg('#image')" class="codel" type="text" placeholder="验证码">
+                    <img id="image" onclick="Pubilc.changeImg(this)" alt="">
+                </div>
+                <div onclick="In.Obtain('Lottery.html','0')" class="item" style="background: #b29882;text-align: center;color:#FFF;margin-top: 10px;">
+                    <div class="cursor" style="height: 22px;">登录</div>
+                </div>
+            </form>
+            <h3 class="fn f12">
+                登陆时有任何问题，请联系我们 <a style="color: #48adf3;" href="http://f88.live800.com/live800/chatClient/chatbox.jsp?companyID=779799&configID=144546&jid=9355144430" name="top_livechat" title="live800">24小时在线客服</a> 协助解决 <br>
+                本网站采用Global Trust最先进的128/256 bit SSL服务器加密机制
+            </h3>
+        </div>
+    </div>
+</div>
+<!--登录-->
+<!-- Copyright � 2005. Spidersoft Ltd -->
+<style>
+A.applink:hover {border: 2px dotted #DCE6F4;padding:2px;background-color:#ffff00;color:green;text-decoration:none}
+A.applink       {border: 2px dotted #DCE6F4;padding:2px;color:#2F5BFF;background:transparent;text-decoration:none}
+A.info          {color:#2F5BFF;background:transparent;text-decoration:none}
+A.info:hover    {color:green;background:transparent;text-decoration:underline}
+</style>
+<header id="header">
+  <div class="wrapper">
+    <div id="logo-bg">
+      <!--[if !IE | gte IE 9]> -->
+      <!--<iframe src="../CdnRedirect/Web.Portal/BO001-01.Portal/Content/Views/Shared/images/logo/logo.html"></iframe>-->
+      <!-- <![endif]-->
+      <!--<a href="../vzt6.html"></a> -->
+        <a id="logobg" href="../vzt6.html"></a>
+    </div>
+    <ul id="top-nav">
+      <li><a href="javascript:void(0)" target="_blank">天下网络度假酒店</a></li>
+      <li class="download"><a href="javascript:void(0)" target="_blank">资讯端下载</a></li>
+      <li class="redenvelope"><a href="javascript:void(0)" target="_blank">红包大厅</a></li>
+      <li class="activity"><a href="javascript:void(0)" target="_blank">活动大厅</a></li>
+      <li class="fast-deposit"><a href="javascript:void(0)" target="_blank">快速充值中心</a></li>
+      <li >加入收藏</li>
+      <li><a href="javascript:void(0)">代理加盟</a></li>
+      <li >代理登录</li>
+      <li><span><img src="../images/lang01.png" /></span> <span><img src="../images/lang02.png" /></span> <span><img src="../images/lang03.png" /></span></li>
+    </ul>
+      <div id="header-bot" class="login-show">
+          <div class="judgment" style="font-size:0"></div>
+          <div id="join"><a style="display: block;width:100%;height: 100%;" href="../register.html"></a></div>
+          <div id="account-box" >
+              <form>
+                  <div class="py usernameclass"><input id="name" type="text" placeholder="帐号"/></div>
+                  <div id="check-code-wrapper" class=" codeclass py">
+                      <input id="code" onfocus="chageimg('#captcha')" type="text" placeholder="验证码"/>
+                      <img  style="height: 26px;width:50px;" onclick="Pubilc.changeImg(this)"  id="captcha" />
+                  </div>
+                  <div class="py passwordclass"><input id="pass" type="password" placeholder="密码" /></div>
+                  <div id="login" onclick="In.Obtain('Lottery.html','0')" class="login-btn" style="display: inline-block;text-align: center;line-height: 28px;">登录</div>
+                  <a href="javascript:void(0)">忘记密码?</a>
+                  <div id="agree">点击登入表示同意<a>用户协议</a></div>
+              </form>
+          </div>
+      </div>
+      <div id="header-bot" class="login-hide">
+          <div class="login-sup">用户名:<span id="lebo_money"></span>账户余额: <span id="money"></span> <div onclick="dropout('Lottery.html')" class="loginout login-btn">退出</div></div>
+          <div class="login-sub">
+              <ul>
+                  <li><a href="../UserCenter/user_center.html">会员中心</a> |</li>
+                  <li><a href="../UserCenter/history.html">历史中心</a> |</li>
+                  <li><a href="../UserCenter/deposit.html">存款</a> |</li>
+                  <li><a href="../UserCenter/drawing.html">提款</a> |</li>
+                  <li><a href="../UserCenter/transfer_accounts.html">额度互转</a> </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</header>
+<nav id="nav">
+        <ul >
+            <li>
+                <a href="../vzt6.html">首页</a>
+            </li>
+            <li>
+                <a href="Live.html">视讯直播</a>
+                <ul class="subnav">
+                    <li id="nima" class="ab"><a  href="javascript:;" onclick="loadgame('CG','','')">CG视讯</a></li>
+                    <li class="gpi"><a href="javascript:;" onclick="loadgame('AGIN','','')" >AG国际厅</a></li>
+                    <li class="ag"><a href="javascript:;"  onclick="loadgame('AG','','')">AG极速厅</a></li>
+                    <li class="mg"><a href="javascript:;"  onclick="loadgame('SB','1','')">申博视讯</a></li>
+                    <li class="pt"><a href="javascript:;"  onclick="loadgame('OB','','');">欧博视讯</a></li>
+                    <li class="evo"><a href="javascript:;"  onclick="loadgame('DS','','');">DS视讯</a></li>
+                    <li class="ab"><a href="javascript:;"  onclick="loadgame('OG','','');">OG视讯</a></li>
+                    <li class="bb"><a href="javascript:;"  onclick="loadgame('BBIN','1','');">BBIN视讯</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="Sport.html">体育赛事</a>
+               <ul class="subnav">
+                    <!-- <li class="bb">BB体育</li>
+                    <li class="saba">沙巴体育</li> -->
+                   <li class="hg"><a a href="javascript:;"  onclick="loadgame('HG','','PC')" style="display: block">皇冠体育</a></li>
+
+               </ul>
+            </li>
+            <li class="hot">
+                <a href="Game.html">电子游艺</a>
+                <ul class="subnav">
+                    <li class="mg"><a href="game_Mg.html">MG电子</a></li>
+                    <li class="pt"><a href="game_pt.html">PT电子</a></li>
+                    <li class="prg"><a href="game_Haba.html">HABA电子</a></li>
+                    <li class="gpi"><a href="javascript:;"  onclick="loadgame('SB','2','')" style="display: block">TGP电子</a></li>
+                    <li class="bb"><a a href="javascript:;"  onclick="loadgame('BBIN','2','')" style="display: block">BBIN电子</a></li>
+                    <!--<li class="sg">SG电子</li>
+                    <li class="fish">捕鱼达人</li>
+                    <li class="mg">MG电子</li>
+                    <li class="prg">PRG电子</li>
+                    <li class="ag">AG电子</li>
+                    <li class="pt">PT电子</li>
+                    <li class="gpi">GPI电子</li>
+                    <li class="gns">GNS电子</li>
+                    <li class="mw">MW电子</li>
+                    <li class="bb">BB电子</li>-->
+                </ul>
+            </li>
+            <li class="active">
+                <a href="Lottery.html">彩票游戏</a>
+                <ul class="subnav">
+                    <li onclick="loadgame('IGLOTTO','','PC')" class="xg"><a  href="javascript:;">香港彩</a></li>
+                    <li onclick="loadgame('IGLOTTERY','1','PC')" class="elottery"><a href="javascript:;">时时票</a></li>
+                </ul>
+            </li>
+            <li class="hot">
+                <a href="../Promotion.html">优惠活动</a>
+            </li>
+            <li><a href="../agent/about.html">代理合作</a></li>
+            <li><a href="../help/index.html?key=0">关于我们</a></li>
+            <li><a href="http://f88.live800.com/live800/chatClient/chatbox.jsp?companyID=779799&configID=144546&jid=9355144430">在线客服</a>
+            </li>
+        </ul>
+    </nav>
+<div id="banner">
+  <div class="wrapper">
+    <div id="news">
+      <div id="hot-news" class="marqueen">
+          <a href="javascript: void(0)" >
+              <!--【入款须知】您好！我司支持微信、支付宝、网银转账，微信入款请您使用我司线上微信入款，支付宝或者网银转账到我司银行账户中，如有问题请联系在线客服或微信QQ客服，为您造成的不便请您谅解，澳门威尼斯娱乐城：VDC999.COM ！-->
+
+        <!--【3月15日周三维护通知】尊敬的会员，您好，★BB平台★维护时间：09:00  ~ 11:40  （北京时间），★『PT2平台』★维护时间： 14:00 – 17:00    (北京时间)，维护期间,游戏可能会断线,请您重新进入即可，如果维护时间有异动或延长，我们将会再另行通知，对您造成的不便敬请谅解，天下网络敬上！-->
+
+        <!--【通知】尊敬的会员，您好，本公司 3月 6日- 3 月12日【周签到】优惠活动财务部门数据已经统计完成，正在火热派送中，请您您在大厅提交活动申请即可哦，谢谢。活动办理大厅链接：http://hd42233.com/venet/index.html也可以联系我司专员（QQ：892383888或563339998）进行申请。温馨提示：周签到彩金超过一个周未申请，系统自动视为放弃该优惠，对此造成您的资金损失，本公司概不负责。特此通知您！~ 澳门威尼斯线上娱乐城：vdc999.com 全体员工祝您生活愉快！-->
+
+        <!--【通知】尊敬的会员，您好，本公司2月份【您的话费我来买单】优惠活动财务部门数据已经统计完成，正在火热派送中，请您您在大厅提交活动申请即可哦，谢谢。活动办理大厅链接：http://hd42233.com/venet/index.html也可以联系我司专员（QQ：892383888 或563339998）进行申请。温馨提示：话费额度超过一个月未申请，系统自动视为放弃该优惠，对此造成您的资金损失，本公司概不负责。特此通知您！~ 澳门威尼斯娱乐城：vdc999.com 全体员工祝您生活愉快！-->
+
+        <!--【重要通知】尊敬的会员您好，由于近期多位会员反馈打开我司网站会跳转到其他网站的情况，因此本公司在此通知：若有接到在线客服说我司网站正在升级、全面升级或更换官网的，全部都为诈骗网站，请广大会员及时联系我司微信客服或qq客服：973886666、563338886进行确认，以免上当受骗。如果我司网站有升级或者更换官网，会以公告、站内信、微信客服和qq客服等官方通道进行通知。天下网络唯一指定官网：www.vdc999.com。感谢您对本公司一直以来的支持，天下网络娱乐城团队敬上-->
+          </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="content">
+  <div class="wrapper">
+    <section id="lobby" >
+      <ul class="game-list">
+          <li game-box="pk" onclick="loadgame('IGLOTTERY','2','PC');"></li>
+          <li game-box="ssc" onclick="loadgame('IGLOTTERY','1','PC');"></li>
+          <li game-box="kl10" onclick="loadgame('IGLOTTERY','4','PC');"></li>
+          <li game-box="lhc" onclick="loadgame('IGLOTTERY','18','PC');"></li>
+          <li game-box="kl8" onclick="loadgame('IGLOTTERY','28','PC');"></li>
+          <li game-box="ks" onclick="loadgame('IGLOTTERY','3','PC');"></li>
+          <li game-box="3d" onclick="loadgame('IGLOTTERY','36','PC');"></li>
+          <li game-box="pc" onclick="loadgame('IGLOTTERY','42','PC');"></li>
+          <li game-box="6hecai" onclick="loadgame('IGLOTTO','PC');"></li>
+      </ul>
+    </section>
+  </div>
+</div>
+<div id="footer"><script>Content.Footer_page('#footer','footer.html');</script></div>
+<aside class="services service-left" id="service-left" scrollfollow>
+    <div id="girl">
+        <img src="" alt="">
+        <a onclick="hide(this)" class="closed02" href="javascript:void(0)"></a>
+    </div>
+</aside>
+<aside class="services service-right" id="service-right" scrollfollow>
+    <div id="girl02">
+        <img src="" alt="">
+        <a onclick="hide(this)" class="closed02" href="javascript:void(0)"></a>
+    </div>
+</aside>
+<!--<script src="../CdnRedirect/Web.Portal/_Common/Scripts/angular-animate/v1.2.14/angular-animate.min.js"></script>-->
+<!--<script src="../CdnRedirect/Web.Portal/_Common/Scripts/angular-ui-bootstrap/v0.10.0/ui-bootstrap-custom-tpls-0.10.0.js"></script>-->
+<script src="../js/_site.js~version=20140418.js"></script>
+<!--<script src="../Scripts/_config.js"></script>-->
+<!--<script src="../Scripts/i18n/labels_zh-CN.js"></script>-->
+<!--<script src="../angular-services~v=z00kDPO4F2cBkTwhInkO6z7EczNriK4CUlOn39zPiR41.js"></script>-->
+<!--<script src="../js/angular-controllers_2.js"></script>-->
+<!--<script src="../angular-directives~v=EPfpLeo99HKH-IsMFJLEIgOscoqlAujg0dTtEeEegzY1.js"></script>-->
+<!--<script src="../angular-filters~v=wP6VPhqlV1pFFlJ_m2VUsbhfbzEiTLBigj7SMuN2P-s1.js"></script>-->
+<script src="../CdnRedirect/Custom/common.js"></script>
+<input name="__RequestVerificationToken" type="hidden" value="0t2QnYS3tuT6KKy9vqj-YllvgGN5Svc1UTgnRkCTVNeNuzPuOBoTTBvfsJ3PcMGmN5QD3tKILs0En8al6OXjcAGbRTI1" />
+</body>
+</html>
+<script src="../User/scroll.js"></script>
+<script src="../js/page_common.js"></script>
+<script src="../js/loadpage.js"></script>
+
+<!--<script src="../personal/pubilc.js"></script>-->
+<!--<script src='../User/P_ublic.js'></script>-->
+<!--<script src="../User/js/code.js"></script>-->
+<!--<script src="../User/js/logingame.js"></script>-->
+<!--<script src='../personal/logo.js'></script>-->
+<!--<script src="../User/drop_out.js"></script>-->
+<script>
+    fn("#service-right");
+    fn("#service-left");
+    function hide(t) {
+        $(t).parent().parent().hide();
+    }
+</script>

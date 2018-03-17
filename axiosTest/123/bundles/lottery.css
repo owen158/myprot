@@ -1,0 +1,39 @@
+#banner {
+	background: url('../Web.Portal/images/lottery/banner_lottery.jpg') no-repeat center
+}
+ul.game-list li {
+	width: 282px;
+	margin:0 23.6px;
+	height: 339px
+}
+ul.game-list li[game-box="3d"] {
+	background: url('../Web.Portal/images/lottery/3d.png') no-repeat;
+}
+ul.game-list li[game-box="6hecai"] {
+	background: url('../Web.Portal/images/lottery/6hecai.png') no-repeat
+}
+ul.game-list li[game-box="lhc"] {
+	background: url('../Web.Portal/images/lottery/lhc.png') no-repeat
+}
+ul.game-list li[game-box="pc"] {
+	background: url('../Web.Portal/images/lottery/PCdandan.png') no-repeat
+}
+ul.game-list li[game-box="pk"] {
+	 background: url('../Web.Portal/images/lottery/PK10.png') no-repeat
+ }
+ul.game-list li[game-box="ks"] {
+	background: url('../Web.Portal/images/lottery/ks.png') no-repeat
+}
+ul.game-list li[game-box="kl8"] {
+	background: url('../Web.Portal/images/lottery/kl8.png') no-repeat
+}
+ul.game-list li[game-box="kl10"] {
+	background: url('../Web.Portal/images/lottery/kl10.png') no-repeat
+}
+ul.game-list li[game-box="ssc"] {
+	background: url('../Web.Portal/images/lottery/ssc.png') no-repeat
+}
+
+ul.game-list li:hover {
+	background-position: bottom
+}

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>澳门威尼斯人</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link href="css/jquery-ui.min.css" rel="stylesheet"/>
+    <link href="css/jquery-ui.theme.min.css" rel="stylesheet"/>
+    <!--<link href="css/normalize.css" rel="stylesheet"/>
+    <link href="css/font-awesome.css" rel="stylesheet"/>-->
+    <link href="css/custom.css" rel="stylesheet"/>
+    <link href="css/site.css" rel="stylesheet"/>
+    <!--<link href="css/zh-CN.css~version=20150116.css" rel="stylesheet" />-->
+    <link href="css/home.css" rel="stylesheet"/>
+    <!--<link href="css/zh-CN.css~version=201404141731.css" rel="stylesheet" /> -->
+    <script src="js/jquery-1.8.2.min.js"></script>
+
+    <script type="text/javascript" src="User/jquery.cookie.js"></script>
+    <link rel="stylesheet" href="css/public.css">
+    <script src='User/validation.js'></script>
+    <script src="./js/pubilc.js"></script>
+    <script src='./User/P_ublic.js'></script>
+    <script src='User/logo.js'></script>
+    <script src="js/common~v=43K0U2PTo3hjXKinjDELLvolTGd1xxqmZDl99bYH0HA1.js"></script>
+     <script src="js/jquery.marquee.min.js"></script><!--最新消息滚动和右下角浮窗-->
+   <script src="js/jquery-ui.js"></script>
+    <!--<script src="js/angular.min.js"></script>&lt;!&ndash;最新消息滚动&ndash;&gt;-->
+    <script src="js/moment-with-locales.min.js"></script>
+    <script src="js/moment-timezone-with-data.min.js"></script>
+    <script src="js/jquery.signalR-2.1.2.js"></script>
+
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <!--[if lte IE 9]>
+        <script src="js/placeholders.min.js"></script>
+        <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+
+</head>
+<body class="layout">
+<div class="xploading_bg"></div>
+<div class="xploading" > <img src='./images/Refresh.gif' />Loading... </div>
+<!-- Copyright ?2005. Spidersoft Ltd -->
+<style>
+A.applink:hover {border: 2px dotted #DCE6F4;padding:2px;background-color:#ffff00;color:green;text-decoration:none}
+A.applink       {border: 2px dotted #DCE6F4;padding:2px;color:#2F5BFF;background:transparent;text-decoration:none}
+A.info          {color:#2F5BFF;background:transparent;text-decoration:none}
+A.info:hover    {color:green;background:transparent;text-decoration:underline}
+</style><!--
+<div style='BORDER: 1px solid #DCE6F4; MARGIN-TOP: 20px; MARGIN-BOTTOM: 20px; MARGIN-LEFT: 5px; MARGIN-RIGHT: 5px; PADDING: 5px; BACKGROUND-COLOR: #eef8ff;line-height:180%; COLOR: #000000; font-family: Arial; font-size: 8pt; width=100%; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr="#FFFFFFFF", EndColorStr="#F2F5FAFF");'>
+This page was saved using <a class="applink" href="http://www.spidersoft.com"><b>WebZIP 7.0.3.1030</b></a> <a class="applink" href="http://www.spidersoft.com"><b>offline browser</b></a>  (Unregistered) on  03/15/17 17:21:55.<br>
+<b>Address:</b> <a class="info" href="http://vzt6.com/">http://vzt6.com/</a><br>
+<b>Title:</b> 婢抽棬濞佸凹鏂汉 &nbsp;&bull;&nbsp; <b>Size:</b> 18840<br></div>-->
+<!-- /Copyright ?2005. Spidersoft Ltd -->
+    <header id="header">
+        <div class="wrapper">
+            <div id="logo-bg">
+                <a id="logobg" href="vzt6.html"></a>
+            </div>
+            <script>
+
+            </script>
+            <ul id="top-nav">
+                <li><a href="http://cn.venetianmacao.com/" target="_blank">澳门威尼斯人度假酒店</a></li>
+                <li class="download"><a target="_blank">资讯端下载</a></li>
+                <li class="redenvelope"><a target="_blank">红包大厅</a></li>
+                <li class="activity"><a target="_blank">活动大厅</a></li>
+                <li class="fast-deposit"><a target="_blank">快速充值中心</a></li>
+                <li>加入收藏</li>
+                <li><a href="">代理加盟</a></li>
+                <li>代理登录</li>
+                <li select-language>
+                    <span><img src="images/lang01.png" /></span>
+                    <span><img src="images/lang02.png" /></span>
+                    <span><img src="images/lang03.png" /></span>
+                </li>
+            </ul>
+            <div id="header-bot" class="login-hide">
+            <div class="judgment" style="font-size:0"></div>
+                <div id="join"><a style="display: block;width:100%;height: 100%;" href="register.html"></a></div>
+                <div id="account-box" >
+                    <form>
+                        <input id="name" type="text" placeholder="帐号"/>
+                        <div id="check-code-wrapper">
+                            <input id="code"  type="text" placeholder="验证码"/>
+                            <img src="http://192.168.0.7:8480/XPJ/validateCode?timesp"+(new Date()).valueOf(); style="height: 26px;width:50px;" onclick="changeImg()" id="captcha" />
+                        </div>
+                        <input id="pass" type="password" placeholder="密码" />
+                        <div id="login" onclick="Login('vzt6.html')" class="login-btn" style="display: inline-block;text-align: center;line-height: 28px;">登录</div>
+                        <!--<button type="button"></button>-->
+                        <a href="">忘记密码?</a>
+                        <div id="agree" ng-show="loginOver">
+                            点击登入表示同意<a>用户协议</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="header-bot" class="login-show">
+                <div class="login-sup">用户名:<span id="lebo_money"></span>账户余额: <span id="money"></span> <div onclick="loginout('vzt6.html')" class="loginout login-btn">退出</div></div>
+                <div class="login-sub">
+                    <ul>
+                        <li >站内消息(<span>0</span>) |</li>
+                        <li onclick="loginVip('User/personal/personal_home.html')">会员中心 |</li>
+                        <li onclick="loginVip('User/personal/personal_bank.html')">历史中心 |</li>
+                        <li onclick="loginVip()">存款 |</li>
+                        <li onclick="loginVip()">提款 |</li>
+                        <li onclick="loginVip()">额度互转 </li>
+                    </ul>
+                </div>
+            </div>
+            <script>
+            </script>
+        </div>
+    </header>
+    <nav id="nav">
+        <ul>
+            <li class="active">
+                <a href="vzt6.html">首页</a>
+            </li>
+            <li>
+                <a href="Lobby/Live.html">视讯直播</a>
+                <ul  class="subnav">
+                    <li id="nima" class="ab"><a  href="javascript:;" onclick="loadgame('CG','','')">CG视讯</a></li>
+                    <li class="gpi"><a href="javascript:;" onclick="loadgame('AGIN','','')" >AG国际厅</a></li>
+                    <li class="ag"><a href="javascript:;"  onclick="loadgame('AG','','')">AG极速厅</a></li>
+                    <li class="mg"><a href="javascript:;"  onclick="loadgame('SB','1','')">申博视讯</a></li>
+                    <li class="pt"><a href="javascript:;"  onclick="loadgame('OB','','');">欧博视讯</a></li>
+                    <li class="evo"><a href="javascript:;"  onclick="loadgame('DS','','');">DS视讯</a></li>
+                    <li class="ab"><a href="javascript:;"  onclick="loadgame('OG','','');">OG视讯</a></li>
+                    <li class="bb"><a href="javascript:;"  onclick="loadgame('BBIN','1','');">BBIN视讯</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="Lobby/Sport.html">体育赛事</a>
+               <ul class="subnav">
+                    <!-- <li class="bb">BB体育</li>
+                    <li class="saba">沙巴体育</li> -->
+                    <li class="hg"><a a href="javascript:;"  onclick="loadgame('HG','','PC')" style="display: block">皇冠体育</a></li>
+                </ul>
+            </li>
+            <li class="hot">
+                <a href="Lobby/Game.html">电子游艺</a>
+                <ul class="subnav">
+                   <li class="mg"><a href="javascript:;">MG电子</a></li>
+                   <li class="pt"><a href="javascript:;">PT电子</a></li>
+                   <li class="prg"><a href="javascript:;">HABA电子</a></li>
+                   <li class="gpi"><a href="javascript:;"  onclick="loadgame('SB','2','')" style="display: block">TGP电子</a></li>
+                   <li class="bb"><a a href="javascript:;"  onclick="loadgame('BBIN','2','')" style="display: block">BBIN电子</a></li>
+                    <!--<li class="sg">SG电子</li>
+                    <li class="fish">捕鱼达人</li>
+                    <li class="mg">MG电子</li>
+                    <li class="prg">PRG电子</li>
+                    <li class="ag">AG电子</li>
+                    <li class="pt">PT电子</li>
+                    <li class="gpi">GPI电子</li>
+                    <li class="gns">GNS电子</li>
+                    <li class="mw">MW电子</li>
+                    <li class="bb">BB电子</li>-->
+                </ul>
+            </li>
+            <li>
+                <a href="Lobby/Lottery.html">彩票游戏</a>
+                <ul class="subnav">
+                    <li onclick="loadgame('IGLOTTO','','PC')" class="xg">香港彩</li>
+                    <li onclick="loadgame('IGLOTTERY','1','PC')" class="elottery">时时票</li>
+                </ul>
+            </li>
+            <li class="hot">
+                <a href="Promotion.html">优惠活动</a>
+            </li>
+            <li>
+                <a href="http://vzt6.com/Mobile">手机投注</a>
+            </li>
+            <li>
+                <a href="http://42233s.com/" target="_blank">线路检测</a>
+            </li>
+            <li>
+                <a href="javascript:void()">在线客服</a>
+            </li>
+        </ul>
+    </nav>
+<!--banner-->
+    <div id="banner">
+        <section id="slide-banner">
+            <!--<div id="imgNames">
+                <img src="images/01.jpg" />
+            </div>
+            <div class="wrapper">
+                <div id="ad-pager">
+                    <strong>
+                        <a href=""></a>
+                    </strong>
+                </div>
+            </div>-->
+            <div id="slideBox" class="slideBox">
+              <div class="hd">
+                  <ul>
+                      <li></li><li></li><li></li></ul>
+              </div>
+              <div class="bd">
+                  <ul id="swiper_container">
+                      <li><a href="" target="_blank"><img src="images/01.jpg" /></a></li>
+                      <li><a href="" target="_blank"><img src="images/02.jpg" /></a></li>
+                      <li><a href="" target="_blank"><img src="images/03.jpg" /></a></li>
+                      <li><a href="" target="_blank"><img src="images/04.jpg" /></a></li>
+                      <li><a href="" target="_blank"><img src="images/07.jpg" /></a></li>
+                  </ul>
+              </div>
+              <a class="prev" href="javascript:void(0)"></a>
+              <a class="next" href="javascript:void(0)"></a>
+
+    </div>
+    <script type="text/javascript">
+    jQuery(".slideBox").slide({mainCell:".bd ul",autoPlay:true});
+    </script>
+        </section>
+        <div class="wrapper">
+            <div id="news">
+                <div class="marqueen">
+                    <a href="javascript: void(0)">【通知】尊敬的会员，您好！目前我司快速支付通道（vnst55.com）已经升级完成，支付宝、微信、网银转账一键入款，秒到账！澳门威尼斯人技术团队敬上！
+【通知】尊敬的会员，您好，本公司 3月 6日- 3 月12日【周签到】优惠活动财务部门数据已经统计完成，正在火热派送中，请您您在大厅提交活动申请即可哦，谢谢。活动办理大厅链接：http://hd42233.com/venet/index.html也可以联系我司专员（QQ：892383888或563339998）进行申请。温馨提示：周签到彩金超过一个周未申请，系统自动视为放弃该优惠，对此造成您的资金损失，本公司概不负责。特此通知您！~ 澳门威尼斯线上娱乐城：vdc999.com 全体员工祝您生活愉快！
+【通知】尊敬的会员，您好，本公司2月份【您的话费我来买单】优惠活动财务部门数据已经统计完成，正在火热派送中，请您您在大厅提交活动申请即可哦，谢谢。活动办理大厅链接：http://hd42233.com/venet/index.html也可以联系我司专员（QQ：892383888 或563339998）进行申请。温馨提示：话费额度超过一个月未申请，系统自动视为放弃该优惠，对此造成您的资金损失，本公司概不负责。特此通知您！~ 澳门威尼斯娱乐城：vdc999.com 全体员工祝您生活愉快！
+【重要通知】尊敬的会员您好，由于近期多位会员反馈打开我司网站会跳转到其他网站的情况，因此本公司在此通知：若有接到在线客服说我司网站正在升级、全面升级或更换官网的，全部都为诈骗网站，请广大会员及时联系我司微信客服或qq客服：973886666、563338886进行确认，以免上当受骗。如果我司网站有升级或者更换官网，会以公告、站内信、微信客服和qq客服等官方通道进行通知。澳门威尼斯人唯一指定官网：www.vdc999.com。感谢您对本公司一直以来的支持，澳门威尼斯人娱乐城团队敬上</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div class="wrapper">
+            <div id="home">
+                <div id="game-box">
+                    <ul>
+                        <li data-img="01">
+                            <a href="Lobby/Live.html"></a>
+                        </li>
+                        <li data-img="02">
+                            <a href="Lobby/Game.html"></a>
+                        </li>
+                    </ul>
+                    <ul id="box-mid">
+                        <li data-img="03">
+                            <a href="javascript:void()" ></a>
+                        </li>
+                            <li  id="regter" data-img="04">
+                                <a onclick="regterlogin()" href="javascript:;"></a>
+                                <!--<a href="javascript:;" ></a>-->
+                            </li>
+                        <li data-img="05">
+                            <a href="Promotion.html"></a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li data-img="06">
+                            <a href="Lobby/Sport.html"></a>
+                        </li>
+                        <li data-img="07">
+                            <a href="Lobby/Lottery.html"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="game-box02">
+                    <ul>
+                        <li data-img="08">
+                            <a href="" target="_blank"></a>
+                        </li>
+                        <li id="slider"
+                            class="cycle-slideshow"
+                            data-cycle-fx="tileSlide"
+                            data-cycle-speed="500"
+                            data-cycle-delay="500">
+                            <img src="images/slide01.jpg" />
+                            <img src="images/slide01.jpg" />
+                        </li>
+                        <li data-img="09">
+                            <a href="http://vzt6.com/Mobile"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="game-box03"></div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <div id="footer-logo" class="wrapper">
+            <div id="vns-logo"></div>
+        </div>
+        <div id="footer-content">
+            <div class="wrapper">
+                <div id="second"></div>
+                <a class="unlverse" href="" target="_blank"></a>
+                <a class="chrome" href="" target="_blank"></a>
+            </div>
+        </div>
+        <div id="footer-bottom">
+           <ul id="footer-nav">
+                <li><a href="/AboutUS">关于我们</a></li>
+                <li><a href="/Contact">联络我们</a></li>
+                <li><a href="/Partner">合作伙伴</a></li>
+                <li><a href="/How/Deposit">存款帮助</a></li>
+                <li><a href="/How/Withdrawal">取款帮助</a></li>
+                <li><a href="/FAQ">常见问题</a></li>
+                <li><a href="/ResponsibleGambling">责任博彩</a></li>
+                <li><a href="" target="_blank">客戶端</a></li>
+            </ul>
+            <p id="footer-suggest">
+                Venetian Macao澳门威尼斯人網站屬於菲律賓卡格場(Cagayan)授權和監營 所有權歸屬澳門威尼斯人所有，違者必究。
+            </p>
+        </div>
+    </footer>
+    <aside class="services service-left" id="service-left" scrollfollow>
+        <ul id="girl">
+            <li class="tel" title=""><span>0063-9278888750</span></li>
+            <li id="chat"></li>
+            <li class="deposit"><a target="_blank"></a></li>
+            <li id="closed"></li>
+        </ul>
+    </aside>
+    <aside class="services service-right" id="service-right" scrollfollow>
+        <ul id="girl02">
+            <li id="chat02" title="在线客服"></li>
+            <li class="qq"><span>563338886</span></li>
+            <li class="qq"><span>563338887</span></li>
+            <li class="qq"><span>973886666</span></li>
+                <li id="freeplay" title="免费试玩"></li>
+            <li id="closed02" service-closed></li>
+        </ul>
+    </aside>
+    <aside id="service-lb">
+        <a target="_blank"></a>
+        <span class="closed" id="closedlb" service-closed></span>
+    </aside>
+    <div id="marquee-wrapper">
+        <aside id="marquee">
+            <header>
+                <h2>最新消息</h2>
+            </header>
+            <ul id="newsBags">
+                <li></li>
+            </ul>
+            <footer>
+                <span>关闭</span>
+            </footer>
+        </aside>
+    </div>
+    <div  id="ad-dialog" >
+        <a href="Promotion.html"><img /></a>
+        <div class="dialog-footer" ></div>
+    </div>
+    <div style="display:none"></div>
+<div class="mask" style="display:none;"></div>
+<div class="mess" style="display:none;">
+    <p class="Poptop">
+        <span class="center">保利国际娱乐城公告</span>
+        <a href="javascript:void(0)" onclick="$('.mask').hide();$('.mess').remove();" id="closeicon"><span></span></a>
+    </p>
+    <p class="Popcontent">
+        <a href="javascript:void(0)" ><img id="gonggao_img" src="" width="100%" height="100%"/></a>
+    </p>
+    <!--<p class="Popbottom"><span class="closePopbtn">关闭</span></p>-->
+</div>
+<div class="mask" style="display:none;"></div>
+    <!--<script src="js/angular-animate.min.js"></script>-->
+    <!--<script src="js/ui-bootstrap-custom-tpls-0.10.0.js"></script>-->
+    <script src="js/_site.js~version=20140418.js"></script><!--调用最新消息滚动函数-->
+    <!--<script src="js/_config.js"></script>
+    <script src="js/labels_zh-CN.js"></script>-->
+    <!--<script src="js/angular-services~v=z00kDPO4F2cBkTwhInkO6z7EczNriK4CUlOn39zPiR41.js"></script>-->
+    <script src="js/angular-controllers.js"></script>
+   <!-- <script src="js/angular-directives~v=EPfpLeo99HKH-IsMFJLEIgOscoqlAujg0dTtEeEegzY1.js"></script>
+    <script src="js/angular-filters~v=wP6VPhqlV1pFFlJ_m2VUsbhfbzEiTLBigj7SMuN2P-s1.js"></script>-->
+    <!--<script src="js/common.js"></script>-->
+    <script src="js/jquery.cycle2.js"></script><!--精彩游戏结构-->
+    <script src="js/jquery.cycle2.tile.js"></script><!--精彩游戏特效-->
+<script src="CdnRedirect/Web.Portal/_Common/Scripts/jquery.cycle2.js"></script>
+<script src="Scripts/each-site/jquery.cycle2.carousel.js"></script>
+<script>
+    /* 不寫在view是因為會跟ng的表達式有衝突，導致ng-mouseover失效 */
+    $('.game-list').cycle({
+        fx: 'carousel',
+        slides: '> div',
+        prev: '#prev',
+        next: '#next',
+        carouselVisible: 5
+    });
+</script>
+<input name="__RequestVerificationToken" type="hidden" value="IqbVpc2jDhjHYCx46E8rprWJdOQTSAAzLwa-bCPwyG7HwDPS_CaBpOSIHXw4dHEJmTZhKNYDmxArhjXGYRuNYt5KUOw1" />
+</body>
+</html>
+<script src="User/scroll.js"></script>
+<script>
+    fn("#service-right");
+    fn("#service-left");
+</script>
+<script src="js/page_common.js"></script>
+<script src="js/loadpage.js"></script>
+<script>
+    $.ajax({
+        type:"post",
+        url:xpj_src+"webcom.do",
+        data:{cagent:cagent},
+        async:true,
+        cache:false,
+        xhrFields:{withCredentials:true},
+        success:function  (data) {
+            $.cookie('gment', data, { expires: 1 , path: '/' });
+        }
+    })
+</script>

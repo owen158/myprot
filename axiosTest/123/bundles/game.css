@@ -1,0 +1,70 @@
+#banner {
+	background: url('../Web.Portal/images/game/banner_game.jpg') no-repeat center
+}
+#lobby>ul.game-list {
+	padding-left: 28px;
+	text-align: left
+}
+ul.game-list li {
+	margin: 0 2px;
+	width: 308px;
+	height: 287px
+}
+ul.game-list li[game-box="mg"] {
+	background: url('../Web.Portal/images/game/mg.png') no-repeat
+}
+ul.game-list li[game-box="bb"] {
+	background: url('../Web.Portal/images/game/bb.png') no-repeat
+}
+ul.game-list li[game-box="prg"] {
+	background: url('../Web.Portal/images/game/prg.png') no-repeat
+}
+ul.game-list li[game-box="ag"] {
+	background: url('../Web.Portal/images/game/ag.png') no-repeat
+}
+ul.game-list li[game-box="pt"] {
+	background: url('../Web.Portal/images/game/pt.png') no-repeat
+}
+ul.game-list li[game-box="gpi"] {
+	background: url('../Web.Portal/images/game/gpi.png') no-repeat
+}
+ul.game-list li[game-box="gns"] {
+	background: url('../Web.Portal/images/game/gns.png') no-repeat
+}
+ul.game-list li[game-box="sg"] {
+	background: url('../Web.Portal/images/game/sg.png') no-repeat
+}
+ul.game-list li[game-box="fish"] {
+	background: url('../Web.Portal/images/game/fish.png') no-repeat
+}
+ul.game-list li[game-box="mw"] {
+	background: url('../Web.Portal/images/game/mw.png') no-repeat
+}
+ul.game-list li[game-box="more"] {
+	background: url('../Web.Portal/images/game/more.png') no-repeat
+}
+ul.game-list li.un-dark:hover:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 308px;
+	height: 287px;
+	background-color: transparent
+}
+ul.game-list:hover li:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 308px;
+	height: 287px;
+	background-color: rgba(0,0,0,.6);
+	-moz-transition: background-color .2s ease;
+	-webkit-transition: background-color .2s ease;
+	-o-transition: background-color .2s ease;
+	transition: background-color .2s ease;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px
+}

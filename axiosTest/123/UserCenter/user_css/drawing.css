@@ -1,0 +1,213 @@
+@charset "utf-8";
+/* CSS Document */
+.content{ width:1163px; height:auto;border:1px solid #d7d7d6; box-shadow:5px 5px 5px #d7d7d6; -moz-box-shadow:5px 5px 5px #d7d7d6; -webkit-box-shadow:5px 5px 5px #d7d7d6;   filter: progid:DXImageTransform.Microsoft.Shadow(color='#d7d7d6', Direction=125, Strength=5);background:#e3e4e4;  }
+
+/*提款*/
+.drawing{  width:1163px; height:auto; background:#fff; padding-bottom: 30px;}
+.eveb_contentqk{ width:1084px; height:auto; overflow:hidden; margin:0px auto;}
+.eveb_contentqk h2{ font-size:30px; color:#242424; font-weight:normal; height:70px; line-height:70px; margin-top:55px;}
+.eveb_withdraw_listtk{ width:1084px; overflow: hidden; margin:0px auto; margin-bottom:25px; overflow: hidden; height: auto; padding-left: 17px;}
+.eveb_contentqk h2 img{ vertical-align:middle; margin-right:10px;}
+.eveb_withdraw_listtk .eveb_withdraow_box{ width: 338px; height: 245px; overflow:hidden;  margin-bottom:20px;  position:relative; float:left;   margin-right:17px;}
+.eveb_withdraw_listtk .eveb_withdraow_box .eveb_withdraow_box_top{ width:338px;  height:200px; overflow: hidden;  background:url(http://image.beike188.com/POLY/user_img/gold-credit-card.jpg) no-repeat center;}
+.eveb_withdraw_listtk .eveb_withdraow_box .eveb_withdraow_box_top strong{ display: inline-block; float: left; width: 140px; height: 36px; line-height: 36px; text-align: center; font-size: 16px;}
+.eveb_withdraw_listtk .eveb_withdraow_box span{ position: absolute; top: 5px; right: 5px; display: inline-block; background-image: url(http://image.beike188.com/POLY/images/login.png); background-repeat: no-repeat; vertical-align: middle; width: 17px; height: 16px; background-position: -8px -143px; float: right; cursor:pointer; }
+
+.eveb_withdraw_listtk em{display:block;  width:318px;background:#F5F5F5;color:#999;font-size:12px;height:40px;line-height:40px;padding:0 10px; font-style:normal; position:absolute; bottom:0px; left:0px;}
+.eveb_withdraw_listtk em strong{color:#666;font-weight:normal;}
+.eveb_withdraow_box em .fl{ float:left; width:159px;}
+.eveb_withdraow_box em .fr{ float:right; width:159px;}
+
+
+
+.eveb_withdraw_listtk p{text-align:center;color:#333;font-size:20px;font-family:"Arial";display:block;height:100px;line-height:100px; clear: both; overflow: hidden; margin-top: 60px;}
+.eveb_withdraw_list span{margin-top:5px;}
+.eveb_withdraw_list em{display:block;background:#F5F5F5;color:#999;font-size:12px;height:40px;line-height:40px;padding:0 10px;}
+.eveb_withdraw_list em strong{color:#666;font-weight:normal;}
+.eveb_withdraw li{position:relative;}
+.eveb_withdraw li span{ display:block; float:left; width:100px; text-align:right;}
+.eveb_withdraw span{width:310px;}
+.eveb_withdraw .eveb_form_box{margin-left:320px;}
+.eveb_withdraw_tip{font-size:16px;clear:both; background:#faf9e6; text-align:center; border:1px solid #c3c1c1; height:55px; line-height:55px;}
+.eveb_withdraw_tip strong{color:#FF7F00;}
+
+
+.eveb_withdraow_add{border:2px solid #ff6c00;height:200px;overflow:hidden;width:338px; float: left;}
+.eveb_withdraow_add a img{ margin-top:55px;}
+.eveb_withdraow_add:hover{border:2px solid #ffb062;}
+.eveb_withdraow_add{background:#F9F9F9;text-align:center;}
+.eveb_withdraow_add a:link,
+.eveb_withdraow_add a:visited{display:block;height:140px;color:#333;}
+.eveb_withdraow_add:hover{background:#FFF;}
+
+.eveb_formtk{ width:1084px; height:auto;}
+.eveb_formtk li{ width:603px; margin:20px auto; font-size:18px; color:#000;}
+.eveb_formtk li .errortk{ font-size:16px; color:#ff6c00;}
+.eveb_formtk li .bankAccountName{ width:105px;  height:22px; line-height:22px; padding-left: 5px;}
+.eveb_formtk li .bankAccountNoFormat{ width:220px;  height:22px; line-height:22px;}
+.eveb_formtk li .amount{ width:105px; height:22px; line-height:22px;}
+.eveb_formtk li .withdrawalPwd{ width:220px;  height:22px; line-height:22px;}
+.eveb_formtk li em{ font-style:normal; font-size:16px; padding-left:10px;}
+.eveb_formtk li em a{ color:#ff6c00;}
+.eveb_form_submittk{ text-align:center;}
+
+.eveb_form_submittk .button_1tk{ margin-right:45px; background:#ff6c00; color:#fff;}
+.eveb_form_submittk .button_3tk{ background:#fff; border:1px solid #ddd; color:#000;}
+.button_mediumtk{ padding: 10px 30px; font-size: 14px; border:1px solid #fff; }
+
+/*银行提款成功*/
+
+.eveb_popup_wraptkcg{position:absolute;display:none;width:100%;height:100%;top:0;left:0;z-index:9;background:#000;background:none\9;opacity:0.5;filter:alpha(opacity=50);}
+.eveb_popuptkcg{position:absolute;width:500px;display:none;top:50%;left:34%;z-index:10;background:#fff;box-shadow:0 5px 10px rgba(0,0,0,0.5);border:1px solid #CCC\9;}
+.eveb_popuptkcg .eveb_popup_hd{height:45px;line-height:40px;color:#000;padding:0 15px;font-size:16px;}
+.eveb_popuptkcg .eveb_popup_hd a{margin-top:14px; background:url(http://image.beike188.com/POLY/user_img/icon_03.png) no-repeat center; width:15px; height:15px; float:right; margin-top:-30px; }
+.eveb_popuptkcg .eveb_popup_bd{padding:20px;}
+.eveb_popuptkcg .eveb_popup_content{text-align:center;}
+.eveb_popuptkcg .eveb_popup_bdtkcg span{margin-bottom:10px;display:block;}
+.eveb_popuptkcg .eveb_popup_contenttkcg{line-height:30px; text-align:center;}
+.eveb_popuptkcg .eveb_popup_btn{text-align:center;margin:20px 0;border-top:1px solid #EEE;padding-top:30px;}
+.eveb_popup_contenttkcg .eveb_tip{margin-top:20px;overflow:auto;zoom:1;}
+.eveb_popup_contenttkcg .eveb_tip li{float:left;width:50%;}
+.eveb_popup_contenttkcg .eveb_tip span{font-size:16px;font-weight:bold;}
+.button_1, .button_1:link, .button_1:visited{ color: #FFF; background: #ff7f00; margin-top:-3px;}
+.button_medium{padding: 10px 30px; font-size: 14px; border:1px solid #fff; cursor:pointer;}
+.button_3, .button_3:link, .button_3:visited{border: 1px solid #DDD;color: #888;background: #FFF;}
+
+
+
+
+/*绑定银行卡弹窗*/
+.eveb_popup_wraptbdyhk{position:absolute;display:none;width:100%;height:100%;top:0;left:0;z-index:9;background:#000;background:none\9;opacity:0.5;filter:alpha(opacity=50);}
+.eveb_popupbdyhk{position:absolute;width:500px;display:none;top:22%;left:34%;z-index:10;background:#fff;box-shadow:0 5px 10px rgba(0,0,0,0.5);border:1px solid #CCC\9;}
+.eveb_popupbdyhk .eveb_popup_hd{height:45px;line-height:40px;color:#000;padding:0 15px;font-size:16px;}
+.eveb_popupbdyhk .eveb_popup_hd a{margin-top:14px; background-image: url(http://image.beike188.com/POLY/images/login.png); background-repeat: no-repeat; display: inline-block; vertical-align: middle; width: 17px;
+height: 16px;background-position: -8px -143px; float:right; margin-top:-30px; }
+.eveb_popupbdyhk .eveb_popup_bd{padding:20px;}
+.eveb_popupbdyhk .eveb_popup_content{text-align:center;}
+.eveb_popupbdyhk .eveb_popup_bd span{margin-bottom:10px;display:block;}
+.eveb_popupbdyhk .eveb_popup_content{line-height:24px;}
+.eveb_popupbdyhk .eveb_popup_btn{text-align:center; border-top:1px solid #EEE;padding-top:30px;}
+.eveb_popup_content .eveb_tip{margin-top:20px;overflow:auto;zoom:1;}
+.eveb_popup_content .eveb_tip li{float:left;width:50%;}
+.eveb_popup_content .eveb_tip span{font-size:16px;font-weight:bold;}
+
+/*绑定银行卡弹窗内表单*/
+.eveb_formbdyhk{line-height:30px;}
+.eveb_formbdyhk span{float:left;display:block;width:120px;text-align:right;color:#333;margin-right:10px;}
+.eveb_formbdyhk em{font-size:12px;color:#999;}
+.eveb_formbdyhk label.error{display:inline-block;font-size:12px;color:#FF7F00;}
+.eveb_formbdyhk li{margin-bottom:20px;}
+.eveb_formbdyhk li .bindcard_bankId{ height: 20px; line-height: 20px;}
+.eveb_formbdyhk li .name{ width: 109px; height: 20px; line-height: 20px; padding-left: 5px;}
+.eveb_formbdyhk li .province1{ height: 20px; line-height: 20px;}
+.eveb_formbdyhk li .city1{ height: 20px; line-height: 20px;}
+.eveb_formbdyhk li .bindcard_openingBank{ height: 20px; line-height: 20px; width: 236px;}
+.eveb_formbdyhk li .bindcard_account{ height: 20px; line-height: 20px; width: 236px; outline: none;}
+.eveb_form_box{margin-left:130px;}
+.eveb_form_box strong{color:#FF7F00}
+.eveb_form_submit{border-top:1px solid #EEE;padding-top:20px;text-align:center;}
+.eveb_form_submit p{margin-bottom:20px;font-size:12px;}
+.eveb_form_submit p strong{color:#2CB200;}
+
+/*银行卡绑定成功*/
+.eveb_popup_wraptbdcg{position:absolute;display:none;width:100%;height:100%;top:0;left:0;z-index:9;background:#000;background:none\9;opacity:0.5;filter:alpha(opacity=50);}
+.eveb_popupbdcg{position:absolute;width:500px;display:none;top:22%;left:34%;z-index:10;background:#fff;box-shadow:0 5px 10px rgba(0,0,0,0.5);border:1px solid #CCC\9;}
+.eveb_popupbdcg .eveb_popup_hdbdcg{height:45px;line-height:40px;color:#000;padding:0 15px;font-size:16px; position:relative;}
+.eveb_popupbdcg .eveb_popup_hdbdcg a{margin-top:14px; width:15px; height:15px; background:url(http://image.beike188.com/POLY/user_img/icon_03.png) no-repeat center; position:absolute; top:-5px; right:5px;}
+.eveb_popupbdcg .eveb_popup_hdbdcg{padding:20px;}
+.eveb_popupbdcg .eveb_popup_content{text-align:center;}
+.eveb_popupbdcg .eveb_popup_bdbdcg span{margin-bottom:10px;display:block;}
+.eveb_popupbdcg .eveb_popup_contentbdcg{line-height:24px; text-align:center;}
+.eveb_popupbdcg .eveb_popup_btn{text-align:center;margin:20px 0;border-top:1px solid #EEE;padding-top:30px;}
+.eveb_popup_contentbdcg .eveb_tip{margin-top:20px;overflow:auto;zoom:1;}
+.eveb_popup_contentbdcg .eveb_tip li{float:left;width:50%;}
+.eveb_popup_contentbdcg .eveb_tip span{font-size:16px;font-weight:bold;}
+
+
+
+
+
+/*是否删除银行卡*/
+body{
+	position: relative;
+}
+/*.eveb_popup_wraptbddete{ white-space: 100%; height: 100%; }*/
+ .eveb_popup_wraptbddete {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top:0;
+	background-color: #000000;
+	background-color:rgba(0,0,0,0.7);
+	z-index: 20;
+	filter:alpha(opacity = 70);
+	display: none;
+}
+ .set_alertdele{
+ 	position: absolute;
+ 	margin: auto;
+  	position: absolute;
+  	top: 25%; left: 36%;
+	width: 500px;
+	height: 225px;
+	padding: 0 15px;
+	line-height: 40px;
+	font-size: 16px;
+	background-color: #FFFFFF;
+	z-index: 9999;
+	display: none;
+
+}
+ .set_alertdele .alert_title{
+	height: 45px;
+    line-height: 40px;
+    color: #000;
+    padding: 0 15px;
+    font-size: 16px;
+    background: url(http://image.beike188.com/POLY/user_img/th.png);
+}
+.set_alertdele .alert_title i{
+	height: 15px;
+	width: 15px;
+	display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    float: right;
+}
+ .set_alertdele .alert_content ul {
+	padding: 20px;
+	line-height: 30px;
+	margin-bottom: 20px;
+}
+.set_alertdele .alert_content ul li span{
+	margin-bottom: 10px;
+    display: block;
+    float: left;
+    width: 120px;
+    text-align: right;
+    color: #333;
+    margin-right: 10px;
+    font-size: 14px;
+}
+ #login_pwd{
+	padding: 5px;
+}
+.set_alertdele .alert_content ul .alert_btn{border-top: 1px solid #EEE;text-align: center;padding-top: 30px;margin:20px 0; }
+.set_alertdele .alert_content ul .alert_btn input{padding: 10px 30px;font-size: 14px;border: none;border-radius: 3px;cursor: pointer;font-family: 'Microsoft Yahei';}
+#btn_getpwddele{color: #FFF;background: #ff7f00;}
+#btn_cancledele{border: 1px solid #DDD;color: #888;background: #FFF;}
+
+/*删除银行卡成功*/
+.eveb_popup_wraptbddele{position:absolute;display:none;width:100%;height:100%;top:0;left:0;z-index:9;background:#000;background:none\9;opacity:0.5;filter:alpha(opacity=50);}
+.eveb_popupbddele{position:absolute;width:500px;display:none;top:22%;left:34%;z-index:10;background:#fff;box-shadow:0 5px 10px rgba(0,0,0,0.5);border:1px solid #CCC\9;}
+.eveb_popupbddele .eveb_popup_hdbdcg{height:45px;line-height:40px;color:#000;padding:0 15px;font-size:16px; position:relative;}
+.eveb_popupbddele .eveb_popup_hdbdcg a{margin-top:14px; width:15px; height:15px; background:url(http://image.beike188.com/POLY/user_img/icon_03.png) no-repeat center; position:absolute; top:-5px; right:5px;}
+.eveb_popupbddele .eveb_popup_hdbdcg{padding:20px;}
+.eveb_popupbddele .eveb_popup_content{text-align:center;}
+.eveb_popupbddele .eveb_popup_bdbdcg span{margin-bottom:10px;display:block;}
+.eveb_popupbddele .eveb_popup_contentbdcg{line-height:24px; text-align:center;}
+.eveb_popupbddele .eveb_popup_btn{text-align:center;margin:20px 0;border-top:1px solid #EEE;padding-top:30px;}
+.eveb_popup_contentbdcg .eveb_tip{margin-top:20px;overflow:auto;zoom:1;}
+.eveb_popup_contentbdcg .eveb_tip li{float:left;width:50%;}
+.eveb_popup_contentbdcg .eveb_tip span{font-size:16px;font-weight:bold;}

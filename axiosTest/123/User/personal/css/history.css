@@ -1,0 +1,63 @@
+#history .header{
+    height: 31px;
+    padding:0;
+    margin:0;
+}
+#history .header .icon{
+    width:43px;
+    background: url(../../../images/h-history.png) no-repeat;
+    height: 32px;
+}
+#history{
+    padding:0;
+    background: #e3e4e4;
+    box-shadow: 0 3px 3px #d8d8d7;
+}
+#history .header .text{
+    /*padding-left: 15px;*/
+    height: 31px;
+    line-height: 31px;
+    font-size:20px;
+    margin: 0 5px;
+}
+#history .Inquire .text-header{
+    height: 40px;
+    width: 380px;
+    font-size: 0;
+    text-align: right;
+}
+#history .Inquire .text-header .text{
+    height: 40px;
+    font-size: 12px;
+    line-height: 40px;
+}
+.Types select,.Status select{
+    border: none;
+    outline: none;
+    font-size: 14px;
+    height: 20px;
+    width: 80px;
+}
+.Types,.Status{
+    margin-top: 5px;
+    padding-top: 5px;
+    height: 30px;
+    border:1px solid #b7b7b7;
+}
+.page{
+    height: 32px;
+    margin-top: 10px;
+}
+.page #biuuu_city .laypage_total{
+    padding-right: 0;
+}
+.page .text{
+    height: 32px; line-height: 32px;
+}
+.prompt_sup{
+    margin-top: 10px;
+}
+.prompt{
+    height: 15px;
+    font-size: 12px;
+}

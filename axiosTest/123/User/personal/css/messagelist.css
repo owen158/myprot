@@ -1,0 +1,101 @@
+/*.messagelist .header .icon {*/
+    /*display: inline-block;*/
+    /*width: 43px;*/
+    /*background: url(../../../images/m-messagelist.png) no-repeat;*/
+    /*height: 31px;*/
+/*}*/
+/*.messagelist .header{*/
+    /*height: 31px;*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+/*}*/
+.messagelist .header{
+    height: 31px;
+    padding:0;
+    margin:0;
+}
+.messagelist .header .icon{
+    width:43px;
+    background: url(../../../images/m-messagelist.png) no-repeat;
+    height: 31px;
+}
+.messagelist .header .text{
+    padding-left: 15px;
+    height: 31px;
+    line-height: 31px;
+    font-size:20px;
+}
+.messagelist .wrapper-main, .messagelist .wrapper-main .item,.messagelist .wrapper-main .sub-content , .messagelist .wrapper-main .sub-content .main-content , .messagelist .wrapper-main .sub-content .main-content .item{
+    width:100%;
+
+}
+.messagelist .wrapper-main .item{
+
+}
+.messagelist .wrapper-main .item , .messagelist .wrapper-main .item  .main-item,.messagelist .wrapper-main .item  .main-item .list,.messagelist .wrapper-main .item  .main-item .list li{
+    height: 40px;
+}
+.messagelist .wrapper-main .item  .main-item .list li{
+    display: inline-block;
+    width:80px;
+    vertical-align: top;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    border:1px solid #b7b7b7;
+    border-bottom: none;
+    background: #ccc;
+    margin-right: 5px;
+}
+.messagelist .wrapper-main .item  .main-item .list li.active{
+    background: #fff;
+}
+.messagelist .wrapper-main .item  .main-item .list li a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+}
+.messagelist .wrapper-main .sub-content .main-content{
+    display: none;
+}
+.messagelist .wrapper-main .sub-content div.active{
+    display: block;
+}
+.messagelist .wrapper-main .sub-content .main-content .item{
+    height: 40px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+}
+.Inquire-time{
+    font-size: 12px;
+}
+.Inquire-time input{
+    width:120px;
+    height: 20px;
+    font-size: 12px;
+    border:none;
+    outline:none;
+    padding-left: 5px;
+}
+.Inquire-time .label,.Inquire-time .main-child {
+    height: 30px;
+    margin-top: 5px;
+    padding-top: 5px;
+
+}
+.Inquire-time .label,.Inquire-time .main-child input{
+    cursor: pointer;
+}
+.Inquire-time .main-child ,.click-main div{
+    border:1px solid #b7b7b7;
+}
+.Inquire-time .click-main div{
+    height: 30px;
+    width:50px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+

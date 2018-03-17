@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>用户中心</title>
+	</head>
+	<link rel="stylesheet" href="user_css/user.css" />
+	<link rel="stylesheet" type="text/css" href="user_css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="user_css/transfer_accounts.css"/>
+    <script src="user_js/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+
+   //zz---转账 ，刷新验证码
+    function changeImg_zz() {
+       var imgSrc_zz= $("#imgObj_zz");
+       var src_zz= imgSrc_zz.attr("src");
+       imgSrc_zz.attr("src", center_src+"validateCode?timesp"+(new Date()).valueOf());
+   }
+   
+	                     
+    
+    </script>
+	<body>
+
+		<div class="wrap">
+			<div class="top_bar clear">
+				<p><a href="../vzt6.html"><img src="http://image.beike188.com/POLY/user_img/bllogo.png" /></a></p>
+    <ul class="top_nav">
+      <li><a onclick="loadgame('HG','','PC');">体育赛事</a></li>
+      <li><a href="../Lobby/Live.html">视讯直播</a></li>
+      <li><a href="../Lobby/game_pt.html">PT电子</a></li>
+      <li><a href="../Lobby/game_Mg.html">MG电子</a></li>
+      <li><a href="../Promotion.html">优惠活动</a></li> <li><a href="">联系我们</a></li>
+    </ul>
+				<div class="header_info">
+					<a  class="first" href="javascript:;"></a>| <a class="last" href="javascript:;">注销</a>  <a class="button" href="http://f88.live800.com/live800/chatClient/chatbox.jsp?companyID=779799&configID=144546&jid=9355144430" target="_blank">在线客服</a>
+				</div>
+			</div>
+			<!--notice-->
+			<div class="notice">
+               <div class="eveb_header_notice">
+                  <h4><i class="icon_small icon_header_notice"></i>公告：</h4>
+                  <!--轮播-->
+                  <div class="txtScroll-top">
+                      <!--<div class="bd">
+                          <ul class="infoList">
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+                              <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+                          </ul>
+                      </div>
+                      <div class="hd">
+                          <a class="next"></a>
+                          <ul></ul>
+                          <a class="prev"></a>
+
+                      </div>-->
+                      <!--文字滚动-->
+				        <div class="header-center_gd">
+				            <div class="picMarquee-left">
+				              <ul class="header_marquee" behavior="scroll">
+				              </ul>
+				            </div>
+				        </div>
+				        <!--文字滚动-end-->
+            </div><!--轮播-end-->
+            </div>
+            </div><!--notice-end-->
+			<ul class="user_nav clear">
+				<li><a href="user_center.html"><i class="icon_home"></i>会员首页</a></li>
+                <li><a href="deposit.html"><i class="icon_bank"></i>存款</a></li>
+                <li><a href="drawing.html"><i class="icon_withdraw"></i>提款</a></li>
+                <li style="background-color: #ddb79a;"><a href="transfer_accounts.html"><i class="icon_transfer"></i>转账</a></li>
+                <!--<li><a href="messagelist.html"><i class="icon_letter"></i>站内信</a></li>
+                <li><a href="market.html"><i class="icon_market"></i>市场活动</a></li>-->
+                <li><a href="history.html"><i class="icon_record"></i>历史记录</a></li>
+                <li><a href="Account_settings.html"><i class="icon_set"></i>账户设置</a></li>
+			</ul>
+			<div class="content">
+               <!--提款-->
+               <div class="transfter_accounts">
+                   <!-- CONTENT START -->
+                  <div class="eveb_content">
+                      <h2><i class="icon_medium icon_transfer"></i>平台转账</h2>
+                      <div class="eveb_transfer_box">
+                          <div class="center_wallet fl">
+                              <span>中心钱包</span>
+                              <p class="money"><strong id="wallet">0.00</strong>元</p>
+															<em id="allbalance" style="cursor: pointer;">一键查询</em>
+                          </div>
+                          <ul class="wallet_list_2">
+		                          	 		 <li><span>CG(视讯)</span><p id="amount_CG" author="game" game="CG">-</p><em  class="bal_refresh"><img src="http://image.beike188.com/POLY/user_img/transfer_accounts_pic3.png" /></em></li>
+		                          	 			<li><span>AG极速厅</span><p id="amount_AG" author="game" game="AG">-</p><em class="bal_refresh"><img src="http://image.beike188.com/POLY/user_img/transfer_accounts_pic3.png" /></em></li>
+		                                      <li><span>AG国际厅</span><p id="amount_AGIN" author="game" game="AGIN">-</p><em class="bal_refresh"><img src="http://image.beike188.com/POLY/user_img/transfer_accounts_pic3.png" /></em></li>
+		                                      <li><span>BBIN(视讯/电子)</span><p id="amount_BBIN" author="game" game="BBIN">-</p><em class="bal_refresh"><img src="http://image.beike188.com/POLY/user_img/transfer_accounts_pic3.png" /></em></li>
+		                                      <li><span>DS(视讯)</span><p id="amount_DS" author="game" game="DS">-</p><em class="bal_refresh"><img src="http://image.beike188.com/POLY/user_img/transfer_accounts_pic3.png" /></em></li>
+		                                      <li><span>欧博(视讯)</span><p id="amount_OB" author="game" game="OB">-</p><em class="bal_refresh"><img src="http://image.beike188.com/POLY/user_img/transfer_accounts_pic3.png" /></em></li>
+		                                      <li><span>OG(视讯)</span><p id="amount_OG" author="game" game="OG">-</p><em class="bal_refresh"><img src="http://image.beike188.com/POLY/user_img/transfer_accounts_pic3.png" /></em></li>
+		                                      <li><span>申博(视讯/电子)</span><p id="amount_SB" author="game" game="SB">-</p><em class="bal_refresh"><img src="http://image.beike188.com/POLY/user_img/transfer_accounts_pic3.png" /></em></li>
+
+													</ul>
+
+													<ul class="wallet_list_2 wallet_list_22">
+																			<li><span>MG(电子)</span><p id="amount_MG" author="game" game="MG">-</p><em class="bal_refresh"><img src="http://image.beike188.com/POLY/user_img/transfer_accounts_pic3.png" /></em></li>
+																			<li><span>HABA(电子)</span><p id="amount_HABA" author="game" game="HABA">-</p><em class="bal_refresh"><img src="http://image.beike188.com/POLY/user_img/transfer_accounts_pic3.png" /></em></li>
+                                      <li><span>PT(电子)</span><p id="amount_PT" author="game" game="PT">-</p><em class="bal_refresh"><img src="http://image.beike188.com/POLY/user_img/transfer_accounts_pic3.png" /></em></li>
+                                      <li><span>HG(体育)</span><p id="amount_HG" author="game" game="HG">-</p><em class="bal_refresh"><img src="http://image.beike188.com/POLY/user_img/transfer_accounts_pic3.png" /></em></li>
+                                      <li><span>IG(彩票)</span><p id="amount_IG" author="game" game="IG">-</p><em class="bal_refresh"><img src="http://image.beike188.com/POLY/user_img/transfer_accounts_pic3.png" /></em></li>
+                                      <li><span>GG(捕鱼)</span><p id="amount_GGBY" author="game" game="GGBY">-</p><em class="bal_refresh"><img src="http://image.beike188.com/POLY/user_img/transfer_accounts_pic3.png" /></em></li>
+                          </ul>
+                      </div>
+                      <form name="eveb_transfer">
+                      <ul class="eveb_formtransfer eveb_withdraw">
+                          <li>
+                              <span>转出：</span>
+                              <select name="outAccount" id="outAccount" style="width:200px;">
+                                  <option value="0">中心娱乐城</option>
+                                   <option value="CG">CG(视讯)</option>
+                                  	 <option value="AG">AG极速厅</option>
+                                      <option value="AGIN">AG国际厅</option>
+                                      <option value="BBIN">BBIN(视讯/电子)</option>
+                                      <option value="DS">DS(视讯)</option>
+                                      <option value="OB">欧博(视讯)</option>
+                                      <option value="OG">OG(视讯)</option>
+                                      <option value="SB">申博(视讯/电子)</option>
+                                      <option value="MG">MG(电子)</option>
+                                      <option value="HABA">HABA(电子)</option>
+                                      <option value="PT">PT(电子)</option>
+                                      <option value="HG">HG(体育)</option>
+                                      <option value="IG">IG(彩票)</option>
+                                      <option value="GGBY">GG(捕鱼)</option>
+                              </select>
+                          </li>
+                          <li>
+                              <span>转入：</span>
+                              <select name="inAccount" id="inAccount" style="width:200px;">
+                                  <option value="0">中心娱乐城</option>
+                                  <option value="CG">CG(视讯)</option>
+                                  		 <option value="AG">AG极速厅</option>
+                                      <option value="AGIN">AG国际厅</option>
+                                      <option value="BBIN">BBIN(视讯/电子)</option>
+                                      <option value="DS">DS(视讯)</option>
+                                      <option value="OB">欧博(视讯)</option>
+                                      <option value="OG">OG(视讯)</option>
+                                      <option value="SB">申博(视讯/电子)</option>
+                                      <option value="MG">MG(电子)</option>
+                                      <option value="HABA">HABA(电子)</option>
+                                      <option value="PT">PT(电子)</option>
+                                      <option value="HG">HG(体育)</option>
+                                      <option value="IG">IG(彩票)</option>
+                                      <option value="GGBY">GG(捕鱼)</option>
+                              </select>
+                          </li>
+                          <li>
+                              <span>金额：</span>
+                              <input name="amount" id="amount" type="text" size="5" onkeyup='this.value=this.value.replace(/^0|\D/gi,"")'  ondragenter=" return false" onpaste="return !clipboardData.getData('text').match(/\D/)" />
+                          </li>
+
+                          <li>
+                            <span>验证码：</span>
+                            <input type="text" id="Verification-code_zzs" maxlength="4"  onkeyup="this.value=this.value.replace(/\D/gi,'')" value="" class="Verification-code_zz" placeholder="请输入验证码" style="float:left;">
+                            <!--<strong class="okimg_confirmpassword_zz">
+                              <img id="okimg_confirmpassword" src="http://image.beike188.com/POLY/images/red_icon.png" >
+                            </strong> -->
+                            <img id="imgObj_zz" alt="验证码"  onclick="changeImg_zz()"
+                               style="float:left;margin-top:3px;height:25px;">
+                               
+                          </li>
+
+                          <li><a id="switchAccount"  class="icon_medium icon_transfer_control" title="交换">交换</a></li>
+                      </ul>
+                      <div class="eveb_form_submittransfer">
+
+                          <input id="btn_save" type="button" value="转 &nbsp;账" class="button_medium button_1" />
+                      </div>
+                      </form>
+                  </div>
+
+
+                  <!--弹窗 转账成功-->
+                  <div class="eveb_popupzzcg" id="eveb_popup_transefer_ok" >
+                      <div class="eveb_popup_hdzzcg">
+                          <h4 id="trans_msg" class="fl"></h4>
+                          <a class="icon_mini icon_close fr wrapzzcg" title="关闭"></a>
+                      </div>
+                      <div class="eveb_popup_bdzzcg">
+                          <div class="eveb_popup_contentzzcg">
+                              <span><i class="icon_big icon_ok_3 wrapzzcg"></i></span>
+                              <p class="alert-msg" style="text-align: center;font-style: bold;"><!--流水号：<strong class="green">SN20150201076771</strong>--></p>
+                              <p style="text-align: center;">如有任何疑问，请及时联系在线客服。</p>
+                          </div>
+                          <div class="eveb_popup_btnzzcg">
+                              <a name="pop_close" class="button_medium button_1 wrapzzcg">知道了</a>
+                          </div>
+                      </div>
+                  </div>
+
+
+	<!-- CONTENT END -->
+               </div>
+               <!--提款-end-->
+			</div>
+			<div class="user_footer">
+				<div class="footer_link"> <a href="../help/index.html?key=0">关于我们</a>| <a href="../agent/index.html">代理专区</a>| <a href="../help/index.html?key=2">新手指南</a>| <a href="../help/index.html?key=1">联系我们</a>| <a href="../column/download.html">手机下注</a> </div>
+				<div class="copyright "> <p style="float:left;margin-right: 20px;">Copyright © 2017 天下网络 All Right Reserved</p>  <p style="float:left">PT游戏是由PT TransPacific在PAGCOR<img style="width:15px;" src="http://image.beike188.com/POLY/images/pagcorlogo.png">的授权下部署</p> </div>
+			</div>
+		</div>
+
+    <!--弹窗 黑底-->
+     <div class="eveb_popup_wrapzzcg"></div>
+
+
+  <!--loading-->
+<div class="xploading_bg"></div>
+<div class="xploading" > <img src="http://image.beike188.com/POLY/images/xploading.gif" />Loading... </div>
+<!--loading-end-->
+
+	</body>
+
+	
+    <script type="text/javascript" src="../personal/jquery.SuperSlide.2.1.1.js"></script>
+	<script src="user_js/user.js" type="text/javascript" charset="utf-8"></script>
+    <script src="user_js/alert.js"></script>
+    <script src="user_js/transfer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../personal/game_plat.js"></script>
+    <script src="../personal/jquery.marquee.min.js"></script>
+<script type="text/javascript" src="../personal/page_common.js"></script>
+<!--<script type="text/javascript" src="../Scripts/page/checkinput.js"></script>-->
+<script src="../personal/loadpage.js"></script>
+    <!--<script>
+	 //公告
+     jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:1});
+	</script>-->
+	<script type="text/javascript">
+
+  /*input获取焦点时刷新验证码*/
+    $('#Verification-code_zzs').focus(function(){        	 	
+	          	 	changeImg_zz();
+	});
+                               	 
+	</script>
+</html>

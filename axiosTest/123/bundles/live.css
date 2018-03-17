@@ -1,0 +1,133 @@
+#banner {
+	background: url('../Web.Portal/images/live/banner_live.jpg') no-repeat center
+}
+.game-list {
+	margin: 0 auto
+}
+div[game-box] {
+	width: 159px;
+	height: 468px
+}
+.back div[game-box] {
+	background-position: bottom
+}
+div[game-box="bb"] {
+	background: url('../Web.Portal/images/live/bb.png')
+}
+div[game-box="gpi"] {
+	background: url('../Web.Portal/images/live/gpi.png')
+}
+div[game-box="ag"] {
+	background: url('../Web.Portal/images/live/ag.png')
+}
+div[game-box="mg"] {
+	background: url('../Web.Portal/images/live/mg.png')
+}
+div[game-box="pt"] {
+	background: url('../Web.Portal/images/live/pt.png')
+}
+div[game-box="evo"] {
+	background: url('../Web.Portal/images/live/ab.png')
+}
+div[game-box="ab"] {
+	background: url('../Web.Portal/images/live/evo.png')
+}
+div[game-box="og"] {
+	
+	background: url('../Web.Portal/images/live/og.png')
+}
+.flipper span {
+	display: block;
+	padding-top: 480px;
+	color: #643d1a;
+	font-size: 27px;
+	font-weight: bold
+}
+.flipper span:after {
+	content: '-进入游戏-';
+	display: block;
+	color: #643d1a;
+	font-size: 18px;
+	font-weight: bold
+}
+.flip-container {
+	-moz-perspective: 1000px;
+	-ms-perspective: 1000px;
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
+	display: inline-block;
+	margin: 0 10px
+}
+.flip-container, .front, .back {
+	width: 159px;
+	height: 550px
+}
+.flipper {
+	position: relative;
+	-moz-transform: perspective(1000px);
+	-moz-transform-style: preserve-3d
+}
+.front, .back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transition: .6s;
+	-webkit-transform-style: preserve-3d;
+	-moz-transition: .6s;
+	-moz-transform-style: preserve-3d;
+	-o-transition: .6s;
+	-o-transform-style: preserve-3d;
+	-ms-transition: .6s;
+	-ms-transform-style: preserve-3d;
+	transition: .6s;
+	transform-style: preserve-3d
+}
+.back {
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	-o-transform: rotateY(-180deg);
+	-ms-transform: rotateY(-180deg);
+	transform: rotateY(-180deg)
+}
+.flip-container:hover .back, .flip-container.hover .back {
+	z-index: 5;
+	-webkit-transform: rotateY(0);
+	-moz-transform: rotateY(0);
+	-o-transform: rotateY(0);
+	-ms-transform: rotateY(0);
+	transform: rotateY(0)
+}
+.flip-container:hover .front, .flip-container.hover .front {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg)
+}
+.front {
+	z-index: 2
+}
+.slide-control {
+	position: absolute;
+	top: 230px;
+	right: 0;
+	left: 0
+}
+.slide-control span {
+	position: absolute;
+	display: inline-block;
+	width: 33px;
+	height: 33px;
+	cursor: pointer
+}
+.slide-control #prev {
+	left: 0;
+	background: url('../Web.Portal/images/prev.png') center no-repeat
+}
+.slide-control #next {
+	right: 0;
+	background: url('../Web.Portal/images/next.png') center no-repeat
+}

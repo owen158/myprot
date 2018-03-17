@@ -1,0 +1,204 @@
+.Theme {
+  background: #2c3e50;
+}
+.ThemeSize {
+  color: #2c3e50;
+}
+.btn {
+  background: #2c3e50;
+  color: #fff;
+}
+.solid {
+  border-top: 1px solid #1f1e23;
+  margin: 0.15rem 0;
+  border-bottom: 1px solid #3c3a42;
+}
+.solid-bottom {
+  border-bottom: 1px solid #7b6d48;
+}
+.box-sizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.text-c1 {
+  color: #fde269;
+}
+.Tips {
+  text-align: left;
+  padding-left: 0.25rem;
+  width: 100%;
+}
+.Tips h2 {
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.4rem;
+  color: #b0b0b0;
+}
+.Tips p {
+  height: 0.5rem;
+  line-height: 0.5rem;
+  color: #696969;
+  font-size: 0.3rem;
+}
+.height-row {
+  height: 0.2rem;
+}
+.Submit {
+  display: block;
+  width: 95%;
+  margin: 0.5rem auto;
+  font-size: 0.35rem;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  background: #414247;
+  color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.page-box {
+  width: 100%;
+  font-size: 0;
+  padding-top: 0.9rem;
+  padding-bottom: 0.8rem;
+  min-height: 100%;
+  background: #2c2b31;
+}
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 100;
+}
+.demo--radioInput {
+  position: absolute;
+  background-color: #2c2b31;
+  border: 1px solid #7b6d48;
+  border-radius: 100%;
+  display: inline-block;
+  height: 18px;
+  left: 0.1rem;
+  vertical-align: middle;
+  width: 18px;
+  line-height: 1;
+}
+.demo--radio:checked + .demo--radioInput:after {
+  background-color: #fde269;
+  border-radius: 100%;
+  content: "";
+  display: inline-block;
+  height: 12px;
+  margin: 2px;
+  width: 12px;
+}
+.demo--checkbox.demo--radioInput,
+.demo--radio:checked + .demo--checkbox.demo--radioInput:after {
+  border-radius: 0;
+}
+.formWrapper form {
+  font-size: 0;
+}
+.formWrapper form .item-form {
+  position: relative;
+  height: 0.7rem;
+  margin: 0;
+  text-align: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-top: 1px solid #7b6d48;
+  background: #35343a;
+  line-height: 0.7rem;
+}
+.formWrapper form .item-form input {
+  width: 100%;
+  height: 0.5rem;
+  margin-top: 0.1rem;
+  outline: none;
+  font-size: 0.25rem;
+  background: #35343a;
+  color: #b0b0b0;
+  padding-left: 1.2rem;
+}
+.formWrapper form .item-form input::-webkit-input-placeholder,
+.formWrapper form .item-form textarea::-webkit-input-placeholder {
+  color: #696969;
+}
+.formWrapper form .item-form input:-moz-placeholder,
+.formWrapper form .item-form textarea:-moz-placeholder {
+  color: #696969;
+}
+.formWrapper form .item-form input::-moz-placeholder,
+.formWrapper form .item-form textarea::-moz-placeholder {
+  color: #696969;
+}
+.formWrapper form .item-form input:-ms-input-placeholder,
+.formWrapper form .item-form textarea:-ms-input-placeholder {
+  color: #696969;
+}
+.formWrapper form .item-form .select {
+  margin-right: 0.1rem;
+  margin-left: 1.2rem;
+}
+.formWrapper form .item-form select {
+  width: 2.65rem;
+  margin-top: 0.1rem;
+  height: 0.5rem;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.formWrapper form .item-form label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+  width: 1.1rem;
+  color: #b0b0b0;
+  font-size: 0.3rem;
+  height: 100%;
+  line-height: 0.7rem;
+}
+.formWrapper form .item-form label i {
+  font-size: 0.5rem;
+  color: #fde269;
+}
+.formWrapper form .item-form .ImgCode {
+  position: absolute;
+  right: 0.1rem;
+  top: 0.015rem;
+  height: 0.6rem;
+  width: 1.3rem;
+  background: red;
+}
+.formWrapper form .item-form:last-child {
+  border-bottom: 1px solid #7b6d48;
+}
+.formWrapper .logRegisterSubmit {
+  margin: 0.3rem auto;
+  width: 100%;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  font-weight: bold;
+  font-size: 0.3rem;
+  background: #414247;
+  color: #b0b0b0;
+}
+.Promptbox {
+  height: 0.5rem;
+  line-height: 0.5rem;
+  background: #bfbfbf;
+  margin-top: 0.2rem;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 0.25rem;
+  color: #2f2f2f;
+  text-align: center;
+}

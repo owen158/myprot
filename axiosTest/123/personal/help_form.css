@@ -1,0 +1,7 @@
+/*用户注册*/
+.zhuce ul {border: solid 2px #ddb79a;margin-top: 20px;padding: 20px 0px;}
+.zhuce li span i{color: red;padding-right: 6px;}
+.zhuce ul .title_top{background: #ddb79a;width:87px;height: 23px;text-align: center;line-height: 23px;border-radius: 5px;position: absolute;   
+     margin-top: -34px;
+    margin-left: 20px;}
+.zhuce select{margin-top: 8px;}

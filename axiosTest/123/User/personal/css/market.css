@@ -1,0 +1,226 @@
+.market .header{
+    height: 31px;
+    padding:0;
+    margin:0;
+}
+.market .header .icon{
+    width:43px;
+    background: url(../../../images/m-market.png) no-repeat;
+    height: 31px;
+}
+/*h-history.png*/
+#market{
+    padding:0;
+    background: #e3e4e4;
+    box-shadow: 0 3px 3px #d8d8d7;
+}
+.market .header .text{
+    padding-left: 15px;
+    height: 31px;
+    line-height: 31px;
+    font-size:20px;
+}
+.market .wrapper-main{
+    width:100%;
+    height: 600px;
+}
+.market .wrapper-main .main-nav-left, .market .wrapper-main .main-right,.market .wrapper-main .main-right .sideBarone .item .offer-list li{
+    height: 100%;
+}
+.market .wrapper-main .main-nav-left{
+    width:170px;
+    background: #e3e4e4;
+    padding-top: 62px;
+}
+.market .wrapper-main .main-right{
+    width: 820px;
+    padding: 10px;
+    margin-right: 10px;
+    background: #fff;
+}
+.market .wrapper-main .main-nav-left .list{
+    width:100%;
+    height: auto;
+}
+.market .wrapper-main .main-nav-left .list li{
+    height: 45px;
+    display: block;
+    color:#0e0e0e;
+    font-size: 18px;
+    line-height: 45px;
+    text-align: center;
+    cursor: pointer;
+}
+.market .wrapper-main .main-nav-left .list li.active{
+    color:#fff;
+    background:#333 url('../../../images/m-arrow.png');
+    background-repeat: no-repeat;
+    background-position: 12% 50%;
+}
+/*.market .wrapper-main .main-nav-left .list li.active a{*/
+   /**/
+/*}*/
+.wrapper-main .main-right .content{
+    display: none;
+}
+.market .wrapper-main .main-right .sideBarone{
+    font-size: 14px;
+}
+.market .wrapper-main .main-right .sideBarone .item,.market .wrapper-main .main-right .sideBarone .item .offer-list,.market .wrapper-main .main-right .sideBarone .item .offer-list .sup,.market .wrapper-main .main-right .sideBarone .item .offer-list .sub,.wrapper-main .main-right .sideBartwo,.wrapper-main .main-right .sideBartwo .copy,.wrapper-main .main-right .sideBartwo .mend{
+    width:100%;
+}
+.market .wrapper-main .main-right .sideBarone .item .offer-list,.wrapper-main .main-right .sideBartwo .mend{
+    height: 100px;
+    list-style: none;
+    font-size: 0;
+    background: #FCFCFC;
+    border:1px solid #BBBBBB;
+}
+.market .wrapper-main .main-right .sideBarone .item .offer-list .sub,.market .wrapper-main .main-right .sideBarone .item .offer-list .sup{
+    text-align: center;
+}
+.market .wrapper-main .main-right .sideBarone .item .offer-list .sup,.wrapper-main .main-right .sideBartwo .mend li .sup{
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+    font-weight: 700;
+
+}
+.market .wrapper-main .main-right .sideBarone .item .offer-list li:hover,.wrapper-main .main-right .sideBartwo .mend li:hover{
+    color:#ff7f00;
+    cursor: pointer;
+}
+.market .wrapper-main .main-right .sideBarone .item .offer-list li{
+    width:16.666666666%;
+    margin: 0;
+    padding: 0;
+}
+.market .wrapper-main .main-right .sideBarone .item .offer-list .sub,.wrapper-main .main-right .sideBartwo .mend li .sub{
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+}
+.market .wrapper-main .list-content-active div.active{
+    display: block;
+}
+.main-table{
+    margin-top: 20px;
+}
+/*表格*/
+.main-table table tr{
+    border:1px solid #b7b7b7;
+    background: #F5F5F5;
+}
+.main-table table thead,.main-table table thead tr, .main-table table thead tr th{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+.main-table table tbody,.main-table table tbody tr,.main-table table tbody tr td{
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    text-align: center;
+}
+.wrapper-main .main-right .sideBarone .main-table table{
+    border:1px solid #b7b7b7;
+    background: #F5F5F5;
+}
+/*表格*/
+
+/*.market .wrapper-main .main-right .sideBarone .main-table table thead,.market .wrapper-main .main-right .sideBarone .main-table table thead tr,.market .wrapper-main .main-right .sideBarone .main-table table thead tr th{*/
+    /*height: 30px;*/
+    /*line-height: 30px;*/
+    /*text-align: center;*/
+/*}*/
+/*.market .wrapper-main .main-right .sideBarone .main-table table tbody, .market .wrapper-main .main-right .sideBarone .main-table table tbody tr,.market .wrapper-main .main-right .sideBarone .main-table table tbody tr td{*/
+    /*height: 25px;*/
+    /*line-height: 25px;*/
+    /*text-align: center;*/
+/*}*/
+.wrapper-main .main-right .sideBartwo .copy{
+    font-size: 16px;
+    padding: 20px;
+    background: #FFFFEE;
+    border: 1px solid #E9DDD1;
+    margin-bottom: 20px;
+}
+.wrapper-main .main-right .sideBartwo .copy a{
+    padding: 5px 5px;
+    background: orange;
+    color:#fff;
+    border-radius: 3px;
+    margin-left: 3px;
+    font-size: 12px;
+}
+.wrapper-main .main-right .sideBartwo .mend,.wrapper-main .main-right .sideBartwo .mend li{
+    height: 100px;
+}
+.wrapper-main .main-right .sideBartwo .mend li{
+    width: 25%;
+}
+.wrapper-main .main-right .sideBartwo  .Inquire{
+    width: 100%;
+}
+.wrapper-main .main-right .sideBartwo  .Inquire,.wrapper-main .main-right .sideBartwo .Inquire-time,.wrapper-main .main-right .sideBartwo  .Inquire .text-header{
+    height: 40px;
+}
+.Inquire .text-header{
+    height: 40px;
+    font-size: 18px;
+}
+#Inquire .Inquire-time{
+    width:500px;
+}
+.Inquire .Inquire-time{
+    width: 420px;
+    font-size: 0;
+}
+.Inquire .Inquire-time form{
+    width: 100%;
+    text-align: right;
+}
+/*.wrapper-main .main-right .sideBartwo  .Inquire .text-header{*/
+    /*line-height: 40px;*/
+    /*font-size: 18px;*/
+/*}*/
+/*.wrapper-main .main-right .sideBartwo  .Inquire .Inquire-time{*/
+    /*width:570px;*/
+/*}*/
+/*.wrapper-main .main-right .sideBartwo  .Inquire .Inquire-time form{*/
+    /*width: 100%;*/
+    /*text-align: right;*/
+/*}*/
+.Inquire-time input{
+    width:90px;
+    height: 20px;
+    font-size: 12px;
+    border:none;
+    outline:none;
+    padding-left: 5px;
+}
+.Inquire-time .label,.Inquire-time .main-child {
+    height: 30px;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+.Inquire-time .label,.Inquire-time .main-child input{
+    cursor: pointer;
+}
+.Inquire-time .main-child ,.click-main div{
+    border:1px solid #b7b7b7;
+}
+.Inquire-time .click-main div{
+    height: 30px;
+    width:50px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+    margin-left: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.wrapper-main .main-right .sideBartwo  .Inquire .Inquire-time form .label{
+    font-size: 14px;
+}

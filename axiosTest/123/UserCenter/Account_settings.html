@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>用户中心</title>
+</head>
+<link rel="stylesheet" href="user_css/user.css" />
+<link rel="stylesheet" type="text/css" href="user_css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="user_css/Account_setting.css"/>
+<body>
+<div class="black_wrap" style="display: none;"> </div>
+<div class="set_alert" style="display: none;">
+  <div class="alert_title">
+    <h4>MG客户端密码查询</h4>
+    <i></i> </div>
+  <div class="alert_content">
+    <ul>
+      <li><span>确认登录密码：</span>
+        <input type="password" id="login_pwd" />
+      </li>
+      <li class="alert_btn">
+        <input type="button" id="btn_getpwd" value = "查询"/>
+        <input type="button"  id="btn_cancle"  value = "取消" />
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="wrap">
+  <div class="top_bar clear">
+    <p><a href="../vzt6.html"><img src="http://image.beike188.com/POLY/user_img/bllogo.png" /></a></p>
+    <ul class="top_nav">
+      <li><a onclick="loadgame('HG','','PC');">体育赛事</a></li>
+      <li><a href="../Lobby/Live.html">视讯直播</a></li>
+      <li><a href="../Lobby/game_pt.html">PT电子</a></li>
+      <li><a href="../Lobby/game_Mg.html">MG电子</a></li>
+      <li><a href="../Promotion.html">优惠活动</a></li> <li><a href="">联系我们</a></li>
+    </ul>
+    <div class="header_info"> <a  class="first" href="javascript:;"></a>| <a class="last" href="##">注销</a> <a class="button" href="http://f88.live800.com/live800/chatClient/chatbox.jsp?companyID=779799&configID=144546&jid=9355144430" target="_blank">在线客服</a> </div>
+  </div>
+  <!--notice-->
+  <div class="notice">
+    <div class="eveb_header_notice">
+      <h4><i class="icon_small icon_header_notice"></i>公告：</h4>
+      <!--轮播-->
+      <div class="txtScroll-top">
+        <!--<div class="bd">
+          <ul class="infoList">
+            <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+            <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+            <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+            <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+            <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+            <li><span class="date">2011-11-11</span><a href="" target="_blank">温馨提示</a></li>
+            <li><span class="date">2011-11-11</span><a href="" target="_blank">新葡京线上娱乐城十存十送优惠</a></li>
+          </ul>
+        </div>
+        <div class="hd"> <a class="next"></a>
+          <ul>
+          </ul>
+          <a class="prev"></a> </div>-->
+          <!--文字滚动-->
+				        <div class="header-center_gd">
+				            <div class="picMarquee-left">
+				              <ul class="header_marquee" behavior="scroll">
+				              </ul>
+				            </div>
+				        </div>
+				        <!--文字滚动-end-->
+      </div>
+      <!--轮播-end-->
+    </div>
+  </div>
+  <!--notice-end-->
+  <ul class="user_nav clear">
+    <li ><a href="user_center.html"><i class="icon_home"></i>会员首页</a></li>
+    <li><a href="deposit.html"><i class="icon_bank"></i>存款</a></li>
+    <li><a href="drawing.html"><i class="icon_withdraw"></i>提款</a></li>
+    <li><a href="transfer_accounts.html"><i class="icon_transfer"></i>转账</a></li>
+    <!--<li><a href="messagelist.html"><i class="icon_letter"></i>站内信</a></li>
+    <li><a href="market.html"><i class="icon_market"></i>市场活动</a></li>-->
+    <li><a href="history.html"><i class="icon_record"></i>历史记录</a></li>
+    <li style="background-color: #ddb79a;"><a href="Account_settings.html"><i class="icon_set"></i>账户设置</a></li>
+  </ul>
+  <!--内容部分-->
+  <div class="set_content clear">
+    <ul class="con_left">
+      <li class="set_active">个人资料</li>
+      <li>登录密码</li>
+      <li>提款密码</li>
+    </ul>
+    <div class="con_right">
+      <div class="right_1">
+        <h2 class="set_content_h2"> <i class="set_content_i"></i>个人记录</h2>
+        <table border="1" cellspacing="1" cellpadding="0">
+          <tr>
+            <td class="set_tit">会员名</td>
+            <td id="username" class="set_wd"></td>
+            <td class="set_tit">手机号码</td>
+            <td class="set_wd" id="setmoile">-</td>
+          </tr>
+          <tr>
+            <td class="set_tit">真实姓名</td>
+            <td class="set_wd" id="set_username">-</td>
+            <td class="set_tit">电子邮箱</td>
+            <td class="set_wd" id="setemail">-</td>
+          </tr>
+          <tr>
+            <!--<td class="set_tit">生日</td>
+            <td class="set_wd">2017-2-12</td>-->
+            <td class="set_tit">注册时间</td>
+            <td class="set_wd" id="setregDate">-</td>
+            <td class="set_tit"></td>
+            <td class="set_wd"></td>
+            
+          </tr>
+          <!--<tr>
+            <td class="set_tit">MG客户端密码</td>
+            <td class="set_wd" id="wd_get" style="color:#ff6c00;cursor: pointer;">查询</td>
+            <td class="set_tit"></td>
+            <td class="set_wd"></td>
+          </tr>-->
+        </table>
+        <!--<p>请完善个人资料</p>-->
+      </div>
+      <div class="right_2" style="display: none;">
+        <h2 class="set_content_h2"><i class="set_content_i"></i>修改登录密码</h2>
+        <ul>
+          <li><span>原密码:</span>
+            <input type="password" name="" id="l_OldPwd" value="" />
+            <label>*请填写您原始的登录密码</label>
+          </li>
+          <li><span>新密码:</span>
+            <input type="password" name="" id="l_NewPwd" value="" />
+            <label>* 以字母开头，8-15位字母，数字组成</label>
+          </li>
+          <li><span>确认密码:</span>
+            <input type="password" name="" id="l_Confirmpwd" value=""/>
+            <label>* 请再次填写新密码</label>
+          </li>
+        </ul>
+        <p>
+          <input type="button" id = "changePassword"  class="p_input1" value="确认修改" />
+          <!-- <input type="button"  class="p_input2" value="重置" /> -->
+        </p>
+      </div>
+      <div class="right_3" style="display: none;">
+        <h2 class="set_content_h2"><i class="set_content_i"></i>修改提款密码</h2>
+        <ul>
+          <li><span>原密码:</span>
+            <input type="password" name="" id="t_OldPwd" value="" />
+            <label>*请填写您原始的提款密码</label>
+          </li>
+          <li><span>新密码:</span>
+            <input type="password" name="" id="t_NewPwd" value="" />
+            <label>* 6位数字(0-9)组成</label>
+          </li>
+          <li><span>确认密码:</span>
+            <input type="password" name="" id="t_Confirmpwd" value=""/>
+            <label>* 请再次填写新密码</label>
+          </li>
+        </ul>
+        <p>
+          <input type="button" id ="changeTpwd"  class="p_input1" value="确认修改" />
+          <!-- <input type="button"  class="p_input2" value="重置" /> -->
+        </p>
+      </div>
+    </div>
+  </div>
+  <!--底部-->
+  <div class="user_footer">
+    <div class="footer_link"> <a href="../help/index.html?key=0">关于我们</a>| <a href="../agent/index.html">代理专区</a>| <a href="../help/index.html?key=2">新手指南</a>| <a href="../help/index.html?key=1">联系我们</a>| <a href="../column/download.html">手机下注</a> </div>
+    <div class="copyright "> <p style="float:left;margin-right: 20px;">Copyright © 2017 天下网络 All Right Reserved</p>  <p style="float:left">PT游戏是由PT TransPacific在PAGCOR<img style="width:15px;" src="http://image.beike188.com/POLY/images/pagcorlogo.png">的授权下部署</p> </div>
+  </div>
+</div>
+<!--loading-->
+<div class="xploading_bg"></div>
+<div class="xploading" > <img src="http://image.beike188.com/POLY/images/xploading.gif" />Loading... </div>
+<!--loading-end-->
+<!--弹窗 黑底-->
+      <div class="eveb_popup_wraptbdcg"></div>
+      <!--弹窗 确定要修改密码-->
+      <div class="eveb_popupbdcg" id="eveb_popup_bank_bind_ok">
+        <div class="eveb_popup_hdbdcg">
+          <h4 class="fl">确认修改登录密码</h4>
+          <a class="icon_mini icon_close fr popupbdcg" title="关闭"></a> </div>
+        <div class="eveb_popup_bdbdcg">
+          <div class="eveb_popup_contentbdcg"> <span><i class="icon_big icon_ok_3"></i></span>
+            <p>确定要修改登录密码吗？</p>
+          </div>
+          <div class="eveb_popup_btn"> 
+          	<a name="pop_close" class="button_medium button_1 popupbdcg tc_confirm" id="tc_confirm">确定</a> 
+          	<a name="pop_close" class="button_medium button_1 popupbdcg tc_off">取消</a> 
+          </div>
+        </div>
+      </div>
+<!--弹窗 确定要修改密码-end-->
+
+<!--弹窗 黑底-->
+      <div class="eveb_popup_wraptbddele" id="eveb_popup_wraptbddele"></div>
+      <!--弹窗 银行删除成功-->
+      <div class="eveb_popupbddele" id="eveb_popup_bank_bind_dele">
+        <div class="eveb_popup_hdbdcg">
+          <h4 class="fl">登录密码修改成功</h4>
+          <a class="icon_mini icon_close fr popupbdcg popupbdcg_delde" title="关闭"></a> </div>
+        <div class="eveb_popup_bdbdcg">
+          <div class="eveb_popup_contentbdcg"> <span><i class="icon_big icon_ok_3"></i></span>
+            <p>登录密码修改成功！</p>
+          </div>
+          <div class="eveb_popup_btn"> <a name="pop_close" class="button_medium button_1 popupbdcg popupbd_dele">知道了</a> </div>
+        </div>
+      </div>
+<!--弹窗 银行删除成功-end-->
+
+
+
+<!--弹窗 黑底-->
+      <div class="eveb_popup_wraptbdcg"></div>
+      <!--弹窗 确定要修改提款密码吗-->
+      <div class="eveb_popupbdcg" id="eveb_popup_bank_bind_oktk">
+        <div class="eveb_popup_hdbdcg">
+          <h4 class="fl">确定要修改提款密码吗</h4>
+          <a class="icon_mini icon_close fr popupbdcg" title="关闭"></a> </div>
+        <div class="eveb_popup_bdbdcg">
+          <div class="eveb_popup_contentbdcg"> <span><i class="icon_big icon_ok_3"></i></span>
+            <p>确定要修改提款密码吗</p>
+          </div>
+          <div class="eveb_popup_btn"> 
+          	<a name="pop_close" class="button_medium button_1 popupbdcg" id="tk_ok">确定</a>
+          	<a name="pop_close" class="button_medium button_1 popupbdcg tc_off">取消</a> 
+          </div>
+        </div>
+      </div>
+      <!--弹窗 确定要修改提款密码吗-end-->
+
+
+
+
+</body>
+<script src="user_js/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="../personal/jquery.SuperSlide.2.1.1.js"></script>
+<script src="user_js/account_set.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="user_js/user.js" type="text/javascript" charset="utf-8"></script>
+<script src="user_js/user_center.js" type="text/javascript" charset="utf-8"></script>
+<script src="../personal/game_plat.js"></script>
+<script src="../personal/jquery.marquee.min.js"></script>
+<script type="text/javascript" src="../personal/page_common.js"></script>
+<!--<script type="text/javascript" src="../Scripts/page/checkinput.js"></script>-->
+<script src="../personal/loadpage.js"></script>
+<!--公告-->
+<!--<script type="text/javascript">
+    jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:1});
+</script>-->
+</html>
