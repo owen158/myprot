@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Title</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        .tadddd{
+            position: relative;
+            height: 40px;
+            width: 120px;
+            background: #e5e5e4;
+        }
+        .tadddd ul{
+            display: none;
+            position: absolute;
+            top: 38px;
+            left:0;
+            width: 120px;
+            height: 120px;
+            background: red;
+        }
+        .tadddd:hover ul , .tadddd:hover ul li{
+            list-style: none;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <div class="nav-left">sfsdfsdfsd</div>
+        <div class="nav-right">
+            <a href="javascript:void(0)" class="tad active">选项一</a>
+            <a href="index2.html" class="tad">选项二</a>
+            <a href="index3.html" class="tad">选项三</a>
+            <a href="index4.html" class="tad">选项四</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="row">
+            <video width="320" height="240" controls>
+                <source src="movie.mp4" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+                <source src="movie.webm" type="video/webm">
+                <object data="movie.mp4" width="320" height="240">
+                    <embed src="movie.swf" width="320" height="240">
+                </object>
+            </video>
+        </div>
+        <div class="tadddd">
+            显示隐藏内容
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+        <!--<video src="donghua.ogg" controls="controls">-->
+            <!--您的浏览器不支持 video 标签。-->
+        <!--</video>-->
+    </div>
+    <div class="footer">
+        版权所有 《082935》
+    </div>
+
+</body>
+</html>
