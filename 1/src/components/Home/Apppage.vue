@@ -4,7 +4,13 @@
         <span id="copy" @click="menu()" class="iconfont icon-tubiaozhizuomoban-copy"></span>
         <div  ref="wrapperBoxL"  class="wrapperBoxL">
             <h2>导航</h2>
-            <div @click="mainbox(),Jump($event)"  class="main" data-src="/">
+            <div @click="mainbox(),Jump($event)"  class="main" data-src="/AppPage/KaiyuanChess">
+                <span class="iconfont icon-majiang"></span>
+                <span class="tad">
+                    开元棋牌
+                </span>
+            </div>
+            <div @click="mainbox(),Jump($event)"  class="main" data-src="/AppPage/LooteryGame">
                 <span class="iconfont icon-shouye"></span>
                 <span class="tad">
                     彩票游戏
@@ -16,13 +22,13 @@
                     真人视讯
                 </span>
             </div>
-            <div @click="mainbox(),Jump($event)"  class="main" data-src="/AppPage/ElectronicGames">
+            <div @click="mainbox(),Jump($event)" class="main" data-src="/AppPage/ElectronicGames">
                 <span class="iconfont icon-dianziyouxi"></span>
                 <span  class="tad">
                     电子游戏
                 </span>
             </div>
-            <div @click="mainbox(),Jump($event)"  class="main" data-src="/AppPage/Sportsevents">
+            <div @click="mainbox(),Jump($event)" class="main" data-src="/AppPage/Sportsevents">
                 <span class="iconfont  icon-zuqiu"></span>
                 <span class="tad">
                     体育赛事
@@ -36,7 +42,7 @@
                         登录
                     </span>
                 </div>
-                <div @click="mainbox(),Jump($event)" data-src="/Registered"  class="main">
+                <div @click="mainbox(),Jump($event)" data-src="/Registered" class="main">
                     <span class="iconfont icon-freg"></span>
                     <span class="tad ">
                         注册
@@ -91,7 +97,7 @@
         </el-tabs>
         <el-container class="LiveVideo" style="padding-bottom: 1.1rem">
             <el-main>
-                <el-row style="margin-bottom: 0.75rem" class="A-Game" v-if="$route.params.name ==='KaiyuanChess' ">
+                <el-row style="margin-bottom: 0.75rem" class="A-Game" v-if="$route.params.name ==='KaiyuanChess'">
                     <el-col :span="8" v-for="v in KaiyuanChess">
                         <div class="A-Game-box" @click="EnterGame(v.Type,v.id,v.Mod,v.title)">
                             <div class="A-Game-Main" :class="v.cls">
@@ -101,7 +107,7 @@
                         </div>
                     </el-col>
                 </el-row>
-                <el-row class="A-Game" v-if="$route.params.name ==='LiveVideo' ">
+                <el-row class="A-Game" v-if="$route.params.name ==='LiveVideo'">
                     <el-col :span="8" v-for="v in LiveVideo">
                         <div class="A-Game-box" @click="EnterGame(v.Type,v.id,v.Mod,v.title)">
                             <div class="A-Game-Main" :class="v.cls">
@@ -131,7 +137,7 @@
                         </div>
                     </el-col>
                 </el-row>
-                <el-row class="A-Game" v-if="$route.params.name ==='LooteryGame' ">
+                <el-row class="A-Game" v-if="$route.params.name ==='LooteryGame'">
                     <el-tabs type="border-card">
                         <el-tab-pane label="IG 彩票 （新）">
                             <el-row class="A-Game">
@@ -400,6 +406,7 @@
             },
             Jump:function(event){
                 el = event.currentTarget;
+                this.activeName = el.getAttribute('data-src');
                 this.$router.push({path:el.getAttribute('data-src')});
             },
             EnterGame:function (type,id,moblie,title){
