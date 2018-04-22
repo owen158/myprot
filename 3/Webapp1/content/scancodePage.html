@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>
+			body {
+				background-image: url(../images/bg.jpg);
+			}
+			
+			.mui-bar {
+				background: linear-gradient(90deg, #734e31, #db9348, #734e31);
+				box-shadow: none;
+				color: #fef7ea;
+			}
+			
+			.mui-bar h1 {
+				color: #fef7ea;
+			}
+			
+			.mui-content {
+				background: transparent;
+			}
+			
+			.mui-bar a {
+				color: #fef7ea;
+			}
+			
+			.item {
+				display: none;
+			}
+			#no {
+				font-size: 15px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				color: #fef7ea;
+			}
+			.mui-card{
+				margin-top: 15px;
+				margin-bottom: 15px;;
+				background: #fef7ea;
+				padding: 10px 0;
+			}
+			.mui-btn-small {
+				padding: 5px 0;
+			}
+			.title{
+				padding-left: 10px;
+				color: #fef7ea;
+				
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mui-action-back">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">支付宝</h1>
+		</header>
+		<div class="mui-content">
+			<div class="item" id="off">
+				<div class="mui-card">
+					<div class="mui-card-header mui-card-media">
+						<!--<img src="../images/logo.png" />-->
+						<div class="mui-media-body">
+							<!--小M-->
+							<p>只能扫描支付哦，如有疑问请联系 <a id="chatClient" href="#">在线客服</a></p>
+						</div>
+						<!--<img class="mui-pull-left" src="../images/logo.png" width="34px" height="34px" />
+					<h2>小M</h2>
+					<p>发表于 2016-06-30 15:30</p>-->
+					</div>
+					<div class="mui-card-content" style="text-align: center;">
+						<img id="ImgCode" src="../images/yuantiao.jpg" alt="" width="50%" />
+					</div>
+					<div class="mui-card-footer">
+						扫描二维码付款成功后，填写汇款信息！
+						<!--<a class="mui-card-link">Like</a>
+						<a class="mui-card-link">Comment</a>
+						<a class="mui-card-link">Read more</a>-->
+					</div>
+				</div>
+				<p class="title">单笔限额 <span id="minquota"></span> - <span id="maxquota"></span> 元 </p>
+				<form class="mui-input-group">
+				    <div class="mui-input-row">
+				        <!--<label>密码框</label>-->
+				        <input id="amount" type="text" maxlength="7" placeholder="请输入存款金额">
+				    </div>
+				     <div class="mui-input-row">
+				        <!--<label>密码框</label>-->
+				        <input id="orderNum" type="text" maxlength="4" placeholder="请输入订单后4位">
+				    </div>
+				</form>
+				<p class="title">1.申请的存款金额必须与实际存款金额一致</p>
+				<p class="title">2.成功存款后，可点击【历史记录】查看详情</p>
+				<p class="title">3.支付遇到困难？请联系客服人员获得帮助</p>
+				<div class="mui-row">
+					<div class="mui-col-sm-4 mui-col-xs-4"></div>
+					<div class="mui-col-sm-4 mui-col-xs-4">
+						<button type="button" id="btn" class="mui-btn mui-btn-block mui-btn-primary mui-btn-small">确认</button>
+					</div>
+					<div class="mui-col-sm-4 mui-col-xs-4"></div>
+				</div>
+			</div>
+		</div>
+		<div class="item" id="no"></div></div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/app.js"></script>
+		<script type="text/javascript">
+			var obj = {
+                    id:'',
+                    amount:'',
+                    orderNum:'',
+                    transfertime:'',
+                    type:''
+                };
+			(function($, doc) {
+				$.init()
+				var self = plus.webview.currentWebview();
+				var idHtml = JSON.parse(self.name);
+				if(idHtml.jum === false) {
+					doc.getElementById('no').style.display = 'block';
+					doc.getElementById('off').style.display = 'none';
+					doc.getElementById('no').innerHTML = idHtml.data + '<a href="#" id="chatClient">在线客服</>'
+					doc.getElementById('chatClient').addEventListener('tap', function(e) {
+						app.Options.id = 'livechatvalue';
+						app.Options.url = app.Client;
+						app.open(app.Options, '在线客服');
+					})
+				} else {
+					doc.getElementById('no').style.display = 'none';
+					doc.getElementById('off').style.display = 'block';
+					doc.getElementById('maxquota').textContent = idHtml.data.maxquota;
+					doc.getElementById('minquota').textContent = idHtml.data.minquota;
+					doc.getElementById('ImgCode').setAttribute('src',idHtml.data.accountimg);
+					doc.getElementById('btn').addEventListener('tap',function(){
+						obj.id =idHtml.data.id;
+						obj.transfertime = app.GetDateT();
+						obj.type = idHtml.type;
+						obj.amount = doc.getElementById('amount').value;
+						obj.orderNum = doc.getElementById('orderNum').value;
+						if(!/^[0-9]+([.]\d{1,2})?$/.test(obj.amount) || (Number(obj.amount) < Number(idHtml.data.minquota) || Number(obj.amount) > Number(idHtml.data.maxquota))){
+							$.alert('请输入金额(例:'+idHtml.data.minquota+'.00),最高保留两位小数', '系统提示', function() {
+								doc.getElementById('amount').value = ''
+							});
+							return;
+						}
+						if(obj.orderNum.length < 4){
+							$.alert('请输入订单号', '系统提示', function() {
+								doc.getElementById('orderNum').value = ''
+							});
+							return;
+						}
+						plus.nativeUI.showWaiting();
+						app.ajax('alipayPaymentScanCode/getOrder',obj,function(data){
+							plus.nativeUI.closeWaiting();
+							if(data.status === "success"){
+								$.alert('提交成功！如有疑问，请及时联系在线客服确认存款信息，谢谢！', '系统提示', function() {
+									doc.getElementById('orderNum').value = '';
+									doc.getElementById('amount').value = '';
+								});
+							}else{
+								$.alert(data.msg, '系统提示', function() {
+									doc.getElementById('orderNum').value = '';
+									doc.getElementById('amount').value = '';
+								});
+							}
+						})
+					})
+				}
+			})(mui, document)
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,93 @@
+var HomeGames = {
+	LiveVideo:[
+		{id:'',type:'AGIN',mobile:"mobile",title:'AGIN国际厅',src:'images/LiveVideo/ag.png'},
+		{id:'1',type:'BBIN',mobile:"mobile",title:'BBIN视讯',src:'images/LiveVideo/bbin.png'},
+		{id:'',type:'CG',mobile:"",title:'Cagayan88',src:'images/LiveVideo/cg.png'},
+		{id:'',type:'DS',mobile:"",title:'DS太阳城',src:'images/LiveVideo/ds.png'},
+		{id:'',type:'OG',mobile:"",title:'OG视讯',src:'images/LiveVideo/og.png'},
+		{id:'3',type:'SB',mobile:"mobile",title:'申博视讯',src:'images/LiveVideo/sun.png'},
+	],
+	LooteryGame:{
+		NewIg:[
+			{id:'18',type:'IGPJLOTTERY',mobile:"MB",title:'IG彩票',src:"images/LooteryGame/x_11x5.png"},
+			{id:'36',type:'IGPJLOTTERY',mobile:"MB",title:'IG彩票',src:'images/LooteryGame/x_fc3d.png'},
+			{id:'3',type:'IGPJLOTTERY',mobile:"MB",title:'IG彩票',src:'images/LooteryGame/x_k3.png'},
+			{id:'4',type:'IGPJLOTTERY',mobile:"MB",title:'IG彩票',src:'images/LooteryGame/x_kl10f.png'},
+			{id:'28',type:'IGPJLOTTERY',mobile:"MB",title:'IG彩票',src:'images/LooteryGame/x_kl8.png'},
+			{id:'',type:'IGPJLOTTO',mobile:"MB",title:'IG彩票',src:'images/LooteryGame/x_lhc.png'},
+			{id:'44',type:'IGPJLOTTERY',mobile:"MB",title:'IG彩票',src:'images/LooteryGame/x_pcdd.png'},
+			{id:'2',type:'IGPJLOTTERY',mobile:"MB",title:'IG彩票',src:'images/LooteryGame/x_pk10.png'},
+			{id:'1',type:'IGPJLOTTERY',mobile:"MB",title:'IG彩票',src:'images/LooteryGame/x_ssc.png'},
+		],
+		Ig:[
+			{id:'2',type:'IGLOTTERY',mobile:"MB",title:'IG彩票',src:"images/LooteryGame/j_pk.png"},
+			{id:'1',type:'IGLOTTERY',mobile:"MB",title:'IG彩票',src:'images/LooteryGame/j_ssc.png'},
+			{id:'4',type:'IGLOTTERY',mobile:"MB",title:'IG彩票',src:'images/LooteryGame/j_kl.png'},
+			{id:'18',type:'IGLOTTERY',mobile:"MB",title:'IG彩票',src:'images/LooteryGame/j_11x5.png'},
+			{id:'28',type:'IGLOTTERY',mobile:"MB",title:'IG彩票',src:'images/LooteryGame/j_k8.png'},
+			{id:'',type:'IGLOTTO',mobile:"MB",title:'IG彩票',src:'images/LooteryGame/j_xgc.png'},
+			{id:'44',type:'IGLOTTERY',mobile:"MB",title:'IG彩票',src:'images/LooteryGame/j_pc.png'},
+			{id:'36',type:'IGLOTTERY',mobile:"MB",title:'IG彩票',src:'images/LooteryGame/j_3d.png'},
+			{id:'3',type:'IGLOTTERY',mobile:"MB",title:'IG彩票',src:'images/LooteryGame/j_k3.png'},
+		],
+		Vrgame:{
+			Popular:[
+				{id:'1',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/officail_vrjx2.png"},
+				{id:'2',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/officail_sc2.png"},
+				{id:'11',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/officail_sfc2.png"},
+				{id:'12',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/officail_vrhs2.png"},
+				{id:'13',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/officail_ft2.png"},
+				{id:'15',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/officail_vrbjl2.png"},
+				{id:'16',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/officail_vrsix2.png"},
+			],
+			AlwaysColorone:[
+				{id:'3',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/ssc1.png"},
+				{id:'4',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/xjsc.png"},
+				{id:'5',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/tjsc.png"},
+				{id:'6',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/gd115.png"},
+				{id:'7',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/jx115.png"},
+				{id:'8',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/bjc.png"},
+				{id:'9',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/ahk3.png"},
+				{id:'10',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/xyc.png"},
+				{id:'14',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/card.png"},
+			],
+			heightColor:[
+				{id:'34',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/vrsx.png"},
+				{id:'35',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/vrmx.png"},
+			],
+			VRanimate:[
+				{id:'36',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/vrsm.png"},
+				{id:'37',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/vryy.png"},
+				{id:'38',type:'VR',mobile:"MB",title:'',src:"images/LooteryGame/vrzxc.png"},
+			]
+		}
+
+	},
+	ElectronicGames:[
+		{id:'hb',type:'PT',mobile:"mobile",title:'PT电子',src:'images/ElectronicGames/pt.png'},
+		{id:'2',type:'BBIN',mobile:"",title:'BBIN电子',src:'images/ElectronicGames/bbin.png'},
+		{id:'',type:'HABA',mobile:"",title:'HABA电子',src:'images/ElectronicGames/haba.png'},
+		{id:'',type:'MG',mobile:"",title:'MG电子',src:'images/ElectronicGames/mg.png'},
+		{id:'4',type:'SB',mobile:"",title:'TGP电子',src:'images/ElectronicGames/sub.png'},
+		{id:'YP800',type:'YOPLAY',mobile:"mobile",title:'YOPLAY电子',src:'images/ElectronicGames/g_ag.png'},
+		
+	],
+	Sportsevents:[
+		{id:'',type:'HG',mobile:"MB",title:'皇冠体育',src:'images/Sportsevents/hg.png'},
+	],
+	KaiyuanChess:[
+		{id:'620',type:'KYQP',mobile:"mobile",title:'开元棋牌',src:'images/KaiyuanChess/dz.png'},
+		{id:'720',type:'KYQP',mobile:"mobile",title:'开元棋牌',src:'images/KaiyuanChess/ebg.png'},
+		{id:'600',type:'KYQP',mobile:"mobile",title:'开元棋牌',src:'images/KaiyuanChess/esyd.png'},
+		{id:'880',type:'KYQP',mobile:"mobile",title:'开元棋牌',src:'images/KaiyuanChess/qhb.png'},
+		{id:'860',type:'KYQP',mobile:"mobile",title:'开元棋牌',src:'images/KaiyuanChess/sg.png'},
+		{id:'870',type:'KYQP',mobile:"mobile",title:'开元棋牌',src:'images/KaiyuanChess/tbnn.png'},
+		{id:'900',type:'KYQP',mobile:"mobile",title:'开元棋牌',src:'images/KaiyuanChess/yzlh.png'},
+		{id:'220',type:'KYQP',mobile:"mobile",title:'开元棋牌',src:'images/KaiyuanChess/zjh.png'},
+		// {id:'',type:'KYQP',mobile:"mobile",title:'开元棋牌',src:''},
+		// {id:'',type:'KYQP',mobile:"mobile",title:'开元棋牌',src:''},
+		// {id:'',type:'KYQP',mobile:"mobile",title:'开元棋牌',src:''},
+		// {id:'',type:'KYQP',mobile:"mobile",title:'开元棋牌',src:''},
+		// {id:'',type:'KYQP',mobile:"mobile",title:'开元棋牌',src:''},
+	]	
+}

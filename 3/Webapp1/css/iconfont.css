@@ -1,0 +1,121 @@
+﻿
+@font-face {
+	font-family: "iconfont";
+
+  src: url('../fonts/iconfont.ttf');
+  /* IE9*/
+  src: url('../fonts/iconfont.ttf') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.ttf') format('woff'), /* chrome, firefox */
+  url('../fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.ttf') format('svg');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tuichu:before { content: "\e603"; }
+
+.icon-gerenzhongxin:before { content: "\e643"; }
+
+.icon-chongzhijilu:before { content: "\e68d"; }
+
+.icon-yinxingqia:before { content: "\e618"; }
+
+.icon-mima:before { content: "\e62a"; }
+
+.icon-jilu:before { content: "\e66b"; }
+
+.icon-zijinliushuimingxi:before { content: "\e62e"; }
+
+.icon-04_youhuihuodong:before { content: "\e634"; }
+
+.icon-fanhui:before { content: "\e605"; }
+
+.icon-chongzhijilu1:before { content: "\e61d"; }
+
+.icon-gerenziliao:before { content: "\e611"; }
+
+.icon-goumaijilu:before { content: "\e64d"; }
+
+.icon-qianbao:before { content: "\e602"; }
+
+.icon-shuaxin:before { content: "\e80a"; }
+
+.icon-chongzhijilu2:before { content: "\e662"; }
+
+
+
+
+[class^="x-icon"]{
+  display: inline-block;
+  margin: 0 auto;
+  background: url('../images/icon.png');
+  background-size:330px 350px;
+}
+.x-icon-pc{
+  width: 152px;
+  height: 46px;
+  background-position: -176px -52px;
+}
+/*&#xe63a;*/
+.x-icon-Online{
+  width: 48px;
+  height: 40px;
+  background-position:-48px 0;
+}
+.x-icon-home-logo{
+  width: 157px;
+  height: 40px;
+  background-position: -5px -55px;
+}
+.x-icon-logo{
+  width: 261px;
+  height: 70px;
+  background-position: -0px -99px;
+}
+.x-icon-Alipay{
+  width: 40px;
+  height: 40px;
+  background-position: -96px 0;
+}
+.x-icon-ScanCode{
+  width: 40px;
+  height: 40px;
+  background-position: -145px 0;
+}
+.x-icon-wechat{
+  width: 40px;
+  height: 40px;
+  background-position: -191px 0;
+}
+.x-icon-tenpay{
+  width: 41px;
+  height: 40px;
+  background-position: -237px 0;
+}
+.x-icon-Banktranfer{
+  width: 40px;
+  height: 40px;
+  background-position: 0 0;
+}
+/*/!************新增 2018 03 06**********!/*/
+.x-icon-Quick{
+  width: 41px;
+  height: 40px;
+  background-position: -284px 0;
+}
+.x-icon-Jingdong{
+  width: 41px;
+  height: 40px;
+  background-position: -237px -44px;
+}
+.x-icon-UnionPay{
+  width: 41px;
+  height: 40px;
+  background-position: -284px -44px;
+}

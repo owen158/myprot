@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        #div1,#div2,#div3,#div4,#div5,#div6{
+            float: left;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 12px;
+            border: 1px solid #000;
+            text-align: center;
+        }
+        *{
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        table { border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-size: 11px; font-family: Arial; margin: 0 auto; }
+        table td, table th { padding: 0; border: 1px solid #d8d8d8; height: 23px; width: 23px; text-align: center; color: #666; }
+        table th { font-weight: bold; color: #000; }
+    </style>
+</head>
+<body>
+<!--<div id="div1" class="div">50</div>-->
+<!--<div id="div2" class="div">40</div>-->
+<!--<div id="div3" class="div">40</div>-->
+<!--<div id="div4" class="div">40</div>-->
+<!--<div id="div5" class="div">40</div>-->
+<!--<div id="div6" class="div">40</div>-->
+<table id="zstable">
+    <thead>
+        <th>一</th>
+        <th>二</th>
+        <th>三</th>
+        <th>四</th>
+        <th>五</th>
+        <th>六</th>
+        <th>七</th>
+        <th>八</th>
+        <th>九</th>
+    </thead>
+    <tbody></tbody>
+</table>
+<!--<img  style="display: none" id="tulip" src="//192.168.0.140:82/mobileTX/images393/icon.png" alt="">-->
+<!--<canvas height="500" width="500" id="mycanvas"></canvas>-->
+<div id="my"></div>
+<script>
+    var ball = function () {
+        this.createTable = function (sum) {
+                var   tbody='';
+                for(var i=1;i<sum;i++){
+                    tbody +='<tr>';
+                    for (var j = 1; j <= 9; j++) {
+                        tbody +='<td id=T' + i + "_" + j + '>'+j+'</td>';
+                    }
+                    tbody += '</dr>';
+                }
+            $("#zstable tbody").html(tbody);
+
+        }
+        this.pushNum = function (sum) {
+            this.createTable(sum);
+            var objs = [];
+            for(var i =1;i< sum;i++){
+                objs.push("T" + i + "_" + Math.floor(1 + Math.random() * (10 - 1)))
+            }
+            this.init(objs)
+        }
+        this.init = function (objs) {
+            for(var i = objs.length - 1 ;i > 0;i--){
+                var tid = $("#" + objs[i]);
+                var fid = $("#" + objs[i - 1]);
+                var f_width = fid.outerWidth();
+                var f_height = fid.outerHeight();
+                var f_top = fid.offset().top;
+                var fid_left  =  fid.offset().left;
+                var t_top = tid.offset().top;
+                var tid_left = tid.offset().left;
+                var can_top = Math.min(f_top,t_top);
+                var can_left = Math.min(fid_left,tid_left);
+                tid.css('background','#ff7700').css('color','#ffffff');
+                fid.css('background','#ff7700').css('color','#ffffff');
+                var  cvs= document.createElement("canvas");
+                cvs.width  = Math.abs(fid_left - tid_left) < f_width ? f_width : Math.abs(fid_left - tid_left);
+                cvs.height = Math.abs(f_top - t_top);
+                cvs.style.top = can_top + parseInt(f_width / 2) + 'px';
+                cvs.style.left = can_left + parseInt(f_height / 2) + 'px';
+                cvs.style.position ='absolute';
+                var cxt  = cvs.getContext('2d');
+                cxt.save();
+                cxt.strokeStyle = '#ff7700';// 设置颜色
+                cxt.lineWidth = 1;// 设置线的宽度
+                cxt.lineJoin = "round";// 设置线的形状
+//                cxt.lineCap = 'round';
+                cxt.beginPath();//开始画线
+                cxt.moveTo(fid_left - can_left, f_top - can_top);
+                cxt.lineTo(tid_left - can_left, t_top - can_top);
+                cxt.closePath();// 结束
+                cxt.stroke();// 行程
+                cxt.restore();// 恢复
+                $("#my").append(cvs);
+
+            }
+        }
+    }
+    var balls = new ball();
+//    balls.pushNum(8);
+//    balls.pushNum(8);
+    balls.pushNum(30);
+    window.onresize=function () {
+//        balls.pushNum(30);
+    }
+//    balls.createTable(30);
+//    function init() {
+//            var el  = document.getElementsByClassName('div');
+//            var ttop = document.getElementById('div1').offsetTop;
+//            var tleft = document.getElementById('div1').offsetLeft;
+//            var ftop = document.getElementById('div6').offsetTop;
+//            var fleft = document.getElementById('div6').offsetLeft;
+//            var cvs_left = Math.min(fleft, tleft);
+//            var cvs_top = Math.min(ftop, ttop);
+//            var  cvs= document.createElement("canvas");
+//            cvs.width = Math.abs(fleft - tleft) < 80 ? 80 : Math.abs(fleft - tleft);
+//            cvs.height = Math.abs(ftop - ttop);
+//            cvs.style.top = (cvs_top) + parseInt(80 / 2) + "px";
+//            cvs.style.left = cvs_left + parseInt(80 / 2) + "px";
+//            cvs.style.position = "absolute";
+//            var cxt= cvs.getContext("2d");
+//            cxt.save();
+//            cxt.strokeStyle = '#ff7700';// 设置颜色
+//            cxt.lineWidth = 1;// 设置线的宽度
+//            cxt.lineJoin = "round";// 设置线的形状
+//            cxt.beginPath();//开始画线
+//            cxt.moveTo(fleft - cvs_top,ftop - cvs_left);
+//            cxt.lineTo(tleft - cvs_top,ttop - cvs_left);
+//            cxt.closePath();// 结束
+//            cxt.stroke();// 行程
+//            cxt.restore();// 恢复
+//            document.getElementById('my').appendChild(cvs)
+//    }
+//    window.onload = init();
+</script>
+</body>
+</html>

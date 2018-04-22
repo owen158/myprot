@@ -1,0 +1,340 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>提款页面</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<script src="../js/vue.js"></script>
+		<style type="text/css">
+			body {
+				background-image: url(../images/bg.jpg);
+			}
+			
+			.mui-bar {
+				background: linear-gradient(90deg, #734e31, #db9348, #734e31);
+				box-shadow: none;
+				color: #fef7ea;
+			}
+			
+			.mui-bar h1 {
+				color: #fef7ea;
+			}
+			
+			.mui-content {
+				background: transparent;
+			}
+			
+			.mui-bar a {
+				color: #fef7ea;
+			}
+			
+			.mui-input-group {
+				background: #ffefde;
+			}
+			
+			.mui-input-row label {
+				width: 30%;
+				font-size: 14px;
+				text-align: right;
+			}
+			
+			.mui-input-row label~input,
+			.mui-input-row label~select,
+			.mui-input-row label~textarea {
+				width: 70%;
+			}
+			
+			button[disabled],
+			html input[disabled] {
+				background: #e5e5e5;
+			}
+			
+			.mui-input-group .mui-input-row:nth-child(2),
+			.mui-input-group .mui-input-row:nth-child(1),
+			.mui-input-group .mui-input-row:nth-child(3) {
+				background: #e5e5e5;
+				margin: 0;
+			}
+			
+			.mui-input-row {
+				margin-top: 10px;
+			}
+			
+			.showApp {
+				width: 100%;
+				height: 100px;
+				margin: 15px 0;
+				padding: 15px 10px;
+				background: url(../images/cardbj.png) center no-repeat;
+			}
+			
+			.showApp p {
+				height: 25px;
+				line-break: 25px;
+				margin: 0;
+				padding: 0;
+				padding-left: 80px;
+				font-size: 16px;
+				color: #FFEFDE;
+			}
+			
+			.addcard {
+				/*margin-top: 30px;*/
+				width: 90%;
+				padding: 15px 0;
+				margin: 50px auto;
+				background: #FFEFDE;
+				border-radius: 3px;
+				text-align: center;
+			}
+			
+			.addcard span {
+				font-size: 70px;
+				color: #533523;
+			}
+			
+			.addcard .test {
+				line-height: 30px;
+				color: #533523;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mui-action-back">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">提款</h1>
+		</header>
+		<div class="mui-content" id="example">
+			<div class="addcard" @click='addcard()' id="addBank" v-if='judgment === false'>
+				<span class="mui-icon mui-icon-plus"></span>
+				<div id="addcard" class="test">点击添加银行卡</div>
+			</div>
+			<form class="mui-input-group" v-show="judgment">
+				<div class="showApp" v-for='item in cardsum'>
+					<p>{{item.card_username}}</p>
+					<p>{{item.bank_name}}</p>
+					<p>{{item.card_num}}</p>
+				</div>
+				<h5>您目前中心钱包账户余额为 : <span id="">0</span>元 </h6>
+				<div class="mui-input-row">
+						<label>卡号</label>
+						<input v-if='cardsum != ""' :value='cardsum[0].card_num' type="text" disabled="disabled" class="mui-input-clear" placeholder="必须与您的银行账户相同">
+					</div>
+					<div class="mui-input-row">
+						<label>要求打码量</label>
+						<input v-if='Config != ""' :value='Config.marking_quantity' type="text" disabled="disabled" class="mui-input-clear" placeholder="银行卡号">
+					</div>
+					<div class="mui-input-row" id="select">
+						<label>完成打码量</label>
+						<input v-if='Config != ""' :value="Config.user_quantity" type="text" disabled="disabled" class="mui-input-clear" placeholder="银行卡号">
+					</div>
+				<div class="mui-input-row">
+						<label>提款金额</label>
+						<input v-model="tk.credit" type="text" class="mui-input-clear" placeholder="提款金额 : ￥100 ~  500000">
+					</div>
+					<div class="mui-input-row">
+						<label>取款密码</label>
+						<input v-model="tk.password" type="password" maxlength="4" class="mui-input-clear" placeholder="请输入密码">
+					</div>
+					<div class="mui-button-row">
+						<button @click='submit()' type="button" class="mui-btn mui-btn-primary">确认</button>
+						<!--<button type="button" class="mui-btn mui-btn-danger">取消</button>-->
+					</div>
+			</form>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/app.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#example',
+				// 选项
+				data: {
+					ArrList: '',
+					money: '',
+					Config: '',
+					cardsum:'',
+					judgment:false,
+					tk: {
+						credit: '',
+						password: '',
+						cardid: ''
+					},
+				},
+				methods: {
+					addcard() {
+						mui.plusReady(function() {
+							mui.openWindow({
+								id: 'addBank',
+								url: 'addBank.html',
+								 extras:{
+							        name:'Withdrawal'
+							  	},
+								show: {
+									aniShow: 'pop-in'
+								},
+								styles: {
+									popGesture: 'hide'
+								},
+								waiting: {
+									autoShow: false
+								}
+							});
+						})
+					},
+					WithDraw(obj) {
+						plus.nativeUI.closeWaiting();
+						app.ajax('User/WithDraw', obj, function(data) {
+							plus.nativeUI.closeWaiting();
+							if(data.msg == "success") {
+								vm.tk.credit = '';
+								vm.tk.password = '';
+								app.getBalance(function(data){
+									vm.money = data;
+								})
+							} else {
+								plus.nativeUI.toast(data.msg);
+							}
+						})
+					},
+					submit() {
+						vm.tk.cardid = vm.cardsum[0].id;
+						if(!/^[0-9]+([.]\d{1,2})?$/.test(vm.tk.credit)) {
+							plus.nativeUI.toast('请输入金额(例:1.00),最高保留两位小数');
+							return;
+						}
+						if(Number(vm.tk.credit) < 100 || Number(vm.tk.credit) > 500000){
+							plus.nativeUI.toast('请输入金额100 - 500000,最高保留两位小数');
+							return;
+						}
+						if(!/^[0-9]{4}$/.test(vm.tk.password)) {
+							plus.nativeUI.toast('请输入提款密码');
+							return;
+						}
+						var btn = ["确定", "取消"],
+							texts = '';
+						if((Number(vm.Config.marking_quantity) > Number(vm.Config.user_quantity)) && (Number(vm.Config.withdraw_fee) > 0 || Number(vm.Config.withdraw_manage_fee) > 0)) {
+							texts = "未完成打码量,提款将收取" + vm.Config.withdrawConfig + "%的费率," + '且今日提款次数过多，提款将收取' + vm.Config.withdraw_fee + '%的手续费和' + vm.Config.withdraw_manage_fee + '元的行政费,是否继续提款？';
+							mui.confirm(texts, '系统提示', btn, function(e) {
+								if(e.index == 0) {
+									vm.WithDraw(vm.tk)
+								}
+							});
+						} else if(Number(vm.Config.marking_quantity) > Number(vm.Config.user_quantity)) {
+							texts = "未完成打码量,提款将收取" + vm.Config.withdrawConfig + "%的费率,是否继续提款？";
+							mui.confirm(texts, '系统提示', btn, function(e) {
+								if(e.index == 0) {
+									vm.WithDraw(vm.tk)
+								}
+							});
+						} else if(Number(vm.Config.withdraw_fee) > 0 || Number(vm.Config.withdraw_manage_fee) > 0) {
+							texts = "今日提款次数过多，提款将收取" + vm.Config.withdraw_fee + "%的费率+" + vm.Config.withdraw_manage_fee + '的行政费,是否继续提款？';
+							mui.confirm(texts, '系统提示', btn, function(e) {
+								if(e.index == 0) {
+									vm.WithDraw(vm.tk);
+								}
+							});
+						} else {
+							vm.WithDraw(vm.tk)
+						}
+					}
+				},
+			});
+				window.addEventListener('addbank', function(event) {
+					var id = event.detail;
+					vm.judgment = id.judgment;
+					if(id.judgment === true) {
+						app.ajax("User/getUserCard", {}, function(data) {
+							plus.nativeUI.closeWaiting();
+							if(data.length > 0) {
+								vm.judgment = true;
+								vm.cardsum = data;
+								app.setBankCard(data)
+								if(JSON.stringify(app.getUserBalance()) === '{}') {
+									app.getBalance(function(data){
+										vm.money = data;
+									})
+								} else {
+									vm.money = app.getUserBalance().balance
+								}
+								if(JSON.stringify(app.getConfig()) === '{}') {
+									app.ajax('User/selectWithdrawConfig', {}, function(Config) {
+										if(Config.status == "success") {
+											vm.Config = Config;
+											app.setConfig(Config);
+										} else if(Config.status == "faild") {}
+									})
+								} else {
+									vm.Config = app.getConfig();
+								}
+							} else {
+								plus.nativeUI.closeWaiting();
+								vm.judgment = false
+							}
+						})
+					}
+				});
+			(function($, doc) {
+				$.init();
+				if(JSON.stringify(app.getBankCard()) === '{}') {
+					app.ajax("User/getUserCard", {}, function(data) {
+						if(data.length > 0) {
+							vm.cardsum = data;
+							vm.judgment =true;
+							app.setBankCard(data);
+							if(JSON.stringify(app.getUserBalance()) === '{}') {
+												//获取钱包余额
+								app.getBalance(function(data){
+									vm.money = data;
+								})
+							} else {
+								vm.money = app.getUserBalance().balance
+							}
+							//获取打码量
+							if(JSON.stringify(app.getConfig()) === '{}') {
+								app.ajax('User/selectWithdrawConfig', {}, function(Config) {
+									if(Config.status == "success") {
+										vm.Config = Config;
+										app.setConfig(Config);
+									} else if(Config.status == "faild") {}
+								})
+							} else {
+								vm.Config = app.getConfig();
+							}
+						}else{
+							vm.judgment =false;
+						}
+					})
+				}else{
+					vm.judgment = true;
+					vm.cardsum = app.getBankCard();
+					//获取打码量
+					if(JSON.stringify(app.getConfig()) === '{}') {
+						// 获取打码量
+						app.ajax('User/selectWithdrawConfig', {}, function(Config) {
+							if(Config.status == "success") {
+								vm.Config = Config;
+								app.setConfig(Config);
+							} else if(Config.status == "faild") {}
+						})
+					}else{
+						vm.Config = app.getConfig();
+					}
+					//获取钱包
+					if(JSON.stringify(app.getUserBalance()) === '{}') {
+						//获取钱包余额
+						app.getBalance(function(data){
+							vm.money = data;
+						})
+					} else {
+						vm.money = app.getUserBalance().balance
+					}
+				}
+				
+			})(mui, document)
+		</script>
+	</body>
+
+</html>

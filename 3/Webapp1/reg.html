@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<style>
+			.mui-content{
+				background-image: url(images/bg.jpg);
+			}
+			.mui-bar {
+				background: linear-gradient(90deg, #734e31, #db9348, #734e31);
+				color: #ffd053;
+				border-bottom: none;
+				box-shadow: none;
+			}
+			.mui-bar h1 {
+				color: #fef7ea;
+			}
+			.mui-bar a{
+				color: #fef7ea;
+			}
+			.area {
+				margin: 20px auto 0px auto;
+			}
+			.mui-input-group:first-child {
+				margin-top: 20px;
+			}
+			.mui-input-group label {
+				width: 28%;
+			}
+			.mui-input-row label~input,
+			.mui-input-row label~select,
+			.mui-input-row label~textarea {
+				width: 72%;
+			}
+			.mui-checkbox input[type=checkbox],
+			.mui-radio input[type=radio] {
+				top: 6px;
+			}
+			.mui-content-padded {
+				margin-top: 25px;
+			}
+			.mui-btn {
+				padding: 10px;
+			}
+			input{
+				font-size: 14px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">注册</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>账号</label>
+					<input id='userName' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input id='passWord' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+				</div>
+				<div class="mui-input-row">
+					<label>手机号</label>
+					<input id='mobileNo' type="tel" class="mui-input-clear mui-input" placeholder="请输入手机号">
+				</div>
+				<div class="mui-input-row">
+					<label>真实姓名</label>
+					<input id='realName' type="text" class="mui-input-clear mui-input" placeholder="与您的银行账户名称相同，否则不能出款!">
+				</div>
+				<div class="mui-input-row">
+					<label>微信</label>
+					<input id='remark' type="text" class="mui-input-clear mui-input" placeholder="*微信">
+				</div>
+				<div class="mui-input-row">
+					<img style='background: red;;width: 80px;height: 40px;' id="imgCodes" src="" alt="" />
+				</div>
+			</form>
+			<div class="mui-content-padded">
+				<button id='reg' class="mui-btn mui-btn-block mui-btn-warning">注册</button>
+			</div>
+			<!--<div class="mui-content-padded">
+				<p>注册真实可用，注册成功后的用户可用于登录，但是示例程序并未和服务端交互，用户相关数据仅存储于本地。</p>
+			</div>-->
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/app.js"></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				 var regs ={
+                    userName:'',//用户名
+                    passWord: '',//密码
+                    repassWord:'',//确认密码
+                    mobileNo:'',//手机号
+                    imgcode:'',//验证码
+                    reguuid:'',//token
+                    qkpwd:'',//取款密码
+                    reqkpwd:'',//确认取款密码
+                    realName:'',//真实姓名
+                    cagent:'',//字段
+                    isMobile:1,//类型
+                    proxyname:'',//
+                    remark:''
+               };
+//             ;
+//console.log(app.linkSrc+'validateCode?timesp'+(new Date()).valueOf())
+//             app.ajax('validateCode?timesp'+(new Date()).valueOf(),{},function(data){
+//             	doc.getElementById('imgCodes').setAttribute('src',data)
+//             })
+				$.plusReady(function() {
+					var settings = app.getSettings();
+//					  userName:'',//用户名
+//                  passWord: '',//密码
+//                  repassWord:'',//确认密码
+//                  mobileNo:'',//手机号
+//                  imgcode:'',//验证码
+//                  reguuid:'',//token
+//                  qkpwd:'',//取款密码
+//                  reqkpwd:'',//确认取款密码
+//                  realName:'',//真实姓名
+//                  cagent:'',//字段
+//                  isMobile:1,//类型
+//                  proxyname:'',//
+//                  remark:''
+					var regButton = doc.getElementById('reg');
+					var userName = doc.getElementById('userName');
+					var passWord = doc.getElementById('passWord');
+					var mobileNo = doc.getElementById('mobileNo');
+					var realName = doc.getElementById('realName');
+					var remark = doc.getElementById('remark');
+					regButton.addEventListener('tap', function(event) {
+						var regInfo = {
+							account: accountBox.value,
+							password: passwordBox.value,
+							email: emailBox.value
+						};
+						var passwordConfirm = passwordConfirmBox.value;
+						if (passwordConfirm != regInfo.password) {
+							plus.nativeUI.toast('密码两次输入不一致');
+							return;
+						}
+						app.reg(regInfo, function(err) {
+							if (err) {
+								plus.nativeUI.toast(err);
+								return;
+							}
+							plus.nativeUI.toast('注册成功');
+							/*
+							 * 注意：
+							 * 1、因本示例应用启动页就是登录页面，因此注册成功后，直接显示登录页即可；
+							 * 2、如果真实案例中，启动页不是登录页，则需修改，使用mui.openWindow打开真实的登录页面
+							 */
+//							plus.webview.getLaunchWebview().show("pop-in",200,function () {
+//								plus.webview.currentWebview().close("none");
+//							});
+							//若启动页不是登录页，则需通过如下方式打开登录页
+//							$.openWindow({
+//								url: 'login.html',
+//								id: 'login',
+//								show: {
+//									aniShow: 'pop-in'
+//								}
+//							});
+						});
+					});
+				});
+			}(mui, document));
+		</script>
+	</body>
+
+</html>

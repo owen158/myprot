@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        /**{*/
+            /*-webkit-box-sizing: border-box;*/
+            /*-moz-box-sizing: border-box;*/
+            /*box-sizing: border-box;*/
+        /*}*/
+        table { border: 0; margin: 0; border-collapse: collapse; border-spacing: 0; font-size: 11px; font-family: Arial; margin: 0 auto; }
+        table td, table th { padding: 0; border: 1px solid #d8d8d8; height: 23px; width: 23px; text-align: center; color: #666; }
+        table th { font-weight: bold; color: #000; }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            CreateTable();
+            var ids = "";
+            for (var i = 1; i < 15; i++) {
+                ids+= "T" + i + "_" + Math.floor(1 + Math.random() * (7 - 1)) + ",";
+            }
+            ids = ids.substring(0, ids.length - 1);
+            CreateLine(ids, 20, "#ff6600", "canvasdiv", "#d5d5d5");
+        });
+        function CreateTable() {
+            var tbody = "";
+            var head = "<tr>";
+            for (var i = 1; i < 15; i++) {
+                head += "<th>H" + i + "</th>";
+                tbody += "<tr>";
+                for (var j = 1; j < 7; j++) {
+                    tbody += "<td id='T" + i + "_" + j + "'>" + j + "</td>";
+                }
+                tbody += "</tr>";
+            }
+            head += "</tr>";
+            $("#zstable thead").html(head);
+            $("#zstable tbody").html(tbody);
+        }
+        function CreateLine(ids, w, c, div, bg) {
+            var list = ids.split(",");
+            for (var j = list.length - 1; j > 0; j--) {
+                var tid = $("#" + list[j]);
+                var fid = $("#" + list[j - 1]);
+                var f_width = fid.outerWidth();
+                var f_height = fid.outerHeight();
+                var f_offset = fid.offset();
+                var f_top = f_offset.top;
+                var f_left = f_offset.left;
+                var t_offset = tid.offset();
+                var t_top = t_offset.top;
+                var t_left = t_offset.left;
+                var cvs_left = Math.min(f_left, t_left);
+                var cvs_top = Math.min(f_top, t_top);
+                tid.css("background", bg).css("color", "red");
+                fid.css("background", bg).css("color", "red");
+                var cvs = document.createElement("canvas");
+                cvs.width = Math.abs(f_left - t_left) < w ? w : Math.abs(f_left - t_left);
+                cvs.height = Math.abs(f_top - t_top);
+                cvs.style.top = cvs_top + parseInt(f_height / 2) + "px";
+                cvs.style.left = cvs_left + parseInt(f_width / 2) + "px";
+                cvs.style.position = "absolute";
+                var cxt = cvs.getContext("2d");
+                cxt.save();
+                cxt.strokeStyle = c;// 设置颜色
+                cxt.lineWidth = 1;// 设置线的宽度
+//                cxt.lineJoin = "round";// 设置线的形状
+                cxt.lineCap = 'round';
+                cxt.beginPath();//开始画线
+                cxt.moveTo(f_left - cvs_left, f_top - cvs_top);
+                cxt.lineTo(t_left - cvs_left, t_top - cvs_top);
+                cxt.closePath();// 结束
+                cxt.stroke();// 行程
+                cxt.restore();// 恢复
+                $("#" + div).append(cvs);
+            }
+        }
+    </script>
+</head>
+<body>
+<form id="form1" runat="server">
+    <table id="zstable">
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+    <div id="canvasdiv">
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,9 @@
+#app .A-Lo-Re,#app .TopHeader,#app .A-Logo,#app .wrapperBoxL ,#app .wrapperBoxR,#app #return{
+    top: 1.6rem;
+}
+#app #copy{
+    top:1.8rem;
+}
+#app{
+    margin-top: 1.6rem;
+}

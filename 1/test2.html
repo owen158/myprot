@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+<script>
+    var doc = document.getElementById('myCanvas');
+    var ctx = doc.getContext('2d');
+    ctx.beginPath();// 开始
+    ctx.lineCap='round';
+    ctx.shadowBlur=20;
+    ctx.shadowColor="black";
+    ctx.strokeStyle="#0000ff";
+    ctx.moveTo(20,20);
+    ctx.lineTo(200,20);
+    ctx.stroke();
+//    ctx.fill()
+</script>
+</body>
+</html>

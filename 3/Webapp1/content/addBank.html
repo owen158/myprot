@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>添加银行卡页面</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		<style>
+			body {
+				background-image: url(../images/bg.jpg);
+			}
+			
+			.mui-center {
+				margin-top: 50px;
+			}
+			
+			.mui-bar {
+				background: linear-gradient(90deg, #734e31, #db9348, #734e31);
+				box-shadow: none;
+				color: #fef7ea;
+			}
+			
+			.mui-bar h1 {
+				color: #fef7ea;
+			}
+			
+			.mui-bar a {
+				color: #fef7ea;
+			}
+			
+			.mui-input-group {
+				width: 100%;
+				margin: 0 auto;
+				padding: 15px 0;
+				background: #ffefde;
+			}
+			
+			.mui-input-row {
+				margin-bottom: 10px;
+				;
+			}
+			
+			.mui-input-row label {
+				font-size: 13px;
+				width: 30%;
+			}
+			
+			.mui-input-row label~input,
+			.mui-input-row label~select,
+			.mui-input-row label~textarea {
+				width: 70%;
+			}
+			
+			#select .mui-btn {
+				float: right;
+				width: 70%;
+			}
+			
+			.mui-btn-blue,
+			.mui-btn-primary,
+			input[type=submit] {
+				background: #f0ad4e;
+				color: #ffefde;
+				border: none;
+			}
+			
+			.mui-spinner {
+				width: 14px;
+				height: 14px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mui-action-back">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">添加银行卡</h1>
+		</header>
+		<div class="mui-center">
+			<p style="padding-left: 12px;">
+				为了您账户安全，真实姓名需要与绑定银行卡姓名一致
+			</p>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>真实用户名</label>
+					<input id="cardUserName" maxlength="18" type="text" class="mui-input-clear" placeholder="必须与您的银行账户相同">
+				</div>
+				<div class="mui-input-row">
+					<label>银行卡号</label>
+					<input id="cardNum" maxlength="19" type="text" class="mui-input-clear" placeholder="银行卡号">
+				</div>
+
+				<div class="mui-input-row" id="select">
+					<label>*银行</label>
+					<button style="margin: 0;padding-left: 0;float: left;text-align: left;border: none;" id='showUserPicker' data-value="" class="mui-btn mui-btn-block mui-btn-outlined" type='button'>选择银行种类</button>
+				</div>
+
+				<div class="mui-input-row">
+					<label>开户行</label>
+					<input id="cardAddress" maxlength="30" type="text" class="mui-input-clear" placeholder="开户行地址">
+				</div>
+				<div class="mui-input-row">
+					<label>取款密码</label>
+					<input id="password" type="password" maxlength="4" class="mui-input-clear" placeholder="请输入密码">
+				</div>
+				<div class="mui-button-row">
+					<!--<button type="button" id="submit" class="mui-btn mui-btn-warning">确认</button>-->
+					<button type="button" id="submit" data-loading-icon="mui-spinner mui-spinner-custom" class="mui-btn mui-btn-primary">确认</button>
+					<!--<button type="button" class="mui-btn mui-btn-danger">取消</button>-->
+				</div>
+			</form>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/app.js"></script>
+		<script src="../js/mui.picker.js"></script>
+		<script src="../js/mui.poppicker.js"></script>
+		<script type="text/javascript">
+			(function($, doc) {
+				$.init();
+				var old_back = $.back;
+				var self = plus.webview.currentWebview();
+				var idHtml = self.name;
+				$.back = function() {
+					var btn = ["确定", "取消"];
+					$.confirm('确认关闭当前添加银行卡页面？', '系统提示', btn, function(e) {
+						if(e.index == 0) {
+							//执行mui封装好的窗口关闭逻辑；
+							$.plusReady(function() {
+								var page = plus.webview.getWebviewById(idHtml);
+								$.fire(page, 'addbank', {
+									judgment: false,
+									obj: {}
+								});
+							})
+							old_back();
+						}
+					});
+				}
+
+				$.ready(function() {
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: '1',
+						text: '中国农业银行'
+					}, {
+						value: '2',
+						text: '中国银行'
+					}, {
+						value: '3',
+						text: '交通银行'
+					}, {
+						value: '4',
+						text: '中国建设银行'
+					}, {
+						value: '5',
+						text: '中国工商银行'
+					}, {
+						value: '6',
+						text: '中国邮政储蓄银行'
+					}, {
+						value: '7',
+						text: '招商银行'
+					}, {
+						value: '8',
+						text: '浦发银行'
+					}, {
+						value: '9',
+						text: '中国光大银行'
+					}, {
+						value: '10',
+						text: '中信银行'
+					}, {
+						value: '11',
+						text: '平安银行'
+					}, {
+						value: '12',
+						text: '中国民生银行'
+					}, {
+						value: '13',
+						text: '华夏银行'
+					}, {
+						value: '14',
+						text: '广发银行'
+					}, {
+						value: '15',
+						text: '北京银行'
+					}, {
+						value: '16',
+						text: '上海银行'
+					}, {
+						value: '17',
+						text: '兴业银行'
+					}]);
+					var showUserPickerButton = doc.getElementById('showUserPicker');
+
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							showUserPickerButton.innerText = items[0].text;
+							showUserPickerButton.setAttribute("data-value", items[0].value);
+						});
+					}, false);
+					//					$(document.body).on('tap', '#submit', function(e) {
+					//						$(this).button('loading');
+					//						setTimeout(function() {
+					//							$(this).button('reset');
+					//						}.bind(this), 10000);
+					//					});
+					var btn = doc.getElementById('submit');
+					btn.addEventListener("tap", function() {
+						var obj = {
+							cardUserName: doc.getElementById('cardUserName').value,
+							cardNum: doc.getElementById('cardNum').value,
+							cardAddress: doc.getElementById('cardAddress').value,
+							password: doc.getElementById('password').value,
+							bankCode: showUserPickerButton.getAttribute('data-value')
+						};
+						app.addbankcard(obj, function(err) {
+							if(err) {
+								plus.nativeUI.toast(err);
+								return ;
+							}
+							plus.nativeUI.showWaiting();
+							app.ajax('User/addUserCard', obj, function(data) {
+								plus.nativeUI.closeWaiting();
+								if(data.msg == 'success') {
+									plus.nativeUI.toast('添加成功！');
+									$.plusReady(function() {
+										var page = plus.webview.getWebviewById(idHtml);
+										$.fire(page, 'addbank', {
+											judgment: true,
+											obj: {}
+										});
+									})
+									old_back();
+								} else {
+									plus.nativeUI.toast(data.msg);
+								}
+							})
+						})
+						//						$(this).button('loading');
+
+						//						setTimeout(function() {
+						//							$(this).button('reset');
+						//						}.bind(this), 100000);
+					});
+				})
+			})(mui, document)
+		</script>
+	</body>
+
+</html>

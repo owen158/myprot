@@ -1,0 +1,146 @@
+.Bg-Active {
+  background: #fff;
+  color: #d62f27;
+}
+.Bg-menu {
+  background: #282828;
+}
+.Bg-notice {
+  background-image: linear-gradient(270deg, #0b002a, #1f1054, #0b002a);
+}
+.Bg-notice-size {
+  color: #333;
+}
+.Bg-menu-title-size {
+  color: #222;
+}
+.Bg-Nav {
+  background: #1e0f52;
+}
+@keyframes gradientChange {
+  100% {
+    background: linear-gradient(90deg, #e91e1e 0%, #6f27b0 100%);
+  }
+}
+.Bg-Ganrett-Title {
+  background: #d62f27;
+  color: #fff;
+}
+.Bg-Header-Title {
+  background: #d62f27 ;
+  color: #fff;
+}
+.Bg-Nav-Title {
+  background: #00ffff;
+  color: #000;
+}
+.Bg-Nav-Title-Active {
+  background: #e4e4e4;
+  color: #000;
+}
+.Bg-Footer {
+  background: #e4e4e4;
+  color: #0b002a;
+}
+.Bg-Btn {
+  display: block;
+  width: 90%;
+  margin: 0.2rem auto;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  font-size: 0.25rem;
+  color: #fff;
+  -moz-border-radius: 0.06rem;
+  -webkit-border-radius: 0.06rem;
+  border-radius: 0.06rem;
+  background: linear-gradient(90deg, #a01f0a 0%, #e91e1e 100%);
+  animation: gradientChange 1.5s infinite;
+}
+.A-search {
+  font-size: 0;
+  overflow: hidden;
+  height: 1.5rem;
+}
+.A-search .A-lf {
+  padding-top: 0.35rem;
+  text-align: center;
+}
+.A-search .HABA img {
+  width: 3.3rem;
+}
+.A-search .BBIN img {
+  width: 2.2rem;
+}
+.A-search .A-rf {
+  position: relative;
+  padding-top: 0.9rem;
+}
+.A-search .A-rf .A-sousuo-box {
+  position: relative;
+  background: #272829;
+  width: 3.2rem;
+  margin: 0 auto;
+  border-radius: 0.25rem;
+}
+.A-search .A-rf label {
+  width: 2.5rem;
+  display: block;
+}
+.A-search .A-rf label input {
+  width: 100%;
+  font-size: 0.25rem;
+  height: 0.5rem;
+  background: #272829;
+  border-radius: 0.25rem;
+  color: #fff;
+  outline: none;
+  padding-left: 0.1rem;
+}
+.A-search .A-rf span {
+  position: absolute;
+  right: 0rem;
+  top: 0rem;
+  width: 0.7rem;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  text-align: center;
+  color: #999;
+}
+.A-game-content-wrapper {
+  width: 100%;
+}
+.A-game-content-wrapper .A-title {
+  height: 0.8rem;
+  line-height: 0.8rem;
+  color: #fff;
+  text-align: left;
+  padding-left: 0.2rem;
+  font-size: 0.3rem;
+  background-image: linear-gradient(to bottom, #d62f27, #d62f27);
+}
+.A-game-content-wrapper .A-box {
+  padding: 0.1rem;
+  margin-top: 0.15rem;
+  height: 2.2rem;
+}
+.A-game-content-wrapper .A-box .A-box-child {
+  width: 2.3rem;
+  margin: 0 auto;
+  height: 2rem;
+  background: url("//192.168.0.140:82/mobileTX/images393/Home/BBIN/bg.png") no-repeat;
+  background-size: 100% 100%;
+}
+.A-game-content-wrapper .A-box .A-box-child .A-Img {
+  width: 2rem;
+  margin: 0 auto;
+  height: 1.37rem;
+  font-size: 0;
+  border-radius: 3px;
+}
+.A-game-content-wrapper .A-box .A-box-child .A-text {
+  height: 0.5rem;
+  width: 100%;
+  line-height: 0.5rem;
+  font-size: 0.23rem;
+  color: #fff;
+}

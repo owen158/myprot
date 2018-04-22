@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas {
+            /*transition:gogogo 0.4s linear ;*/
+            animation: 1s gogogo linear infinite normal;
+            /*-webkit-transition:gogogo 0.4s infinite linear ;*/
+            /*-moz-transition:gogogo 0.4s infinite linear ;*/
+            /*-o-transition:gogogo 0.4s infinite linear ;*/
+        }
+        canvas:hover {
+            transform:rotate(360deg) scale(1.2);
+            -webkit-transform:rotate(360deg) scale(1.2);
+            -moz-transform:rotate(360deg) scale(1.2);
+            -o-transform:rotate(360deg) scale(1.2);
+            -ms-transform:rotate(360deg) scale(1.2);
+        }
+        @-webkit-keyframes gogogo {
+            0%{
+                transform:rotate(0deg) scale(0.5);
+                /*-webkit-transform:rotate(0deg) scale(1.2);*/
+                /*-moz-transform:rotate(0deg) scale(1.2);*/
+                /*-o-transform:rotate(0deg) scale(1.2);*/
+                /*-ms-transform:rotate(0deg) scale(1.2);*/
+
+            }
+            50%{
+                transform:rotate(180deg) scale(0.8);
+                /*-webkit-transform:rotate(180deg) scale(1.2);*/
+                /*-moz-transform:rotate(180deg) scale(1.2);*/
+                /*-o-transform:rotate(180deg) scale(1.2);*/
+                /*-ms-transform:rotate(180deg) scale(1.2);*/
+            }
+            100%{
+                transform:rotate(360deg) scale(1.2);
+                /*-webkit-transform:rotate(360deg) scale(1.2);*/
+                /*-moz-transform:rotate(360deg) scale(1.2);*/
+                /*-o-transform:rotate(360deg) scale(1.2);*/
+                /*-ms-transform:rotate(360deg) scale(1.2);*/
+            }
+
+
+        }
+    </style>
+</head>
+<body>
+<!--<div>-->
+    <canvas height="500" width="500" id="myCanvas"></canvas>
+    <!--<h4>CSS3</h4>-->
+<!--</div>-->
+</body>
+<script type="text/javascript">
+
+//    //  技能
+//    var c = document.getElementById("process");
+//    var ctx = c.getContext('2d');
+//    var centerX = c.width/2;   //Canvas中心点x轴坐标
+//    var centerY = c.height/2;  //Canvas中心点y轴坐标
+//    var rad = Math.PI*2/100; //将360度分成100份，那么每一份就是rad度
+//    var speed = 0.4;         //加载的快慢就靠它了
+//    //  var sec = document.getElementById("section-5th");
+//    //滚动条距离顶部高度
+//    //  window.onscroll = function(){
+//    //          var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+//    //          if(sec.offsetTop < scrollTop + 100 && speed < 80){
+//    //              animate();
+//    //
+//    //          }
+//    //
+//    //      }
+//    animate();
+//
+//    function animate(){
+//        window.requestAnimationFrame(function(){
+//            if(speed < 80 ){
+//                animate();
+//            }
+//        });
+//        ctx.clearRect(0, 0, c.width, c.height);
+//        speed += 0.4;
+//        drawCircle(ctx,speed);
+//    };
+//
+//
+//    function drawCircle(ctx,percent){
+//        //画白色的静态圆
+//        ctx.save();
+//        ctx.strokeStyle = "#D8CCBE";
+//        ctx.lineWidth = 12;
+//        ctx.beginPath();
+//        ctx.arc(centerX, centerY, 68, 0, Math.PI*2, false);
+//        ctx.stroke();
+//        ctx.closePath();
+//        ctx.restore();
+//        //画进度环
+//        ctx.save();
+//        ctx.strokeStyle = "#E87E04";
+//        ctx.lineWidth = 12;
+//        ctx.beginPath();
+//        ctx.arc(centerX, centerY, 68, -Math.PI/2, -Math.PI/2 +percent*rad, false);
+////        ctx.stroke();
+//        ctx.fill();
+//        ctx.closePath();
+//        ctx.restore();
+//
+//        //百分比文字绘制
+//        ctx.save();
+//        ctx.fillStyle = "#474d5d";
+//        ctx.font = "bold 21px Arial";
+//
+//        //绘制字体并指定位置
+//        ctx.fillText(percent.toFixed(0) + '%', centerX-20, centerY+10);
+//        ctx.restore();
+//    }
+//****************************************************************
+//var canvas=document.getElementById("process");
+//var cxt=canvas.getContext("2d");
+////画一个空心圆
+////cxt.beginPath();
+////cxt.arc(200,200,50,0,360,false);
+//cxt.lineWidth=5;
+////cxt.strokeStyle="green";
+////cxt.stroke();//画空心圆
+////cxt.closePath();
+//////画一个实心圆
+////cxt.beginPath();
+////cxt.arc(200,100,50,0,360,false);
+////cxt.fillStyle="red";//填充颜色,默认是黑色
+////cxt.fill();//画实心圆
+////cxt.closePath();
+////空心和实心的组合
+//cxt.beginPath();
+////cxt.arc(80,80,50,0,1*Math.PI,false);
+////cxt.fillStyle="red";
+//cxt.arc(80,80,50,0.5*Math.PI,2*Math.PI,false);
+//cxt.fillStyle="#000";
+//cxt.fill();
+//cxt.strokeStyle="green";
+//cxt.stroke();
+//cxt.closePath();
+//cxt.beginPath();
+////cxt.arc(80,80,50,0,1*Math.PI,false);
+////cxt.fillStyle="red";
+//cxt.arc(80,80,50,2*Math.PI,0.5*Math.PI,false);
+//cxt.fillStyle="red";
+//cxt.fill();
+//cxt.strokeStyle="green";
+//cxt.stroke();
+//cxt.closePath();
+
+//*********************************************
+//var canvas=document.getElementById("process");
+////var cxt=canvas.getContext("2d");
+//var cxt = canvas.getContext('2d'); //创建context对象
+//cxt.strokeStyle="#000"; //设置或返回用于笔触的颜色、渐变或模式
+////cxt.lineCap = 'square'; //设置或返回线条的结束端点样式
+//cxt.beginPath(); //起始一条路径，或重置当前路径
+//cxt.moveTo(100,100); //把路径移动到画布中的指定点，不创建线条
+//
+//function draw(current){
+//    cxt.fillStyle = '#FF0000'; //设置或返回用于填充绘画的颜色、渐变或模式 染成红色
+//cxt.lineTo(100,0); //添加一个新点，然后在画布中创建从该点到最后指定点的线条
+//    cxt.arc(100,100,40,-0.5*Math.PI,0.5*(2*Math.PI) - Math.PI/2,false); //绘制一个中心点为（100,100），半径为100，起始点为1.5*Math.PI,终点为2*Math.PI,顺时针的1/4圆
+//    cxt.arc(100,100,40,0*Math.PI,0.5*(2*Math.PI) - Math.PI/2,false); //绘制一个中心点为（100,100），半径为100，起始点为1.5*Math.PI,终点为2*Math.PI,顺时针的1/4圆
+//    cxt.arc(100,100,40,1*Math.PI,0.5*(2*Math.PI) - Math.PI/2,false); //绘制一个中心点为（100,100），半径为100，起始点为1.5*Math.PI,终点为2*Math.PI,顺时针的1/4圆
+//    cxt.closePath(); //创建从当前点回到起始点的路径
+//    cxt.fill();//填充当前绘图（路径）
+////cxt.lineWidth = 10.0; //设置或返回当前的线条宽度
+//    cxt.stroke(); //绘制已定义的路径
+////    var t=0;
+////    t += 0.005;
+////    requestAnimationFrame(draw(t))
+////    cxt.lineTo(100,0); //添加一个新点，然后在画布中创建从该点到最后指定点的线条
+//
+////    cxt.arc(100,100,40,0,0.5*(2*Math.PI) - Math.PI/2,false); //绘制一个中心点为（100,100），半径为100，起始点为1.5*Math.PI,终点为2*Math.PI,顺时针的1/4圆
+////    cxt.fillStyle = '#FF0'; //设置或返回用于填充绘画的颜色、渐变或模式 染成红色
+////    cxt.closePath(); //创建从当前点回到起始点的路径
+////    cxt.fill();//填充当前绘图（路径）
+//////cxt.lineWidth = 10.0; //设置或返回当前的线条宽度
+////    cxt.stroke(); //绘制已定义的路径
+//}
+//draw(0.6);
+//var t=0;
+//var timer=null;
+//function loadCanvas(now){
+//    timer = setInterval(function(){
+//        if(t>now){
+//            draw(now);//最后一次绘制
+//            clearInterval(timer);
+//        }else{
+//            draw(t);
+//            t+=0.005;
+//        }
+//    },5);
+//}
+//loadCanvas(0.8);
+//timer=null;
+
+    //*************************
+var myCanvas = document.getElementById("myCanvas");
+myCanvas.width = 50;
+myCanvas.height = 50;
+
+var _ctx = myCanvas.getContext("2d");
+//画线
+function drawLine(ctx, startX, startY, endX, endY){
+    ctx.beginPath();
+    ctx.moveTo(startX,startY);
+    ctx.lineTo(endX,endY);
+    ctx.stroke();
+}
+//画弧
+function drawArc(ctx, centerX, centerY, radius, startAngle, endAngle){
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+    ctx.stroke();
+}
+//画圆
+function drawPieSlice(ctx,centerX, centerY, radius, startAngle, endAngle, color ){
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.moveTo(centerX,centerY);
+    ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+    ctx.closePath();
+    ctx.fill();
+}
+//drawLine(_ctx,100,100,200,200);
+//drawArc(_ctx, 150,150,150, 0, Math.PI/3);
+//drawPieSlice(_ctx, 150,150,150, Math.PI/2, Math.PI/2 + Math.PI/4, '#ff0000');
+//drawPieSlice(_ctx, 150,150,150, Math.PI/16,Math.PI/4+Math.PI/4, '#ff0000');
+var myVinyls = {
+    "Classical music": 10,
+    "Alassical music": 9,
+    "Alternative rock": 14,
+    "Rlternative rock": 7,
+    "Pop": 2,
+    "Jazz": 12,
+    "Hazz": 5,
+};
+var colors =[
+    "#fde23e","#f16e23", "#57d9ff","#937e88","#ff7700","#007700","#bbbbbb"
+]
+//colors.
+var Piechart = function(options){
+    this.options = options;
+    this.canvas = options.canvas;
+    this.ctx = this.canvas.getContext("2d");
+    this.colors = options.colors;
+
+    this.draw = function(){
+        var total_value = 0;
+        var color_index = 0;
+        for (var categ in this.options.data){
+            var val = this.options.data[categ];
+            total_value += val;
+        }
+        var start_angle = 0;
+        for (categ in this.options.data){
+            val = this.options.data[categ];
+            var slice_angle = 2 * Math.PI * val / total_value;
+            console.log(slice_angle)
+            drawPieSlice(
+                this.ctx,
+                this.canvas.width/2,
+                this.canvas.height/2,
+                Math.min(this.canvas.width/2,this.canvas.height/2),
+                start_angle,
+                start_angle+slice_angle,
+                this.colors[color_index%this.colors.length]
+            );
+            start_angle += slice_angle;
+            color_index++;
+        }
+        if (this.options.doughnutHoleSize){
+            drawPieSlice(
+                this.ctx,
+                this.canvas.width/2,
+                this.canvas.height/2,
+                this.options.doughnutHoleSize * Math.min(this.canvas.width/2,this.canvas.height/2),
+                0,
+                2 * Math.PI,
+                "#ffffff"
+            );
+        }
+    }
+}
+var myPiechart = new Piechart({canvas:myCanvas, data:myVinyls, colors:colors,doughnutHoleSize:0.8});
+myPiechart.draw()
+</script>
+</html>

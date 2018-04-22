@@ -1,0 +1,448 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>查询页面</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mui.picker.min.css" />
+		<link rel="stylesheet" href="../css/mui.poppicker.css" />
+		<style>
+			body {
+				background-image: url(../images/bg.jpg);
+			}
+			
+			.mui-bar {
+				background: linear-gradient(90deg, #734e31, #db9348, #734e31);
+				box-shadow: none;
+				color: #fef7ea;
+			}
+			
+			.mui-bar h1 {
+				color: #fef7ea;
+			}
+			
+			.mui-content {
+				padding: 0 15px;
+				background: transparent;
+			}
+			
+			.mui-bar a {
+				color: #fef7ea;
+			}
+			
+			.center {
+				text-align: center;
+			}
+			
+			.title {
+				padding-left: 5px;
+				color: #E6C7AA;
+				font-weight: 900;
+				font-size: 16px;
+				;
+				line-height: 30px;
+			}
+			
+			.Records {
+				display: none;
+			}
+			
+			.btn {
+				margin-top: 30px;
+				;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mui-action-back">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">筛选</h1>
+		</header>
+		<div class="mui-content">
+			<p class="title">时间:</p>
+			<div class="mui-row">
+				<div class="mui-col-xs-6 mui-col-sm-6 center">
+					<button id='bdate' style="font-size: 13px;" data-options='{"type":"date","beginYear":2010,"beginMonth":10,"endYear":2020}' class=" mui-btn mui-btn-warning">选择日期时间</button>
+				</div>
+				<div class="mui-col-xs-6 mui-col-sm-6 center">
+					<button id='edate' style="font-size: 13px;" data-options='{"type":"date","beginYear":2010,"beginMonth":10,"endYear":2020}' class=" mui-btn mui-btn-warning">选择日期时间</button>
+				</div>
+			</div>
+			<div id="TransferRecords" class="Records">
+				<p class="title">游戏类型:</p>
+				<div class="mui-row">
+					<div class="mui-col-xs-6 mui-col-sm-6 center">
+						<button style="width: 90%;" data-type="" id='GameType' style="font-size: 13px;" class="mui-btn mui-btn-warning"> 所 有 </button>
+					</div>
+				</div>
+				<p class="title">分类:</p>
+				<div class="mui-row">
+					<div class="mui-col-xs-6 mui-col-sm-6 center">
+						<button style="width: 90%;" data-type="" id='gaming' style="font-size: 13px;" class="mui-btn mui-btn-warning"> 全 部 </button>
+
+					</div>
+
+				</div>
+				<div class="mui-row center">
+					<button id="btn" class="mui-btn btn mui-btn-warning mui-btn-block"> 确 认 </button>
+				</div>
+			</div>
+			<div id="RechargeRecord" class="Records">
+				<p class="title">分类:</p>
+				<div class="mui-col-xs-6 mui-col-sm-6 center">
+					<button data-type="" style="width: 90%;" id='Type' style="font-size: 13px;" data-options='{"type":"date","beginYear":2010,"beginMonth":10,"endYear":2020}' class="mui-btn mui-btn-warning">全部</button>
+				</div>
+				<p class="title">状态:</p>
+				<div class="mui-col-xs-6 mui-col-sm-6 center">
+					<button data-type="" style="width: 90%;" id='statu' style="font-size: 13px;" data-options='{"type":"date","beginYear":2010,"beginMonth":10,"endYear":2020}' class="mui-btn mui-btn-warning">所有</button>
+				</div>
+				<div class="mui-row center">
+					<button id="btns" class="mui-btn btn mui-btn-warning mui-btn-block"> 确 认 </button>
+				</div>
+			</div>
+			<div id="WithdrawalsRecord" class="Records">
+				<p class="title">状态:</p>
+				<div class="mui-col-xs-6 mui-col-sm-6 center">
+					<button data-type="" style="width: 90%;" id='Withdrawalsstatu' data-options='{"type":"date","beginYear":2010,"beginMonth":10,"endYear":2020}' class="mui-btn mui-btn-warning">全部</button>
+				</div>
+				<div class="mui-row center">
+					<button id="Withdrawalsbtn" class="mui-btn btn mui-btn-warning mui-btn-block"> 确 认 </button>
+				</div>
+			</div>
+			<div id="CapitalRecord" class="Records">
+				<div class="mui-row center">
+					<button id="CapitalRecordbtn" class="mui-btn btn mui-btn-warning mui-btn-block"> 确 认 </button>
+				</div>
+			</div>
+			<div id="bettingRecord" class="Records">
+				<div class="mui-row">
+					<p class="title">游戏类型:</p>
+					<div class="mui-col-xs-6 mui-col-sm-6 center">
+						<button style="width: 90%;" data-type="IGPJ" id='type' style="font-size: 13px;" class="mui-btn mui-btn-warning"> IG彩票(新) </button>
+					</div>
+				</div>
+				<div class="mui-row center">
+					<button id="bettingRecordbtn" class="mui-btn btn mui-btn-warning mui-btn-block"> 确 认 </button>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.min.js"></script>
+		<script src="../js/mui.poppicker.js"></script>
+		<script src="../js/app.js"></script>
+		<script type="text/javascript">
+			(function($, doc) {
+				$.init({
+					swipeBack: true,
+				});
+				var self = plus.webview.currentWebview();
+				var idHtml = self.name;
+				var page = plus.webview.getWebviewById(idHtml);
+				var bdate = doc.getElementById('bdate');
+				var edate = doc.getElementById('edate');
+
+				var old_back = $.back;
+				bdate.addEventListener('tap', function() {
+					var _self = this;
+					app.EndData(bdate, _self)
+				}, false);
+				edate.addEventListener('tap', function() {
+					var _self = this;
+					app.EndData(edate, _self);
+				}, false);
+				if(idHtml === 'TransferRecords') {
+					doc.getElementById('TransferRecords').style.display = 'block'
+					var gaminguserPicker = new $.PopPicker();
+					gaminguserPicker.setData([{
+						text: '全部',
+						value: '',
+					}, {
+						text: '转入平台',
+						value: 'OUT',
+					}, {
+						text: '转入游戏',
+						value: 'IN',
+					}]);
+					var gaming = doc.getElementById('gaming');
+					gaming.addEventListener('tap', function(event) {
+						gaminguserPicker.show(function(items) {
+							gaming.innerText = items[0].text;
+							gaming.setAttribute("data-type", items[0].value);
+						});
+					}, false);
+					var GameTypes = new $.PopPicker();
+					GameTypes.setData(app.game);
+					var GameType = doc.getElementById('GameType');
+					GameType.addEventListener('tap', function(event) {
+						GameTypes.show(function(items) {
+							GameType.innerText = items[0].text;
+							GameType.setAttribute("data-type", items[0].value);
+						});
+					}, false);
+					var btn = doc.getElementById('btn');
+					btn.addEventListener('tap', function(event) {
+						console.log(1);
+						var Type = GameType.getAttribute("data-type");
+						var Types = gaming.getAttribute("data-type");
+						var pager = {
+							pageSize: 5,
+							pageNo: 1,
+							bdate: '',
+							edate: '',
+							Type: Type,
+							Ttype: Types
+						};
+						if(bdate.innerHTML === '选择日期时间') {
+							pager.bdate = app.datatboy(0);
+						} else {
+							pager.bdate = bdate.innerHTML;
+						}
+						if(edate.innerHTML === '选择日期时间') {
+							pager.edate = app.datatboy(0);
+						} else {
+							pager.edate = edate.innerHTML;
+						}
+						$.plusReady(function() {
+							var page = plus.webview.getWebviewById(idHtml);
+							$.fire(page, 'Inquire', pager);
+							$.openWindow({
+								id: idHtml,
+								url: idHtml + 'html',
+								show: {
+									aniShow: 'pop-in'
+								},
+								styles: {
+									popGesture: 'hide'
+								},
+								waiting: {
+									autoShow: false
+								}
+							});
+						});
+					})
+				} else if(idHtml === 'RechargeRecord') {
+					doc.getElementById('RechargeRecord').style.display = 'block';
+					var Types = new $.PopPicker();
+					Types.setData([{
+						text: '全部',
+						value: '',
+					}, {
+						text: '网银',
+						value: '网银',
+					}, {
+						text: '微信',
+						value: '微信',
+					}, {
+						text: '支付宝',
+						value: '支付宝',
+					}, {
+						text: '银行汇款',
+						value: '银行汇款',
+					}]);
+					var Type = doc.getElementById('Type');
+					Type.addEventListener('tap', function(event) {
+						Types.show(function(items) {
+							Type.innerText = items[0].text;
+							Type.setAttribute("data-type", items[0].value);
+						});
+					}, false);
+					var status = new $.PopPicker();
+					status.setData([{
+						text: '所有',
+						value: '',
+					}, {
+						text: '处理中',
+						value: '处理中',
+					}, {
+						text: '交易失败',
+						value: '交易失败',
+					}, {
+						text: '交易成功',
+						value: '交易成功',
+					}]);
+					//					status
+					var statu = doc.getElementById('statu');
+					statu.addEventListener('tap', function(event) {
+						status.show(function(items) {
+							statu.innerText = items[0].text;
+							statu.setAttribute("data-type", items[0].value);
+						});
+					}, false);
+					var btns = doc.getElementById('btns');
+					btns.addEventListener('tap', function(event) {
+						var obj = {
+							pageSize: 5,
+							pageNo: 1,
+							bdate: '',
+							edate: '',
+							Type: Type.getAttribute("data-type"),
+							status: statu.getAttribute("data-type")
+						}
+						if(bdate.innerHTML === '选择日期时间') {
+							obj.bdate = app.datatboy(0);
+						} else {
+							obj.bdate = bdate.innerHTML;
+						}
+						if(edate.innerHTML === '选择日期时间') {
+							obj.edate = app.datatboy(0);
+						} else {
+							obj.edate = edate.innerHTML;
+						}
+						$.plusReady(function() {
+							var page = plus.webview.getWebviewById(idHtml);
+							$.fire(page, 'Inquire', obj);
+							$.openWindow({
+								id: idHtml,
+								url: idHtml + 'html',
+								show: {
+									aniShow: 'pop-in'
+								},
+								styles: {
+									popGesture: 'hide'
+								},
+								waiting: {
+									autoShow: false
+								}
+							});
+						});
+					})
+				}else if( idHtml === 'WithdrawalsRecord'){
+					doc.getElementById('WithdrawalsRecord').style.display = 'block';
+					var Withdrawalsstatus = new $.PopPicker();
+					Withdrawalsstatus.setData([{
+						text: '所有',
+						value: '',
+					}, {
+						text: '交易中',
+						value: '0',
+					}, {
+						text: '交易失败',
+						value: '2',
+					}, {
+						text: '交易成功',
+						value: '1',
+					}]);
+					var Withdrawalsstatu = doc.getElementById('Withdrawalsstatu');
+					Withdrawalsstatu.addEventListener('tap', function(event) {
+						Withdrawalsstatus.show(function(items) {
+							Withdrawalsstatu.innerText = items[0].text;
+							Withdrawalsstatu.setAttribute("data-type", items[0].value);
+						});
+					}, false);
+					var Withdrawalsbtn = doc.getElementById('Withdrawalsbtn');
+
+					Withdrawalsbtn.addEventListener('tap', function(event) {
+						var obj = { pageSize: 5, pageNo: 1, bdate: '', edate: '', status: Withdrawalsstatu.getAttribute("data-type") };
+						if(bdate.innerHTML === '选择日期时间') {
+							obj.bdate = app.datatboy(0);
+						} else {
+							obj.bdate = bdate.innerHTML;
+						}
+						if(edate.innerHTML === '选择日期时间') {
+							obj.edate = app.datatboy(0);
+						} else {
+							obj.edate = edate.innerHTML;
+						}
+						$.plusReady(function() {
+							var page = plus.webview.getWebviewById(idHtml);
+							$.fire(page, 'Inquire', obj);
+							$.openWindow({
+								id: idHtml,
+								url: idHtml + 'html',
+								show: {
+									aniShow: 'pop-in'
+								},
+								styles: {
+									popGesture: 'hide'
+								},
+								waiting: {
+									autoShow: false
+								}
+							});
+						});
+					})
+				}else if(idHtml === 'CapitalRecord'){
+					doc.getElementById('CapitalRecord').style.display = 'block';
+					var CapitalRecordbtn = doc.getElementById('CapitalRecordbtn');
+					CapitalRecordbtn.addEventListener('tap', function(event) {
+						var obj = { pageSize: 5, pageNo: 1, startTime: "", endTime: "" };
+						if(bdate.innerHTML === '选择日期时间') {
+							obj.startTime = app.datatboy(0)+' ' +'00:00:00';
+						} else {
+							obj.startTime = bdate.innerHTML+' ' +'23:59:59';
+						}
+						if(edate.innerHTML === '选择日期时间') {
+							obj.endTime = app.datatboy(0)+' ' +'00:00:00';
+						} else {
+							obj.endTime = edate.innerHTML+' ' +'23:59:59';
+						}
+						$.plusReady(function() {
+							var page = plus.webview.getWebviewById(idHtml);
+							$.fire(page, 'Inquire', obj);
+							$.openWindow({
+								id: idHtml,
+								url: idHtml + 'html',
+								show: {
+									aniShow: 'pop-in'
+								},
+								styles: {
+									popGesture: 'hide'
+								},
+								waiting: {
+									autoShow: false
+								}
+							});
+						});
+					})
+				}else if(idHtml === 'bettingRecord'){
+					doc.getElementById('bettingRecord').style.display = 'block';
+					var types = new $.PopPicker();
+					types.setData(app.game);
+					var type = doc.getElementById('type');
+					type.addEventListener('tap', function(event) {
+						types.show(function(items) {
+							type.innerText = items[0].text;
+							type.setAttribute("data-type", items[0].value);
+						});
+					}, false);
+					var bettingRecordbtn = doc.getElementById('bettingRecordbtn');
+					bettingRecordbtn.addEventListener('tap', function(event) {
+						var obj = { pageSize: 5, pageNo: 1, bdate: '',edate: '',type: type.getAttribute("data-type") };
+						if(bdate.innerHTML === '选择日期时间') {
+							obj.bdate = app.datatboy(0)+' ' +'00:00:00';
+						} else {
+							obj.bdate = bdate.innerHTML+' ' +'23:59:59';
+						}
+						if(edate.innerHTML === '选择日期时间') {
+							obj.edate = app.datatboy(0)+' ' +'00:00:00';
+						} else {
+							obj.edate = edate.innerHTML+' ' +'23:59:59';
+						}
+						$.plusReady(function() {
+							var page = plus.webview.getWebviewById(idHtml);
+							$.fire(page, 'Inquire', obj);
+							$.openWindow({
+								id: idHtml,
+								url: idHtml + 'html',
+								show: {
+									aniShow: 'pop-in'
+								},
+								styles: {
+									popGesture: 'hide'
+								},
+								waiting: {
+									autoShow: false
+								}
+							});
+						});
+					})
+				}
+
+			})(mui, document);
+		</script>
+	</body>
+
+</html>
