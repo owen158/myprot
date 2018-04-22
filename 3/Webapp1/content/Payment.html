@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">-->
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mui.picker.min.css" />
+		<link rel="stylesheet" href="../css/mui.poppicker.css" />
+		<!--<script src="js/vue.js"></script>-->
+		<style>
+			body {
+				background-image: url(../images/bg.jpg);
+			}
+			
+			.mui-bar {
+				background: linear-gradient(90deg, #734e31, #db9348, #734e31);
+				box-shadow: none;
+				color: #fef7ea;
+			}
+			
+			.mui-bar h1 {
+				color: #fef7ea;
+			}
+			
+			.mui-content {
+				background: transparent;
+			}
+			
+			.mui-bar a {
+				color: #fef7ea;
+			}
+			
+			.mui-checkbox input[type=checkbox],
+			.mui-radio input[type=radio] {
+				top: 6px;
+			}
+			.mui-btn-small {
+				padding: 5px 0;
+			}
+			
+			#btn {
+				margin-top: 30px;
+			}
+			
+			.NOlist {
+				display: none;
+				text-align: center;
+				margin-top: 30px;
+				line-height: 40px;
+				color: #fef7ea;
+			}
+			
+			#BankType {}
+			
+			.title {
+				line-height: 30px;
+				margin: 0;
+				color: #fef7ea;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mui-action-back">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">支付宝</h1>
+		</header>
+		<div class="mui-content" id="example">
+			<div class="mui-row" id="Group">
+				<p>请选择支付方式</p>
+				<ul id="GroupList" class="mui-table-view mui-table-view-radio">
+				</ul>
+				<div class="mui-row" id="Bank">
+					<p class="title">请选择银行列表</p>
+					<div class="mui-col-xs-6 mui-col-sm-6 center">
+						<button style="width: 90%;" data-type="" id='BankType' style="font-size: 13px;" class="mui-btn mui-btn-warning">选择银行 </button>
+					</div>
+				</div>
+				<form style="margin-top: 30px;" class="mui-input-group">
+					<div class="mui-input-row">
+						<input type="text" id="credit" class="mui-input-clear" placeholder="请输入金额">
+					</div>
+				</form>
+				<div class="mui-row">
+					<div class="mui-col-sm-4 mui-col-xs-4"></div>
+					<div class="mui-col-sm-4 mui-col-xs-4">
+						<button type="button" id="btn" class="mui-btn mui-btn-block mui-btn-primary mui-btn-small">确认</button>
+					</div>
+					<div class="mui-col-sm-4 mui-col-xs-4"></div>
+				</div>
+			</div>
+			<div class="NOlist" id="NoList">
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.min.js"></script>
+		<script src="../js/mui.poppicker.js"></script>
+		<script src="../js/app.js"></script>
+		<script type="text/javascript">
+			(function($, doc) {
+				$.init();
+				var self = plus.webview.currentWebview();
+				var idHtml = JSON.parse(self.name);
+				var  bankcode =  {
+				                    acounmt: '',
+				                    scancode: "",
+				                    payId: '',
+				                    mobile:'mobile'
+				               };
+				// 公用 头部
+				for(var i = 0; i < app.MBchannel.length; i++) {
+					if(app.MBchannel[i].type === idHtml.type) {
+						bankcode.scancode = app.MBchannel[i].scancode;
+						document.getElementsByClassName('mui-title')[0].innerHTML = app.MBchannel[i].title;
+						break;
+					}
+				}
+				if(idHtml.judgment === true) {
+					
+					doc.getElementById('Group').style.display = 'block';
+					infoHtml(idHtml.data);
+					doc.getElementById('Bank').style.display = 'none';
+					//网银
+					var BankTypes = new $.PopPicker();
+					var BankType = doc.getElementById('BankType');
+					if(idHtml.type === '5') {
+						online(idHtml.data[0].paymentName);
+					}
+					//网银
+					doc.getElementById('GroupList').children[0].className = 'mui-selected mui-table-view-cell';
+					doc.getElementById('btn').addEventListener('tap', function(e) {
+						var credit = doc.getElementById('credit').value;
+						
+						if(!/^[0-9]+([.]\d{1,2})?$/.test(credit) || (Number(credit) < idHtml.data[activeClass()].minquota || Number(credit) > idHtml.data[activeClass()].maxquota)){
+							$.alert('请输入金额(例:'+idHtml.data[activeClass()].minquota+'.00),最高保留两位小数', '系统提示', function() {
+								doc.getElementById('credit').value = ''
+							});
+							return;
+						}
+						if(idHtml.type === '5'){
+							var region ='';
+							if(listName(idHtml.data[activeClass()].paymentName)){
+								app.newOpenWindow(app.linkSrc+"PlatformPay/onlineBanking",idHtml.data[activeClass()].paymentName,credit,idHtml.data[activeClass()].id,region)
+							}else{
+								if(BankType.getAttribute("data-type") === ''){
+									$.alert('请选择支付银行', '系统提示', function() {});
+								}
+								region = BankType.getAttribute("data-type");
+								app.newOpenWindow(app.linkSrc+"PlatformPay/onlineBanking",idHtml.data[activeClass()].paymentName,credit,idHtml.data[activeClass()].id,region)
+							}
+						}else{
+							bankcode.acounmt = credit;
+							bankcode.payId=idHtml.data[activeClass()].id;
+							plus.nativeUI.showWaiting();
+							app.ajax.call(this,'PlatformPay/scanPay',bankcode,function(data){
+								plus.nativeUI.closeWaiting();
+								if(typeof data != 'undefined' && data.status== 'success'){
+									if(data.res_type == '1'){
+									}else if(data.res_type == '2'){
+									}else if(data.res_type == '3'){
+									}else if(data.res_type == '4'){
+										plus.runtime.openURL(data.html)
+									}
+								}
+							})
+						}
+					})
+					//支付列表；
+					document.querySelector('.mui-table-view.mui-table-view-radio').addEventListener('selected', function(e) {
+						var t = e.detail.el.getAttribute('data-ID');
+						if(idHtml.type === '5') {
+							online(t);
+						}
+					});
+				} else {
+					doc.getElementById('Group').style.display = 'none';
+					doc.getElementById('NoList').style.display = 'block';
+					doc.getElementById('NoList').innerHTML = idHtml.data + '<a id="chatClient" href="#">在线客服</a>';
+					//					在线客服
+					doc.getElementById('chatClient').addEventListener('tap', function(e) {
+						app.Options.id = 'livechatvalue';
+						app.Options.url = app.Client;
+						app.open(app.Options, '在线客服');
+					})
+				}
+				//网银
+				function online(type){
+					if(banklist(type) === false) {
+						doc.getElementById('Bank').style.display = 'none';
+					} else {
+						BankTypes.setData(banklist(type));
+						doc.getElementById('Bank').style.display = 'block';
+							BankType.addEventListener('tap', function(event) {
+							BankTypes.show(function(items) {
+								BankType.innerText = items[0].text;
+								BankType.setAttribute("data-type", items[0].value);
+							});
+						}, false);
+					}
+				}
+			})(mui, document);
+			//			支付页面
+			function infoHtml(obj) {
+				var fragment = document.createDocumentFragment();
+				var ele = document.getElementsByClassName('mui-table-view')[0];
+				obj.forEach(function(e, index) {
+					var parent = document.createElement('li');
+					parent.className = 'mui-table-view-cell';
+					parent.setAttribute('data-ID', e.paymentName);
+					var a = document.createElement('a');
+					a.className = 'mui-navigate-right'
+					a.textContent = '支付' + (index + 1) + ' ' + '(支付范围' + e.minquota + '-' + e.maxquota + ')';
+					a.setAttribute('data-ID', e.id);
+					parent.appendChild(a);
+					fragment.appendChild(parent);
+				})
+				ele.appendChild(fragment);
+			}
+			//获取当前支付
+			function activeClass(el) {
+				var els = document.getElementById('GroupList').children;
+				for(var i = 0; i < els.length; i++) {
+					if(els[i].getAttribute('class').indexOf('mui-selected') != -1) {
+						return i;
+					}
+				}
+			}
+			 function listName(el){
+		          return el === "DC" ? true : el ==="YEE" ? true : el ==="JH" ? true : el ==="XZF" ? true : el ==="JFK" ? true : el ==="AK" ? true : el ==='YLX' ? true : false;
+		      }
+			function banklist(type) {
+				BankType.innerText = '选择银行';
+				BankType.setAttribute("data-type", '');
+				for(var item in app.CARDLISTS) {
+					if(item === type) {
+						return app.CARDLISTS[item];
+					}
+				}
+				return false;
+			}
+			  function pay(id){  
+                // 从服务器请求支付订单  
+                var PAYSERVER='';  
+                if(id=='alipay'){  
+                PAYSERVER=ALIPAYSERVER;  
+                channel = aliChannel;  
+            }else if(id=='wxpay'){  
+                    PAYSERVER=WXPAYSERVER;  
+                    channel = wxChannel;  
+                }else{  
+                    plus.nativeUI.alert("不支持此支付通道！",null,"捐赠");  
+                    return;  
+             }  
+                var xhr=new XMLHttpRequest();  
+                 var amount = document.getElementById('jine').value; 
+                
+                xhr.onreadystatechange=function(){  
+                    switch(xhr.readyState){  
+                        case 4:  
+                        if(xhr.status==200){  
+                            plus.payment.request(channel,xhr.responseText,function(result){  
+                                plus.nativeUI.alert("支付成功！",function(){  
+                                back();  
+                            });  
+                            },function(error){  
+                                plus.nativeUI.alert("支付失败：" + error.code);  
+                            });  
+                        }else{  
+                            alert("获取订单信息失败！");  
+                        }  
+                        break;  
+                    default:  
+                    break;  
+                }  
+         }  
+            xhr.open('GET',PAYSERVER+amount);  
+            xhr.send();  
+            
+    }  
+		</script>
+	</body>
+
+</html>

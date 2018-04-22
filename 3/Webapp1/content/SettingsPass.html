@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>设置密码页面</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>
+			body {
+				background-image: url(../images/bg.jpg);
+			}
+			
+			.mui-bar {
+				background: linear-gradient(90deg, #734e31, #db9348, #734e31);
+				box-shadow: none;
+				color: #fef7ea;
+			}
+			
+			.mui-bar h1 {
+				color: #fef7ea;
+			}
+			
+			.mui-content {
+				background: transparent;
+			}
+			
+			.mui-bar a {
+				color: #fef7ea;
+			}
+			
+			.mui-input-group {
+				background: #ffefde;
+			}
+			
+			.mui-input-row label {
+				width: 30%;
+				font-size: 14px;
+				text-align: right;
+			}
+			
+			.mui-input-row label~input,
+			.mui-input-row label~select,
+			.mui-input-row label~textarea {
+				width: 70%;
+			}
+			
+			.mui-input-row h6 {
+				text-align: center;
+			}
+			
+			.mui-input-row h6 span {
+				padding: 0 5px;
+				color: #007AFF;
+			}
+			
+			.mui-content-padded {
+				margin: 10px 0;
+				background: #533523;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				border-bottom: 2px solid #ffe000;
+				color: #ffe000;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+				color: #fef7ea;
+			}
+			
+			.mui-popup-buttons .mui-popup-button {
+				color: #333333!important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mui-action-back">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">修改密码</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded gameNav">
+				<div class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+					<a class="mui-control-item mui-active" href="#item1">登录密码</a>
+					<a class="mui-control-item" href="#item2">取款密码</a>
+				</div>
+			</div>
+			<div id="item1" class="mui-control-content mui-active">
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>原密码</label>
+						<input id="password" type="password" maxlength="12" class="mui-input-clear" placeholder="">
+					</div>
+					<div class="mui-input-row">
+						<label>新密码</label>
+						<input id="npassword" type="password" maxlength="12" class="mui-input-clear" placeholder="新密码须为6～12位英文或数字">
+					</div>
+					<div class="mui-input-row">
+						<label>确认密码</label>
+						<input id="renpassword" type="password" maxlength="12" class="mui-input-clear" placeholder="请输入密码">
+					</div>
+					<div class="mui-button-row">
+						<button id="loginbtn" type="button" class="mui-btn mui-btn-primary">确认</button>
+					</div>
+					<div class="mui-input-row">
+						<h6>密码须为<span>6～12位英文或数字</span>且符合a~z字元或0~9</h6>
+					</div>
+				</form>
+			</div>
+			<div id="item2" class="mui-control-content">
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label>原密码</label>
+						<input type="password" id="passwords" maxlength="4" class="mui-input-clear" placeholder="">
+					</div>
+					<div class="mui-input-row">
+						<label>新密码</label>
+						<input type="password" id="npasswords" maxlength="4" class="mui-input-clear" placeholder="取款密码必须为4位数字的组合">
+					</div>
+					<div class="mui-input-row">
+						<label>确认密码</label>
+						<input type="password" id="renpasswords" maxlength="4" class="mui-input-clear" placeholder="请输入密码">
+					</div>
+					<div class="mui-button-row">
+						<button id="bankpass" type="button" class="mui-btn mui-btn-primary">确认</button>
+
+					</div>
+					<div class="mui-input-row">
+						<h6>密码须为<span>4位数字</span>且符合0~9字元</h6>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/app.js"></script>
+		<script type="text/javascript">
+			(function($, doc) {
+				$.init();
+//				 bankpass:{
+//                  password:'',
+//                  npassword:'',
+//                  renpassword:''
+//              }
+				var loginbtn = doc.getElementById('loginbtn');
+				var bankpass = doc.getElementById('bankpass');
+				loginbtn.addEventListener('tap', function(event) {
+					var  obj = {
+	                    password:doc.getElementById('password').value,
+	                    npassword:doc.getElementById('npassword').value,
+	                    renpassword:doc.getElementById('renpassword').value
+	                }
+					if(obj.password === ""){
+						doc.getElementById('password').value = '';
+						plus.nativeUI.toast('请输入原密码');
+						return;
+					}
+					if(obj.npassword === obj.password){
+						doc.getElementById('npassword').value = '';
+						plus.nativeUI.toast('不能和旧密码相同');
+						return;
+					}
+					if(!/^[0-9A-Za-z]{6,12}$/.test(obj.npassword)){
+						doc.getElementById('npassword').value = '';
+						plus.nativeUI.toast('请输入新密码');
+						return;
+					}
+					if(obj.npassword != obj.renpassword){
+						doc.getElementById('renpassword').value = '';
+						plus.nativeUI.toast('确认密码有误，请重新输入');
+						return;
+					}
+					app.ajax.call(this,'User/changePassword',obj,function(data){
+						if(data.msg == "success"){
+							doc.getElementById('renpassword').value = '';
+							doc.getElementById('npassword').value = '';
+							doc.getElementById('password').value = '';
+							$.alert('登录密码修改成功', '系统提示', function() {});
+							return;
+						}else{
+//							doc.getElementById('renpassword').value = '';
+//							doc.getElementById('npassword').value = '';
+//							doc.getElementById('password').value = '';
+							$.alert(data.msg, '系统提示', function() {});
+						}
+					})
+				})
+				bankpass.addEventListener('tap', function(event) {
+					var  obj = {
+	                    password:doc.getElementById('passwords').value,
+	                    npassword:doc.getElementById('npasswords').value,
+	                    renpassword:doc.getElementById('renpasswords').value
+	               }
+					if(obj.password === ''){
+						doc.getElementById('password').value = '';
+						plus.nativeUI.toast('请输入原密码');
+						return;
+					}
+					if(obj.password === obj.npassword){
+						doc.getElementById('password').value = '';
+						plus.nativeUI.toast('请输入新取款密码,不能和旧密码相同');
+						return;
+					}
+					if(!/^[0-9]{4}$/.test(obj.npassword)){
+						doc.getElementById('password').value = '';
+						plus.nativeUI.toast('请输入新取款密码');
+						return;
+					}
+					if(obj.renpassword != obj.npassword){
+						doc.getElementById('password').value = '';
+						plus.nativeUI.toast('确认密码有误，请重新输入');
+						return;
+					}
+					console.log(1)
+					app.ajax.call(this,"User/changeQkpwd",obj,function(data){
+						if (data.msg == "success") {
+							doc.getElementById('renpasswords').value = '';
+							doc.getElementById('npasswords').value = '';
+							doc.getElementById('passwords').value = '';
+							$.alert('登录密码修改成功', '系统提示', function() {});
+							return;
+						}else{
+//							doc.getElementById('renpasswords').value = '';
+//							doc.getElementById('npasswords').value = '';
+//							doc.getElementById('passwords').value = '';
+							$.alert(data.msg, '系统提示', function() {});
+						}
+					})
+				})
+			})(mui, document)
+		</script>
+	</body>
+
+</html>

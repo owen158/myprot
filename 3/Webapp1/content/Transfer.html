@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>转账页面</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mui.picker.min.css" />
+		<link rel="stylesheet" href="../css/mui.poppicker.css" />
+		<style type="text/css">
+			body {
+				background-image: url(../images/bg.jpg);
+			}
+			
+			.mui-bar {
+				background: linear-gradient(90deg, #734e31, #db9348, #734e31);
+				box-shadow: none;
+				color: #fef7ea;
+			}
+			
+			.mui-bar h1 {
+				color: #fef7ea;
+			}
+			
+			.mui-content {
+				background: transparent;
+			}
+			
+			.mui-bar a {
+				color: #fef7ea;
+			}
+			
+			.content {
+				text-align: center;
+				color: #fef7ea;
+			}
+			
+			.content .name {
+				height: 30px;
+				line-height: 30px;
+				background: #533523;
+			}
+			
+			.GameContent {
+				height: 260px;
+			}
+			
+			.title {
+				padding: 20px 10px;
+				background: #533523;
+				color: #fef7ea;
+			}
+			
+			.mui-btn-small {
+				padding: 5px 0;
+			}
+			
+			.item div,
+			.info {
+				text-align: center;
+			}
+			
+			.item div:nth-child(1) {
+				height: 40px;
+				line-height: 40px;
+			}
+			
+			.item div:nth-child(2) {
+				height: 30px;
+				line-height: 30px;
+			}
+			
+			.info {
+				height: 70px;
+				line-height: 70px;
+			}
+			
+			.tranbtn {
+				padding: 5px 25px;
+			}
+			
+			#btn {
+				margin-top: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mui-action-back">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">余额互转</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-row">
+				<div class="mui-col-sm-6 item mui-col-xs-6">
+					<div>总余额</div>
+					<div id="tolmongy">loading..</div>
+				</div>
+				<div class="mui-col-sm-6 info mui-col-xs-6">
+					<div id="btns">一键查询</div>
+				</div>
+			</div>
+			<div class="mui-row content GameContent"></div>
+			<p class="title"> 提示：余额互转 ￥ 1~ 100000</p>
+			<form class="mui-input-group">
+				<div class="mui-button-row">
+					<button type="button" id="gameIn" class="mui-btn tranbtn mui-btn-small">中心钱包</button>
+					<span id="TranIcon" class="mui-icon tranbtn mui-icon-arrowthinright"></span>
+					<button type="button" id="gameOut" class="mui-btn tranbtn mui-btn-small"></button>
+				</div>
+				<div class="mui-input-row">
+					<input type="text" id="credit" class="mui-input-clear" placeholder="请输入金额">
+				</div>
+				<!--<div class="mui-input-row">
+					<input type="text" id="imgcode" class="mui-input-clear" placeholder="验证码">
+				</div>-->
+			</form>
+			<div class="mui-row">
+				<div class="mui-col-sm-4 mui-col-xs-4"></div>
+				<div class="mui-col-sm-4 mui-col-xs-4">
+					<button type="button" id="btn" class="mui-btn mui-btn-block mui-btn-primary mui-btn-small">确认</button>
+				</div>
+				<div class="mui-col-sm-4 mui-col-xs-4"></div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.picker.min.js"></script>
+		<script src="../js/mui.poppicker.js"></script>
+		<script src="../js/app.js"></script>
+		<script type="text/javascript">
+			//游戏余额
+			(function(el) {
+				var ele = document.getElementsByClassName(el)[0];
+				let fragment = document.createDocumentFragment();
+				app.game.forEach((e) => {
+					var parent = document.createElement('div');
+					parent.className = "mui-col-sm-4 mui-col-xs-4 gameinfo"
+					var value = document.createElement('div');
+					value.className = "name";
+					var texts = document.createElement('div');
+					texts.className = "money";
+					value.textContent = e.text;
+					texts.textContent = 'loading...'
+					texts.setAttribute("data-id", e.value);
+					app.ajax('User/getBalance', {
+						BType: e.value
+					}, function(data) {
+						if(data.msg == "error") {
+							plus.nativeUI.toast('系统错误');
+						} else if(data.msg == 'process') {
+							plus.nativeUI.toast('维护中');
+						} else {
+							if(isNaN(Number(data.balance))) {
+								texts.textContent = data.balance;
+							} else {
+								texts.textContent = Number(data.balance).toFixed(2);
+							}
+						}
+					})
+					parent.appendChild(value);
+					parent.appendChild(texts);
+					fragment.appendChild(parent);
+				})
+				ele.appendChild(fragment)
+			})('GameContent');
+			(function($, doc) {
+				$.init();
+				if(JSON.stringify(app.getUserBalance()) === '{}') {
+					//获取钱包余额
+					app.getBalance(function(data) {
+						doc.getElementById('tolmongy').innerHTML = data;
+					})
+				} else {
+					doc.getElementById('tolmongy').innerHTML = app.getUserBalance().balance
+				}
+				doc.getElementById('btns').addEventListener('tap', function() {
+					//				刷新全部余额
+					plus.nativeUI.showWaiting();
+					setTimeout(function() {
+						plus.nativeUI.closeWaiting();
+						var wobj = plus.webview.getWebviewById("Transfer");
+						wobj.reload(true);
+					}.bind(this), 2000);
+				});
+				$('.gameinfo').on('tap', '.money', function(e) {
+					var el = e.target;
+					el.textContent = 'loading...';
+					plus.nativeUI.showWaiting();
+					setTimeout(function() {
+						app.ajax('User/getBalance', {
+							BType: el.getAttribute('data-id')
+						}, function(data) {
+							plus.nativeUI.closeWaiting();
+							if(data.msg == "error") {
+								plus.nativeUI.toast('系统错误');
+							} else if(data.msg == 'process') {
+								plus.nativeUI.toast('维护中');
+							} else {
+								if(isNaN(Number(data.balance))) {
+									el.textContent = data.balance;
+								} else {
+									el.textContent = Number(data.balance).toFixed(2);
+								}
+							}
+						})
+					}.bind(this), 2000);
+				})
+				var gameIns = new $.PopPicker();
+				gameIns.setData(app.game);
+				var gameIn = doc.getElementById('gameIn');
+				gameIn.addEventListener('tap', function(event) {
+					gameIns.show(function(items) {
+						gameIn.innerText = items[0].text;
+						gameIn.setAttribute("data-type", items[0].value);
+						gameOut.innerText = '中心钱包';
+						gameOut.setAttribute("data-type", '');
+						doc.getElementById('TranIcon').setAttribute("class", 'mui-icon tranbtn mui-icon-arrowthinleft');
+					});
+				}, false);
+				var gameOuts = new $.PopPicker();
+				gameOuts.setData(app.game);
+				var gameOut = doc.getElementById('gameOut');
+				gameOut.innerText = 'IG 彩票（新）';
+				gameOut.setAttribute("data-type", 'IGPJ');
+				gameOut.addEventListener('tap', function(event) {
+					gameOuts.show(function(items) {
+						gameOut.innerText = items[0].text;
+						gameOut.setAttribute("data-type", items[0].value);
+						gameIn.innerText = '中心钱包';
+						gameIn.setAttribute("data-type", '');
+						doc.getElementById('TranIcon').setAttribute("class", 'mui-icon tranbtn mui-icon-arrowthinright');
+					});
+				}, false);
+				var btn = doc.getElementById('btn');
+				btn.addEventListener('tap', function(event) {
+					var objs = {
+						credit: doc.getElementById('credit').value,
+						type: '',
+						imgcode: doc.getElementById('imgcode').value,
+						uuid: '',
+						isImgCode: 0
+					}
+					app.ajax('User/getToken', {
+						userKey: app.getState().userkey
+					}, function(token) {
+						if(typeof token === 'undefined') {
+							mui.alert('转账未完成', '系统提示', function() {});
+						} else {
+							objs.uuid = token.msg;
+							plus.nativeUI.showWaiting();
+							setTimeout(function() {
+								if(gameIn.innerText === '中心钱包') {
+									objs.type = gameOut.getAttribute('data-type');
+									BugTransfer('User/TransferTo', objs);
+								} else {
+									objs.type = gameIn.getAttribute('data-type');
+									BugTransfer('User/TransferFrom', objs);
+								}
+							}, 2000)
+
+						}
+					})
+				})
+			})(mui, document);
+
+			function BugTransfer(t, obj) {
+				var transfeErrors = [{
+						id: '01',
+						message: '转账平台错误'
+					},
+					{
+						id: '02',
+						message: '转账金额错误'
+					},
+					{
+						id: '03',
+						message: 'token验证失败,如有疑问，请咨询客服'
+					},
+					{
+						id: '04',
+						message: '图形验证码错误'
+					},
+					{
+						id: '05',
+						message: '转账未完成,请稍后再试'
+					},
+					{
+						id: '06',
+						message: '余额不足'
+					},
+					{
+						id: '07',
+						message: '钱包查询出错'
+					},
+					{
+						id: 'error',
+						message: '钱包查询出错'
+					},
+					{
+						id: 'process',
+						message: '维护中'
+					},
+					{
+						id: 'success'
+					}
+				];
+				app.ajax(t, obj, function(data) {
+					plus.nativeUI.closeWaiting();
+					for(var i = 0; i < transfeErrors.length; i++) {
+						if(transfeErrors[i].id === data.msg) {
+							if(transfeErrors[i].id === 'success') {
+								mui.alert('转账成功', '系统提示', function() {
+									var wobj = plus.webview.getWebviewById("Transfer");
+									wobj.reload(true);
+								});
+							} else {
+								mui.alert(transfeErrors[i].message, '系统提示', function() {});
+								break;
+							}
+						}
+					}
+				})
+			}
+		</script>
+	</body>
+
+</html>

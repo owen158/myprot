@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<style>
+			body {
+				background-image: url(images/bg.jpg);
+			}
+			.Title {
+				background: url(images/mybg.jpg);
+				padding: 20px 15px;
+			}
+			
+			.mui-ios .mui-table-view-cell {
+				padding: 30px 15px;
+				;
+			}
+			
+			.icon-gerenzhongxin {
+				color: #ffd053;
+				font-size: 45px;
+			}
+			
+			.item {
+				height: 70px;
+			}
+			
+			.Tuser,
+			.Tinfo {
+				line-height: 70px;
+				text-align: center;
+			}
+			
+			.Tinfo span {
+				font-size: 25px;
+				color: #ffd053;
+			}
+			
+			.TuserMoney,
+			.TuserName {
+				padding-left: 10px;
+				margin: 0;
+			}
+			
+			.TuserName {
+				margin-top: 10px;
+				line-height: 25px;
+				font-size: 18px;
+			}
+			
+			.TuserMoney {
+				line-height: 20px;
+			}
+			
+			.TuserMoney span {
+				color: #ffd053;
+				padding-right: 10px;
+			}
+			
+			.infoNav {
+				padding: 5px 0;
+				text-align: center;
+				background: #533523;
+				color: #FFEFDE;
+			}
+			
+			.infoNav div {
+				padding: 10px 0;
+			}
+			
+			.infoNav div:not(:nth-child(1)) {
+				border-left: 1px solid #FFEFDE;
+			}
+			
+			.mui-grid-view.mui-grid-9 .mui-media span {
+				color: #533523;
+				font-size: 30px;
+				;
+			}
+			
+			.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
+				color: #533523;
+			}
+			
+			.mui-grid-view.mui-grid-9 {
+				border-top: 1px solid #533523;
+				border-left: 1px solid #533523;
+				background-color: #FFEFDE;
+			}
+			
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+				/*border-bottom: 1px solid #533523;*/
+				/*border-right: 1px solid #533523;*/
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-center">
+			<div class="mui-row Title">
+				<div class="mui-col-sm-2 mui-col-xs-2 item Tuser">
+					<span class="icon-gerenzhongxin iconfont"></span>
+				</div>
+				<div class="mui-col-sm-8 mui-col-xs-8 item">
+					<p class="TuserName" id="TuserName"></p>
+					<p class="TuserMoney">
+						<span class="icon-qianbao iconfont"></span>
+						<b id="TuserMoneys"></b>
+					</p>
+				</div>
+				<div class="mui-col-sm-2 mui-col-xs-2 item Tinfo">
+					<span id="trans" class="icon-shuaxin iconfont"></span>
+				</div>
+			</div>
+			<div class="mui-row infoNav">
+				<!--<div class="mui-col-sm-4 mui-col-xs-4" data-id='Recharge'>
+					<span></span> 充值
+				</div>
+				<div class="mui-col-sm-4 mui-col-xs-4" data-id='Withdrawal'>
+					<span></span> 提款
+				</div>-->
+				<div class="mui-col-sm-4 mui-col-xs-4" data-id='Transfer'>
+					<span ></span> 余额互转
+				</div>
+			</div>
+			<ul class="mui-table-view mui-grid-view mui-grid-9">
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#" data-id='Personal'>
+						<span class="iconfont icon-gerenziliao"></span>
+						<div class="mui-media-body">个人资料</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#" data-id='banCard'>
+						<span class="iconfont icon-yinxingqia"></span>
+						<div class="mui-media-body">银行卡</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#" data-id='SettingsPass'>
+						<span class="iconfont icon-mima"></span>
+						<div class="mui-media-body">修改密码</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#" data-id="bettingRecord">
+						<span class="iconfont icon-jilu"></span>
+						<div class="mui-media-body">投注记录</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#" data-id='TransferRecords'>
+						<span class="iconfont icon-chongzhijilu1"></span>
+						<div class="mui-media-body">转账记录</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#" data-id="RechargeRecord">
+						<span class="iconfont icon-chongzhijilu2"></span>
+						<div class="mui-media-body">充值记录</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#" data-id="WithdrawalsRecord">
+						<span class="iconfont icon-goumaijilu"></span>
+						<div class="mui-media-body">提款记录</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#" data-id="CapitalRecord">
+						<span class="iconfont icon-zijinliushuimingxi"></span>
+						<div class="mui-media-body">资金流水</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#" data-id='Promotions'>
+						<span class="iconfont icon-04_youhuihuodong"></span>
+						<div class="mui-media-body">优惠活动</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#" id="exit">
+						<span class="iconfont icon-tuichu"></span>
+						<div class="mui-media-body">退出</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="./js/app.js"></script>
+		<script type="text/javascript">
+			(function($, doc) {
+				$.init({
+					swipeBack: true //启用右滑关闭功能
+				});
+				var TuserName = doc.getElementById('TuserName');
+				var TuserMoneys = doc.getElementById('TuserMoneys');
+				var trans = doc.getElementById('trans');
+				trans.addEventListener('tap', function (){
+					TuserMoneys.innerHTML = 'loading...';
+					plus.nativeUI.showWaiting();
+					setTimeout(function(){
+						app.getBalance(function(data){
+							plus.nativeUI.closeWaiting();
+							TuserMoneys.innerHTML = data;
+						})
+					},2000)
+				})
+				window.addEventListener('showPageB', function(event) {
+					var id = event.detail;
+					TuserName.innerHTML = id.state.userName.substring(3);
+					TuserMoneys.innerHTML = id.balance;
+				});
+				$('.mui-table-view').on('tap', 'a', function(e) {
+					var id = this.getAttribute('data-id');
+					$.plusReady(function() {
+						var settingPage = $.preload({
+							"id": id,
+							"url": 'content/' + id + '.html'
+						});
+					})
+					var b = plus.nativeUI;
+					b.showWaiting();
+					setTimeout(function(){
+						b.closeWaiting();
+						$.openWindow({
+							id: id,
+							show: {
+								aniShow: 'pop-in'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+					}.bind(this), 1500)
+				});
+				$('.infoNav').on('tap', 'div', function(e) {
+					var id = this.getAttribute('data-id');
+					$.plusReady(function() {
+						var settingPage = $.preload({
+							"id": id,
+							"url": 'content/' + id + '.html'
+						});
+					})
+					var b = plus.nativeUI;
+					b.showWaiting();
+					setTimeout(function(){
+						b.closeWaiting();
+						$.openWindow({
+							id: id,
+							show: {
+								aniShow: 'pop-in'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+					}.bind(this), 1500)
+				});
+			}(mui, document));
+			//退出
+			document.getElementById('exit').addEventListener('tap', function() {
+				app.DropOut();
+				app.check();
+			}, false);
+		</script>
+	</body>
+
+</html>

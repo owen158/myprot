@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			body {
+				background-image: url(images/bg.jpg);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" data-id='chatClient'>
+				 	<a class="mui-navigate-right">在线客服</a>	
+				</li>
+				<li class="mui-table-view-cell" data-id='QQ'>
+					<a class="mui-navigate-right">QQ:81068143</a>	
+					<!--http://wpa.qq.com/msgrd?v=3&uin=123456&site=qq&menu=yes-->
+				</li>
+				<li class="mui-table-view-cell">微信</li>
+			</ul>
+			<!--<a data-v-82181708="" target="_blank" href="" style="display: block;"><img data-v-82181708="" border="0" src="http://wpa.qq.com/pa?p=2:81068143:41" alt="点击这里给我发消息" title="点击这里给我发消息">81068143</a>-->
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script src="js/app.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			
+			mui('.mui-table-view').on('tap', '.mui-table-view-cell', function(e) {
+				
+				var el = this.getAttribute('data-id');
+				console.log(el)
+				if(el === 'chatClient'){
+					app.Options.id = 'livechatvalue';
+					app.Options.url ='https://f18.livechatvalue.com/chat/chatClient/chatbox.jsp?companyID=880208&configID=73642&jid=2412543991&s=1';
+					app.open(app.Options,'在线客服');
+				}else if(el === 'QQ'){
+//					Bug.WebviewOptions.id = 'wpaqq'
+//					Bug.WebviewOptions.url ='http://wpa.qq.com/msgrd?v=3&amp;uin=81068143&amp;site=qq&amp;menu=yes';
+//					Bug.open(Bug.WebviewOptions,'QQ');
+				}
+			});
+		</script>
+	</body>
+
+</html>

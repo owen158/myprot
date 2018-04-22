@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			body {
+				background-image: url(images/bg.jpg);
+			}
+			
+			.mui-bar {
+				background: linear-gradient(90deg, #734e31, #db9348, #734e31);
+				box-shadow: none;
+				color: #fef7ea;
+			}
+			
+			.mui-bar h1 {
+				color: #fef7ea;
+			}
+			
+			.mui-bar a {
+				color: #fef7ea;
+			}
+			
+			.mui-content {
+				background: transparent;
+			}
+			
+			.IconImgs {
+				overflow: hidden;
+				margin: 0;
+			}
+			
+			.IconImgs img {
+				width: 200%;
+			}
+			
+			.infoTitles {
+				margin: 0;
+				text-align: center;
+				color: #fff;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			.title {
+				height: 30px;
+				line-height: 30px;
+				font-size: 18px;
+				font-weight: bold;
+				padding-left: 15px;
+				color: #FFEFDE;
+				background: #734e31;
+			}
+			
+				.mui-content-padded {
+				margin: 10px 0;
+				background: #533523;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+				border-bottom: 2px solid #ffe000;
+				color: #ffe000;
+			}
+			
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+				color: #fef7ea;
+			}
+			
+			.mui-popup-buttons .mui-popup-button {
+				color: #333333!important;
+			}
+			#item1,#item2{
+				padding-bottom: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav mui-action-back">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">MG 电子</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded gameNav">
+				<div class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+					<a class="mui-control-item mui-active" href="#item1">热门游戏</a>
+					<a class="mui-control-item" href="#item2">更多游戏</a>
+				</div>
+			</div>
+			<div id="item1" class="mui-control-content mui-active">
+				<div class="mui-row" id="BonusSlot"></div>
+			</div>
+			<div id="item2" class="mui-control-content">
+				<div class="mui-row" id="ClassicSlot"></div>
+			</div>
+			<!--<p class="title">热门游戏</p>
+			
+			<p class="title">更多游戏</p>-->
+			
+			<!--<p class="title">累计奖池</p>
+			<div class="mui-row" id="ClassicSlot"></div>-->
+		</div>
+		<script src="js/mui.min.js"></script>
+
+		<script src="js/app.js"></script>
+		<script src="josn.js"></script>
+		
+		<script type="text/javascript">
+			(function($, doc) {
+				$.init();
+				var obj = {model: '',
+					gameID: ''
+				}
+				var BonusSlots = gamelist.BonusSlot;
+				var ClassicSlots = gamelist.ClassicSlot;
+				var BonusSlot = doc.getElementById('BonusSlot');
+				var ClassicSlot = doc.getElementById('ClassicSlot');
+				GameHtml(BonusSlots, BonusSlot);
+				GameHtml(ClassicSlots, ClassicSlot);
+				$('.mui-row').on('tap', '.box', function(e) {
+					obj.gameID = this.getAttribute('data-id')
+					GameLink(obj)
+				});
+			})(mui, document);
+
+			function GameHtml(objs, el) {
+				var fragment = document.createDocumentFragment();
+				el.innerHTML = '';
+				objs.forEach(function(e) {
+					var parent = document.createElement('div');
+					parent.setAttribute('data-id', e.GameID)
+					parent.className = 'mui-col-sm-3 box mui-col-xs-3';
+					var IconImg = document.createElement('p');
+					IconImg.className = 'IconImgs';
+					var img = document.createElement('img');
+					img.setAttribute('src', e.src);
+					var infoTitle = document.createElement('p');
+					infoTitle.className = 'infoTitles';
+					infoTitle.textContent = e.title;
+					IconImg.appendChild(img);
+					parent.appendChild(IconImg);
+					parent.appendChild(infoTitle);
+					fragment.appendChild(parent);
+				})
+				el.appendChild(fragment);
+			}
+
+			function GameLink(objs) {
+				plus.nativeUI.showWaiting();
+				app.ajax('checklogin.do', {}, function(tokenmsg) {
+					if(tokenmsg.msg == "faild") {
+						app.check();
+					} else if(tokenmsg.msg == "islogin") {
+						app.check();
+					} else if(tokenmsg.msg == "success") {
+						app.setState(tokenmsg);
+						app.ajax('User/getToken', {
+							userKey: tokenmsg.userkey
+						}, function(token) {
+							objs.uuid = token.msg;
+							app.ajax('User/forwardGame', objs, function(data) {
+								plus.nativeUI.closeWaiting();
+								if(data.msg == "error") {
+									plus.nativeUI.toast('系统错误');
+								} else if(data.msg == 'process') {
+									plus.nativeUI.toast('维护中');
+								} else {
+									app.Options.url = data.msg
+									app.Options.id = 'EnterGame'
+									app.open(app.Options,'MG电子');
+								}
+							})
+						})
+					}
+				})
+			}
+		</script>
+	</body>
+
+</html>

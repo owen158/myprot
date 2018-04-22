@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>
+			body {
+				background-image: url(../images/bg.jpg);
+			}
+			
+			.mui-bar {
+				background: linear-gradient(90deg, #734e31, #db9348, #734e31);
+				box-shadow: none;
+				color: #fef7ea;
+			}
+			
+			.mui-bar h1 {
+				color: #fef7ea;
+			}
+			
+			.mui-content {
+				background: transparent;
+			}
+			
+			.mui-bar a {
+				color: #fef7ea;
+			}
+			.center{
+				text-align: center;
+			}
+			#pullrefresh {
+				margin-top: 50px;
+			}
+			
+			.mui-pull-caption {
+				color: #fef7ea;
+			}
+			
+			.mui-icon-pulldown {
+				color: #fef7ea;
+			}
+			.mui-table-view-chevron .mui-table-view-cell{
+				/*padding-right: 0;*/
+				padding: 0 5px;
+			}
+			#setting{
+				color: #fef7ea;
+			}
+			#example{
+				color: #fef7ea;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a id="return" class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">投注记录</h1>
+			<button id='setting' class=" mui-pull-right mui-btn-link">筛选</button>
+		</header>
+		<div class="mui-content">
+			<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<!--数据列表-->
+					<ul class="mui-table-view mui-table-view-chevron">
+						
+					</ul>
+					<div class="mui-row" id="example" v-show='jum'>
+						<div class="mui-col-xs-4 mui-col-sm-4">
+							<div>下注金额小计</div>
+							<div class="center">{{column.betamountSum}}元</div>
+						</div>
+						<div class="mui-col-xs-4 mui-col-sm-4">
+							<div>派彩金额小计</div>
+							<div class="center">{{column.payoutSum}}元</div>
+						</div>
+						
+						<div class="mui-col-xs-4 mui-col-sm-4">
+							<div>输赢金额小计</div>
+							<div class="center">{{column.netAmountSum}}元</div>
+						</div>
+						
+						<div class="mui-col-xs-4 mui-col-sm-4">
+							<div>下注金额总计</div>
+							<div class="center">{{column.betamountTotal}}元</div>
+						</div>
+						
+						<div class="mui-col-xs-4 mui-col-sm-4">
+							<div>派彩金额总计</div>
+							<div class="center">{{column.payoutTotal}}元</div>
+						</div>
+						
+						<div class="mui-col-xs-4 mui-col-sm-4">
+							<div>输赢金额总计</div>
+							<div class="center">{{column.netAmountTotal}}元</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/vue.js"></script>
+		<script src="../js/app.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#example',
+				// 选项
+				data: {
+					column:'',
+					jum:false,
+				},
+				methods: {
+				},
+			});
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					up: {
+						auto: true, //可选,默认false.首次加载自动下拉刷新一次
+						color: '#fef7ea', //可选，默认“#2BD009” 下拉刷新控件颜色
+						contentdown: "下拉可以刷新", //可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+						contentover: "释放立即刷新", //可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+						contentrefresh: "正在刷新...",
+						callback: pullupRefresh
+					}
+				}
+			});
+			var old_back = mui.back;
+			document.getElementById('return').addEventListener('tap', function(event) {
+				app.setRecords({});
+				old_back();
+			});
+			mui.plusReady(function() {
+				var settingButton = document.getElementById('setting');
+				settingButton.addEventListener('tap', function(event) {
+					app.setRecords({})
+					mui.openWindow({
+						url: 'Inquire.html',
+						id: 'setting',
+						show: {
+							aniShow: 'pop-in'
+						},
+						extras: {
+							name: 'bettingRecord'
+						},
+						styles: {
+							popGesture: 'hide'
+						},
+						waiting: {
+							autoShow: false
+						}
+					});
+				});
+			})
+			var pager = {}; //分页
+			var totalPage; //总页码
+			var count = 1;
+			var dataobj ={
+				betamountSum:0,payoutSum:0,netAmountSum:0,betamountTotal:0,payoutTotal:0,netAmountTotal:0
+			}
+			window.addEventListener('Inquire', function(event) {
+				var id = event.detail;
+				app.setRecords(id);
+				var wobj = plus.webview.getWebviewById("bettingRecord");
+				wobj.reload(true);
+			});
+			function pullupRefresh() {
+				setTimeout(function() {
+					if(JSON.stringify(app.getRecords()) === '{}') {
+						pager = {
+							pageSize: 5,
+							pageNo: count,
+							bdate: app.datatboy(0) + ' ' + '00:00:00',
+							edate: app.datatboy(0)+ ' ' + '23:59:59',
+							type: 'IGPJ'
+						};
+					} else {
+						pager = app.getRecords();
+						pager.pageNo = count;
+					}
+					var table = document.body.querySelector('.mui-table-view');
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+					app.ajax('User/getBetInfo', pager, function(data) {
+						mui('#pullrefresh').pullRefresh().endPullupToRefresh(true);
+						var returnData = data;
+						dataobj.betamountSum +=data[1].betamountSum;
+						dataobj.payoutSum += data[1].payoutSum;	
+						dataobj.netAmountSum += data[1].netAmountSum;
+						dataobj.betamountTotal += data[1].betamountTotal;
+						dataobj.payoutTotal += data[1].payoutTotal;
+						dataobj.netAmountTotal += data[1].netAmountTotal;
+						vm.column = dataobj;
+						for(var i = 2; i < returnData.length; i++) {
+							var li = document.createElement('li');
+							li.className = 'mui-table-view-cell';
+							li.innerHTML ='<div class="mui-row">'+
+												'<div class="mui-col-sm-12 mui-col-xs-12">'+returnData[i].type+'</div>'+
+												'<div class="mui-col-sm-4 mui-col-xs-4">'+
+													'<div>下注金额</div>'+
+													'<div>'+returnData[i].betAmount+'</div>'+
+												'</div>'+
+												'<div class="mui-col-sm-4 mui-col-xs-4">'+
+													'<div>派彩金额</div>'+
+													'<div>'+returnData[i].Payout+'</div>'+
+												'</div>'+
+												'<div class="mui-col-sm-4 mui-col-xs-4">'+
+													'<div>输赢金额</div>'+
+													'<div>'+returnData[i].netAmount+'</div>'+
+												'</div>'+
+												'<div  style="text-align:right;" class="mui-col-sm-12 mui-col-xs-12">'+(app.franttime(parseInt(returnData[i].bettime)))+'</div>'+
+											'</div>';
+											
+							table.appendChild(li);
+						}
+						totalPage = Number(data[0].cnt) % pager.pageSize != 0 ? parseInt(Number(data[0].cnt) / pager.pageSize) + 1 : Number(data[0].cnt) / pager.pageSize;
+						if(totalPage == pager.pageNo || Number(data[0].cnt) === 0) {
+							vm.jum = false;
+							mui('#pullrefresh').pullRefresh().endPullupToRefresh(true);
+						} else {
+							count++;
+							vm.jum = ture;
+							mui('#pullrefresh').pullRefresh().refresh(true);
+						}
+					})
+				}, 1500);
+			}
+		</script>
+	</body>
+
+</html>
