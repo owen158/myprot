@@ -169,7 +169,7 @@
 				if(JSON.stringify(app.getUserInfo()) === '{}') {
 					doc.getElementsByClassName('mui-table-view')[0].innerHTML = ''
 					plus.nativeUI.showWaiting();
-					app.ajax.call(this, 'User/getUserInfo', {}, function(data) {
+					app.ajax( 'User/getUserInfo', {}, function(data) {
 						plus.nativeUI.closeWaiting();
 						if(data) {
 							Arr = [data.username.substring(3), data.realname, data.email, data.mobile, data.wallet, app.franttime(parseInt(data.reg_date.time)), app.franttime(parseInt(data.login_time.time)), data.integral];
@@ -212,7 +212,7 @@
 						return;
 					}
 					plus.nativeUI.showWaiting();
-					app.ajax.call(this, 'XUser/personalInformation', obj, function(data) {
+					app.ajax('XUser/personalInformation', obj, function(data) {
 						plus.nativeUI.closeWaiting();
 						if(data.status === 'success') {
 							doc.getElementById('userName').value = '';
@@ -226,7 +226,6 @@
 							});
 						}
 					})
-
 				})
 				var infohtml = '';
 				$('.mui-segmented-control').on('tap', 'a', function(e) {

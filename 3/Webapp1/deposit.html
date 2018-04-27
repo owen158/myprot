@@ -127,7 +127,9 @@
 				margin-top: 25px;
 				text-align: center;
 			}
-			.item2,.item1{
+			
+			.item2,
+			.item1 {
 				display: none;
 			}
 			/*.mui-input-group,
@@ -194,6 +196,7 @@
 		<script src="js/mui.picker.js"></script>
 		<script src="js/mui.poppicker.js"></script>
 		<script src="js/app.js"></script>
+		<script src="js/pubilc.js"></script>
 		<script type="text/javascript">
 			var WithdrawConfig, cardid;
 			(function($, doc) {
@@ -205,21 +208,16 @@
 						doc.getElementById('no_item1').style.display = 'none';
 						doc.getElementById('off_item1').style.display = 'block';
 						app.setPayment(id.list);
-						PaymentInfo(id.list);
+						bug.MBchanne(id.list, bug.MBchannel).Payment()
 					} else {
 						doc.getElementById('no_item1').style.display = 'block';
 						doc.getElementById('off_item1').style.display = 'none';
 					}
-
 				});
 				//加载银行卡
 				window.addEventListener('addbank', function(event) {
 					var id = event.detail;
-					if(id.judgment === true){
-						document.getElementById('no_item2').style.display = 'none';
-						document.getElementById('off_item2').style.display = 'none';
-						ObtainCard();
-					}
+					buggetUserCard();
 				});
 				//支付渠道
 				$('.mui-table-view').on('tap', 'a', function(e) {
@@ -236,7 +234,6 @@
 								data: ''
 							}
 							plus.nativeUI.closeWaiting();
-							console.log(JSON.stringify(data))
 							if(data.status === 'error' || typeof data === 'undefined') {
 								list.judgment = false;
 								list.data = data.msg;
@@ -250,17 +247,14 @@
 							}
 						});
 					} else {
-//						if(types === '44'){
-//							
-//						}
 						app.openWindow('content/' + dataSrc, {});
 					}
 				})
-				
+
 				$('.mui-segmented-control').on('tap', 'a', function(e) {
 					var ele = e.target;
 					if(this.getAttribute('href') === '#item2') {
-						ObtainCard();
+						buggetUserCard();
 					}
 				})
 				doc.getElementById('btn').addEventListener('tap', function(e) {
@@ -309,8 +303,8 @@
 						WithDraw(tk)
 					}
 				})
-				doc.getElementById('addBank').addEventListener('tap',function(e){
-					app.openWindow('content/addBank.html','deposit.html')
+				doc.getElementById('addBank').addEventListener('tap', function(e) {
+					app.openWindow('content/addBank.html', 'deposit.html')
 				})
 				//在线客服
 				doc.getElementById('chatClient').addEventListener('tap', function(e) {
@@ -320,118 +314,38 @@
 				})
 			})(mui, document)
 
-			function Arrdata(obj) {
-				let objs = [];
-				for(let i = 0; i < obj.length; i++) {
-					for(var r= 0;r < app.MBchannel.length;r++){
-						if (obj[i] === 21){
-							console.log(1)
-							continue;
-						} 
-						if(obj[i] === app.MBchannel[r].sum){
-							objs.push(app.MBchannel[r]);
-						}
-					}
-					if(i === obj.length - 1) {
-						return objs;
-					}
-				}
-			}
-			function ObtainCard() {
+			function buggetUserCard() {
+				document.getElementById('no_item2').style.display = 'none';
+				document.getElementById('off_item2').style.display = 'none';
 				plus.nativeUI.showWaiting();
-				app.ajax("User/getUserCard", {}, function(data) {
+				bug.getUserCard(function(data) {
 					plus.nativeUI.closeWaiting();
-					if(data.length > 0) {
+					if(data != 'error') {
+						cardid = data[0].id;
 						document.getElementById('no_item2').style.display = 'none';
 						document.getElementById('off_item2').style.display = 'block';
-						cardid = data[0].id;
-						cardHtml(data);
-						Obtain();
+						bug.cardHtml(data).Obtain();
 					} else {
 						document.getElementById('no_item2').style.display = 'block';
 						document.getElementById('off_item2').style.display = 'none';
 					}
 				})
 			}
-			//			银行卡
-			function cardHtml(htmls) {
-				document.getElementById('showCard').innerHTML = '';
-				var fragment = document.createDocumentFragment();
-				htmls.forEach(function(e) {
-					var p1 = document.createElement('p');
-					p1.textContent = e.card_username;
-					var p2 = document.createElement('p');
-					p2.textContent = e.card_num;
-					var p3 = document.createElement('p');
-					p3.textContent = e.bank_name;
-					fragment.appendChild(p1);
-					fragment.appendChild(p2);
-					fragment.appendChild(p3);
-				})
-				document.getElementById('showCard').appendChild(fragment);
-			}
 			//提款接口
 			function WithDraw(obj) {
 				plus.nativeUI.showWaiting();
 				app.ajax('User/WithDraw', obj, function(data) {
 					plus.nativeUI.closeWaiting();
-					console.log(JSON.stringify(data))
 					if(data.msg == "success") {
 						mui.alert('提款成功', '系统提示', function() {
 							document.getElementById('credit').value = ''
 							document.getElementById('password').value = ''
-							Obtain();
+							bug.Obtain();
 						});
 					} else {
 						plus.nativeUI.toast(data.msg);
 					}
 				})
-			}
-			//					// 获取打码量 //获取钱包余额
-			function Obtain() {
-				app.ajax('User/selectWithdrawConfig', {}, function(Config) {
-					if(Config.status == "success") {
-						WithdrawConfig = Config;
-						document.getElementById('marking_quantity').value = Config.marking_quantity
-						document.getElementById('user_quantity').value = Config.user_quantity
-						app.setConfig(Config);
-					} else if(Config.status == "faild") {
-						document.getElementById('marking_quantity').style.display = 'none';
-						document.getElementById('user_quantity').style.display = 'none';
-					}
-				})
-				app.getBalance(function(data) {
-					document.getElementById('userMoney').textContent = data
-				})
-			}
-			//			支付渠道页面
-			function PaymentInfo(elpage) {
-
-				var Htmls = '';
-				var fragment = document.createDocumentFragment();
-				document.getElementsByClassName('mui-table-view')[0].innerHTML = '';
-				var ele = document.getElementsByClassName('mui-table-view')[0];
-				elpage.forEach((e) => {
-					var parent = document.createElement('li');
-					parent.className = "mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"
-					var a_ = document.createElement('a');
-					a_.setAttribute('dataType', e.type)
-					a_.setAttribute('dataSrc', e.src)
-					var span_ = document.createElement('span');
-					span_.className = e.icon;
-					var One = document.createElement('div');
-					One.className = 'mui-media-body';
-					One.textContent = e.text;
-					var Two = document.createElement('div');
-					Two.className = 'mui-media-body';
-					Two.textContent = e.title;
-					a_.appendChild(span_);
-					a_.appendChild(One);
-					a_.appendChild(Two);
-					parent.appendChild(a_);
-					fragment.appendChild(parent);
-				})
-				ele.appendChild(fragment)
 			}
 		</script>
 	</body>

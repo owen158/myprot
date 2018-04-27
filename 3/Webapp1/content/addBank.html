@@ -117,6 +117,7 @@
 		<script src="../js/app.js"></script>
 		<script src="../js/mui.picker.js"></script>
 		<script src="../js/mui.poppicker.js"></script>
+		<script src="js/Inquire.js"></script>
 		<script type="text/javascript">
 			(function($, doc) {
 				$.init();
@@ -139,75 +140,9 @@
 						}
 					});
 				}
-
 				$.ready(function() {
-					var userPicker = new $.PopPicker();
-					userPicker.setData([{
-						value: '1',
-						text: '中国农业银行'
-					}, {
-						value: '2',
-						text: '中国银行'
-					}, {
-						value: '3',
-						text: '交通银行'
-					}, {
-						value: '4',
-						text: '中国建设银行'
-					}, {
-						value: '5',
-						text: '中国工商银行'
-					}, {
-						value: '6',
-						text: '中国邮政储蓄银行'
-					}, {
-						value: '7',
-						text: '招商银行'
-					}, {
-						value: '8',
-						text: '浦发银行'
-					}, {
-						value: '9',
-						text: '中国光大银行'
-					}, {
-						value: '10',
-						text: '中信银行'
-					}, {
-						value: '11',
-						text: '平安银行'
-					}, {
-						value: '12',
-						text: '中国民生银行'
-					}, {
-						value: '13',
-						text: '华夏银行'
-					}, {
-						value: '14',
-						text: '广发银行'
-					}, {
-						value: '15',
-						text: '北京银行'
-					}, {
-						value: '16',
-						text: '上海银行'
-					}, {
-						value: '17',
-						text: '兴业银行'
-					}]);
-					var showUserPickerButton = doc.getElementById('showUserPicker');
-
-					showUserPickerButton.addEventListener('tap', function(event) {
-						userPicker.show(function(items) {
-							showUserPickerButton.innerText = items[0].text;
-							showUserPickerButton.setAttribute("data-value", items[0].value);
-						});
-					}, false);
-					//					$(document.body).on('tap', '#submit', function(e) {
-					//						$(this).button('loading');
-					//						setTimeout(function() {
-					//							$(this).button('reset');
-					//						}.bind(this), 10000);
-					//					});
+					var showUserPickerButton = doc.getElementById('showUserPicker'),userPicker;
+					bill.PopPicker(showUserPickerButton,userPicker,bill.addBand)
 					var btn = doc.getElementById('submit');
 					btn.addEventListener("tap", function() {
 						var obj = {
@@ -240,11 +175,6 @@
 								}
 							})
 						})
-						//						$(this).button('loading');
-
-						//						setTimeout(function() {
-						//							$(this).button('reset');
-						//						}.bind(this), 100000);
 					});
 				})
 			})(mui, document)

@@ -12,6 +12,7 @@
 			body {
 				background-image: url(images/bg.jpg);
 			}
+			
 			.Title {
 				background: url(images/mybg.jpg);
 				padding: 20px 15px;
@@ -19,7 +20,6 @@
 			
 			.mui-ios .mui-table-view-cell {
 				padding: 30px 15px;
-				;
 			}
 			
 			.icon-gerenzhongxin {
@@ -118,22 +118,28 @@
 					<span id="trans" class="icon-shuaxin iconfont"></span>
 				</div>
 			</div>
-			<div class="mui-row infoNav">
-				<!--<div class="mui-col-sm-4 mui-col-xs-4" data-id='Recharge'>
+			<!--<div class="mui-row infoNav">-->
+			<!--<div class="mui-col-sm-4 mui-col-xs-4" data-id='Recharge'>
 					<span></span> 充值
 				</div>
 				<div class="mui-col-sm-4 mui-col-xs-4" data-id='Withdrawal'>
 					<span></span> 提款
 				</div>-->
-				<div class="mui-col-sm-4 mui-col-xs-4" data-id='Transfer'>
+			<!--<div class="mui-col-sm-4 mui-col-xs-4" data-id='Transfer'>
 					<span ></span> 余额互转
-				</div>
-			</div>
+				</div>-->
+			<!--</div>-->
 			<ul class="mui-table-view mui-grid-view mui-grid-9">
 				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
 					<a href="#" data-id='Personal'>
 						<span class="iconfont icon-gerenziliao"></span>
 						<div class="mui-media-body">个人资料</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+					<a href="#" data-id='Transfer'>
+						<span class="iconfont icon-zhuanzhang"></span>
+						<div class="mui-media-body">余额互转</div>
 					</a>
 				</li>
 				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
@@ -185,7 +191,7 @@
 					</a>
 				</li>
 				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-					<a href="#" id="exit">
+					<a href="#" data-id='login.html' id="exit">
 						<span class="iconfont icon-tuichu"></span>
 						<div class="mui-media-body">退出</div>
 					</a>
@@ -202,73 +208,38 @@
 				var TuserName = doc.getElementById('TuserName');
 				var TuserMoneys = doc.getElementById('TuserMoneys');
 				var trans = doc.getElementById('trans');
-				trans.addEventListener('tap', function (){
+				trans.addEventListener('tap', function() {
 					TuserMoneys.innerHTML = 'loading...';
 					plus.nativeUI.showWaiting();
-					setTimeout(function(){
-						app.getBalance(function(data){
+					setTimeout(function() {
+						app.getBalance(function(data) {
 							plus.nativeUI.closeWaiting();
 							TuserMoneys.innerHTML = data;
 						})
-					},2000)
+					}, 2000)
 				})
 				window.addEventListener('showPageB', function(event) {
 					var id = event.detail;
-					TuserName.innerHTML = id.state.userName.substring(3);
-					TuserMoneys.innerHTML = id.balance;
+					TuserName.innerHTML = id.data.userName.substring(3);
+					plus.nativeUI.showWaiting();
+					setTimeout(function() {
+						app.getBalance(function(data) {
+							plus.nativeUI.closeWaiting();
+							TuserMoneys.innerHTML = data;
+						})
+					}, 0)
 				});
 				$('.mui-table-view').on('tap', 'a', function(e) {
 					var id = this.getAttribute('data-id');
-					$.plusReady(function() {
-						var settingPage = $.preload({
-							"id": id,
-							"url": 'content/' + id + '.html'
-						});
-					})
-					var b = plus.nativeUI;
-					b.showWaiting();
-					setTimeout(function(){
-						b.closeWaiting();
-						$.openWindow({
-							id: id,
-							show: {
-								aniShow: 'pop-in'
-							},
-							waiting: {
-								autoShow: false
-							}
-						});
-					}.bind(this), 1500)
-				});
-				$('.infoNav').on('tap', 'div', function(e) {
-					var id = this.getAttribute('data-id');
-					$.plusReady(function() {
-						var settingPage = $.preload({
-							"id": id,
-							"url": 'content/' + id + '.html'
-						});
-					})
-					var b = plus.nativeUI;
-					b.showWaiting();
-					setTimeout(function(){
-						b.closeWaiting();
-						$.openWindow({
-							id: id,
-							show: {
-								aniShow: 'pop-in'
-							},
-							waiting: {
-								autoShow: false
-							}
-						});
-					}.bind(this), 1500)
+					if(id === 'login.html'){
+						app.DropOut();
+						app.check();
+					}else{
+						app.openWindow('content/' + id + '.html', '')
+					}
 				});
 			}(mui, document));
 			//退出
-			document.getElementById('exit').addEventListener('tap', function() {
-				app.DropOut();
-				app.check();
-			}, false);
 		</script>
 	</body>
 

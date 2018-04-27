@@ -10,6 +10,7 @@
 			body {
 				background-image: url(../images/bg.jpg);
 			}
+			
 			.mui-bar {
 				background: linear-gradient(90deg, #734e31, #db9348, #734e31);
 				box-shadow: none;
@@ -27,50 +28,128 @@
 			.mui-bar a {
 				color: #fef7ea;
 			}
+			
+			.mui-table-view {
+				background-image: url(../images/bg.jpg);
+			}
+			
+			.mui-table-view-cell,
+			.mui-collapse,
+			.mui-table-view-cell.mui-active {
+				background: transparent;
+			}
+			
+			.mui-table-view-cell {
+				padding: 0;
+			}
+			
+			.mui-table-view-cell.mui-collapse .mui-collapse-content {
+				background: transparent;
+			}
+			
+			.mui-table-view-cell .mui-active {
+				background: transparent;
+			}
+			
+			.mui-table-view-cell.mui-collapse .mui-collapse-content {
+				padding: 0;
+				margin: 0;
+			}
+			
+			.mui-table-view {
+				width: 95%;
+				margin: 0 auto;
+			}
+
+			.mui-table-view-cell>a:not(.mui-btn) {
+				/*margin: 0;*/
+			}
+			
+			.mui-table-view li {
+				margin-bottom: 15px;
+			}
+			
+			.mui-table-view-cell:after,
+			.mui-table-view:after {
+				display: none;
+			}
 		</style>
 	</head>
+
 	<body>
 		<header class="mui-bar mui-bar-nav mui-action-back">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">优惠活动</h1>
 		</header>
-		<div class="mui-content">
-			<ul class="mui-table-view" id="example" style="margin-top: 0;">
-				<li class="mui-table-view-cell mui-collapse" v-if="offer != ''" v-for="item in offer">
-					<a class="mui-navigate-right" href="#">
-						<img width="100%" :src="item.img1" alt="" />
-					</a>
-					<div class="mui-collapse-content">
-						<img width="100%" :src="item.img2" alt="" />
-					</div>
-				</li>
-			</ul>
+		<div class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-collapse">
+						<a class="mui-navigate-right" href="#">
+							<img width="100%" src="images/Promotions/txyh_m_youhui_01.jpg" alt="" />
+						</a>
+						<div class="mui-collapse-content">
+							<img width="100%" src="images/Promotions/txyh_m_youhui_js_01.jpg" alt="" />
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-collapse">
+						<a class="mui-navigate-right" href="#">
+							<img width="100%" src="images/Promotions/txyh_m_youhui_02.jpg" alt="" />
+						</a>
+						<div class="mui-collapse-content">
+							<img width="100%" src="images/Promotions/txyh_m_youhui_js_02.jpg" alt="" />
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-collapse">
+						<a class="mui-navigate-right" href="#">
+							<img width="100%" src="images/Promotions/txyh_m_youhui_03.jpg" alt="" />
+						</a>
+						<div class="mui-collapse-content">
+							<img width="100%" src="images/Promotions/txyh_m_youhui_js_03.jpg" alt="" />
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-collapse">
+						<a class="mui-navigate-right" href="#">
+							<img width="100%" src="images/Promotions/txyh_m_youhui_04.jpg" alt="" />
+						</a>
+						<div class="mui-collapse-content">
+							<img width="100%" src="images/Promotions/txyh_m_youhui_js_04.jpg" alt="" />
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-collapse">
+						<a class="mui-navigate-right" href="#">
+							<img width="100%" src="images/Promotions/txyh_m_youhui_05.jpg" alt="" />
+						</a>
+						<div class="mui-collapse-content">
+							<img width="100%" src="images/Promotions/txyh_m_youhui_js_05.jpg" alt="" />
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-collapse">
+						<a class="mui-navigate-right" href="#">
+							<img width="100%" src="images/Promotions/txyh_m_youhui_06.jpg" alt="" />
+						</a>
+						<div class="mui-collapse-content">
+							<img width="100%" src="images/Promotions/txyh_m_youhui_js_06.jpg" alt="" />
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
-		<script src="../js/vue.js"></script>
 		<script src="../js/mui.min.js"></script>
 		<script src="../js/app.js"></script>
 		<script type="text/javascript">
-			var vm = new Vue({
-				el: '#example',
-				data: {
-					offer: '',
-				},
-			});
 			(function($, doc) {
 				$.init({
 					swipeBack: true //启用右滑关闭功能
 				});
-				plus.nativeUI.showWaiting();
-				app.ajax.call(this,'mobleWebcomConfig.do',{type: 2, cagent:app.cagent},function(data){
-					plus.nativeUI.closeWaiting();
-					var obj = [];
-					for(var i = 0;i<data.length;i++){
-//						console.log(JSON.stringify(data[i]))
-						if(data[i].src1 === '9CK'){
-							obj.push(data[i])
-						}
-					}
-					vm.offer = obj;
+				$(".mui-scroll-wrapper").scroll({
+					scrollY: true, //是否竖向滚动
+					scrollX: true, //是否横向滚动
+					startX: 0, //初始化时滚动至x
+					startY: 0, //初始化时滚动至y
+					indicators: false, //是否显示滚动条
+					deceleration: 0.0006, //阻尼系数,系数越小滑动越灵敏
+					bounce: false, //是否启用回弹
 				})
 				$.plusReady(function() {})
 			}(mui, document));

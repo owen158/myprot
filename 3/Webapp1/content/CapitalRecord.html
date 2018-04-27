@@ -103,28 +103,12 @@
 				app.setRecords({});
 				old_back();
 			});
-			mui.plusReady(function() {
-				var settingButton = document.getElementById('setting');
-				settingButton.addEventListener('tap', function(event) {
-					app.setRecords({})
-					mui.openWindow({
-						url: 'Inquire.html',
-						id: 'setting',
-						show: {
-							aniShow: 'pop-in'
-						},
-						extras: {
-							name: 'CapitalRecord'
-						},
-						styles: {
-							popGesture: 'hide'
-						},
-						waiting: {
-							autoShow: false
-						}
-					});
-				});
-			})
+
+			var settingButton = document.getElementById('setting');
+			settingButton.addEventListener('tap', function(event) {
+				app.setRecords({})
+				app.openWindow('Inquire.html','CapitalRecord')
+			});
 
 			var pager = {}; //分页
 			var totalPage; //总页码
@@ -135,10 +119,10 @@
 				var wobj = plus.webview.getWebviewById("CapitalRecord");
 				wobj.reload(true);
 			})
-
 			function pullupRefresh() {
 				setTimeout(function() {
 					if(JSON.stringify(app.getRecords()) === '{}') {
+						console.log(1)
 						pager = {
 							pageSize: 5,
 							pageNo: 1,

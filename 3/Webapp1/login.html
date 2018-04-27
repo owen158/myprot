@@ -157,6 +157,7 @@
 				$.init({
 					statusBarBackground: '#f7f7f7'
 				});
+
 				$.plusReady(function() {
 					plus.screen.lockOrientation("portrait-primary");
 					var settings = app.getSettings();
@@ -289,8 +290,7 @@
 							}
 							plus.nativeUI.showWaiting();
 							loginInfo.tname =app.cagent + loginInfo.tname;
-							app.ajax('login.do', loginInfo, function(data) {
-								console.log(JSON.stringify(data))
+							app.ajaxs('login.do', loginInfo, function(data) {
 								plus.nativeUI.closeWaiting();
 								if(data.status === 'ok') {
 									app.setState(data);

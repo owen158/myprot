@@ -134,28 +134,13 @@
 				app.setRecords({});
 				old_back();
 			});
-			mui.plusReady(function() {
-				var settingButton = document.getElementById('setting');
-				settingButton.addEventListener('tap', function(event) {
-					app.setRecords({})
-					mui.openWindow({
-						url: 'Inquire.html',
-						id: 'setting',
-						show: {
-							aniShow: 'pop-in'
-						},
-						extras: {
-							name: 'bettingRecord'
-						},
-						styles: {
-							popGesture: 'hide'
-						},
-						waiting: {
-							autoShow: false
-						}
-					});
-				});
-			})
+
+			var settingButton = document.getElementById('setting');
+			settingButton.addEventListener('tap', function(event) {
+				app.setRecords({})
+				app.openWindow('Inquire.html','bettingRecord')
+			});
+
 			var pager = {}; //分页
 			var totalPage; //总页码
 			var count = 1;
@@ -174,7 +159,7 @@
 						pager = {
 							pageSize: 5,
 							pageNo: count,
-							bdate: app.datatboy(0) + ' ' + '00:00:00',
+							bdate: app.datatboy(100000) + ' ' + '00:00:00',
 							edate: app.datatboy(0)+ ' ' + '23:59:59',
 							type: 'IGPJ'
 						};

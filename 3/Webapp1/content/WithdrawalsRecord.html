@@ -92,29 +92,11 @@
 				app.setRecords({});
 				old_back();
 			});
-
-			mui.plusReady(function() {
-				var settingButton = document.getElementById('setting');
-				settingButton.addEventListener('tap', function(event) {
-					app.setRecords({})
-					mui.openWindow({
-						url: 'Inquire.html',
-						id: 'setting',
-						show: {
-							aniShow: 'pop-in'
-						},
-						extras: {
-							name: 'WithdrawalsRecord'
-						},
-						styles: {
-							popGesture: 'hide'
-						},
-						waiting: {
-							autoShow: false
-						}
-					});
-				});
-			})
+			var settingButton = document.getElementById('setting');
+			settingButton.addEventListener('tap', function(event) {
+				app.setRecords({});
+				app.openWindow('Inquire.html','WithdrawalsRecord')
+			});
 			/**
 			 * 上拉加载具体业务实现
 			 */

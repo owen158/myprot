@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>充值</title>
+		<title>充值(备用)</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../css/iconfont.css" />
@@ -56,117 +56,17 @@
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">充值</h1>
 		</header>
-		<div class="mui-content" id="example">
-			<ul class="mui-table-view mui-grid-view mui-grid-9" v-if='ArrList != ""'></ul>
+		<div class="mui-content">
+			
 		</div>
 		<script src="../js/mui.min.js"></script>
 		<script src="../js/app.js"></script>
+		<script src="../js/pubilc.js"></script>
 		<script type="text/javascript">
 			(function($, doc) {
 				$.init();
-				plus.nativeUI.showWaiting();
-				app.ajax("PlatformPay/paymentChannel", {}, function(data) {
-					plus.nativeUI.closeWaiting();
-					if(typeof data != 'undefined') {
-						app.setPayment(Arrdata(data.MBchannel));
-						PaymentInfo(Arrdata(data.MBchannel));
-					}
-				})
-				$('.mui-table-view').on('tap', 'a', function(e) {
-					var id = $(this)[0];
-					if(id.dataType != '44' || id.dataType != '66' || id.dataType != '16' || id.dataType != '18') {
-						plus.nativeUI.showWaiting();
-						app.ajax('PlatformPay/getPaymentList', {
-							type: id.dataType
-						}, function(data) {
-							var list = {
-								type:id.dataType,
-								judgment: '',
-								data: ''
-							}
-							plus.nativeUI.closeWaiting();
-							if(data.status === 'error' || typeof data === 'undefined') {
-								list.judgment = false;
-								list.data = data.msg;
-								list = JSON.stringify(list);
-								srcUrl(id.dataSrc, list);
-							} else {
-								list.judgment = true;
-								list.data = data.typeList;
-								list = JSON.stringify(list);
-								srcUrl(id.dataSrc, list)
-							}
-						});
-						
-
-					} else {
-						b.closeWaiting();
-						$.openWindow({
-							"url": id.dataSrc,
-							id: id.dataSrc,
-							show: {
-								aniShow: 'pop-in'
-							},
-							waiting: {
-								autoShow: false
-							}
-						});
-					}
-				})
-				function srcUrl(src, obj) {
-					$.openWindow({
-						"url": src,
-						id: src,
-						show: {
-							aniShow: 'pop-in'
-						},
-						extras: {
-							name: obj
-						},
-						waiting: {
-							autoShow: false
-						}
-					})
-				}
 			})(mui, document)
-			function Arrdata(obj) {
-				let objs = [];
-				for(let i = 0; i < obj.length; i++) {
-					if(obj[i] === app.MBchannel[i].sum) {
-						objs.push(app.MBchannel[i])
-					}
-					if(i === obj.length - 1) {
-						return objs;
-					}
-				}
-			}
 
-			function PaymentInfo(elpage) {
-				var Htmls = '';
-				var fragment = document.createDocumentFragment();
-				var ele = document.getElementsByClassName('mui-table-view')[0];
-				elpage.forEach((e) => {
-					var parent = document.createElement('li');
-					parent.className = "mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"
-					var a_ = document.createElement('a');
-					a_.dataType = e.type;
-					a_.dataSrc = e.src;
-					var span_ = document.createElement('span');
-					span_.className = e.icon;
-					var One = document.createElement('div');
-					One.className = 'mui-media-body';
-					One.textContent = e.text;
-					var Two = document.createElement('div');
-					Two.className = 'mui-media-body';
-					Two.textContent = e.title;
-					a_.appendChild(span_);
-					a_.appendChild(One);
-					a_.appendChild(Two);
-					parent.appendChild(a_);
-					fragment.appendChild(parent);
-				})
-				ele.appendChild(fragment)
-			}
 		</script>
 	</body>
 

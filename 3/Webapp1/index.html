@@ -29,15 +29,12 @@
 			.mui-bar-tab .mui-tab-item.mui-active {
 				color: #ffd053;
 			}
-			
 			.mui-scroll-wrapper {
 				z-index: 3000;
 			}
-			
 			.mui-bar .mui-title {
 				color: #fef7ea;
 			}
-			
 			.mui-bar {
 				box-shadow: none;
 				border-bottom: none;
@@ -70,12 +67,11 @@
 		</nav>
 		<script src="js/mui.min.js"></script>
 		<script src="js/app.js"></script>
-		<!--<script src="js/public.js"></script>-->
 		<script type="text/javascript">
 			mui.init();
 			var subpages = ['Home.html', 'NoteSingle.html', 'deposit.html', 'MemberCentre.html'];
 			var subpage_style = {
-				top: '44px',
+				top: '45px',
 				bottom: '50px',
 				styles: {
 					"render": "always", //一直渲染
@@ -113,50 +109,8 @@
 			//选项卡点击事件
 			mui('.mui-bar-tab').on('tap', 'a', function(e) {
 				var targetTab = this.getAttribute('href');
-				app.ajax('checklogin.do', {}, function(data) {
-					if(data.msg == "faild") {
-						app.check();
-					} else if(data.msg == "islogin") {
-						app.check();
-					} else if(data.msg == "success") {
-						app.setState(data)
-					}
-				})
 				if(targetTab == activeTab) {
 					return;
-				}
-				if(targetTab === 'deposit.html') {
-					var page = plus.webview.getWebviewById(targetTab);
-					plus.nativeUI.showWaiting();
-					app.ajax("PlatformPay/paymentChannel", {}, function(data) {
-						plus.nativeUI.closeWaiting();
-						var objsData={
-								list:'',
-								jum:true
-							}
-						if(typeof data.MBchannel != 'undefined') {
-							objsData.list= Arrdata(data.MBchannel),
-							objsData.jum = true;
-							mui.fire(page, 'deposits',objsData);
-						}else{
-							objsData.list='',
-							objsData.jum = false;
-							mui.fire(page, 'deposits',objsData);
-						}
-					})
-				} else if(targetTab === 'MemberCentre.html') {
-					var state = app.getState();
-					var pageB = plus.webview.getWebviewById(targetTab);
-						plus.nativeUI.showWaiting();
-						app.getBalance(function(data){
-							plus.nativeUI.closeWaiting();
-							mui.fire(pageB, 'showPageB', {
-									state: state,
-									balance:  data
-								});
-						})
-				} else {
-					plus.nativeUI.closeWaiting();
 				}
 				//更换标题
 				if(this.querySelector('.mui-tab-label').innerHTML === "首页") {
@@ -166,7 +120,69 @@
 				} else {
 					title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
 				}
-				
+				var page = plus.webview.getWebviewById(targetTab);
+				plus.nativeUI.showWaiting();
+				app.ajaxs('checklogin.do', {}, function(data) {
+					plus.nativeUI.closeWaiting();
+					if(data.msg == "faild") {
+						app.check();
+					} else if(data.msg == "islogin") {
+						app.check();
+					} else if(data.msg == "success") {
+						if(targetTab === 'MemberCentre.html'){
+							mui.fire(page, 'showPageB', {data:data});
+						}
+						if(targetTab === 'deposit.html') {
+							plus.nativeUI.showWaiting();
+							app.ajax("PlatformPay/paymentChannel", {}, function(data) {
+								plus.nativeUI.closeWaiting();
+								var objsData = {
+									list: '',
+									jum: true
+								}
+								if(typeof data.MBchannel != 'undefined') {
+									objsData.list = data.MBchannel,
+									objsData.jum = true;
+									mui.fire(page, 'deposits', objsData);
+								} else {
+									objsData.list = '',
+									objsData.jum = false;
+									mui.fire(page, 'deposits', objsData);
+								}
+							})
+						}
+						//显示目标选项卡
+						//若为iOS平台或非首次显示，则直接显示
+						if(mui.os.ios || aniShow[targetTab]) {
+							plus.webview.show(targetTab);
+						} else {
+							//否则，使用fade-in动画，且保存变量
+							var temp = {};
+							temp[targetTab] = "true";
+							mui.extend(aniShow, temp);
+							plus.webview.show(targetTab, "fade-in", 300);
+						}
+						//隐藏当前;
+						plus.webview.hide(activeTab);
+						//更改当前活跃的选项卡
+						activeTab = targetTab;
+					}
+				})
+
+			});
+			function active(active){
+//				var targetTab = this.getAttribute('href');
+				if(active == activeTab) {
+					return;
+				}
+				//更换标题
+				if(this.querySelector('.mui-tab-label').innerHTML === "首页") {
+					title.innerHTML = "天下网络";
+				} else if(this.querySelector('.mui-tab-label').innerHTML === "客服") {
+					title.innerHTML = "在线客服";
+				} else {
+					title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
+				}
 				//显示目标选项卡
 				//若为iOS平台或非首次显示，则直接显示
 				if(mui.os.ios || aniShow[targetTab]) {
@@ -182,22 +198,6 @@
 				plus.webview.hide(activeTab);
 				//更改当前活跃的选项卡
 				activeTab = targetTab;
-			});
-			function Arrdata(obj) {
-				let objs = [];
-				for(let i = 0; i < obj.length; i++) {
-					for(var r= 0;r < app.MBchannel.length;r++){
-						if (obj[i] === 21){
-							continue;
-						} 
-						if(obj[i] === app.MBchannel[r].sum){
-							objs.push(app.MBchannel[r]);
-						}
-					}
-					if(i === obj.length - 1) {
-						return objs;
-					}
-				}
 			}
 		</script>
 	</body>

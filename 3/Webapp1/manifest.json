@@ -161,17 +161,17 @@
 					"iphone": {
 						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
 						"retina35": "E:/99hh皇冠app套图/启动/ios/iPhoen4s-4.png",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-						"retina40": "E:/99hh皇冠app套图/启动/ios/iPhoen5s-5.png","iphonex":"E:/99hh皇冠app套图/启动/ios/iPhoenX.png","retina47":"E:/99hh皇冠app套图/启动/ios/iPhoen678.png","retina55":"E:/99hh皇冠app套图/启动/ios/iPhoen678Push.png"
+						"retina40": "E:/99hh皇冠app套图/启动/ios/iPhoen5s-5.png","iphonex":"E:/99hh皇冠app套图/启动/ios/iPhoenX.png","retina47":"E:/99hh皇冠app套图/启动/ios/iPhoen678.png","retina55":"E:/99hh皇冠app套图/启动/ios/iPhoen678Push.png","iphonexl":"E:/99hh皇冠app套图/启动/ios/iPhoen4s-4.png","retina55l":"E:/99hh皇冠app套图/启动/ios/ipad2Xipadmini.png"
 					},
 					"ipad": {
-						"portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait": "E:/99hh皇冠app套图/启动/ios/ipad2Xipadmini.png", /*iPad竖屏启动图片，分辨率：768x1004*/
 						/*iPad高分屏竖屏图片，分辨率：1536x2008*/
-						"landscape": "", /*iPad横屏启动图片，分辨率：1024x748*/
-						"landscape-retina": "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+						"landscape": "E:/99hh皇冠app套图/启动/ios/iPhoen4s-4.png", /*iPad横屏启动图片，分辨率：1024x748*/
+						"landscape-retina": "E:/99hh皇冠app套图/启动/ios/iPhoen4s-4.png", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
 						"portrait7": "E:/99hh皇冠app套图/启动/ios/ipad2Xipadmini.png", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
 						"portrait-retina7": "E:/99hh皇冠app套图/启动/ios/ipad.png",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
-						"landscape7": "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
-						"landscape-retina7": ""
+						"landscape7": "E:/99hh皇冠app套图/启动/ios/ipad2Xipadmini.png", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+						"landscape-retina7": "E:/99hh皇冠app套图/启动/ios/ipad.png","portrait-retina":"E:/99hh皇冠app套图/启动/ios/ipad.png"
 					}
 				},
 				"android": {
@@ -182,7 +182,7 @@
 					"xxhdpi": ""
 				}
 			}
-		},"ads":{"rp":true,"splash":true,"push":true},"adid":""
+		},"ads":{"rp":false,"splash":false,"push":false},"adid":""
 	},
 	"dependencies": {
 		"pages": {

@@ -143,7 +143,7 @@
 					value.textContent = e.text;
 					texts.textContent = 'loading...'
 					texts.setAttribute("data-id", e.value);
-					app.ajax('User/getBalance', {
+					app.ajaxs('User/getBalance', {
 						BType: e.value
 					}, function(data) {
 						if(data.msg == "error") {
@@ -191,6 +191,7 @@
 						app.ajax('User/getBalance', {
 							BType: el.getAttribute('data-id')
 						}, function(data) {
+							console.log(JSON.stringify(data))
 							plus.nativeUI.closeWaiting();
 							if(data.msg == "error") {
 								plus.nativeUI.toast('系统错误');
@@ -237,30 +238,37 @@
 					var objs = {
 						credit: doc.getElementById('credit').value,
 						type: '',
-						imgcode: doc.getElementById('imgcode').value,
+						imgcode: '',
 						uuid: '',
 						isImgCode: 0
 					}
-					app.ajax('User/getToken', {
-						userKey: app.getState().userkey
-					}, function(token) {
-						if(typeof token === 'undefined') {
-							mui.alert('转账未完成', '系统提示', function() {});
-						} else {
-							objs.uuid = token.msg;
-							plus.nativeUI.showWaiting();
-							setTimeout(function() {
-								if(gameIn.innerText === '中心钱包') {
-									objs.type = gameOut.getAttribute('data-type');
-									BugTransfer('User/TransferTo', objs);
-								} else {
-									objs.type = gameIn.getAttribute('data-type');
-									BugTransfer('User/TransferFrom', objs);
-								}
-							}, 2000)
+					if(!/^[0-9]+([.]\d{1,2})?$/.test(objs.credit) || (Number(objs.credit) < 1 || Number(objs.credit) > 100000)) {
+						$.alert('请输入金额(例:1.00),最高保留两位小数', '系统提示', function() {
+							doc.getElementById('credit').value = ''
+						});
+						return;
+					}
+					app.ajaxs('checklogin.do', {}, function(check) {
+						app.ajaxs('User/getToken', {userKey: check.userkey}, function(token) {
+							if(typeof token === 'undefined') {
+								mui.alert('转账未完成', '系统提示', function() {});
+							} else {
+								objs.uuid = token.msg;
+								plus.nativeUI.showWaiting();
+								setTimeout(function() {
+									if(gameIn.innerText === '中心钱包') {
+										objs.type = gameOut.getAttribute('data-type');
+										BugTransfer('User/TransferTo', objs);
+									} else {
+										objs.type = gameIn.getAttribute('data-type');
+										BugTransfer('User/TransferFrom', objs);
+									}
+								}, 2000)
 
-						}
+							}
+						})
 					})
+
 				})
 			})(mui, document);
 

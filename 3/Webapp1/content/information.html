@@ -12,6 +12,7 @@
 			body {
 				background-image: url(../images/bg.jpg);
 			}
+			
 			.mui-bar {
 				background: linear-gradient(90deg, #734e31, #db9348, #734e31);
 				box-shadow: none;
@@ -21,12 +22,15 @@
 			.mui-bar h1 {
 				color: #fef7ea;
 			}
+			
 			.mui-content {
 				background: transparent;
 			}
+			
 			.mui-bar a {
 				color: #fef7ea;
 			}
+			
 			.mui-input-row label,
 			.mui-button-row label {
 				width: 27%;
@@ -37,42 +41,55 @@
 				float: left;
 				padding: 11px 15px;
 			}
-			.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea{
+			
+			.mui-input-row label~input,
+			.mui-input-row label~select,
+			.mui-input-row label~textarea {
 				width: 73%;
 				font-size: 14px;
 			}
-			.info{
+			
+			.info {
 				margin: 0;
 				height: 25px;
 				padding-left: 15px;
 				line-height: 25px;
 				color: #fef7ea;
 			}
+			
 			button[disabled],
 			html input[disabled] {
 				background: #e5e5e5;
 			}
+			
 			.mui-btn-small {
 				padding: 5px 0;
 			}
-			#btn{
-				margin-top: 30px;;
+			
+			#btn {
+				margin-top: 30px;
+				;
 			}
-			.title{
+			
+			.title {
 				line-height: 40px;
 				margin: 0;
-				padding-left: 15px;;
+				padding-left: 15px;
+				;
 			}
-			.mui-input-group{
-				background:#fef7ea ;
+			
+			.mui-input-group {
+				background: #fef7ea;
 			}
-			.mui-button-row .mui-btn{
+			
+			.mui-button-row .mui-btn {
 				float: left;
 			}
-			.mui-card{
+			
+			.mui-card {
 				/*display: none;*/
 				margin: 15px;
-				background:#fef7ea ;
+				background: #fef7ea;
 				padding: 5px;
 			}
 		</style>
@@ -84,21 +101,23 @@
 			<h1 class="mui-title">填写存款信息</h1>
 		</header>
 		<div class="mui-content">
-			<p class="title">汇款前请联系客服确认汇款信息 <a href="#" id="chatClient">在线客服</a> </p>
-			<div class="mui-row">
+			<p class="title">汇款前请联系客服确认汇款信息
+				<a href="#" id="chatClient">在线客服</a>
+			</p>
+			<div class="mui-row" id="card">
 				<div class="mui-card">
-				<!--页眉，放置标题-->
-				<!--<div class="mui-card-header">银行卡</div>-->
-				<!--内容区-->
-				<div class="mui-card-content">银行户名: 897897987979</div>
-				<div class="mui-card-content">银行账户: 478978978979</div>
-				<div class="mui-card-content">银行名称</div>
-				<div class="mui-card-content">开户行地址</div>
-				<!--页脚，放置补充信息或支持的操作-->
-				<!--<div class="mui-card-footer">页脚</div>-->
+					<!--页眉，放置标题-->
+					<!--<div class="mui-card-header">银行卡</div>-->
+					<!--内容区-->
+					<!--<div class="mui-card-content"></div>
+					<div class="mui-card-content">银行账户: 478978978979</div>
+					<div class="mui-card-content">银行名称</div>
+					<div class="mui-card-content">开户行地址</div>-->
+					<!--页脚，放置补充信息或支持的操作-->
+					<!--<div class="mui-card-footer">页脚</div>-->
+				</div>
 			</div>
-			</div>
-			
+
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>姓名</label>
@@ -120,7 +139,7 @@
 				</div>
 				<div class="mui-button-row">
 					<label>存款方式</label>
-					<button data-type='1' type="button"  id="type" class="mui-btn mui-btn-warning">网银转账</button>
+					<button data-type='1' type="button" id="type" class="mui-btn mui-btn-warning">网银转账</button>
 				</div>
 				<div class="mui-button-row">
 					<label>申请彩金</label>
@@ -148,102 +167,98 @@
 		<script src="../js/mui.picker.min.js"></script>
 		<script src="../js/mui.poppicker.js"></script>
 		<script src="../js/app.js"></script>
+		<script src="js/Inquire.js"></script>
 		<script type="text/javascript">
-			(function($,doc){
+			(function($, doc) {
 				$.init();
-//				getBankList();
-				var types = new $.PopPicker();
-				types.setData([ 
-					{text:'网银转账',value:'1'},
-                    {text:'支付宝',value:'2'},
-                    {text:'财付通',value:'3'},
-                    {text:'微信',value:'4'},
-                    {text:'ATM自动柜员机',value:'5'},
-                    {text:'ATM现金入款',value:'6'},
-                    {text:'银行柜台',value:'7'}
-                ]);
-                var type = doc.getElementById('type');
-					type.addEventListener('tap', function(event) {
-						types.show(function(items) {
-							type.innerText = items[0].text;
-							type.setAttribute("data-type", items[0].value);
-						});
-					}, false);
-				var caijins = new $.PopPicker();
-				caijins.setData([ 
-					{text:'不申请',value:'0'},
-                    {text:'申请',value:'1'}
-                ]);
-                 var caijin = doc.getElementById('caijin');
-					caijin.addEventListener('tap', function(event) {
-						caijins.show(function(items) {
-							caijin.innerText = items[0].text;
-							caijin.setAttribute("data-type", items[0].value);
-						});
-					}, false);
-				doc.getElementById('chatClient').addEventListener('tap',function(e){
+				getBankList();
+				var type = doc.getElementById('type'),types;
+				var caijin = doc.getElementById('caijin'),caijins;
+				bill.PopPicker(type,types,bill.informationType).PopPicker(caijin,caijins,[{text: '不申请',value: '0'},{text: '申请',value: '1'}]);
+
+				doc.getElementById('chatClient').addEventListener('tap', function(e) {
 					app.Options.id = 'livechatvalue'
-					app.Options.url =app.Client;
-					app.open(app.Options,'在线客服');
+					app.Options.url = app.Client;
+					app.open(app.Options, '在线客服');
 				})
-				doc.getElementById('btn').addEventListener('tap',function(e){
+				doc.getElementById('btn').addEventListener('tap', function(e) {
 					var name = doc.getElementById('name').value;
 					var account = doc.getElementById('account').value;
 					var amount = doc.getElementById('amount').value;
 					var CardObj = {
-						name:name,
-						account:account,
-						amount:amount,
-						ctime:app.GetDateT(),
-						type:type.getAttribute("data-type"),
-						caijin:caijin.getAttribute("data-type")
+						name: name,
+						account: account,
+						amount: amount,
+						ctime: app.GetDateT(),
+						type: type.getAttribute("data-type"),
+						caijin: caijin.getAttribute("data-type")
 					};
 					var btnssss = ["确定", "取消"];
-					if(!/^\D{2,18}$/.test(CardObj.name)){
+					if(!/^\D{2,18}$/.test(CardObj.name)) {
 						$.alert('真实姓名必须与您的银行账户相同 2 -18 中文', '系统提示', btnssss, function(e) {
-								doc.getElementById('name').value = '';
+							doc.getElementById('name').value = '';
 						});
 						return;
 					}
-					if(!/^[0-9]{4,19}$/.test(CardObj.account)){
+					if(!/^[0-9]{4,19}$/.test(CardObj.account)) {
 						$.alert('请填写银行卡', '系统提示', btnssss, function(e) {
-								doc.getElementById('account').value = '';
+							doc.getElementById('account').value = '';
 						});
 						return;
 					}
-					if(!/^[0-9]+([.]\d{1,2})?$/.test(CardObj.amount) || Number(CardObj.amount) <= 0){
+					if(!/^[0-9]+([.]\d{1,2})?$/.test(CardObj.amount) || Number(CardObj.amount) <= 0) {
 						$.alert('请输入金额(例:1.00),最高保留两位小数,不能小于、等于0', '系统提示', btnssss, function(e) {
-								doc.getElementById('amount').value = '';
+							doc.getElementById('amount').value = '';
 						});
 						return;
 					}
 					plus.nativeUI.showWaiting();
-					app.ajax('bk/BankPay.do',CardObj,function(data){
+					app.ajax('bk/BankPay.do', CardObj, function(data) {
 						plus.nativeUI.closeWaiting();
-						if(data.status == 'success'){
+						if(data.status == 'success') {
 							$.alert('提交成功！如有疑问，请及时联系在线客服确认存款信息，谢谢！', '系统提示', btnssss, function(e) {
 								doc.getElementById('amount').value = '';
 								doc.getElementById('account').value = '';
 								doc.getElementById('name').value = '';
 							});
-						}else if(data.status == 'faild'){
+						} else if(data.status == 'faild') {
 							$.alert('失败,如有疑问，请联系在线客服', '系统提示', btnssss, function(e) {});
-						}else{
+						} else {
 							$.alert(data.Msg, '系统提示', btnssss, function(e) {});
 						}
 					})
 				})
-			})(mui,document)
-			function getBankList(){
-				var fragment = document.createDocumentFragment();
-				app.ajax('bk/getBankList.do',{},function(data){
-					console.log(JSON.stringify(data));
-					if(JSON.stringify(data) != null || JSON.stringify(data) != 'undefined'){
-						data.forEach(function(e){
-						})
-					}
+			})(mui, document)
+			function getBankList() {
+				app.ajax('bk/getBankList.do', {}, function(data) {
+					var card = document.getElementById('card');
+					card.innerHTML = '';
+					var fragment = document.createDocumentFragment();
+					data.forEach(function(e) {
+						var parent = document.createElement('div');
+						parent.className = 'mui-card';
+						var content = document.createElement('div');
+						content.className = 'mui-card-content';
+						content.textContent = '用户名 : ' + e.realname;
+						var content1 = document.createElement('div');
+						content1.className = 'mui-card-content';
+						content1.textContent = '银行卡号 : ' + e.cardno;
+						var content2 = document.createElement('div');
+						content2.className = 'mui-card-content';
+						content2.textContent = '银行名称 : ' + e.bankname;
+						var content3 = document.createElement('div');
+						content3.className = 'mui-card-content';
+						content3.textContent = '开户行地址 : ' + e.bankaddress;
+						parent.appendChild(content);
+						parent.appendChild(content1);
+						parent.appendChild(content2);
+						parent.appendChild(content3);
+						fragment.appendChild(parent);
+					})
+					card.appendChild(fragment);
 				})
 			}
 		</script>
 	</body>
+
 </html>

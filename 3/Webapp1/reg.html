@@ -4,13 +4,14 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title></title>
+		<title>注册</title>
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link href="css/style.css" rel="stylesheet" />
 		<style>
-			.mui-content{
+			.mui-content {
 				background-image: url(images/bg.jpg);
 			}
+			
 			.mui-bar {
 				background: linear-gradient(90deg, #734e31, #db9348, #734e31);
 				color: #ffd053;
@@ -20,38 +21,48 @@
 			.mui-bar h1 {
 				color: #fef7ea;
 			}
-			.mui-bar a{
+			
+			.mui-bar a {
 				color: #fef7ea;
 			}
+			
 			.area {
 				margin: 20px auto 0px auto;
 			}
+			
 			.mui-input-group:first-child {
 				margin-top: 20px;
 			}
+			
 			.mui-input-group label {
 				width: 28%;
 			}
+			
 			.mui-input-row label~input,
 			.mui-input-row label~select,
 			.mui-input-row label~textarea {
 				width: 72%;
 			}
+			
 			.mui-checkbox input[type=checkbox],
 			.mui-radio input[type=radio] {
 				top: 6px;
 			}
+			
 			.mui-content-padded {
 				margin-top: 25px;
 			}
+			
 			.mui-btn {
 				padding: 10px;
 			}
-			input{
+			
+			input {
 				font-size: 14px;
 			}
 		</style>
 	</head>
+
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
@@ -61,27 +72,28 @@
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>账号</label>
-					<input id='userName' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+					<input id='userName' maxlength="11" type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
 				</div>
 				<div class="mui-input-row">
 					<label>密码</label>
-					<input id='passWord' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+					<input id='passWord' maxlength="12" type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
 				</div>
 				<div class="mui-input-row">
 					<label>手机号</label>
-					<input id='mobileNo' type="tel" class="mui-input-clear mui-input" placeholder="请输入手机号">
+					<input id='mobileNo' maxlength="11" type="tel" class="mui-input-clear mui-input" placeholder="请输入手机号">
 				</div>
 				<div class="mui-input-row">
 					<label>真实姓名</label>
-					<input id='realName' type="text" class="mui-input-clear mui-input" placeholder="与您的银行账户名称相同，否则不能出款!">
+					<input id='realName' maxlength="18" type="text" class="mui-input-clear mui-input" placeholder="与您的银行账户名称相同，否则不能出款!">
 				</div>
 				<div class="mui-input-row">
+					<label>取款密码</label>
+					<input id='qkpwd' maxlength="4" type="password" class="mui-input-clear mui-input" placeholder="4位数字的取款密码">
+				</div>
+				<!--<div class="mui-input-row">
 					<label>微信</label>
-					<input id='remark' type="text" class="mui-input-clear mui-input" placeholder="*微信">
-				</div>
-				<div class="mui-input-row">
-					<img style='background: red;;width: 80px;height: 40px;' id="imgCodes" src="" alt="" />
-				</div>
+					<input id='remark' maxlength="30" type="text" class="mui-input-clear mui-input" placeholder="*微信">
+				</div>-->
 			</form>
 			<div class="mui-content-padded">
 				<button id='reg' class="mui-btn mui-btn-block mui-btn-warning">注册</button>
@@ -95,80 +107,100 @@
 		<script>
 			(function($, doc) {
 				$.init();
-				 var regs ={
-                    userName:'',//用户名
-                    passWord: '',//密码
-                    repassWord:'',//确认密码
-                    mobileNo:'',//手机号
-                    imgcode:'',//验证码
-                    reguuid:'',//token
-                    qkpwd:'',//取款密码
-                    reqkpwd:'',//确认取款密码
-                    realName:'',//真实姓名
-                    cagent:'',//字段
-                    isMobile:1,//类型
-                    proxyname:'',//
-                    remark:''
-               };
-//             ;
-//console.log(app.linkSrc+'validateCode?timesp'+(new Date()).valueOf())
-//             app.ajax('validateCode?timesp'+(new Date()).valueOf(),{},function(data){
-//             	doc.getElementById('imgCodes').setAttribute('src',data)
-//             })
+				var mainPage = plus.webview.getWebviewById("index");
+				var main_loaded_flag = false;
+				if(!mainPage) {
+					mainPage = $.preload({
+						"id": 'index',
+						"url": 'index.html'
+					});
+				} else {
+					main_loaded_flag = true;
+				}
+				mainPage.addEventListener("loaded", function() {
+					main_loaded_flag = true;
+				});
+				var toMain = function() {
+					//使用定时器的原因：
+					//可能执行太快，main页面loaded事件尚未触发就执行自定义事件，此时必然会失败
+					var id = setInterval(function() {
+						if(main_loaded_flag) {
+							clearInterval(id);
+							$.fire(mainPage, 'show', null);
+							mainPage.show("pop-in");
+						}
+					}, 20);
+				};
 				$.plusReady(function() {
 					var settings = app.getSettings();
-//					  userName:'',//用户名
-//                  passWord: '',//密码
-//                  repassWord:'',//确认密码
-//                  mobileNo:'',//手机号
-//                  imgcode:'',//验证码
-//                  reguuid:'',//token
-//                  qkpwd:'',//取款密码
-//                  reqkpwd:'',//确认取款密码
-//                  realName:'',//真实姓名
-//                  cagent:'',//字段
-//                  isMobile:1,//类型
-//                  proxyname:'',//
-//                  remark:''
 					var regButton = doc.getElementById('reg');
 					var userName = doc.getElementById('userName');
 					var passWord = doc.getElementById('passWord');
 					var mobileNo = doc.getElementById('mobileNo');
 					var realName = doc.getElementById('realName');
+					var qkpwd = doc.getElementById('qkpwd');
 					var remark = doc.getElementById('remark');
 					regButton.addEventListener('tap', function(event) {
 						var regInfo = {
-							account: accountBox.value,
-							password: passwordBox.value,
-							email: emailBox.value
+							userName: userName.value, //用户名
+							passWord: passWord.value, //密码
+							repassWord: passWord.value, //确认密码
+							mobileNo: mobileNo.value, //手机号
+							imgcode: '', //验证码
+							reguuid: '', //token
+							qkpwd: qkpwd.value, //取款密码
+							reqkpwd: qkpwd.value, //确认取款密码
+							realName: realName.value, //真实姓名
+							cagent: app.cagent, //字段
+							isMobile: 1, //类型
+							isImgCode: '0',
+							proxyname: '', //
+							//			                    remark:remark.value
 						};
-						var passwordConfirm = passwordConfirmBox.value;
-						if (passwordConfirm != regInfo.password) {
-							plus.nativeUI.toast('密码两次输入不一致');
-							return;
-						}
+						var Arr=[
+							{code:'001',text:'用户名为空'},
+							{code:'002',text:'用户名格式不正确'},
+							{code:'003',text:'手机号为空'},
+							{code:'004',text:'手机号不正确'},
+							{code:'005',text:'密码为空'},
+							{code:'006',text:'确认密码为空'},
+							{code:'007',text:'两次密码不一致'},
+							{code:'008',text:'密码格式不正确'},
+							{code:'009',text:'账号已存在'},
+							{code:'010',text:'reguuid为空,如有疑问联系在线客服'},
+							{code:'011',text:'图片验证码为空'},
+							{code:'012',text:'图片验证码错误'},
+							{code:'013',text:'取款密码为空'},
+							{code:'014',text:'确认取款密码为空'},
+							{code:'015',text:'两次取款密码不一致'},
+							{code:'016',text:'取款密码格式不正确'},
+							{code:'success',text:'恭喜您，注册成功'},
+							{code:'error',text:'网络异常'},
+						]
 						app.reg(regInfo, function(err) {
-							if (err) {
+//							toMain();
+							if(err) {
 								plus.nativeUI.toast(err);
 								return;
 							}
-							plus.nativeUI.toast('注册成功');
-							/*
-							 * 注意：
-							 * 1、因本示例应用启动页就是登录页面，因此注册成功后，直接显示登录页即可；
-							 * 2、如果真实案例中，启动页不是登录页，则需修改，使用mui.openWindow打开真实的登录页面
-							 */
-//							plus.webview.getLaunchWebview().show("pop-in",200,function () {
-//								plus.webview.currentWebview().close("none");
-//							});
-							//若启动页不是登录页，则需通过如下方式打开登录页
-//							$.openWindow({
-//								url: 'login.html',
-//								id: 'login',
-//								show: {
-//									aniShow: 'pop-in'
-//								}
-//							});
+							plus.nativeUI.showWaiting();
+							app.ajaxs('User/getToken', {}, function(token) {
+								regInfo.reguuid = token.msg;
+								app.ajaxs('User/register', regInfo, function(data) {
+									plus.nativeUI.closeWaiting();
+									if('success' === data.msg){
+										$.alert('恭喜您，注册成功', '系统提示', function() {
+											toMain();
+										});
+									}else{
+										Arr.forEach(function(e){
+											if(e.code === data.msg){
+												plus.nativeUI.toast(e.text);
+											}
+										})
+									}
+								})
+							})
 						});
 					});
 				});

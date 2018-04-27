@@ -44,9 +44,10 @@
 			}
 			
 			.addcard .test {
-				display: none;
+				/*display: none;*/
 				line-height: 30px;
 				color: #533523;
+				font-size: 18px;
 			}
 			
 			.showApp {
@@ -80,75 +81,43 @@
 		<div class="mui-content">
 			<div class="addcard" id="addBank">
 				<span class="mui-icon mui-icon-plus"></span>
-				<div class="test">点击添加银行卡</div>
-				<input type="text" hidden="" />
+
+				<div  class="test">点击添加银行卡</div>
+				<!--<input type="text" hidden="" />-->
 			</div>
-			<div class="showApp" id="showApp">
+			<div class="showApp" id="showCard">
 			</div>
 		</div>
 		<script src="../js/mui.min.js"></script>
 		<script src="../js/app.js"></script>
+		<script src="../js/pubilc.js"></script>
 		<script type="text/javascript">
 			(function($, doc) {
 				$.init();
-				var banksum;
-				function addcard(sum) {
-					var text;
-					for(var i = 0; i < sum.length; i++) {
-						text = '<p>' + sum[i].card_username + '</p><p>' + sum[i].bank_name + '</p><p>' + sum[i].card_num + '</p><input id="cardId" value=' + sum[i].id + ' type="text" hidden="" />'
-					}
-					doc.getElementById('showApp').innerHTML = text;
-				}
 				window.addEventListener('addbank', function(event) {
 					var id = event.detail;
-					if(id.judgment === true) {
-						var wobj = plus.webview.getWebviewById("banCard");
-						wobj.reload(true);
-					}
+					buggetUserCard();
 				})
-				$.plusReady(function() {
-					var settingButton = doc.getElementById('addBank');
-					settingButton.addEventListener('tap', function(event) {
-						$.openWindow({
-							id: 'addBank',
-							url: 'addBank.html',
-							 extras:{
-						        name:'banCard'
-						  	},
-							show: {
-								aniShow: 'pop-in'
-							},
-							styles: {
-								popGesture: 'hide'
-							},
-							waiting: {
-								autoShow: false
-							}
-						});
-					});
+				buggetUserCard();
+				var settingButton = doc.getElementById('addBank');
+				settingButton.addEventListener('tap', function(event) {
+					app.openWindow('addBank.html','content/banCard.html')
 				});
-				if(JSON.stringify(app.getBankCard()) === '{}') {
+				
+				function buggetUserCard(){
 					plus.nativeUI.showWaiting();
-					app.ajax("User/getUserCard", {}, function(data) {
+					bug.getUserCard(function(data){
 						plus.nativeUI.closeWaiting();
-						if(data.length > 0) {
-							app.setBankCard(data);
-							document.getElementById('showApp').style.display = 'block'
+						if(data != 'error'){
+							doc.getElementById('showCard').style.display = 'block'
 							doc.getElementById('addBank').style.display = 'none';
-							addcard(data);
-						} else {
-							document.getElementById('showApp').style.display = 'none'
+							bug.cardHtml(data);
+						}else{
+							doc.getElementById('showCard').style.display = 'none'
 							doc.getElementById('addBank').style.display = 'block';
 						}
 					})
-					return;
-				} else {
-					doc.getElementById('addBank').style.display = 'none';
-					document.getElementById('showApp').style.display = 'block'
-					banksum = app.getBankCard();
-					addcard(banksum);
-				};
-
+				}
 			})(mui, document)
 		</script>
 	</body>

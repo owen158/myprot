@@ -137,11 +137,6 @@
 		<script type="text/javascript">
 			(function($, doc) {
 				$.init();
-//				 bankpass:{
-//                  password:'',
-//                  npassword:'',
-//                  renpassword:''
-//              }
 				var loginbtn = doc.getElementById('loginbtn');
 				var bankpass = doc.getElementById('bankpass');
 				loginbtn.addEventListener('tap', function(event) {
@@ -170,7 +165,9 @@
 						plus.nativeUI.toast('确认密码有误，请重新输入');
 						return;
 					}
-					app.ajax.call(this,'User/changePassword',obj,function(data){
+					plus.nativeUI.showWaiting();
+					app.ajax('User/changePassword',obj,function(data){
+						plus.nativeUI.closeWaiting();
 						if(data.msg == "success"){
 							doc.getElementById('renpassword').value = '';
 							doc.getElementById('npassword').value = '';
@@ -211,8 +208,10 @@
 						plus.nativeUI.toast('确认密码有误，请重新输入');
 						return;
 					}
-					console.log(1)
-					app.ajax.call(this,"User/changeQkpwd",obj,function(data){
+						
+					plus.nativeUI.showWaiting();
+					app.ajax("User/changeQkpwd",obj,function(data){
+						plus.nativeUI.closeWaiting();
 						if (data.msg == "success") {
 							doc.getElementById('renpasswords').value = '';
 							doc.getElementById('npasswords').value = '';
@@ -220,6 +219,7 @@
 							$.alert('登录密码修改成功', '系统提示', function() {});
 							return;
 						}else{
+							
 //							doc.getElementById('renpasswords').value = '';
 //							doc.getElementById('npasswords').value = '';
 //							doc.getElementById('passwords').value = '';

@@ -7,12 +7,8 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<style>
-			body {
+		body {
 				background-image: url(images/bg.jpg);
-			}
-			#sliderTest {
-				height: 40px;
-				background: #734e31;
 			}
 			
 			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
@@ -44,223 +40,194 @@
 				z-index: 998;
 				background-color: rgba(0, 0, 0, .6);
 			}
+			
+			#sliderTest {
+				position: relative;
+				color: #000000;
+				overflow: hidden;
+				height: 40px;
+				background: #734e31;
+				/*transition: width 1s;*/
+				/*-moz-transition: width 1s;*/
+				/* Firefox 4 */
+				/*-webkit-transition: width 1s;*/
+				/* Safari 和 Chrome */
+				/*-o-transition: width 1s;*/
+				/* Opera */
+			}
+			
+			#sliderTest .Marquee-List {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			
+			#sliderTest .Marquee-List li {
+				list-style-type: none;
+				height: 40px;
+				line-height: 40px;
+				text-align: left;
+				font-size: 14px;
+				padding-left: 5px;
+				color: #ffefde;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
 		</style>
 		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	</head>
 
 	<body>
 		<div class="mui-center">
-			<div id="slider" class="mui-slider">
-				<div class="mui-slider-group mui-slider-loop">
-					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-					<div class="mui-slider-item mui-slider-item-duplicate">
-						<a href="#">
-							<img src="images/txyl_lunbo_05.jpg">
-						</a>
+
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div id="slider" class="mui-slider">
+						<div class="mui-slider-group mui-slider-loop">
+							<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#">
+									<img src="images/txyl_lunbo_05.jpg">
+								</a>
+							</div>
+							<!-- 第一张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="images/txyl_lunbo_01.jpg">
+								</a>
+							</div>
+							<!-- 第二张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="images/txyl_lunbo_02.jpg">
+								</a>
+							</div>
+							<!-- 第三张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="images/txyl_lunbo_03.jpg">
+								</a>
+							</div>
+							<!-- 第四张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="images/txyl_lunbo_04.jpg">
+								</a>
+							</div>
+							<!-- 第四张 -->
+							<div class="mui-slider-item">
+								<a href="#">
+									<img src="images/txyl_lunbo_05.jpg">
+								</a>
+							</div>
+							<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#">
+									<img src="images/txyl_lunbo_01.jpg">
+								</a>
+							</div>
+						</div>
+						<div class="mui-slider-indicator">
+							<div class="mui-indicator mui-active"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+							<div class="mui-indicator"></div>
+						</div>
 					</div>
-					<!-- 第一张 -->
-					<div class="mui-slider-item">
-						<a href="#">
-							<img src="images/txyl_lunbo_01.jpg">
-						</a>
+					<div id="sliderTest">
+						<ul id="Marquee-List" class="Marquee-List"></ul>
 					</div>
-					<!-- 第二张 -->
-					<div class="mui-slider-item">
-						<a href="#">
-							<img src="images/txyl_lunbo_02.jpg">
-						</a>
+					<div class="mui-content-padded gameNav">
+						<div class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+							<a class="mui-control-item mui-active" href="#item1">真人视讯</a>
+							<a class="mui-control-item" href="#item2">彩票娱乐</a>
+							<a class="mui-control-item" href="#item3">电子游戏</a>
+							<a class="mui-control-item" href="#item4">体育赛事</a>
+							<a class="mui-control-item" href="#item5">开元棋牌</a>
+						</div>
 					</div>
-					<!-- 第三张 -->
-					<div class="mui-slider-item">
-						<a href="#">
-							<img src="images/txyl_lunbo_03.jpg">
-						</a>
+					<div id="item1" class="mui-control-content mui-active">
+						<div class="Game mui-row" id="LiveVideo"></div>
 					</div>
-					<!-- 第四张 -->
-					<div class="mui-slider-item">
-						<a href="#">
-							<img src="images/txyl_lunbo_04.jpg">
-						</a>
+					<div id="item2" class="mui-control-content">
+						<div class="mui-content-padded gameNav">
+							<div class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+								<a class="mui-control-item mui-active" href="#item6">新IG</a>
+								<a class="mui-control-item" href="#item7">IG</a>
+								<a class="mui-control-item" href="#item8">VR 彩票</a>
+							</div>
+						</div>
+						<div id="item6" class="mui-control-content mui-active">
+							<div class="Game mui-row" id="NewIg"></div>
+						</div>
+						<div id="item7" class="mui-control-content">
+							<div class="Game mui-row" id="Ig"></div>
+						</div>
+						<div id="item8" class="mui-control-content">
+							<p class="info_Title">视频彩频道</p>
+							<div class="Game mui-row" id="Popular"></div>
+							<p class="info_Title">国彩频道</p>
+							<div class="Game mui-row" id="AlwaysColorone"></div>
+							<p class="info_Title">高频彩频道</p>
+							<div class="Game mui-row" id="heightColor"></div>
+							<p class="info_Title">动画彩频道</p>
+							<div class="Game mui-row" id="VRanimate"></div>
+						</div>
 					</div>
-					<!-- 第四张 -->
-					<div class="mui-slider-item">
-						<a href="#">
-							<img src="images/txyl_lunbo_05.jpg">
-						</a>
+					<div id="item3" class="mui-control-content">
+						<div class="Game mui-row" id="ElectronicGame"></div>
 					</div>
-					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-					<div class="mui-slider-item mui-slider-item-duplicate">
-						<a href="#">
-							<img src="images/txyl_lunbo_01.jpg">
-						</a>
+					<div id="item4" class="mui-control-content">
+						<div class="Game mui-row" id="Sportsevent"></div>
+					</div>
+					<div id="item5" class="mui-control-content">
+						<div class="Game mui-row" id="KaiyuanChe"></div>
 					</div>
 				</div>
-				<div class="mui-slider-indicator">
-					<div class="mui-indicator mui-active"></div>
-					<div class="mui-indicator"></div>
-					<div class="mui-indicator"></div>
-					<div class="mui-indicator"></div>
-					<div class="mui-indicator"></div>
-				</div>
-			</div>
-			<div id="sliderTest"></div>
-			<div class="mui-content-padded gameNav">
-				<div class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
-					<a class="mui-control-item mui-active" href="#item1">真人视讯</a>
-					<a class="mui-control-item" href="#item2">彩票娱乐</a>
-					<a class="mui-control-item" href="#item3">电子游戏</a>
-					<a class="mui-control-item" href="#item4">体育赛事</a>
-					<a class="mui-control-item" href="#item5">开元棋牌</a>
-				</div>
-			</div>
-			<div id="item1" class="mui-control-content mui-active">
-				<div class="Game mui-row" id="LiveVideo"></div>
-			</div>
-			<div id="item2" class="mui-control-content">
-				<div class="mui-content-padded gameNav">
-					<div class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
-						<a class="mui-control-item mui-active" href="#item6">新IG</a>
-						<a class="mui-control-item" href="#item7">IG</a>
-						<a class="mui-control-item" href="#item8">VR 彩票</a>
-					</div>
-				</div>
-				<div id="item6" class="mui-control-content mui-active">
-					<div class="Game mui-row" id="NewIg"></div>
-				</div>
-				<div id="item7" class="mui-control-content">
-					<div class="Game mui-row" id="Ig"></div>
-				</div>
-				<div id="item8" class="mui-control-content">
-					<p class="info_Title">视频彩频道</p>
-					<div class="Game mui-row" id="Popular"></div>
-					<p class="info_Title">国彩频道</p>
-					<div class="Game mui-row" id="AlwaysColorone"></div>
-					<p class="info_Title">高频彩频道</p>
-					<div class="Game mui-row" id="heightColor"></div>
-					<p class="info_Title">动画彩频道</p>
-					<div class="Game mui-row" id="VRanimate"></div>
-				</div>
-			</div>
-			<div id="item3" class="mui-control-content">
-				<div class="Game mui-row" id="ElectronicGame"></div>
-			</div>
-			<div id="item4" class="mui-control-content">
-				<div class="Game mui-row" id="Sportsevent"></div>
-			</div>
-			<div id="item5" class="mui-control-content">
-				<div class="Game mui-row" id="KaiyuanChe"></div>
 			</div>
 		</div>
 		<script src="js/mui.min.js"></script>
 		<script src="js/app.js"></script>
 		<script src="js/Home.js"></script>
-		<script src="js/public.js"></script>
+		<script src="js/pubilc.js"></script>
 		<script type="text/javascript">
-			(function($,doc) {
+			(function($, doc) {
 				$.init();
 				// 调用轮播
 				var slider = $("#slider");
 				slider.slider({
 					interval: 5000
 				});
-				var obj=new Object();
-				var LiveVideos = HomeGames.LiveVideo;
-				var LiveVideo = doc.getElementById('LiveVideo');
-				GameHtml(LiveVideos, LiveVideo)
-				var NewIgs = HomeGames.LooteryGame.NewIg;
-				var NewIg = doc.getElementById('NewIg');
-				GameHtml(NewIgs, NewIg)
-				var Igs = HomeGames.LooteryGame.Ig;
-				var Ig = doc.getElementById('Ig');
-				GameHtml(Igs, Ig)
-				
-				var Populars = HomeGames.LooteryGame.Vrgame.Popular;
-				var Popular = doc.getElementById('Popular');
-				GameHtml(Populars, Popular);
-				
-				var AlwaysColorones = HomeGames.LooteryGame.Vrgame.AlwaysColorone;
-				var AlwaysColorone = doc.getElementById('AlwaysColorone');
-				GameHtml(AlwaysColorones, AlwaysColorone);
-				
-				var heightColors = HomeGames.LooteryGame.Vrgame.heightColor;
-				var heightColor = doc.getElementById('heightColor');
-				GameHtml(heightColors, heightColor);
-				
-				var VRanimates = HomeGames.LooteryGame.Vrgame.VRanimate;
-				var VRanimate = doc.getElementById('VRanimate');
-				GameHtml(VRanimates, VRanimate);
-	
-				var ElectronicGames = HomeGames.ElectronicGames;
-				var ElectronicGame = doc.getElementById('ElectronicGame');
-				GameHtml(ElectronicGames, ElectronicGame);
-				
-				
-				
-				var Sportsevents = HomeGames.Sportsevents;
-				var Sportsevent = doc.getElementById('Sportsevent');
-				GameHtml(Sportsevents, Sportsevent);
-				
-				var KaiyuanChes = HomeGames.KaiyuanChess;
-				var KaiyuanChe = doc.getElementById('KaiyuanChe');
-				GameHtml(KaiyuanChes, KaiyuanChe);
-				$('.mui-row').on('tap', '.box', function(e) {
-					obj.gameType = this.getAttribute('data-type'),
-					obj.model =  this.getAttribute('data-mobile'),
-					obj.gameID =  this.getAttribute('data-id');
-					if(obj.gameType === 'MG' || obj.gameType === 'HABA'){
-						app.openWindow(obj.gameType + 'Game.html','');
-						return;
-					}
-					GameLink(obj,this.getAttribute('data-title'))
-				});
-			})(mui,document);
-			function GameHtml(objs, el) {
-				var fragment = document.createDocumentFragment();
-				el.innerHTML = '';
-				objs.forEach(function(e) {
-					var parent = document.createElement('div');
-					parent.setAttribute('data-id', e.id)
-					parent.setAttribute('data-type', e.type)
-					parent.setAttribute('data-mobile', e.mobile)
-					parent.setAttribute('data-title', e.title)
-					parent.className = 'mui-col-sm-4 box mui-col-xs-4';
-					var img = document.createElement('img');
-					img.setAttribute('src', e.src);
-					parent.appendChild(img);
-					fragment.appendChild(parent);
-				})
-				el.appendChild(fragment);
-			}
-			
-			function GameLink(objs,title) {
-				plus.nativeUI.showWaiting();
-				app.ajax('checklogin.do', {}, function(tokenmsg) {
-					if(tokenmsg.msg == "faild") {
-						app.check();
-					} else if(tokenmsg.msg == "islogin") {
-						app.check();
-					} else if(tokenmsg.msg == "success") {
-						app.setState(tokenmsg);
-						app.ajax('User/getToken', {
-							userKey: tokenmsg.userkey
-						}, function(token) {
-							objs.uuid = token.msg;
-							app.ajax('User/forwardGame', objs, function(data) {
-								plus.nativeUI.closeWaiting();
-								if(data.msg == "error") {
-									plus.nativeUI.toast('系统错误');
-								} else if(data.msg == 'process') {
-									plus.nativeUI.toast('维护中');
-								} else {
-									app.Options.url = data.msg
-									app.Options.id = 'EnterGame'
-									app.open(app.Options,title);
-								}
-							})
-						})
-					}
-				})
-			}
+				bug.gonggao();
+				bug.HomeGameHtml(HomeGames.LiveVideo, doc.getElementById('LiveVideo'))
+					.HomeGameHtml(HomeGames.LooteryGame.NewIg, doc.getElementById('NewIg'))
+					.HomeGameHtml(HomeGames.LooteryGame.Ig, doc.getElementById('Ig'))
+					.HomeGameHtml(HomeGames.LooteryGame.Vrgame.Popular, doc.getElementById('Popular'))
+					.HomeGameHtml(HomeGames.LooteryGame.Vrgame.AlwaysColorone, doc.getElementById('AlwaysColorone'))
+					.HomeGameHtml(HomeGames.LooteryGame.Vrgame.heightColor, doc.getElementById('heightColor'))
+					.HomeGameHtml(HomeGames.LooteryGame.Vrgame.VRanimate, doc.getElementById('VRanimate'))
+					.HomeGameHtml(HomeGames.ElectronicGames, doc.getElementById('ElectronicGame'))
+					.HomeGameHtml(HomeGames.Sportsevents, doc.getElementById('Sportsevent'))
+					.HomeGameHtml(HomeGames.KaiyuanChess, doc.getElementById('KaiyuanChe'))
+					.HomeClickGame();
+				 $(".mui-scroll-wrapper").scroll({
+	                scrollY: true, //是否竖向滚动
+	                scrollX: true, //是否横向滚动
+	                startX: 0, //初始化时滚动至x
+	                startY: 0, //初始化时滚动至y
+	                indicators: false, //是否显示滚动条
+	                deceleration: 0.0006, //阻尼系数,系数越小滑动越灵敏
+	                bounce: false, //是否启用回弹
+            	})
+			})(mui, document);
 		</script>
 	</body>
+
 </html>
