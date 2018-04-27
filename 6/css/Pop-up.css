@@ -1,0 +1,3 @@
+.xploading_bg{ width:100%; min-height:980px; height:100%; background:#000; filter:alpha(opacity=20); -moz-opacity:0.2; -khtml-opacity: 0.2; opacity: 0.2; position:fixed; left:0px; top:0px; z-index:101; display:none;}
+.xploading{ width:130px; height:40px; background:#fff; overflow:hidden; margin:0px auto; position:fixed; left:47%; top:21%; display:none; z-index:102;}
+.xploading img{ width:40px; vertical-align:middle; margin:0px 5px;}

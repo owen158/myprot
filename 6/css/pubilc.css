@@ -1,0 +1,7 @@
+.py{
+    display: inline-block;
+    vertical-align: top;
+}
+.login-hide,login-show{
+    display: none;
+}

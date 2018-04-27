@@ -1,0 +1,7 @@
+.footer_wrapper{
+    position: fixed;
+    width:100%;
+    bottom: 0;
+    text-align: center;
+    background: #643d1a;
+}

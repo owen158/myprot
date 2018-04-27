@@ -1,0 +1,90 @@
+.Record {
+  padding-bottom: 50px;
+  width: 100%;
+}
+.Record h1 {
+  line-height: 0.8rem;
+  font-size: 0.3rem;
+  text-align: left;
+}
+.Record .filter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 14px;
+  z-index: 15;
+  color: #c8a675;
+  font-weight: 800;
+  padding: 13px 10px;
+}
+.Record .norecording {
+  height: 80px;
+  line-height: 80px;
+  font-size: 18px;
+}
+.Record .time {
+  font-size: 12px;
+}
+.Record .data {
+  font-size: 13px;
+}
+.Record .today {
+  font-size: 13px;
+  text-align: left;
+}
+.Record .data,
+.Record .time,
+.Record .Types,
+.Record .status,
+.Record .Remarks,
+.Record .text {
+  line-height: 18px;
+}
+.Record .Remarks {
+  font-weight: 900;
+  color: #222;
+  text-align: center;
+}
+.Record .text {
+  font-size: 12px;
+  text-align: center;
+  text-indent: 5px;
+}
+.Record .Types {
+  font-weight: 900;
+  color: #222;
+}
+.Record .status {
+  color: #999;
+}
+.Record .Amount {
+  line-height: 32px;
+  text-align: center;
+}
+.Record .rowbg {
+  background: #fff;
+  text-align: left;
+  padding: 17px 10px;
+}
+.Record ._title {
+  line-height: 20px;
+  margin: 0;
+  padding: 0 10px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 900;
+}
+.Record .rowbg:not(:first-child) {
+  border-top: 1px solid #e5e5e5;
+}
+.Record .el-pagination {
+  margin-top: 15px;
+}
+.Record .el-pager > li.number,
+.Record .tag {
+  border-radius: 0;
+}
+.Record .el-pager > li.active {
+  background: #C8A675;
+  color: #fff;
+}

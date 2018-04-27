@@ -1,0 +1,371 @@
+@import "./style";
+.radius(@a){
+    border-radius: @a
+}
+.fixed{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: @bg-c1;
+    z-index: 10;
+}
+.submit{
+    display: block;
+    width: 100%;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    font-size: 0.3rem;
+    color:#fff;
+    margin: 0.2rem auto;
+    border-radius: 3px;
+    background:@bg-c2;
+}
+.G-submit{
+    width: 250px;
+    margin: 15px auto;
+    font-size: 16px;
+    //background: #c8a675!important;
+    //color: #fff!important;;
+    //border:none!important;
+    span{
+        font-weight: 900;
+    }
+}
+//.BtnSubmit
+.Promptbox{
+    width: 100%;
+    height: 0.5rem;
+    background: #fff;
+    line-height: 0.5rem;
+    color:@bg-c2;
+    margin-bottom: 0.1rem;
+    margin-top: 0.2rem;
+    font-size: 0.25rem;
+    text-align: center;
+}
+.A-Form{
+    font-size: 0;
+    width: 100%;
+    form{
+        width: 95%;
+        margin: 0 auto;
+        border-radius: 3px;
+    }
+    .A-item{
+        position: relative;
+        width: 100%;
+        height: 0.7rem;
+        text-align: left;
+        padding-top: 0.1rem;
+        margin: 0 auto;
+        label{
+            position: absolute;
+            width: 0.6rem;
+            top:0.1rem;
+            left:0.1rem;
+            font-size: 0.5rem;
+            color:#e0c23e;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+            height: 0.5rem;
+        }
+        input{
+            width:100%;
+            height: 0.5rem;
+            font-size: 0.25rem;
+            border-radius: 3px;
+            outline: none;
+            padding-left: 0.8rem;
+        }
+        input:focus{background:#fff}
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;//关于解决输入框背景颜色
+            -webkit-text-fill-color: @bor-c1!important;//关于接输入框文字颜色
+        }
+        select{
+            height: 0.5rem;
+            margin-left: 0.25rem;
+            width: 3rem;
+        }
+        img{
+            position: absolute;
+            top:0;
+            right:0;
+        }
+    }
+    .A-solid{
+        border-bottom: 1px solid #000;
+    }
+    .A-check{
+        width: 95%;
+        margin: 0 auto;
+        color:#222;
+        text-align: left;
+        font-size: 0.2rem;
+        input{
+            margin-right: 0.01rem;
+        }
+    }
+    .A-btn{
+        width: 95%;
+        margin: 0 auto;
+        a{
+            font-size: 0.3rem;
+            color:#e0c23e;
+        }
+    }
+}
+.A-Form-Box{
+    font-size: 0;
+    width: 100%;
+    form{
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 3px;
+    }
+    .A-item{
+        position: relative;
+        width: 100%;
+        height: 30px;
+        text-align: left;
+        margin: 4px auto;
+        border:1px solid @bor-c2;
+        background: @bg-c4;
+        border-radius: 3px;
+        padding-top: 0.1rem;
+        label{
+            position: absolute;
+            width: 1rem;
+            top:0.1rem;
+            left:0.1rem;
+            font-size: 0.25rem;
+            color:@bg-c2;
+            //background: @bg-c3;
+            text-align: center;
+            line-height: 0.5rem;
+            height: 0.5rem;
+        }
+        input{
+            width:100%;
+            //background: @bg-c3;
+            background: @bg-c4;
+            height: 22px;
+            font-size: 14px;
+            border-radius: 3px;
+            outline: none;
+            padding-left: 1.2rem;
+            color: @text-c2;
+        }
+        select{
+            height: 0.5rem;
+            margin-left: 0.25rem;
+            width: 3rem;
+        }
+        img{
+            position: absolute;
+            top:0.02rem;
+            right:0;
+        }
+        input:focus{background:transparent}
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;//关于解决输入框背景颜色
+            -webkit-text-fill-color: @text-c2!important;//关于接输入框文字颜色
+        }
+    }
+    .A-text{
+        font-size: 0.25rem;
+        color: @text-c4;
+        text-align: left;
+        padding-left: 0.35rem;
+    }
+    span{
+        color:red;
+    }
+    .A-btn{
+        width: 90%;
+        margin: 0 auto;
+        a{
+            font-size: 0.3rem;
+            color:#e0c23e;
+        }
+    }
+    .A-link{
+        height: 0.7rem;
+        line-height: 0.7rem;
+        font-size: 0.3rem;
+        a{
+            color: @text-c2;
+        }
+    }
+    .A-check{
+        line-height: 0.35rem;
+        font-size: 0;
+        position: relative;
+        input{
+            position: absolute;
+            top:0.05rem;
+            left: 0.1rem;
+            width: 2px;
+            height: 2px;
+        }
+        label{
+            float: left;
+            text-align: left;
+            margin-left: 0.35rem;
+            font-size: 0.2rem;
+            color: @text-c2;
+        }
+    }
+    .demo--radioInput{
+        position: absolute;
+        top: 0.02rem;
+        left:0;
+        background-color: @bg-c1;
+        border: 1px solid rgba(0,0,0,.15);
+        display: inline-block;
+        height: 14px;
+        vertical-align: middle;
+        border:1px solid  @bor-c1;
+        width: 14px;
+        line-height: 1;
+    }
+    .demo--radio:checked + .demo--radioInput:after{
+        background-color:@bg-c2;
+        content:"";
+        display:inline-block;
+        height:8px;
+        margin:2px;
+        width:8px
+    }
+    .demo--checkbox.demo--radioInput,.demo--radio:checked + .demo--checkbox.demo--radioInput:after{border-radius:0}
+    .A-registered-link{
+        float: left;
+        padding-left: 0.1rem;
+        font-size: 0.2rem;
+        color:@text-c1;
+    }
+}
+.G-A-Form-Box{
+    font-size: 0;
+    width: 100%;
+    form{
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 3px;
+    }
+    .A-item{
+        position: relative;
+        width: 100%;
+        height: 30px;
+        text-align: left;
+        margin: 4px auto;
+        border:1px solid @bor-c2;
+        background: @bg-c4;
+        padding-top: 4px;
+        border-radius: 3px;
+        label{
+           display: none;
+        }
+        input{
+            width:100%;
+            background: @bg-c4;
+            height: 22px;
+            font-size: 14px;
+            border-radius: 3px;
+            outline: none;
+            padding-left:10px;
+            color: @text-c2;
+        }
+
+        img{
+            position: absolute;
+            top:0rem;
+            right: 2px;
+            width:60px;
+            height: 28px;
+        }
+        input:focus{background:transparent}
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;//关于解决输入框背景颜色
+            -webkit-text-fill-color: @text-c2!important;//关于接输入框文字颜色
+        }
+    }
+    .A-text{
+        font-size: 0.25rem;
+        color: @text-c4;
+        text-align: left;
+        padding-left: 0.35rem;
+    }
+    span{
+        //color:red;
+    }
+    .A-btn{
+        width: 90%;
+        margin: 0 auto;
+        a{
+            font-size: 0.3rem;
+            color:#e0c23e;
+        }
+    }
+    .A-link{
+        height: 0.7rem;
+        line-height: 0.7rem;
+        font-size: 0.3rem;
+        a{
+            color: @text-c2;
+        }
+    }
+    .A-check{
+        line-height: 18px;
+        font-size: 0;
+        position: relative;
+        input{
+            position: absolute;
+            top:0.05rem;
+            left: 0.1rem;
+            width: 2px;
+            height: 2px;
+        }
+        label{
+            float: left;
+            text-align: left;
+            margin-left:18px;
+            font-size: 12px;
+            color: @text-c2;
+        }
+    }
+    .demo--radioInput{
+        position: absolute;
+        top: 2px;
+        left:0;
+        background-color: @bg-c1;
+        border: 1px solid rgba(0,0,0,.15);
+        display: inline-block;
+        height: 14px;
+        vertical-align: middle;
+        border:1px solid  @bor-c1;
+        width: 14px;
+        line-height: 1;
+    }
+    .demo--radio:checked + .demo--radioInput:after{
+        background-color:@bg-c2;
+        content:"";
+        display:inline-block;
+        height:8px;
+        margin:2px;
+        width:8px
+    }
+    .demo--checkbox.demo--radioInput,.demo--radio:checked + .demo--checkbox.demo--radioInput:after{border-radius:0}
+    .A-registered-link{
+        float: left;
+        padding-left:3px;
+        font-size: 12px;
+        color:@text-c1;
+    }
+}
+.el-message{
+    top:2.5rem;
+}

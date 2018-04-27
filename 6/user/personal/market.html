@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>澳门威尼斯人</title>
+    <!--<link rel="shortcut icon" href="../../images/favicon.ico" />-->
+    <!--<link rel="stylesheet" href="../../css/normalize.css">-->
+    <!--<link rel="stylesheet" href="../../css/site.css">-->
+    <!--<link rel="stylesheet" href="../../css/public.css">-->
+    <!--<link rel="stylesheet" href="./css/personal.css">-->
+    <!--<link rel="stylesheet" href="../../css/xinpujing2.css">-->
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/three.css">
+    <link rel="stylesheet" href="./css/timepanel.css">
+    <link rel="stylesheet" href="../css/panel.css">
+    <!--<link rel="stylesheet" href="./css/qubilc_content.css">-->
+    <!--<link rel="stylesheet" href="./css/messagelist.css">-->
+    <!--<link rel="stylesheet" href="./css/Transfer.css">-->
+    <link rel="stylesheet" href="./css/market.css">
+    <script src="../../js/jquery-1.8.2.js"></script>
+    <script src="../js/content.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <!--<script src="../../js/jquery-1.8.2.min.js"></script>-->
+    <!--<script src="../js/pubilc_content.js"></script>-->
+    <!--<script type="text/javascript" src="../../User/jquery.cookie.js"></script>-->
+    <!--<script src="../../js/pubilc.js"></script>-->
+    <!--<script src='../../User/P_ublic.js'></script>-->
+    <!--<script src='../js/logo.js'></script>-->
+    <!--<script src="../../User/drop_out.js"></script>-->
+    <!--<script src="../js/personal.js"></script>-->
+</head>
+<body >
+<div class="xploading_bg"></div>
+<div class="xploading" > <img src='../../images/Refresh.gif' />Loading... </div>
+<div class="wrapper">
+    <script>Content.Header('.wrapper')</script>
+    <div class="container market" id="market">
+        <div class="wrapper-main">
+            <div class="main-nav-left py">
+                <ul class="list-ul-active list">
+                    <li onclick="shut.Downactive(this)" mank="#offer1" class="active">优惠钱包</li>
+                    <li onclick="shut.Downactive(this)" mank="#offer2">推荐返利</li>
+                </ul>
+            </div>
+            <div class="main-right py list-content-active">
+                <h2 class="header"><span class="icon py"></span><span class="text py">市场活动</span></h2>
+                <hr style="margin: 20px 0">
+                <div id="offer1" class="content sideBarone  active">
+                    <div class="item">
+                        <ul class="offer-list">
+                            <li class="py">
+                                <p class="sup"><span>0</span></p>
+                                <p class="sub">已领取 锁定中</p>
+                            </li>
+                            <li class="py">
+                                <p class="sup"><span>0</span></p>
+                                <p class="sub"><span>待领取</span></p>
+                            </li>
+                            <li class="py">
+                                <p class="sup"><span>0</span></p>
+                                <p class="sub"><span>待领取</span></p>
+                            </li>
+                            <li class="py">
+                                <p class="sup"><span>0</span></p>
+                                <p class="sub"><span>待领取</span></p>
+                            </li>
+                            <li class="py">
+                                <p class="sup"><span>0</span></p>
+                                <p class="sub"><span>待领取</span></p>
+                            </li>
+                            <li class="py">
+                                <p class="sup"><span>0</span></p>
+                                <p class="sub"><span>待领取</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item main-table">
+                        <table  width="100%">
+                            <thead>
+                                <tr>
+                                    <th>优惠名称</th>
+                                    <th>优惠类型</th>
+                                    <th>金额</th>
+                                    <th>过期时间</th>
+                                    <th>投注额要求</th>
+                                    <th>状态</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>充值大返利</td>
+                                    <td>现金</td>
+                                    <td>55,5555</td>
+                                    <td>2017.01.31</td>
+                                    <td>900,000</td>
+                                    <td>已使用</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="offer2" class="content sideBartwo">
+                    <div class="item">
+                        <div class="copy center">
+                            <span>您的推荐链接：http://37286699.com/?u=M110685</span><a href="javascript:void(0)" class="">复制粘贴</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <ul class="mend">
+                            <li class="py  center">
+                                <p class="sup">0</p>
+                                <p class="sub">已领取</p>
+                            </li>
+                            <li  class="py  center">
+                                <p class="sup">0</p>
+                                <p class="sub">注册人数</p>
+                            </li>
+                            <li  class="py  center">
+                                <p class="sup">0</p>
+                                <p class="sub">成功推荐人数</p>
+                            </li>
+                            <li  class="py  center">
+                                <p class="sup">0.0</p>
+                                <p class="sub">总推荐优惠</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item Inquire-time">
+                        <div class="lf  text-header"></div>
+                        <div class="rf time-panel">
+                            <form class="">
+                                <div class="label py">起止时间：</div>
+                                <div class="main-child py"><input  type="text" size="10" class="Wdate beginTime" onclick="WdatePicker({minDate:'%y-%M-{%d-30}',maxDate:'%y-%M-%d'})" /></div>
+                                <div class="py" style="height: 40px;line-height: 40px; font-size: 14px;">-</div>
+                                <div class="main-child py"><input   type="text" size="10" class="Wdate endTime" onclick="WdatePicker({minDate:'%y-%M-{%d-30}',maxDate:'%y-%M-%d'})" /></div>
+                                <div class="py click-main">
+                                    <div class="py orange data-btn data-active" >筛选</div>
+                                    <div onclick="today()" class="py data-btn">今日</div>
+                                    <div onclick="threeDay()" class="py data-btn" >三天</div>
+                                    <div onclick="weekday()" class="py data-btn">本周</div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="item main-table">
+                        <table  width="100%">
+                            <thead>
+                            <tr>
+                                <th>会员名</th>
+                                <th>真实姓名</th>
+                                <th>注册日期</th>
+                                <th>累计存款金额</th>
+                                <th>推荐优惠</th>
+                                <th>状态</th>
+                                <th>备注</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>kenny</td>
+                                <td>罗高年</td>
+                                <td>2017.2.28</td>
+                                <td>235，358.45</td>
+                                <td>7，300.58</td>
+                                <td>在线</td>
+                                <td>无</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wns-footer-fixed w-golab ">
+    <script>Content.Footer('.wns-footer-fixed')</script>
+</div>
+</body>
+</html>
+<script src="lody/My97DatePicker/WdatePicker.js"></script>
+<!--//检查-->
+<script src='../js/pubilc.js'></script>
+<script src="./js/homepubilc.js"></script>
+<!--提示-->
+<script src="../js/panel.js"></script>
+<!--登录-->
+<script src="../js/login.js"></script>
+<!--游戏-->
+<script src="../js/loadgame.js"></script>
+<script src="./js/vip_home.js"></script>
+<script src="./js/data.js"></script>
+<!--<script src="../js/market.js"></script>-->

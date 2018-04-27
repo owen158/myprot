@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html class="zh-cn">
+<head><link rel="shortcut icon" href="/cl/tpl/xinpujing2/favicon.ico" type="image/vnd.microsoft.icon">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新葡京娱乐场</title>
+<meta http-equiv="Cache-Control" content="max-age=864000" />
+<meta name="keywords" content="新葡京娱乐场-老品牌值得您信赖！" />
+<meta name="description" content="新葡京娱乐场-老品牌值得您信赖！" />
+<link href="/cl/tpl/xinpujing2/css/common.css?=658" type="text/css" rel="stylesheet" />
+<link href="/cl/tpl/xinpujing2/css/xinpujing2.css?=658" type="text/css" rel="stylesheet" />
+<link href="/cl/tpl/xinpujing2/ver2/css/standard.css?=658" rel="stylesheet" type="text/css">
+<link href="/cl/tpl/commonFile/js/ui/1.9.2/themes/base/jquery-ui.css?=658" type="text/css" rel="stylesheet" />
+<script language="javascript" type="text/javascript" src="/cl/tpl/commonFile/js/jquery-1.8.3.min.js?=658"></script>
+<script language="javascript" type="text/javascript" src="/cl/tpl/commonFile/js/ui/1.9.2/js/jquery-ui.js?=658"></script>
+<script language="javascript" type="text/javascript" src="/cl/tpl/commonFile/js/ui/1.9.2/external/jquery.bgiframe-2.1.2.js?=658"></script>
+<script language="javascript" type="text/javascript" src="/cl/tpl/commonFile/js/common.js?=658"></script>
+<script language="javascript" type="text/javascript" src="/cl/tpl/commonFile/js/tools/upup.js?=700"></script>
+<script language="javascript" type="text/javascript" src="/cl/tpl/commonFile/js/tools/tab.js?=700"></script>
+<script language="javascript" type="text/javascript" src="/cl/tpl/commonFile/js/pluging/swfobject.js?=658"></script>
+<script language="javascript" type="text/javascript" src="/cl/tpl/commonFile/js/pluging/jquery.cookie.js?=658"></script>
+<script language="javascript" type="text/javascript" src="/cl/tpl/commonFile/js/tools/float.js?=700"></script>
+<link href="/cl/tpl/xinpujing2/ver2/css/colorbox.css?=658" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/cl/tpl/xinpujing2/ver2/js/jquery.colorbox-min.js?=658"></script>
+<script type="text/javascript" src="/cl/tpl/xinpujing2/ver2/js/jcarousellite.js?=658"></script>
+<script type="text/javascript" src="/cl/tpl/xinpujing2/ver2/js/csPopup.js?=658"></script>
+
+
+<!--[if IE 6]>
+<script language="javascript" type="text/javascript" src="/cl/tpl/commonFile/js/tools/DD_belatedPNG.js?=700"></script>
+<script language="javascript" type="text/javascript">
+setTimeout("DD_belatedPNG.fix('.img-png,.KMSPrefix_kinMaxShow_image_item,.btn-sty,.mz-bd-bannerPos')",100);
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+
+	var flashvars = {};
+	attributes = {
+	   id: 'am-logo'
+	   
+	};
+	var params = {  
+		wmode : "Transparent"//加入这个参数后，那个嵌入的swf文件就不会被致于最上顶层，而是嵌入到指定的div里面  
+	}; 			
+	swfobject.embedSWF('/cl/tpl/xinpujing2/images/common/logo.swf?=658', 'logoId', '105', '116', '11.0.0', null,flashvars,params,attributes);
+
+    var dd2=new Date("2017/03/27 00:22:40");
+	setInterval("RefTime()",1000);
+    //设置美东时间
+	function RefTime()
+	{
+		dd2.setSeconds(dd2.getSeconds()+1);
+		var myYears = ( dd2.getYear() < 1900 ) ? ( 1900 + dd2.getYear() ) : dd2.getYear();
+
+		document.getElementById("EST_reciprocal").innerHTML ="&nbsp;"+ myYears+"/"+fixNum(dd2.getMonth()+1)+"/"+fixNum(dd2.getDate())+" "+time(dd2) + " (UTC -5:00)&nbsp;";
+
+	}
+	function time(vtime){
+		var s='';
+		var d=vtime!=null?new Date(vtime):new Date();
+		with(d){
+			s=fixNum(getHours())+':'+fixNum(getMinutes())+':'+fixNum(getSeconds())
+		}
+		return(s);
+	}
+	function fixNum(num){
+		return (parseInt(num) < 10) ? ('0'+ num) : num;
+	}
+	$(function() {
+	    
+		sMsgReset('.msg-col','||');
+		$("li.LS-LiveMain,li.LS-sports,li.LS-Lottery,li.LS-Game").subTabs();
+		
+	});
+	
+</script>
+</head>
+
+<body>
+	<div class="body-wrap">
+		<!--头部start-->
+<div class="w-golab wns-header-fixed clearfix">
+		<div class="w-golab wns-header rel">
+			  <div class="w1054 mc clearfix rel ">
+			  	       <div class="l date">
+						   美东时间： <span id="EST_reciprocal"></span>
+					   </div>
+					   <div class="wns-collect tr r">
+					   	   
+					   	    <div class="r wns-tools" style="position:relative;">
+					   	   		<img src="/cl/tpl/xinpujing2/images/zhizhao.png?=658" alt="" style="position:absolute;left:-125px;top:25px;z-index:999;display:none" id="zhizhao"/>
+					   	   		<a href="javascript:f_com.getPager('-','MAdvertis','test_reg');" class="flash">免费试玩</a>
+					   	   		<span>|</span>
+					   	   		<a href="javascript:void(0)" class="zhizhao">执照展示</a>
+					   	   		<span>|</span>
+								<a href="javascript:void(0)" onclick="setFirst('http://'+ window.location.hostname)">设为首页</a>
+								<span>|</span>
+								<a href="javascript:void(0)" onclick="bookMarksite('http://'+ window.location.hostname,document.title);">添加收藏</a>
+
+                                <span> |</span>
+								<a href="http://leboxpj.com" target="_blank" class="flash">线路检测</a>
+							    <span class="wns-languages">
+									<img src="/cl/tpl/xinpujing2/images/china.png?=658" alt=""/> <span>Chinese</span>
+								</span>
+							   <ul class="wns-languages-dropdownlist">
+								   <li>
+									   <a href="/cl/index.php?module=System&method=first&langx=zh-cn" class="ele-lang-option ele-lang-zh-cn" target="mem_index" title="简体中文">
+										  简体中文<img src="/cl/tpl/xinpujing2/images/china.png?=658" alt=""/>
+									   </a>
+								   </li>
+								   <li>
+									   <a href="/cl/index.php?module=System&method=first&langx=zh-tw" class="ele-lang-option ele-lang-zh-tw" target="mem_index" title="繁体中文">
+										   繁体中文<img src="/cl/tpl/xinpujing2/images/aomen.png?=658" alt=""/>
+									   </a>
+								   </li>
+								   <li>
+									   <a href="/cl/index.php?module=System&method=first&langx=zh-cn" class="ele-lang-option ele-lang-zh-cn" target="mem_index" title="简体中文">
+										  english <img src="/cl/tpl/xinpujing2/images/usa.png?=658" alt=""/>
+									   </a>
+								   </li>
+							   </ul>
+					   	   </div>
+					   </div>
+					    
+
+	  	   	  	        <div class="wns-navigation rel  r zindex1">
+										<a href="/cl/index.php?module=System&amp;method=first" target="mem_index">
+											 <span id="logoId">
+												<img src="/cl/tpl/xinpujing2/images/logo.png?=658" alt=""/>
+											 </span>
+										</a>
+						  	   	   		<div class="r rel">
+											<img src="/cl/tpl/xinpujing2/images/xs.png?=658" alt="" style="position:absolute;left:0;top:0;"/>
+											<div class="r login_input">
+												<form name="LoginForm" action="../app/member/login.php" method="post" onsubmit="return inputCheck();">
+							                      <input name="langx" id="langx" type="hidden" value="zh-cn" />
+							                      <input name="gtype" id="gtype" type="hidden" value="FIRST" />
+							                      <ul >
+							                          <li>
+							                              <i class="icons icon-account"></i>
+							                              <input type="text" name="username" id="username"   autocommplete="on" class="wns-inputbgs" value="账号" onfocus="if(this.value=='账号')this.value=''" onblur="if(this.value =='') this.value ='账号'" tabindex="1" />
+							                          </li>
+							                          <li style="position:relative">  
+							                              <i class="icons icon-pwds"></i>
+							                              <input type="password"  name="passwd" id="passwd"  tabindex="2"  value="xx@x@x.x" onfocus="if(this.value=='xx@x@x.x')this.value=''" onblur="if(this.value =='') this.value ='xx@x@x.x'" value="xx@x@x.x" class="wns-inputbgs wns-input-pwd"/>
+							                          </li>
+							                          <li>
+							                              <i class="icons icon-pwds"></i>
+							                              <input type="text" tabindex="3" size="4"   autocommplete="off" value="验证码"  onfocus="change_zc_yzm('checkNum_img');if(this.value=='验证码')this.value=''" onblur="if(this.value =='') this.value ='验证码'"  class="wns-inputbgs wns-verifycode" name="vlcodes" id="vlcodes" >
+							                              <img name="checkNum_img" id="checkNum_img"  class="fl wns-verifycode-imgs" alt="点击更换" onclick="change_zc_yzm('checkNum_img');" src="/cl/tpl/xinpujing2/images/code.jpg?=658">
+							                          </li>
+
+							                          <li >
+							                              <div class="submit">
+							                                  <input type="submit"  name="Submit"  class="sub-btn" value="登陆">
+							                              </div>
+							                          </li>
+							                          <li style="margin-top:-7px">
+							                          	<div class="reg">
+							                                  <a href="javascript:f_com.getPager('-','MAdvertis','');" class="reg-btn">立即注册</a>
+							                              </div>
+							                          </li>
+							                          <li class="forget">
+							                          	<a href="javascript:void(0)" onclick="winOpen('/app/member/account/forget_pwd.php?uid=guest',320,280,0,0);" >忘记密码</a>
+							                          	<img src="/cl/tpl/xinpujing2/images/forget.png?=658" alt=""/>
+							                          </li>
+							                          <li class="justifyFix" style="width:100%;height:0px;"></li>
+							                      </ul>
+							                  </form>
+											</div>
+						  	   	   			<ul class="header-nav-ul ">
+	
+							  	   	   			<li id="LS-first" class="on">
+							  	   	   				<a class="home" href="/cl/index.php?module=System&amp;method=first" id="index" target="mem_index">
+														<span class="txt1">首页</span>
+														<span class="txt2">Home</span>
+							  	   	   				</a>
+							  	   	   			</li>
+												<li id="LS-LiveMain" class="LS-LiveMain" onclick="javascript:f_com.getPager('-','LiveMain','');">
+													<a href="javascript:f_com.getPager('-','LiveMain','');" onclick="javascript:f_com.getPager('-','LiveMain','');">
+														<span class="txt1">视讯直播</span>
+														<span class="txt2">Video</span>
+													</a>
+												</li>
+												<li id="LS-Game" class="LS-Game" class="game list3 " onclick="javascript:f_com.getPager('-','MAdvertis','AT7');">
+													<a href="javascript:f_com.getPager('-','MAdvertis','AT7');">
+														<span class="txt1">电子游艺</span>
+														<span class="txt2">Electronics</span>
+													</a>
+												</li>
+							  	   	   			<li id="LS-sports" class="LS-sports" onclick="javascript:f_com.getPager('-','MAdvertis','AT8');">
+													<a href="javascript:f_com.getPager('-','MAdvertis','AT8');">
+														<span class="txt1">体育赛事</span>
+														<span class="txt2">Sporting</span>
+													</a>
+												</li>
+
+												<li id="LS-Lottery" class="LS-Lottery"  class="game list2 " onclick="javascript:f_com.getPager('-','Lottery','');">
+													<a href="javascript:f_com.getPager('-','Lottery','');">
+														<span class="txt1">彩票游戏</span>
+														<span class="txt2">Lottery</span>
+													</a>
+												</li>
+												<li id="LS-Agent">
+													<a href="javascript:f_com.getPager('-','MAdvertis','AT4');">
+														<span class="txt1">代理合作</span>
+														<span class="txt2">Agent</span>
+													</a>
+												</li>
+												<li id="LS-pre" >
+													<i class="youhui-icon"></i>
+													<a href="javascript:f_com.getPager('-','MAdvertis','MemberExclusiveII');">
+														<span class="txt1">优惠活动</span>
+														<span class="txt2">Discount</span>
+													</a>
+												</li>
+
+												<li id="LS-online-service">
+													<a href="javascript:void(0);" onclick="LeboCSlink()">
+														<span class="txt1">在线客服</span>
+														<span class="txt2">Oline Service</span>
+												    </a>
+												</li>
+										  	</ul>
+										   	<div id="live-nav" class="LS-LiveMain">
+												<a href="javascript:void(0)" onclick="alert('您尚未登录，请先登录后再进行游戏');">LEBO旗舰厅</a>
+												<a href="javascript://"  onclick="alert('您尚未登录，请先登录后再进行游戏');">AG女优厅</a>
+												<a href="javascript://"  onclick="alert('您尚未登录，请先登录后再进行游戏');">OG东方厅</a>
+												<a href="javascript://"  onclick="alert('您尚未登录，请先登录后再进行游戏');">DG竞咪厅</a>
+												<a href="javascript://"  onclick="alert('您尚未登录，请先登录后再进行游戏');">BG大游厅</a>
+												<a href="javascript://"  onclick="alert('您尚未登录，请先登录后再进行游戏');">BBIN旗舰厅</a>
+												<a href="javascript://"  onclick="alert('您尚未登录，请先登录后再进行游戏');">CT皇冠厅</a>
+												<a href="javascript://"  onclick="alert('您尚未登录，请先登录后再进行游戏');">MG欧美厅</a>
+										 	</div>
+										  	<div id="live-nav" class="LS-sports">
+												 <a href="/app/member/FT_index.php?uid=guest&langx=zh-cn" target="mem_index">皇冠体育</a>
+												 <a href="/cl/?module=System&method=Sb" target="mem_index">沙巴体育</a>
+										  	</div>
+										  	<div id="live-nav" class="LS-Lottery">
+												<a href="javascript:f_com.getPager('-','Lottery','');">香港六合彩</a>
+												<a href="javascript:f_com.getPager('-','Lottery','');">福彩3D</a>
+												<a href="javascript:f_com.getPager('-','Lottery','');">北京PK10</a>
+												<a href="javascript:f_com.getPager('-','Lottery','');">时时彩</a>
+										  	</div>
+										  	<div id="live-nav" class="LS-Game">
+												<a href="javascript:f_com.getPager('-','PTGame','');">PT平台</a>
+												<a href="javascript:f_com.getPager('-','Game','');">MG电子</a>
+												<a href="javascript:f_com.getPager('-','MWGame','');">MW平台</a>
+												<a href="javascript:f_com.getPager('-','AGGame','');">AG平台</a>
+												<a href="javascript:f_com.getPager('-','BBGame','');">BBIN平台</a>
+												<a href="javascript:f_com.getPager('-','MWGame','');">千炮捕鱼</a>
+												<a href="javascript:f_com.getPager('-','Game','');">冰上曲棍求</a>
+												<a href="javascript:f_com.getPager('-','MWGame','');">斗地主</a>
+												<a href="javascript:f_com.getPager('-','AGGame','');">AG捕鱼王</a>
+												<a href="javascript:f_com.getPager('-','Game','');">经典水果机</a>
+										  	</div>
+						  	   	   		</div>
+
+
+						</div>
+
+		         </div>
+	                <div id="games">
+						<div class="list list1">
+							<div class="list_1"><a href="javascript:void(0);" onclick="alert('您尚未登录，请先登录后再进行游戏');">立即游戏</a></div>
+							<div class="list_2"><a href="javascript:void(0);" onclick="alert('您尚未登录，请先登录后再进行游戏');">立即游戏</a></div>
+							<div class="list_3"><a href="javascript:void(0);" onclick="alert('您尚未登录，请先登录后再进行游戏');">立即游戏</a></div>
+							<div class="list_4"><a href="javascript:void(0);" onclick="alert('您尚未登录，请先登录后再进行游戏');">立即游戏</a></div>
+							<div class="list_5"><a href="javascript:void(0);" onclick="alert('您尚未登录，请先登录后再进行游戏');">立即游戏</a></div>
+							<div class="list_6"><a href="javascript:void(0);" onclick="alert('您尚未登录，请先登录后再进行游戏');">立即游戏</a></div>
+						</div>
+						<div class="list list2">
+							<div class="list_7"><a  href="javascript:f_com.getPager('-','Lottery','');"	 >立即游戏</a></div>
+							<div class="list_8"><a  href="javascript:f_com.getPager('-','Lottery','');"	 >立即游戏</a></div>
+							<div class="list_9"><a  href="javascript:f_com.getPager('-','Lottery','');"	 >立即游戏</a></div>
+							<div class="list_10"><a href="javascript:f_com.getPager('-','Lottery','');"	 >立即游戏</a></div>
+							<div class="list_11"><a href="javascript:f_com.getPager('-','Lottery','');"	 >立即游戏</a></div>
+						</div>
+						<div class="list list3">
+							<div class="list_12"><a href="javascript:void(0);" onclick="alert('您尚未登录，请先登录后再进行游戏');" >立即游戏</a></div>
+							<div class="list_13"><a href="javascript:f_com.getPager('-','Game','');"	 >立即游戏</a></div>
+						</div>
+					</div>
+		        
+			  </div>
+
+</div>
+<!--头部end-->
+<div class="common-banner">
+	<div class="rel w1054 mc ovh">
+		<img id="xpj-banner-img"  alt=""/>
+		<div class="wns-login-panel">
+			<h2 class="title-1"><span class="txt1">登入</span><span class="txt2">login</span></h2>
+			<form name="LoginForm" action="../app/member/login.php" method="post" onsubmit="return inputCheck();">
+				<input name="langx" id="langx" type="hidden" value="zh-cn" />
+				<input name="gtype" id="gtype" type="hidden" value="FIRST" />
+				<ul class="wns-login-box-ul clearfix text-justify">
+					<li>
+						<i class="icon icon-user"></i>
+						<input type="text" name="username" id="username"   autocommplete="on" class="wns-inputbg" value="账号" onfocus="if(this.value=='账号')this.value=''" onblur="if(this.value =='') this.value ='账号'" tabindex="1" />
+					</li>
+					<li>
+						<i class="icon icon-pwd"></i>
+						<input type="password"  name="passwd" id="passwd"  tabindex="2"  value="xx@x@x.x" onfocus="if(this.value=='xx@x@x.x')this.value=''" onblur="if(this.value =='') this.value ='xx@x@x.x'" value="xx@x@x.x" class="wns-inputbg wns-input-pwd"/>
+					</li>
+					<li>
+						<i class="icon icon-code"></i>
+						<input type="text" tabindex="3" size="4"   autocommplete="off" value="验证码"  onfocus="change_zc_yzm('checkNum_img');if(this.value=='验证码')this.value=''" onblur="if(this.value =='') this.value ='验证码'"  class="wns-inputbg wns-verifycode" name="vlcodes" id="vlcodes" >
+						<img name="checkNum_img" id="checkNum_img"  class="fl wns-verifycode-img" alt="点击更换" onclick="change_zc_yzm('checkNum_img');" src="/cl/tpl/xinpujing2/images/code.jpg?=658">
+					</li>
+
+					<li >
+						<div class="submit">
+							<input type="submit"  name="Submit"  class="sub-btn" value="登陆">
+						</div>
+						<div class="reg">
+							<a href="javascript:f_com.getPager('-','MAdvertis','');" class="reg-btn">立即注册</a>
+						</div>
+					</li>
+					<li class="justifyFix" style="width:100%;height:0px;"></li>
+				</ul>
+			</form>
+		</div>
+
+	</div>
+</div>
+		<div class="w1054 rel mc clearfix wns-common-bg">
+	<h2 class="title-1 clearfix"><span class="txt1">真人娱乐</span><span class="txt2">Live video</span><span style="float:right;padding-right:30px;font-size:16px">www.801.com</span></h2>
+	<ul class="wns-live-list text-justify">
+		<li>
+			<div class="bg"><img src="/cl/tpl/xinpujing2/images/live/newlebo_pic.png?=658" alt=""/></div>
+			<div class="mask">
+				<img src="/cl/tpl/xinpujing2/images/live/live_pic_hover.png?=658" alt=""/>
+				<h2>
+					<span class="txt1">新葡京贵宾厅</span>
+					<span class="txt2">VIP GRANDLISBOA</span>
+				</h2>
+				<a href="javascript://"  onclick="alert('您尚未登录，请先登录后再进行游戏');" class="join aLoginCheck">进入游戏</a>
+			</div>
+            <div class="footer-mask">
+				<img src="/cl/tpl/xinpujing2/images/live/Vip-Grand-Lisboa.png?=658" alt=""/>
+			</div>
+		</li>
+		<li>
+			<div class="bg"><img src="/cl/tpl/xinpujing2/images/live/ebo_pic.png?=658" alt=""/></div>
+			<div class="mask">
+				<img src="/cl/tpl/xinpujing2/images/live/live_pic_hover.png?=658" alt=""/>
+				<h2>
+				    <span class="txt1">新葡京旗舰厅</span>
+					<span class="txt2">VIP GRAND LISBOA</span>
+					
+				</h2>
+				<a href="javascript://"  onclick="alert('您尚未登录，请先登录后再进行游戏');" class="join aLoginCheck">进入游戏</a>
+			</div>
+			<div class="footer-mask">
+				<img src="/cl/tpl/xinpujing2/images/live/Vip-Grand-Lisboa1.png?=658" alt=""/>
+			</div>
+		</li>
+		<li>
+			<div class="bg"><img src="/cl/tpl/xinpujing2/images/live/bg_pic.png?=658" alt=""/></div>
+			<div class="mask">
+				<img src="/cl/tpl/xinpujing2/images/live/live_pic_hover.png?=658" alt=""/>
+				<h2>
+					<span class="txt1">BG视讯厅</span>
+					<!--<span class="txt2">VIP GRAND LISBOA</span>-->
+				</h2>
+				<a href="javascript://"  onclick="alert('您尚未登录，请先登录后再进行游戏');" class="join aLoginCheck">进入游戏</a>
+			</div>
+			<div class="footer-mask">
+				<img src="/cl/tpl/xinpujing2/images/live/biggaming.png?=658" alt=""/>
+			</div>
+		</li>
+		
+		
+		<li>
+			<div class="bg"><img src="/cl/tpl/xinpujing2/images/live/ag_pic.png?=658" alt=""/></div>
+			<div class="mask">
+				<img src="/cl/tpl/xinpujing2/images/live/live_pic_hover.png?=658" alt=""/>
+				<h2>
+					<span class="txt1">AG 女优厅</span>
+					<span class="txt2">ASIANGAMING</span>
+				</h2>
+				<a href="javascript://"  onclick="alert('您尚未登录，请先登录后再进行游戏');" class="join aLoginCheck">进入游戏</a>
+			</div>
+			<div class="footer-mask">
+				<img src="/cl/tpl/xinpujing2/images/live/asiangaming.png?=658" alt=""/>
+			</div>
+		</li>
+		<li>
+			<div class="bg"><img src="/cl/tpl/xinpujing2/images/live/og_pic.png?=658" alt=""/></div>
+			<div class="mask">
+				<img src="/cl/tpl/xinpujing2/images/live/live_pic_hover.png?=658" alt=""/>
+				<h2>
+					<span class="txt1">OG东方厅</span>
+					<span class="txt2">ORIENTALGAMING</span>
+				</h2>
+				<a href="javascript://"  onclick="alert('您尚未登录，请先登录后再进行游戏');" class="join aLoginCheck">进入游戏</a>
+			</div>
+			<div class="footer-mask">
+				<img src="/cl/tpl/xinpujing2/images/live/orientalgaming.png?=658" alt=""/>
+			</div>
+		</li>
+		<li>
+			<div class="bg"><img src="/cl/tpl/xinpujing2/images/live/bbin_pic.png?=658" alt=""/></div>
+			<div class="mask">
+				<img src="/cl/tpl/xinpujing2/images/live/live_pic_hover.png?=658" alt=""/>
+				<h2>
+					<span class="txt1">BBIN旗舰厅</span>
+					<span class="txt2">BBIN GAMING</span>
+				</h2>
+				<a href="javascript://"  onclick="alert('您尚未登录，请先登录后再进行游戏');" class="join aLoginCheck">进入游戏</a>
+			</div>
+			<div class="footer-mask">
+				<img src="/cl/tpl/xinpujing2/images/bbingaming.png?=658" alt=""/>
+			</div>
+		</li>
+		
+
+		<li>
+			<div class="bg"><img src="/cl/tpl/xinpujing2/images/live/ct_pic.png?=658" alt=""/></div>
+			<div class="mask">
+				<img src="/cl/tpl/xinpujing2/images/live/live_pic_hover.png?=658" alt=""/>
+				<h2>
+					<span class="txt1">CT皇冠厅</span>
+					<span class="txt2">CTECHGAMING</span>
+				</h2>
+				<a href="javascript://"  onclick="alert('您尚未登录，请先登录后再进行游戏');" class="join aLoginCheck">进入游戏</a>
+			</div>
+			<div class="footer-mask">
+				<img src="/cl/tpl/xinpujing2/images/live/ctechgaming.png?=658" alt=""/>
+			</div>
+		</li>
+		<li>
+			<div class="bg"><img src="/cl/tpl/xinpujing2/images/live/mg_pic.png?=658" alt=""/></div>
+			<div class="mask">
+				<img src="/cl/tpl/xinpujing2/images/live/live_pic_hover.png?=658" alt=""/>
+				<h2>
+					<span class="txt1">MG 欧美厅</span>
+					<span class="txt2">MICROGAMING</span>
+				</h2>
+				<a href="javascript://"  onclick="alert('您尚未登录，请先登录后再进行游戏');" class="join aLoginCheck">进入游戏</a>
+			</div>
+			<div class="footer-mask">
+				<img src="/cl/tpl/xinpujing2/images/live/MICROGAMING.png?=658" alt=""/>
+			</div>
+		</li>
+		<li>
+			<div class="bg"><img src="/cl/tpl/xinpujing2/images/live/dg_pic.jpg?=658" alt=""/></div>
+			<div class="mask">
+				<img src="/cl/tpl/xinpujing2/images/live/live_pic_hover.png?=658" alt=""/>
+				<h2>
+					<span class="txt1">DG 竞咪厅</span>
+					<span class="txt2">DGGAMING</span>
+				</h2>
+				<a href="javascript://"  onclick="alert('您尚未登录，请先登录后再进行游戏');" class="join aLoginCheck">进入游戏</a>
+			</div>
+			<div class="footer-mask">
+				<img src="/cl/tpl/xinpujing2/images/live/DGGAMING.png?=658" alt=""/>
+			</div>
+		</li>
+		<li style="margin-left:40px">
+			<div class="bg"><img src="/cl/tpl/xinpujing2/images/live/pre_pic.png?=658" alt=""/></div>
+			<div class="mask">
+				<img src="/cl/tpl/xinpujing2/images/live/live_pic_hover.png?=658" alt=""/>
+			</div>
+		</li>
+		<!-- <li class="justifyFix" style="width:244px;height:0px;"></li> -->
+	</ul>
+</div>
+
+<!--真人视讯主体区 end-->
+<style type="text/css">
+	.wns-login-panel {
+		display:none;
+	}
+</style>
+<script language="javascript" type="text/javascript">
+	$(document).ready(function(){
+		var MtabUl = $('#Union').children('ul');
+		MtabUl.addClass("mtab-live-menual");
+		$('#Union').mtab2();
+	});
+var is_login = '0';
+$(function(){
+		if(is_login == "0"){
+		$(".aLoginCheck").each(function(i){
+			$(this).attr("onclick","").click(function (){
+				alert('您尚未登录，请先登录再进行游戏');
+				return false;
+			})
+		});
+	}
+});
+</script>
+
+		<!--footer主体区 start-->
+<div class="wns-footer-fixed w-golab ">
+	<div class="w-golab wns-footer">
+		  <div class="w1054 mc rel wns-footer-top">
+             	         <img src="/cl/tpl/xinpujing2/images/footer_pic.png?=658" alt="" style="display:block;" class="mc"/>
+                         <p class="footernav tc">
+								<a href="javascript:f_com.getPager('-','MAdvertis','AT1');" >关于我们</a>
+
+								<a href="javascript:f_com.getPager('-','MAdvertis','AT5');" >联络我们</a>
+
+								<a href="javascript:f_com.getPager('-','MAdvertis','AT4');" >合作伙伴</a>
+
+								<a href="javascript:f_com.getPager('-','MAdvertis','AT3');" >存款帮助</a>
+
+								<a href="javascript:f_com.getPager('-','MAdvertis','AT2');" >取款帮助 </a>
+
+								<a href="javascript:f_com.getPager('-','MAdvertis','AT6');" >常见问题 </a>
+
+								<a href="javascript:f_com.getPager('-','MAdvertis','AT9');" >负责任博彩 </a>
+
+								<a href="javascript:f_com.getPager('-','MAdvertis','AT10');" >协议与规则</a>
+                         </p>
+                        <div class="copyright">
+							<p >Copyright © 新葡京娱乐场 Reserved  </p>
+                        </div>
+          </div>
+
+	</div>
+</div>
+
+<!--左右浮动 start-->
+<div picfloat="right" class="floatDiv">
+    <a href="javascript:void(0);"  onclick="LeboCSlink()"><img src="/cl/tpl/xinpujing2/images/chats/left1.png?=658"/></a>
+    <a href="javascript:void(0);"  onclick="LeboCSlink()"><img src="/cl/tpl/xinpujing2/images/chats/left2.png?=658"/></a>
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=903536666&site=qq&menu=yes"><img src="/cl/tpl/xinpujing2/images/chats/left3.png?=658"/></a>
+    <a href="http://801.com" target="_blank"><img src="/cl/tpl/xinpujing2/images/chats/left4.png?=658"/></a>
+    <a href="javascript:void(0)"><img src="/cl/tpl/xinpujing2/images/chats/left5.png?=658"/></a>
+
+</div>
+<!-- <div picfloat="right" class="floatDiv">
+    <a href="javascript:void(0);" onclick="LeboCSlink()"><img src="/cl/tpl/xinpujing2/images/chats/right1.gif?=658"/></a>
+	 <a href="http://www.669692.com" target="_blank" ><img src="/cl/tpl/xinpujing2/images/chats/right2.gif?=658"/></a>
+    <a href="javascript:f_com.getPager('-','MAdvertis','test_reg');"	><img src="/cl/tpl/xinpujing2/images/chats/right3.gif?=658"/></a>
+	 <a href="http://xpj.98983.com" target="_blank" ><img src="/cl/tpl/xinpujing2/images/chats/right4.png?=658"/></a>
+    <a href="javascript:void(0);" class="kf-close"><img src="/cl/tpl/xinpujing2/images/chats/right5.gif?=658"/></a>
+</div> -->
+
+
+<!--左右浮动 end-->
+
+<div id="r-code" class="code-r" style="width: 218px;height:135px;position:fixed;right: 0px;bottom: 3px;z-index: 9999;overflow:hidden">
+    <div id="r-code-title1" style="z-index:99999;position:absolute;right:40px;top:0px; height: 30px;width:50px;cursor: pointer;"></div>
+    <div class="main_visual" style="border-top:none;">
+        <div class="flicking_con">
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+        <div class="main_image">
+            <ul>
+                <li><span><img src="/cl/tpl/xinpujing2/images/lb/1.png?=658" width="218" height="135" alt="" /></span></li>
+                <li><span><img src="/cl/tpl/xinpujing2/images/lb/2.png?=658" width="218" height="135" alt="" /></span></li>
+                <li><span><img src="/cl/tpl/xinpujing2/images/lb/3.png?=658" width="218" height="135" alt="" /></span></li>
+                <li><span ><img src="/cl/tpl/xinpujing2/images/lb/4.png?=658" width="218" height="135" alt="" /></span></li>
+                <li style="position:relative"><span ><img src="/cl/tpl/xinpujing2/images/lb/5.png" width="217" height="135" alt="" /></span></li>
+            </ul>
+            <a href="javascript:;" id="btn_prev"></a>
+            <a href="javascript:;" id="btn_next"></a>
+        </div>
+    </div>
+</div>
+
+<div id="w-code1" class="code-w" style="width: 127px;height:122px;position:fixed;left: 0px;bottom: 0;z-index: 9999;background: url(/cl/tpl/xinpujing2/images/common/w-code3.png?=658) no-repeat;" onclick="winOpen('/mgame/info.html',window.screen.width,window.screen.height,0,0,'game')">
+    <div id="w-code-title1" style="position:absolute;right:2px;top:0px;height: 20px;width:20px;cursor: pointer;"></div>
+</div>
+
+<script language="javascript" type="text/javascript" src="/cl/tpl/xinpujing2/ver2/js/xinpujing2.js?=658"></script>
+<script language="javascript" type="text/javascript" src="/cl/tpl/xinpujing2/ver2/js/jquery.touchSlider.js?=658"></script>
+<script type="text/javascript">
+
+$("#w-code-title1").click(function() {
+       $(this).parents(".code-w").fadeOut(300);
+});
+$("#r-code-title1").click(function() {
+       $(this).parents(".code-r").fadeOut(300);
+    });
+function inputCheck(){
+	if(document.LoginForm.username.value == "" || document.LoginForm.username.value == "帐号"){
+        alert('请输入帐号!!');
+        document.LoginForm.username.focus();
+        return false;
+    }else if(document.LoginForm.passwd.value == "" || document.LoginForm.passwd.value == "xx@x@x.x"){
+        alert('请输入密码!!');
+        document.LoginForm.passwd.focus();
+        return false;
+    }else if(document.LoginForm.passwd.value.length > 0 && document.LoginForm.passwd.value.length < 6){
+        alert('密码长度不能少于6个字元');
+        document.LoginForm.passwd.focus();
+        return false;
+    }else if(document.LoginForm.vlcodes.value == "" || document.LoginForm.vlcodes.value == "验证码"){
+        alert('请输入验证码!!');
+        document.LoginForm.vlcodes.focus();
+        return false;
+    }
+    return true;
+}
+
+var left_top = 140, right_top = 250, float_list = [];
+$(function(){
+
+
+	if(top.uid || top.uid == "guest"){
+		$("#LS-freeReg a").attr("href","javascript:void(0)");
+	}
+	var page = "LiveMain";
+	var otherPage = "/image/2.jpg";
+	var pageImgID = $("#xpj-banner-img");
+	if( page == "MAdvertis" ){
+		if(otherPage == "MemberExclusiveII"){
+			pageImgID.attr("src","/cl/tpl/xinpujing2/images/MemberExclusiveII.png?=658");
+			$("li#LS-pre").find("a").addClass("hover");
+		}else{
+			pageImgID.attr("src","/cl/tpl/xinpujing2/images/Help.png?=658");
+			if(otherPage == "test_reg"){
+				$("li#LS-freeReg").find("a").addClass("hover");
+
+			}else if(otherPage.substr(0,2) == "AT" ){
+				var game_index = Number(otherPage.substr(-1));
+				switch(game_index){
+                    case 7:
+                    $("li#LS-Game").find("a").addClass("hover");
+                    pageImgID.attr("src","/cl/tpl/xinpujing2/images/Game.png?=658");
+                    pageImgID.css({
+                    	position:'relative',
+                    	top:'-72px'
+                    });
+                    break;
+                    case 8:
+                    $("li#LS-sports").find("a").addClass("hover");
+                    pageImgID.attr("src","/cl/tpl/xinpujing2/images/Sports.png?=658");
+                    break;
+                    case 4:
+                    $("li#LS-ageng").find("a").addClass("hover");
+                    break;
+					default:
+					$("li#LS-ageng").find("a").addClass("hover");
+					break;
+				}
+
+			}else{
+				pageImgID.attr("src","/cl/tpl/xinpujing2/images/Reg.png?=658");
+			}
+		}
+	}else{
+
+			pageImgID.attr("src","/cl/tpl/xinpujing2/images/"+page+".png?=658");
+		    $("li#LS-" + page).find("a").addClass("hover");
+		    if(page === 'Game'||page ==='AGGame'){
+		    	pageImgID.css({
+                        	position:'relative',
+                        	top:'-72px'
+                        });
+		    }
+
+
+	}
+	   var isloginin=0;
+	   var bn_height =369;
+	   
+	   if(page!=='first'){
+	   	       if(page === 'Lottery'){
+                       pageImgID.css({
+                        	position:'relative',
+                        	top:'-31px'
+                        });
+	   	       }
+			   var bn_src = "/cl/tpl/xinpujing2/images/"+page+".png?=658";
+			   var _img = new Image();
+			   //_img.src = bn_src;
+			   _img.onload=function(evt){
+
+			   	   bn_height = _img.height;
+			   	   //这里我们可能要根据当前banner的高度进行设置高度
+				   $(".common-banner").css({
+				   	height:bn_height+'px'
+				   });;
+			   }
+		}
+		// switch (page) {
+		//  case 'Lottery':
+		//
+		// 	 break;
+		// 	 case 'expression':
+		//
+		// 		 break;
+		// 		 case 'expression':
+		//
+		// 			 break;
+		// 			 case 'expression':
+		//
+		// 				 break;
+		//  default:
+		//
+		// }
+		// switch (otherPage) {
+		//  case 'AT7':
+		//  $(".common-banner").css({
+		// 	height:'px'
+		//  });;
+		// 	 break;
+		// 	 case 'AT8':
+		// 	 $(".common-banner").css({
+		// 		height:'375px'
+		// 	 });;
+		// 		 break;
+		//  default:
+		//
+		// }
+
+	   //这里我们可能要根据当前banner的高度进行设置高度
+	   $(".common-banner").css({
+	   	height:bn_height+'px'
+	   });;
+
+	// 厅主自改 - 浮动图
+	$(".floatDiv").each(function(i){
+		float_list[i] = $(this);
+	});
+	for (var i in float_list) {
+	    var self = float_list[i];
+
+	    var picfloat = (self.attr('picfloat') == 'right') ? 1 : 0;
+	    self.show().Float({'floatRight' : picfloat, 'topSide' : ((picfloat == 1) ? right_top : left_top)});
+
+	    // ie6 png bug
+	    if (navigator.userAgent.toLowerCase().indexOf('msie 6') != -1) {
+	    	$.each(self.find('img'), function(){
+	    		$(this).css({'width':$(this).width(),'height' : $(this).height()});
+	    	});
+	    }
+
+	    if (picfloat) {
+	        right_top = right_top + (self.find('a > img').height() || 300);
+	    } else {
+	        left_top = left_top + (self.find('a > img').height() || 300);
+	    }
+	    self.find('a').find('span img:last').css('display', 'none');
+	    self.find('a').hover(function() {
+	        $(this).find('span img:first').css('display', 'none');
+	        $(this).find('span img:last').css('display', 'block');
+	    }, function() {
+	        $(this).find('span img:last').css('display', 'none');
+	        $(this).find('span img:first').css('display', 'block');
+	    })
+
+		self.find('div').click(function() {
+	        event.cancelBubble = true;
+	        $(this).parent().fadeOut(300);
+	    });
+	}
+	$(".kf-close").click(function() {
+		$(this).parents(".floatDiv").fadeOut(300);
+	});
+
+    $dragBln = false;
+    $(".main_image").touchSlider({
+        flexible : true,
+        speed : 200,
+        btn_prev : $("#btn_prev"),
+        btn_next : $("#btn_next"),
+        paging : $(".flicking_con a"),
+        counter : function (e){
+            $(".flicking_con a").removeClass("on").eq(e.current-1).addClass("on");
+        }
+    });
+    $(".main_image1").touchSlider({
+        flexible : true,
+        speed : 200,
+        btn_prev : $("#btn_prev"),
+        btn_next : $("#btn_next"),
+        paging : $(".flicking_con1 a"),
+        counter : function (e){
+            $(".flicking_con1 a").removeClass("on").eq(e.current-1).addClass("on");
+        }
+    });
+    $(".main_image").bind("mousedown", function() {
+        $dragBln = false;
+    });
+    $(".main_image").bind("dragstart", function() {
+        $dragBln = true;
+    });
+    $(".main_image a").click(function(){
+        if($dragBln) {
+            return false;
+        }
+    });
+    timer = setInterval(function(){
+        $("#btn_next").click();
+    }, 5000);
+    
+    $(".main_visual").hover(function(){
+        clearInterval(timer);
+    },function(){
+        timer = setInterval(function(){
+            $("#btn_next").click();
+        },5000);
+    });
+    
+    $(".main_image").bind("touchstart",function(){
+        clearInterval(timer);
+    }).bind("touchend", function(){
+        timer = setInterval(function(){
+            $("#btn_next").click();
+        }, 5000);
+    });
+
+});
+
+</script>
+
+	</div>
+</body>
+</html>
+
+<div id="kfCode" style="display:none">
+<!-- BEGIN KFCODE Code -->
+http://messenger.providesupport.net/messenger/06iqga3xynb511s8tbuspcj88o.html
+<!-- END KFCODE Code -->
+</div>

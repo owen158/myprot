@@ -1,0 +1,217 @@
+.nav-bar{
+    width:100%;
+    /*height: 60px;*/
+}
+.nav-bar,.nav-bar .logo,.nav-bar .nav,.nav-bar .nav li,.nav-bar .nav li a,.hader-info{
+    height: 60px;
+}
+.nav-bar .logo{
+    width:25%;
+    position: relative;
+}
+.loginout{
+    width:60px;
+    text-align: center;
+    color:#fff;
+    height: 30px;
+    line-height: 30px;
+    background: #00b8e1;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+.nav-bar .logo a,.nav-bar .nav li a，.hader-info，.eveb_header_notice h4,.txtScroll ul li,.nav-user li a{
+    color:#fff;
+}
+.nav-bar .logo a{
+    display: block;
+    position: absolute;
+    left:0;
+    top:12px;
+    font-size: 0;
+    height: 80px;
+    width:237px;
+    background: red;
+    font-weight: bold;
+}
+#lebo_money{
+    color:#428bca;
+}
+.nav-bar .nav{
+    width:50%;
+    padding:0;
+    list-style: none;
+}
+.nav-bar .nav li{
+    display:inline-block;
+    width:80px;
+    font-size:14px;
+}
+.nav-bar .nav li a{
+    text-align: center;
+    display: block;
+    /*background: orange;*/
+    border-bottom: 2px solid transparent;
+}
+.nav-bar .nav li a,.hader-info .user,.hader-info p{
+    line-height: 60px;
+}
+.nav-bar .nav li a:hover{
+    color:orange;
+    border-bottom: 2px solid orange;
+}
+.hader-info{
+    text-align: right;
+    width:25%;
+    font-size:14px;
+}
+.hader-info .user{
+    display: inline-block;
+}
+.hader-info p{
+    float: right;
+}
+.notice{
+    width: 100%;
+    color:#0e0e0e;
+}
+.notice,.eveb_header_notice, .eveb_header_notice h4,.txtScroll,.txtScroll ul,.txtScroll ul li{
+    height: 42px;
+}
+.eveb_header_notice{
+    width: 570px;
+    float: right;
+}
+ul{
+    padding: 0;
+}
+.eveb_header_notice h4{
+    width:10%;
+    font-size: 14px;
+    line-height: 42px;
+}
+.dianji{
+    float: right;
+    vertical-align: top;
+    width:10%;
+    height: 42px;
+}
+.dianji div:nth-child(1){
+    background: #00a5f3;
+}
+.dianji div{
+    width:100%;
+    height: 21px;
+    text-align: center;
+    line-height: 21px;
+    font-size: 12px;
+    z-index: 5;
+    background: #fff;
+}
+.txtScroll{
+    width:90%;
+}
+.box{
+    width:90%;
+    height: 42px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+.txtScroll ul {
+    width:100%;
+    position: absolute;
+    list-style: none;
+    left:0;
+    height: 42px;
+
+}
+.txtScroll ul li{
+    width:100%;
+    float: left;
+    line-height: 42px;
+    font-size:14px;
+    color:#000;
+}
+.nav-personal,.nav-user,.nav-user li{
+    height: 50px;
+}
+.nav-personal{
+    margin-top: 9px;
+    width:100%;
+    background: #643d1a;
+}
+.nav-user{
+    width:100%;
+}
+.nav-user li{
+    display: inline-block;
+    font-size:14px;
+}
+.nav-user li.active a{
+    color:#ff7f00;
+    border-bottom: 2px solid #ff7f00;
+}
+.nav-user li a{
+    display: block;
+    padding: 0 10px;
+    line-height: 50px;
+    height: 100%;
+    border-bottom: 2px solid transparent;
+}
+.nav-user li i.icon_set {
+    background-position: -314px -90px;
+}
+.nav-user li i.icon_record {
+    background-position: -263px -89px;
+}
+.nav-user li i.icon_letter {
+    background-position: -165px -90px;
+}
+.nav-user li i.icon_market {
+    background-position: -214px -91px;
+}
+.nav-user li i.icon_transfer {
+    background-position: -115px -91px;
+}
+.nav-user li i.icon_withdraw {
+    background-position: -65px -89px;
+}
+.nav-user li i.icon_home{
+    background-position: -364px -90px;
+}
+.nav-user li i.icon_bank{
+    background-position: -16px -89px;
+}
+.nav-user li i{
+    float: left;
+    width: 30px;
+    margin-top: 15px;
+    height: 30px;
+    background: url(../img/icon.png);
+    vertical-align: middle;
+    overflow: hidden;
+    cursor: pointer;
+}
+table{
+    border-collapse:collapse;
+}
+h4{
+    margin: 0;
+}
+a{
+    color:#000;
+}
+.wrapper{
+    width:1000px;
+    margin:0 auto;
+    font-size:0;
+}
+.container{
+    width:100%;
+    padding:30px;
+    min-height: 600px;
+    background: #fff;
+    box-shadow: 0 1px 5px #bbb;
+    margin-bottom: 100px;
+}

@@ -1,0 +1,65 @@
+.G_row {
+  height: 54px;
+  border-bottom: 1px solid #c4c4c4;
+  background: #fff;
+}
+.G_row a {
+  position: relative;
+  display: block;
+  line-height: 54px;
+  font-size: 14px;
+  text-align: left;
+  padding-left: 15px;
+}
+.G_row a span {
+  position: absolute;
+  right: 5px;
+  top: 17px;
+  font-size: 18px;
+}
+.TopHeader {
+  font-size: 16px;
+  color: #222;
+  font-weight: bold;
+}
+.G_title {
+  line-height: 40px;
+  height: 40px;
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 15px;
+}
+.detail {
+  padding: 15px 15px 30px 15px;
+  font-size: 12px;
+}
+p {
+  font-size: 13px;
+  margin: 10px 0;
+  line-height: 15px;
+  text-align: left;
+}
+h1 {
+  font-size: 14px;
+  text-align: left;
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
+}
+.G_hlep_title {
+  margin: 10px 0;
+  font-size: 14px;
+  background: #fff;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #c4c4c4;
+  border-top: 1px solid #c4c4c4;
+}
+.Hlpe_img {
+  width: 100%;
+}
+.Hlpe_img img {
+  width: 100%;
+}

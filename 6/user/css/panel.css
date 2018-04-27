@@ -1,0 +1,240 @@
+.xploading_bg{ width:100%; min-height:980px; height:100%; background:#000; filter:alpha(opacity=20); -moz-opacity:0.2; -khtml-opacity: 0.2; opacity: 0.2; position:fixed; left:0px; top:0px; z-index:150; display:none;}
+.xploading{ width:130px; height:40px; background:#fff; overflow:hidden; margin:0px auto; position:fixed; left:47%; top:21%; display:none; z-index:151;}
+.xploading img{ width:40px; vertical-align:middle; margin:0px 5px;}
+.panel{ width:100%; min-height:980px; height:100%; background:#000; filter:alpha(opacity=20); -moz-opacity:0.2; -khtml-opacity: 0.2; opacity: 0.2; position:fixed; left:0px; top:0px; z-index:106;display: none }
+.panel-con{
+    width:500px;
+    height:226px;
+    padding:10px;
+    display: none;
+    overflow:hidden;
+    margin:0px auto;
+    position:fixed;
+    left:35%; top:30%;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    z-index:107;
+}
+.panel-con h2{
+    margin: 0;
+    height: 85px;
+    line-height: 85px;
+    font-size: 18px;
+    color:#000;
+}
+.panel-con{
+}
+.panel-con .wrapper{
+    width: 100%;
+    position: relative;
+    background:#fff;
+    margin-left: 0;
+    min-height: 215px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    position: relative;
+}
+.Notice{
+    height: 35px;
+    font-size: 16px;
+    line-height: 35px;
+    padding-left: 10px;
+    color:#000;
+}
+.determine{
+    display: inline-block;
+    width:105px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+    font-size: 16px;
+    text-align: center;
+    bottom:15px;
+    right:37%;
+    color:#fff;
+    position: absolute;
+    background: #ff7f00;
+}
+.panel-con .wrapper .panel-text{
+    width:95%;
+    margin: 0 auto;
+    height: 70px;
+    color:#000;
+    border-bottom: 1px solid #b7b7b7;
+    text-align: center;
+    font-size: 14px;
+}
+.guanbi{
+    position: absolute;
+    right:-36px;
+    cursor: pointer;
+    top:-6px;
+    width:30px;
+    margin: 0;
+    height: 30px;
+    background: url(../img/guanbi1.png) no-repeat;
+}
+.panel-con hr{
+    margin-top: 0;
+}
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.cursor{
+    cursor: pointer;
+}
+.login-panel{ width:100%; min-height:980px; height:100%; background:#000; filter:alpha(opacity=40); -moz-opacity:0.4; -khtml-opacity: 0.4; opacity: 0.4; position:fixed; left:0px; top:0px; z-index:99;
+    display: none;
+}
+.login-panel-con{
+    width:500px;
+    min-height:250px;
+    padding:10px;
+    background:#fff;
+    display: none;
+    overflow:hidden;
+    margin:0px auto;
+    position:fixed;
+    left:35%; top:30%;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    z-index:100;
+}
+.panel-content{
+    width:100%;
+    height: 100%;
+
+}
+/*login.png*/
+.login-panel-con h2{
+    margin: 0;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 38px;
+    font-size: 18px;
+    color:#000;
+}
+.sup-header{
+    width:100%;
+    height: 30px;
+    border-bottom:1px solid #b7b7b7;
+}
+.sup-header> i.ico{
+    background-position: -6px -8px;
+}
+.sup-header .icon{
+    width:23px;
+    margin-top: 3px;
+    height: 26px;
+    display: inline-block;
+    background: url(../img/login.png) no-repeat;
+}
+.sup-header span{
+    padding-top: 6px;
+    font-size: 14px;
+}
+a{
+    text-decoration: none;
+}
+.sup-header span a:hover{
+    color:blue;
+}
+.login-panel-con{
+}
+.login-panel-con .wrapper{
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    color:#000000;
+}
+.login-panel-con .wrapper .guanbi{
+    position: absolute;
+    right:10px;
+    cursor: pointer;
+    top:7px;
+    width:25px;
+    margin: 0;
+    height: 25px;
+}
+.login-panel-con .wrapper .item{
+    position: relative;
+    width:310px;
+    margin:5px auto;
+    height: 30px;
+    border:1px solid #b7b7b7;
+    padding-top: 4px;
+}
+.login-panel-con .wrapper .item span.icon-user{
+    background-position: -5px -68px;
+}
+.login-panel-con .wrapper .item span.icon-pass{
+    background-position: -5px -109px;
+}
+.login-panel-con .wrapper .code-item{
+    position: relative;
+}
+.login-panel-con .wrapper .code-item img{
+    position: absolute;
+    right:0px;
+    width:60px;
+    height: 28px;
+    top:0;
+}
+.py{
+    display: inline-block;
+    vertical-align: top;
+}
+.login-panel-con .wrapper form{
+    margin-top: 10px;
+}
+.login-panel-con .wrapper .code-item span.icon-code{
+    background-position: -5px -109px;
+}
+.login-panel-con .wrapper .item span{
+    position: absolute;
+    left:5px;
+    width:18px;
+    height: 22px;
+    background: url(../img/login.png) no-repeat;
+}
+.login-panel-con .wrapper .fn{
+    text-align: center;
+    font-size:12px;
+    font-weight: 100;
+    margin-top: 30px;
+
+}
+body{
+    margin: 0;
+}
+.star{
+    color:red;
+}
+.login-panel-con .wrapper .item input{
+    border:none;
+    height: 20px;
+    outline:none;
+    width:308px;
+    padding-left: 30px;
+}
+.login-panel-con .wrapper .guanbi{
+    background: url(../img/guanbi2.png) no-repeat;
+}
+.login-panel-con .wrapper .guanbi:hover{
+    background: url(../img/guanbi1.png) no-repeat;
+}
+.cont{
+    margin: 0 auto;
+}
+.center{
+    text-align: center;
+}
+

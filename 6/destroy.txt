@@ -1,0 +1,67 @@
+User 文件
+    js
+        jquery.cookie.js
+            token
+        registered.js
+            注册/登录
+        login.js
+            登录
+         loadgame.js
+            进入游戏
+        panel.js
+            面板显示隐藏
+        pubilc.js
+            拼写前缀/URL/检查是否登录/退出登录/Code验证码/检查个人中心页
+        electronics.js
+            JSON.js/MG
+            JSON2.js/Haba
+            JSON3.js/PT
+
+    css
+        panel.css
+            登录框/提示框//缓冲页面
+    agent 目录
+        代理合作页面
+    personal
+        footer.html
+                        //公用头部
+        header.html
+                        //公用底部
+        transfer.html
+                        // 转账页面
+        personal_bank.html
+                        //存款页面
+        parsonal_drawing.html
+                        // 提款页面
+        personal_home.html
+                        //会员首页
+        messagelist.heml
+                        // 站内信
+        market.html
+                    //市场活动
+        history.html
+                    //历史记录
+        settings.html
+                    // 设置页面
+        css
+            footer.css
+                        //公用底部
+            header.css
+                        //公用头部
+            three.css
+                        // 市场活动、历史记录、设置页面 主建
+            timepanel.css
+                        // 日期时间显示
+            settings.css
+                        //设置页面
+        js
+            data.js
+                        // 时间
+            game_list.js
+                        //游戏类型
+            homepubilc.js
+                        检查个人中心页 - 登录状态跳转
+            vip_home.js
+                        获取个人信心
+
+

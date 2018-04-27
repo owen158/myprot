@@ -1,0 +1,274 @@
+.bank .header{
+    height: 31px;
+
+    padding:0;
+    margin:0;
+}
+.bank .header .icon{
+    display: inline-block;
+    width:43px;
+    background: url(../img/deposit_wy_03.png) no-repeat;
+    height: 31px;
+}
+.bank .header .text{
+    padding-left: 15px;
+    height: 31px;
+    line-height: 31px;
+    font-size:20px;
+}
+.bank .wrapper {
+    width:100%;
+}
+.bank .wrapper .list{
+    height: 51px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #dea771;
+    width:100%;
+}
+.bank .wrapper .list li{
+    width:113px;
+    height: 46px;
+    cursor: pointer;
+    line-height: 46px;
+    text-align: center;
+    font-weight: 900;
+    color:#666;
+    font-size: 14px;
+}
+.bank .wrapper .list li.active{
+    background:#FFF url(../img/depositnavbg_03.png) no-repeat;
+}
+.bank .wrapper .list li a{
+    display: block;
+    height: auto;
+}
+
+.bank .wrapper .cont .item{
+    display: none;
+    font-size: 14px;
+}
+.bank .wrapper .cont{
+    width:100%;
+    padding: 10px;
+    height: auto;
+}
+.bank .wrapper .cont div.active{
+    display: block;
+}
+#card_tran form{
+    with:100%;
+    height: auto;
+}
+#card_tran form .main{
+    width:100%;
+    height: 40px;
+    font-size:14px;
+}
+#card_tran form .main label{
+    font-size: 16px;
+    font-weight: bold;
+}
+#card_tran form .main{
+    margin: 5px 0px;
+}
+#card_tran form .main p{
+    height: 40px;
+}
+#card_tran form .main span{
+    color:rosybrown;
+}
+#card_tran form .main p input[type='checkbox']{
+    margin-top: 2px;
+}
+
+#card_tran form .main input[type='text']{
+    height: 20px;
+    border:none;
+    outline:none;
+    padding-left: 3px;
+}
+#card_tran form .main .ipt{
+    height: 30px;
+    margin-top: 5px;
+    padding-top: 3px;
+    border:1px solid #b7b7b7;
+}
+#card_tran form .main em{
+    /*position: absolute;*/
+    position: relative;
+    top:-3px;
+    display: inline-block;
+    margin-left: 5px;
+    width:124px;
+    height: 30px;
+    background:url(../../img/bank_logo.gif);
+    overflow: hidden;
+    vertical-align: middle;
+    cursor: pointer;
+    border:1px solid #bbb;
+}
+#card_tran form .main label{
+    height: 40px;
+    width:126px;
+    margin-right: 2px;
+    display: inline-block;
+}
+#card_tran form .main em.abc{
+    background-position: 0 -67px;
+}
+#card_tran form .main  .icbc{
+    background-position: 0 -33px;
+}
+
+#card_tran form .main  .ccb{
+    background-position: 0 -134px;
+}
+#card_tran form .main .BOCOM{
+    background-position: 0 -167px;
+}
+#card_tran form .main .BOC{
+    background-position: 0 -101px;
+}
+#card_tran form .main .CMBC{
+    background-position: 0 -431px;
+}
+#card_tran form .main .CMBCS{
+    background-position: 0 -332px;
+}
+
+#card_tran form .main .CEBBANK{
+    background-position: 0 -266px;
+}
+
+#card_tran form .main .BCCB{
+    background-position: 0 -662px;
+}
+#card_tran form .main .PINGAN{
+    background-position: 0 -530px;
+}
+#card_tran form .main .HXB{
+    background-position: 0 -299px;
+}
+#card_tran form .main .BOS{
+    background-position: 0 -695px;
+}
+#card_tran form .main .CIB{
+    background-position: 0 -464px;
+}
+#card_tran form .main .PSBC{
+    background-position: 0 -200px;
+}
+#card_tran form .main .SPDB{
+    background-position: 0 -497px;
+}
+#card_tran form .main .ECITIC{
+    background-position: 0 -233px;
+}
+.submit-btn{
+    margin-top: 6px;
+}
+#card_tran form .main .CGB{
+    background-position: 0 -365px;
+}
+#card_Micro .micro{
+    list-style: none;
+    margin-bottom: 10px;
+}
+#card_Micro .micro li.active{
+    /*background:#FFF url(../img/depositnavbg_03.png) no-repeat;*/
+    border:1px solid #b3b3b3;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+#card_Micro .micro li{
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+}
+#card_Micro .micro li img{
+    vertical-align: middle;
+    width: 80px;
+    height: 25px;
+}
+#card_Micro .content{
+    height: auto;
+    width:70%;
+    margin: 0 auto;
+}
+#card_Micro .content .item{
+    display: none;
+}
+#card_Micro .content .item .main{
+    height: 40px;
+    width:100%;
+}
+#card_Micro .content .item .main label{
+    font-size: 16px;
+    font-weight: 600;
+}
+#card_Micro .content .item .main input{
+    height: 20px;
+    padding-left: 3px;
+    border:none;
+    outline:none;
+}
+#card_Micro .content .item .main .ipt{
+    width:179px;
+    height: 30px;
+    padding-top: 3px;
+    margin-top: 5px;
+    border:1px solid #b7b7b7;
+}
+.Mone{
+    width:400px;
+    height: 40px;
+}
+.Mone ul{
+    list-style: none;
+    width:100%;
+    height: 40px;
+    margin:0;
+}
+.Mone ul li{
+    display: inline-block;
+    vertical-align: top;
+    line-height: 40px;
+    width:60px;
+    text-align: center;
+    cursor: pointer;
+}
+.Mone ul li.active{
+    background:#00b8e1;
+    color:#fff;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+#card_Micro .content div.active{
+    display: block;
+}
+#card_Micro .content .item .tjbtn,#card_Micro .content .item .zxbtn{
+    width:77px;
+    height: 28px;
+    line-height: 28px;
+    cursor: pointer;
+    margin-left: 65px;
+    text-align: center;
+}
+.btn{
+    background: #ff6c00;
+    font-size: 14px;
+    color:#fff;
+    cursor: pointer;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+.btn a{
+    color:#FFF
+}
+
+
+
+

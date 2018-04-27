@@ -1,0 +1,32 @@
+.wns-footer-fixed {
+    background: #21201b;
+    padding-top: 13px;
+    margin-top: 28px;
+}
+.wns-footer,.wns-footer-fixed{
+    width:100%;
+}
+.wns-footer {
+    color: #9a8a75;
+    position: relative;
+}
+.w1054 {
+    width: 1200px;
+    margin:0 auto;
+}
+.copyright {
+    text-align: center;
+    margin: 0 auto;
+    width: 980px;
+    padding-bottom: 18px;
+}
+.copyright p {
+    line-height: 150%;
+    margin: 0;
+}
+p{
+    margin: 0;
+}
+.wns-footer a {
+    color: #9a8a75;
+}

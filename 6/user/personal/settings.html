@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>澳门威尼斯人</title>
+    <!--<link rel="shortcut icon" href="../../images/favicon.ico" />-->
+    <!--<link rel="stylesheet" href="../../css/normalize.css">-->
+    <!--<link rel="stylesheet" href="../../css/site.css">-->
+    <!--<link rel="stylesheet" href="../../css/public.css">-->
+    <!--<link rel="stylesheet" href="./css/personal.css">-->
+    <!--<link rel="stylesheet" href="./css/market.css">-->
+    <!--<link rel="stylesheet" href="./css/history.css">-->
+    <!--公用-->
+    <link rel="stylesheet" href="../css/panel.css">
+    <!--头部-->
+    <link rel="stylesheet" href="./css/header.css">
+    <!--共用-->
+    <link rel="stylesheet" href="./css/three.css">
+    <!--底部-->
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/settings.css">
+    <!--<link rel="stylesheet" href="../../css/xinpujing2.css">-->
+    <script src="../../js/jquery-1.8.2.js"></script>
+    <script src="../js/content.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <!--//检查-->
+    <script src='../js/pubilc.js'></script>
+    <!--提示-->
+    <script src="./js/homepubilc.js"></script>
+    <!--<link rel="stylesheet" href="./css/qubilc_content.css">-->
+    <!--<script src="../../js/jquery-1.8.2.min.js"></script>-->
+    <!--<script src="../js/pubilc_content.js"></script>-->
+    <!--<script src="../js/panel.js"></script>-->
+    <!--<script type="text/javascript" src="../../User/jquery.cookie.js"></script>-->
+    <!--<script src="../../js/pubilc.js"></script>-->
+    <!--<script src='../../User/P_ublic.js'></script>-->
+    <!--<script src="../js/pubilc_content.js"></script>-->
+    <!--<script src='../js/logo.js'></script>-->
+    <!--<script src="../../User/drop_out.js"></script>-->
+    <!--<script src="../js/personal.js"></script>-->
+    <!--<script src="../../js/pubilc.js"></script>-->
+    <!--<script src='../../User/P_ublic.js'></script>-->
+    <!--<script src='../js/logo.js'></script>-->
+    <!--<script src="../../User/drop_out.js"></script>-->
+    <!--<script src="../js/personal.js"></script>-->
+</head>
+<body>
+<div class="xploading_bg"></div>
+<div class="xploading" > <img src='../../images/Refresh.gif' />Loading... </div>
+<div class="panel"></div>
+<div class="panel-con">
+    <div class="wrapper">
+        <h2 class="Notice">提示</h2>
+        <div class="panel-text"></div>
+        <div  onclick="shut.Down('.panel','.panel-con')"  class="determine">确定</div>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="wrapperp">
+        <script>Content.Header('.wrapperp')</script>
+    </div>
+    <div  class="container  market" id="settings">
+        <div class="wrapper-main">
+            <div class="main-nav-left py">
+                <ul class="list-ul-active list">
+                    <li onclick="shut.Downactive(this)" mank="#offer1" class="active">个人资料</li>
+                    <li onclick="shut.Downactive(this)" mank="#offer2" >登录密码</li>
+                    <li onclick="shut.Downactive(this)" mank="#offer3" >取款密码</li>
+                </ul>
+            </div>
+            <div class="main-right py list-content-active">
+                <div id="offer1" class="content sideBarone  active">
+                    <h2 class="header"><span class="icon py"></span><span class="text py">个人记录</span></h2>
+                    <hr style="margin: 20px 0">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="bk">会员名</td>
+                                <td class="getusername"></td>
+                                <td class="bk">手机号</td>
+                                <td class="getnumber"></td>
+                            </tr>
+                            <tr>
+                                <td class="bk">真实姓名</td>
+                                <td class="getname"></td>
+                                <td class="bk">电子邮箱</td>
+                                <td class="getloginmailbox"></td>
+                            </tr>
+                            <tr>
+                                <td class="bk">注册时间</td>
+                                <td class="getlogintime"></td>
+                                <td class="bk"></td>
+                                <td></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="offer2" class="content sideBartwo  ">
+                    <h2 class="header"><span class="icon py"></span><span class="text py">修改登录密码</span></h2>
+                    <hr style="margin: 20px 0">
+                    <div class="form-wrapper">
+                        <form action="">
+                            <div class="main">
+                                <div class="py label">原密码:</div>
+                                <div class="py ipt">
+                                    <input class="loginps" type="password" placeholder="原密码">
+                                </div>
+                                <div class="text orange py">*请填写您原始的登录密码</div>
+                            </div>
+                            <div class="main">
+                                <div class="py label">新密码:</div>
+                                <div class="py ipt">
+                                    <input class="loginpass" type="password" placeholder="新密码">
+                                </div>
+                                <div class="text orange py">* 非数字开头，8-15位字母，数字组成</div>
+                            </div>
+                            <div class="main">
+                                <div class="py label">确认密码:</div>
+                                <div class="py ipt">
+                                    <input class="loginqrpass" type="password" placeholder="确认密码">
+                                </div>
+                                <div class="text orange py">* 请再次填写新密码</div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="main">
+                        <div onclick="settings.Submitlogin()" class="submit">确认修改</div>
+                    </div>
+                </div>
+                <div id="offer3" class="content sideBartwo ">
+                    <h2 class="header"><span class="icon py"></span><span class="text py">修改提款密码</span></h2>
+                    <hr style="margin: 20px 0">
+                    <div class="form-wrapper">
+                        <form action="">
+                            <div class="main">
+                                <div class="py label">原密码:</div>
+                                <div class="py ipt">
+                                    <input class="cardps" type="password" placeholder="原密码">
+                                </div>
+                                <div class="text orange py"> *请填写您原始的提款密码</div>
+                            </div>
+                            <div class="main">
+                                <div class="py label">新密码:</div>
+                                <div class="py ipt">
+                                    <input onkeydown="if(event.keyCode==13)event.keyCode=9" onKeypress="if
+((event.keyCode<48 || event.keyCode>57)) event.returnValue=false" class="cardpass" type="password" placeholder="新密码">
+                                </div>
+                                <div class="text orange py">* 取款密码，必须为6（0-9）位数字</div>
+                            </div>
+                            <div class="main">
+                                <div class="py label">确认密码:</div>
+                                <div class="py ipt">
+                                    <input class="cardqrpass" type="password" placeholder="确认密码">
+                                </div>
+                                <div class="text orange py">* 请再次填写新密码</div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="main">
+                        <div onclick="settings.submitcard()" class="submit">确认修改</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wns-footer-fixed w-golab ">
+    <script>Content.Footer('.wns-footer-fixed')</script>
+</div>
+</body>
+</html>
+<script src="lody/laypage/laypage.js"></script>
+<script>
+    $(".page1").hide();
+    //    var data = [
+    //        '北京',
+    //        '上海',
+    //        '广州',
+    //        '深圳',
+    //        '杭州',
+    //        '长沙',
+    //        '合肥',
+    //        '宁夏',
+    //        '成都',
+    //        '西安',
+    //        '南昌',
+    //        '上饶',
+    //        '沈阳',
+    //        '济南',
+    //        '厦门',
+    //        '福州',
+    //        '九江',
+    //        '宜春',
+    //        '赣州',
+    //        '宁波',
+    //        '绍兴',
+    //        '无锡',
+    //        '苏州',
+    //        '徐州',
+    //        '东莞',
+    //        '佛山',
+    //        '中山',
+    //        '成都',
+    //        '武汉',
+    //        '青岛',
+    //        '天津',
+    //        '重庆',
+    //        '南京',
+    //        '九江',
+    //        '香港',
+    //        '澳门',
+    //        '台北'
+    ////    ];
+    //    var nums = 4; //每页出现的数量
+    //    var pages = Math.ceil(data.length/nums); //得到总页数
+    //    var thisDate = function(curr){
+    //        //此处只是演示，实际场景通常是返回已经当前页已经分组好的数据
+    //        var str = '', last = curr*nums - 1;
+    //        last = last >= data.length ? (data.length-1) : last;
+    //        for(var i = (curr*nums - nums); i <= last; i++){
+    //            str += '<td>'+ data[i] +'</td>';
+    //        }
+    //        return str;
+    //    };
+    //    //调用分页
+    //    laypage({
+    //        cont: $('#biuuu_city'), //容器。值支持id名、原生dom对象，jquery对象,
+    //        pages: pages, //总页数
+    //        skip: true, //是否开启跳页
+    //        skin: '#AF0000',
+    //        groups: 3 ,//连续显示分页数
+    //        jump: function(obj){
+    //            document.getElementById('biuuu_city_list').innerHTML = thisDate(obj.curr);
+    //        }
+    //    })
+</script>
+<script src="lody/My97DatePicker/WdatePicker.js"></script>
+
+<script src="../js/panel.js"></script>
+<!--登录-->
+<script src="../js/login.js"></script>
+<!--游戏-->
+<script src="../js/loadgame.js"></script>
+<script src="./js/vip_home.js"></script>
+<script src="./js/settings.js"></script>
+<!--<script src="../js/market.js"></script>-->
+<!--<script src="../js/settings.js"></script>-->
+<!--<script src="../../js/pubilc.js"></script>-->
+<!--<script src='../../User/P_ublic.js'></script>-->
+<!--<script src='../js/logo.js'></script>-->
+<!--<script src="../../User/drop_out.js"></script>-->
+<!--<script src="../js/personal.js"></script>-->
