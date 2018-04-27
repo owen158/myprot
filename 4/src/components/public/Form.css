@@ -1,0 +1,30 @@
+.G_Form .el-form-item {
+  background: #fff;
+  margin-bottom: 0;
+  height: 50px;
+  padding-top: 5px;
+}
+.G_Form .el-input__inner {
+  border: none;
+  outline: none;
+}
+.G_Form .el-form-item__content {
+  position: relative;
+}
+.G_Form .el-input-group__prepend {
+  background: transparent;
+  border: none;
+}
+.G_Form .el-input-group__prepend span {
+  font-size: 24px;
+}
+.G_Form .ImgCode {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 60px;
+  height: 30px;
+}
+.G_Form .el-form-item__content {
+  position: relative;
+}

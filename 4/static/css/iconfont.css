@@ -1,0 +1,872 @@
+﻿@font-face {
+    font-family: "iconfont";
+    src: url('../font/iconfont.ttf');
+    /* IE9*/
+    src: url('../font/iconfont.ttf') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.ttf') format('woff'), /* chrome, firefox */
+    url('../font/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.ttf') format('svg');
+    /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="x-icon"] {
+    display: block;
+    margin: 0 auto;
+    background: url('http://mobile.beike188.com/mobileYHH/image/icon.png');
+    background-size: 500px 500px;
+}
+
+.x-icon-logo-bottom {
+    width: 74px;
+    height: 54px;
+    background-position: -86px -296px;
+}
+
+.x-icon-pc {
+    width: 152px;
+    height: 46px;
+    background-position: -176px -52px;
+}
+
+.x-icon-Online {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-position: -31px -4px;
+}
+
+.x-icon-home-logo {
+    width: 96px;
+    height: 40px;
+    background-position: -0px -55px;
+}
+
+.x-icon-logo {
+    width: 196px;
+    height: 70px;
+    background-position: -0px -99px;
+}
+
+.x-icon-Alipay {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-position: -58px -3px;
+}
+
+.x-icon-ScanCode {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-position: -3px -28px;
+}
+
+.x-icon-wechat {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-position: -30px -28px;
+}
+
+.x-icon-tenpay {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-position: -58px -29px;
+}
+
+.x-icon-ylsm {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-position: -88px -29px;
+}
+
+.x-icon-kj {
+    display: inline-block;
+    width: 28px;
+    height: 29px;
+    background-position: -118px 0px;
+}
+
+.x-icon-jd {
+    display: inline-block;
+    width: 28px;
+    height: 29px;
+    background-position: -118px -28px;
+}
+
+.x-icon-Banktranfer {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-position: -3px -4px;
+}
+
+.x-icon-help-tag01,
+.x-icon-help-tag02,
+.x-icon-help-tag03,
+.x-icon-help-tag04,
+.x-icon-help-tag05,
+.x-icon-help-tag06,
+.x-icon-help-tag07,
+.x-icon-help-tag08 {
+    width: 45px;
+    height: 45px;
+}
+
+.x-icon-help-tag01 {
+    background-position: -258px -182px;
+}
+
+.x-icon-help-tag02 {
+    background-position: -303px -137px;
+}
+
+.x-icon-help-tag03 {
+    background-position: -303px -181px;
+}
+
+.x-icon-help-tag04 {
+    background-position: -257px -46px;
+}
+
+.x-icon-help-tag05 {
+    background-position: -303px -46px;
+}
+
+.x-icon-help-tag06 {
+    background-position: -258px -92px;
+}
+
+.x-icon-help-tag07 {
+    background-position: -303px -92px;
+}
+
+.x-icon-help-tag08 {
+    background-position: -258px -137px;
+}
+
+.x-icon-help-Policy {
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+    background-position: -7px -285px;
+}
+
+.x-icon-help-phone {
+    height: 25px;
+    width: 30px;
+    margin: 0 auto;
+    background-position: -104px -220px;
+}
+
+.x-icon-help-opinion {
+    height: 25px;
+    width: 30px;
+    margin: 0 auto;
+    background-position: -104px -191px;
+}
+
+.x-icon-help-desire {
+    width: 30px;
+    height: 30px;
+    background-position: -4px -259px
+}
+
+.x-icon-help-mission {
+    width: 30px;
+    height: 30px;
+    background-position: -34px -259px
+}
+
+.x-icon-help-value {
+    width: 30px;
+    height: 30px;
+    background-position: -64px -260px
+}
+
+.x-icon-game-bbin {
+    width: 58px;
+    height: 58px;
+    background-position: -279px -385px
+}
+
+.x-icon-game-ds {
+    width: 58px;
+    height: 58px;
+    background-position: -110px -385px
+}
+
+.x-icon-game-ag {
+    width: 58px;
+    height: 58px;
+    background-position: -55px -385px
+}
+
+.x-icon-game-cg {
+    width: 58px;
+    height: 58px;
+    background-position: 3px -385px
+}
+
+.x-icon-game-og {
+    width: 58px;
+    height: 58px;
+    background-position: -222px -385px
+}
+
+.x-icon-game-mg {
+    width: 58px;
+    height: 58px;
+    background-position: 4px -443px
+}
+
+.x-icon-game-pt {
+    width: 58px;
+    height: 58px;
+    background-position: -55px -442px
+}
+
+.x-icon-game-haba {
+    width: 58px;
+    height: 58px;
+    background-position: -110px -442px
+}
+
+.x-icon-game-vr {
+    width: 58px;
+    height: 58px;
+    background-position: -166px -442px
+}
+
+.x-icon-game-sb {
+    width: 58px;
+    height: 58px;
+    background-position: -165px -385px
+}
+
+.x-icon-game-hg {
+    width: 58px;
+    height: 58px;
+    background-position: -222px -443px
+}
+
+.x-icon-game-kyqp {
+    width: 58px;
+    height: 58px;
+    background-image: url("http://mobile.beike188.com/mobileYHH/images/Home/Chess/kyqp.png")!important;
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: 5px 5px
+}
+
+.x-icon-game-XIG {
+    width: 58px;
+    height: 58px;
+    background-position: -279px -443px
+}
+
+.x-icon-game-JIG {
+    width: 58px;
+    height: 58px;
+    background-position: -338px -442px
+}
+
+.x-icon-game-logo {
+    width: 58px;
+    height: 58px;
+    background-position: -336px -386px
+}
+
+.x-icon-Mem-tad1 {
+    width: 35px;
+    height: 35px;
+    background-position: -4px -110px
+}
+
+.x-icon-Mem-tad2 {
+    width: 36px;
+    height: 36px;
+    background-position: -36px -108px
+}
+
+.x-icon-Mem-tad3 {
+    width: 36px;
+    height: 36px;
+    background-position: -72px -108px
+}
+
+
+/*资金流水*/
+
+.x-icon-Mem-tad4 {
+    width: 36px;
+    height: 36px;
+    background-position: -111px -109px;
+}
+
+
+/*投注记录*/
+
+.x-icon-Mem-tad5 {
+    width: 36px;
+    height: 36px;
+    background-position: -142px -109px;
+}
+
+
+/*充值记录*/
+
+.x-icon-Mem-tad6 {
+    width: 36px;
+    height: 36px;
+    background-position: -178px -109px;
+}
+
+
+/*消息中心*/
+
+.x-icon-Mem-tad7 {
+    width: 36px;
+    height: 36px;
+    background-position: -36px -146px;
+}
+
+
+/*账户信息*/
+
+.x-icon-Mem-tad8 {
+    width: 36px;
+    height: 36px;
+    background-position: -72px -146px;
+}
+
+
+/*安全设置*/
+
+.x-icon-Mem-tad9 {
+    width: 36px;
+    height: 36px;
+    background-position: -106px -146px;
+}
+
+
+/*优惠活动*/
+
+.x-icon-Mem-tad10 {
+    width: 36px;
+    height: 36px;
+    background-position: -178px -180px;
+}
+
+
+/*转账记录*/
+
+.x-icon-Mem-tad11 {
+    width: 36px;
+    height: 36px;
+    background-position: -217px -108px;
+}
+
+
+/*提款记录*/
+
+.x-icon-Mem-tad12 {
+    width: 36px;
+    height: 36px;
+    background-position: -217px -145px;
+}
+
+
+/*帮助中心*/
+
+.x-icon-Mem-tad13 {
+    width: 36px;
+    height: 36px;
+    background-position: -143px -145px;
+}
+
+.x-icon-Mem-tad14 {
+    width: 35px;
+    height: 35px;
+    background-position: -4px -146px
+}
+
+
+/*会员中心logo*/
+
+.x-icon-Mem-logo {
+    width: 70px;
+    height: 70px;
+    background-position: -6px -292px
+}
+
+.x-icon-lotter-active {
+    width: 36px;
+    height: 36px;
+    background-position: -145px -218px;
+}
+
+
+/*proxy*/
+
+.icon-shuaxin:before {
+    content: "\e601";
+}
+
+.icon-caipiao:before {
+    content: "\e600";
+}
+
+.icon-shangchengxitongtubiaozitihuayuanwenjian84:before {
+    content: "\e785";
+}
+
+.icon-category:before {
+    content: "\e699";
+}
+
+.icon-set:before {
+    content: "\e6ae";
+}
+
+.icon-addbank:before {
+    content: "\e629";
+}
+
+.icon-skype:before {
+    content: "\e896";
+}
+
+.icon-shuaxin1:before {
+    content: "\e63d";
+}
+
+.icon-suo:before {
+    content: "\e6f8";
+}
+
+.icon-youxiang:before {
+    content: "\e607";
+}
+
+.icon-55:before {
+    content: "\e61a";
+}
+
+.icon-shouye2:before {
+    content: "\e63f";
+}
+
+.icon-weixintubiao:before {
+    content: "\e67b";
+}
+
+.icon-mm:before {
+    content: "\e605";
+}
+
+.icon-service:before {
+    content: "\e6db";
+}
+
+.icon-mjiantou-copy:before {
+    content: "\e61f";
+}
+
+.icon-kuanyi20guanqiantixianjilu:before {
+    content: "\e628";
+}
+
+.icon-iconfontyoujiantou:before {
+    content: "\e687";
+}
+
+.icon-jifenshangchengtubiao:before {
+    content: "\e624";
+}
+
+.icon-qq-copy:before {
+    content: "\e609";
+}
+
+.icon-menu:before {
+    content: "\e637";
+}
+
+.icon-youhuihuodong:before {
+    content: "\e6eb";
+}
+
+.icon-shouji:before {
+    content: "\e6f2";
+}
+
+.icon-kefu:before {
+    content: "\e6df";
+}
+
+.icon-jiantoufuben:before {
+    content: "\e65e";
+}
+
+.icon-denglu:before {
+    content: "\e60a";
+}
+
+.icon-freg:before {
+    content: "\e769";
+}
+
+.icon-guanfang1:before {
+    content: "\e608";
+}
+
+.icon-suokai:before {
+    content: "\e6da";
+}
+
+.icon-cuo:before {
+    content: "\e622";
+}
+
+.icon-homedeposit:before {
+    content: "\e60b";
+}
+
+.icon-mimaxianshi:before {
+    content: "\e642";
+}
+
+.icon-user:before {
+    content: "\e602";
+}
+
+.icon-gerenziliao:before {
+    content: "\e617";
+}
+
+.icon-icondengluyonghu:before {
+    content: "\e659";
+}
+
+.icon-wuqiacunqukuan:before {
+    content: "\e666";
+}
+
+.icon-shoukuanzhanghuyucunkuan:before {
+    content: "\e62a";
+}
+
+.icon-liushuizijin:before {
+    content: "\e60c";
+}
+
+.icon-denglu3:before {
+    content: "\e678";
+}
+
+.icon-zuqiu:before {
+    content: "\e626";
+}
+
+.icon-sousuo-copy-copy-copy:before {
+    content: "\e640";
+}
+
+.icon-shixun:before {
+    content: "\e603";
+}
+
+.icon-tiyu:before {
+    content: "\e606";
+}
+
+.icon-code:before {
+    content: "\e7e5";
+}
+
+.icon-xiugaimima:before {
+    content: "\e6c2";
+}
+
+.icon-remen:before {
+    content: "\e6bf";
+}
+
+.icon-jilu2-copy-copy:before {
+    content: "\e60d";
+}
+
+.icon-denglu2:before {
+    content: "\e6cc";
+}
+
+.icon-tianjia:before {
+    content: "\e62b";
+}
+
+.icon-jifenduihuanjilu:before {
+    content: "\e625";
+}
+
+.icon-denglu1:before {
+    content: "\e67c";
+}
+
+.icon-06:before {
+    content: "\e611";
+}
+
+.icon-tiaokuan:before {
+    content: "\e62c";
+}
+
+.icon-youhuihuodong1:before {
+    content: "\e61b";
+}
+
+.icon-shouye1:before {
+    content: "\e623";
+}
+
+.icon-icon-user-edit:before {
+    content: "\e68f";
+}
+
+.icon-zhuanhuan:before {
+    content: "\e64a";
+}
+
+.icon-cunkuan:before {
+    content: "\e613";
+}
+
+.icon-dui:before {
+    content: "\e614";
+}
+
+.icon-zhuanhuan1:before {
+    content: "\e62f";
+}
+
+.icon-yinhangqia:before {
+    content: "\e621";
+}
+
+.icon-yijianfankui_xianxing:before {
+    content: "\e689";
+}
+
+.icon-shexiangtou:before {
+    content: "\e688";
+}
+
+.icon-VR:before {
+    content: "\e68d";
+}
+
+.icon-xinxi:before {
+    content: "\e62e";
+}
+
+.icon-tubiaozhizuomoban-copy:before {
+    content: "\e604";
+}
+
+.icon-jiebei-huanqiansvg:before {
+    content: "\e69d";
+}
+
+.icon-Ankerwebicon-:before {
+    content: "\e674";
+}
+
+.icon-wujiaoxing:before {
+    content: "\e616";
+}
+
+.icon-weixin:before {
+    content: "\e693";
+}
+
+.icon-shoucang:before {
+    content: "\e7b5";
+}
+
+.icon-yanzhengma1:before {
+    content: "\e76d";
+}
+
+.icon-laba:before {
+    content: "\e612";
+}
+
+.icon-gerenzhongxin:before {
+    content: "\e618";
+}
+
+.icon-chongzhijilu:before {
+    content: "\e60e";
+}
+
+.icon-yanzhengma:before {
+    content: "\e620";
+}
+
+.icon-jilu:before {
+    content: "\e60f";
+}
+
+.icon-wo:before {
+    content: "\e639";
+}
+
+.icon-qq:before {
+    content: "\e630";
+}
+
+.icon-xiazai:before {
+    content: "\e641";
+}
+
+.icon-jilu1:before {
+    content: "\e67d";
+}
+
+.icon-shezhi:before {
+    content: "\e661";
+}
+
+.icon-shouye3:before {
+    content: "\e63a";
+}
+
+.icon-dianhua:before {
+    content: "\e69f";
+}
+
+.icon-yuechi-copy:before {
+    content: "\e61c";
+}
+
+.icon-dianziyouxi:before {
+    content: "\e63e";
+}
+
+.icon-fenlei:before {
+    content: "\e680";
+}
+
+.icon-ziyuan:before {
+    content: "\e61e";
+}
+
+.icon-kefu1:before {
+    content: "\e619";
+}
+
+.icon-shouyedianji:before {
+    content: "\e62d";
+}
+
+.icon-zhuce:before {
+    content: "\e694";
+}
+
+.icon-touxiang:before {
+    content: "\e610";
+}
+
+.icon-qukuan:before {
+    content: "\e71c";
+}
+
+.icon-yinhangqia1:before {
+    content: "\e63b";
+}
+
+.icon-shouye:before {
+    content: "\e66f";
+}
+
+.icon-cunqukuanyewupingdan:before {
+    content: "\e65f";
+}
+
+.icon-gerenzhongxinhui:before {
+    content: "\e61d";
+}
+
+.icon-zuqiu1:before {
+    content: "\e627";
+}
+
+.icon-tuichu:before {
+    content: "\e638";
+}
+
+.icon-youhui:before {
+    content: "\e6ed";
+}
+
+.icon-qian:before {
+    content: "\e6ee";
+}
+
+.icon-yinhangqiaqukuan:before {
+    content: "\e730";
+}
+
+.icon-jiaocheng:before {
+    content: "\e7e6";
+}
+
+.icon-changyongxinxi:before {
+    content: "\e631";
+}
+
+.icon-zhuanzhang:before {
+    content: "\e632";
+}
+
+.icon-kefu2:before {
+    content: "\e633";
+}
+
+.icon-iconjia:before {
+    content: "\e615";
+}
+
+.icon-banbenxinxi:before {
+    content: "\e645";
+}
+
+.icon-wuqiaqukuan:before {
+    content: "\e634";
+}
+
+.icon-bangzhuzhongxin:before {
+    content: "\e63c";
+}
+
+.icon-4A:before {
+    content: "\e635";
+}
+
+.icon-mimaxianshi1:before {
+    content: "\e68a";
+}
+
+.icon-lishijiekuanjilu:before {
+    content: "\e636";
+}

@@ -1,0 +1,135 @@
+.PayPage .el-radio--small,
+.PayPage .is-bordered {
+  margin-bottom: 10px;
+}
+.PayPage .el-form,
+.PayPage .el-radio-group {
+  background: #fff;
+}
+.PayPage input {
+  border: none;
+}
+.PayPage .el-form-item__label {
+  line-height: 50px;
+}
+.PayPage .el-form-item__content {
+  line-height: 50px;
+}
+.PayPage .el-form-item {
+  margin-bottom: 0;
+}
+.PayPage .el-form-item__content {
+  position: relative;
+}
+.PayPage .Description {
+  position: absolute;
+  font-size: 14px;
+  right: 0px;
+  top: 0;
+  height: 50px;
+  width: 100px;
+  color: #c8a675;
+}
+.PayPage .PayPage-transition {
+  width: 100%;
+  height: 40px;
+  background: #e4e4e4;
+}
+.PayPage .PayPage-transition p {
+  font-size: 15px;
+  text-align: right;
+  padding-right: 15px;
+  line-height: 40px;
+}
+.PayPage .PayPage-transition_ {
+  font-size: 15px;
+  width: 100%;
+  min-height: 40px;
+  padding-right: 15px;
+  background: #e4e4e4;
+}
+.PayPage .PayPage-transition_ p {
+  line-height: 30px;
+  text-align: right;
+}
+.PayPage .G-Warm {
+  text-align: left;
+  padding: 10px;
+}
+.PayPage .G-Warm .G_info_title {
+  height: 30px;
+  line-height: 30px;
+  font-size: 15px;
+}
+.PayPage .G-Warm .G_info_p_title {
+  height: 25px;
+  line-height: 25px;
+  font-size: 14px;
+}
+.PayPage .G-Warm .G_info_text {
+  line-height: 20px;
+  font-size: 13px;
+}
+.PayPage .NoList {
+  line-height: 120px;
+  height: 120px;
+  width: 95%;
+  margin: 15px auto;
+  font-size: 13px;
+  background: #fff;
+  /*background: #f1efef;*/
+  border-radius: 5px;
+}
+.PayPage .el-card {
+  width: 160px;
+  margin: 10px auto;
+  height: 160px;
+}
+.transitionselect {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 30;
+  background: #f2f2f2;
+}
+.transitionselect .header {
+  position: relative;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 900;
+  border-bottom: 1px solid #c8c7cc;
+  line-height: 40px;
+}
+.transitionselect .header .G_iocn {
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  font-size: 25px;
+}
+.transitionselect .information {
+  padding: 12px 20px;
+  font-size: 17px;
+  text-align: left;
+  background: #fff;
+  border-bottom: 1px solid #efe7e7;
+}
+.transitionselect .Discount {
+  background: #fff;
+  padding: 15px 20px;
+  border-bottom: 1px solid #efe7e7;
+  text-align: left;
+}
+.transitionselect .Discount span {
+  height: 15px;
+  width: 15px;
+  font-size: 15px;
+  color: #c8a675!important;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 1px solid #c8a675;
+}
+.bg-white {
+  background: #fff;
+}
